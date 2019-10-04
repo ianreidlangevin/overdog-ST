@@ -1,0 +1,98 @@
+
+
+<nav class="navbar">
+
+	<div class="container">
+
+		<a class="navbar__logo" id="logo" href="{{ siteUrl }}" title="{{ siteName }}" rel="home">
+			<img src="{{siteUrl}}img/underdog-logo.svg" alt="logo" />
+		</a>
+
+		<button class="navbar__hamburger" type="button">
+			<span class="hamburger__box">
+				<span class="hamburger__inner"></span>
+			</span>
+		</button>
+
+	</div>
+
+	<div class="mega-nav" role="navigation">
+
+		<div class="container">
+
+			<div class="row">
+
+				<!-- Menu colonne 1 -->
+
+				<div class="col-12 col-lg-4 mega-nav__col">
+
+					<div class="mega-nav__menu-title">Title if needed</div>
+
+          {% cache %}
+
+          {% set pages = craft.entries.section('pages').all() %}
+
+          <nav>
+
+            <ul>
+
+                {% nav page in pages %}
+
+										{# get the level of the page to add classes to the li and children ul #}
+
+										{% set pageLevel = page.level %}
+
+                    <li class="menu-item__level-{{pageLevel}}">
+
+                      {% if page.type == 'pageCategories' %}
+                      	{{ page.title }}
+                      {% else %}
+                        <a href="{{ page.url }}">{{ page.title }}</a>
+                      {% endif %}
+
+													{# set the classes for each level of menu list #}
+
+                          <ul class="menu-list__level-{{pageLevel}}">
+														
+													{#
+													# The next snippet is a relationship to add internal pages that already exists
+													# to another menu section.
+													# Loop trough the pageCategories type in structure to fetch the entries field.
+													#}
+
+													{% if page.type == 'pageCategories' %}
+														{% set menuDuplicatas = page.relationPages.all() %}
+														{% if menuDuplicatas %}
+																{% for menuDuplicata in menuDuplicatas %}
+																	<li class="menu-item__level-{{pageLevel}}">
+																		<a href="{{ menuDuplicata.url }}">{{ menuDuplicata.title }}</a></li>
+																{% endfor %}
+														{% endif %}
+													{% endif %}
+
+													{# output the children with the default menu li structure #}
+
+													{% ifchildren %}
+
+                        	{% children %}
+
+													{% endifchildren %}
+
+                        	</ul>
+
+                    </li>
+                {% endnav %}
+            </ul>
+          </nav>
+
+          {% endcache %}
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</nav>

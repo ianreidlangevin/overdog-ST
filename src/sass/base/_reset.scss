@@ -1,0 +1,190 @@
+/*
+* GENERAL
+* -----------------------------------------------------------------------------------------------*/
+a,
+button:focus,
+input,
+select,
+textarea {
+	outline: none;
+}
+
+/*
+* ROOT SIZE AND BODY
+* -----------------------------------------------------------------------------------------------*/
+:root {
+	font-size: 75%;
+	/* root font-size = 12px small value add better control for BS spacers padding */
+	@include media-breakpoint-up(md) {
+		font-size: 88%;
+		/* root font-size = 14px */
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 100%;
+		/* root font-size = 16px */
+	}
+}
+
+body {
+	font-size: 1.25rem;
+	/* 15px*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include media-breakpoint-up(md) {
+		font-size: 1.15rem;
+		/* 16px*/
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 1rem;
+		/* 16px*/
+	}
+	@include media-breakpoint-up(xxxl) {
+		font-size: 17px;
+	}
+}
+
+/*
+* GLOBAL PADDING AND MARGIN
+* -----------------------------------------------------------------------------------------------*/
+// Use this as your padding on row for a better control site wide and for responsive
+// In a flexible layout page with optionnal content, always use padding-row--bottom to avoid double padding
+
+.padding-row {
+	&--bottom {
+		padding-bottom: 4.5rem;
+		@include media-breakpoint-up(md) {
+			padding-bottom: 6rem;
+		}
+	}
+
+	&--bottom-small {
+	padding-bottom: 2rem;
+
+		@include media-breakpoint-up(md) {
+			padding-bottom: 2.5rem;
+		}
+
+	}
+
+	&--top {
+		padding-top: 4.5rem;
+		@include media-breakpoint-up(md) {
+			padding-top: 6rem;
+		}
+	}
+
+	&--top-small {
+	padding-top: 2rem;
+
+		@include media-breakpoint-up(md) {
+			padding-top: 2.5rem;
+		}
+
+	}
+
+	&--y {
+		// y means the y-axis
+		padding-top: 4.5rem;
+		padding-bottom: 4.5rem;
+		@include media-breakpoint-up(md) {
+			padding-top: 6rem;
+			padding-bottom: 6rem;
+		}
+	}
+
+	&--y-small { // y means the y-axis
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+		@include media-breakpoint-up(md) {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		}
+	}
+
+}
+
+.margin-row {
+	&--bottom {
+		margin-bottom: 4.5rem;
+		@include media-breakpoint-up(md) {
+			margin-bottom: 6rem;
+		}
+	}
+
+	&--top {
+		margin-top: 4.5rem;
+		@include media-breakpoint-up(md) {
+			margin-top: 6rem;
+		}
+	}
+
+	&--y {
+		// y means the y-axis
+		margin-top: 4.5rem;
+		margin-bottom: 4.5rem;
+		@include media-breakpoint-up(md) {
+			margin-top: 6rem;
+			margin-bottom: 6rem;
+		}
+	}
+}
+
+/*
+* LAYOUT
+* -----------------------------------------------------------------------------------------------*/
+// important, wrapper padding value must be the same as your navbar height
+.content-wrapper {
+	padding: $navbar-height 0 0;
+	@include media-breakpoint-up(md) {
+		padding: $navbar-height-md 0 0;
+	}
+	@include media-breakpoint-up(lg) {
+		padding: $navbar-height-lg 0 0;
+	}
+}
+
+/*
+* LAYOUT OPTIONS
+* -----------------------------------------------------------------------------------------------*/
+// Use this on container or row to create a small width textblock
+.narrow-content {
+	max-width: 900px;
+	margin: auto;
+}
+
+/*
+* GUTTERS ADD-ON
+* -----------------------------------------------------------------------------------------------*/
+// Use this on a row to have bigger gutter for md and up
+@include media-breakpoint-up(md) {
+	.small-gutters {
+		margin-right: -15px;
+		margin-left: -15px;
+
+		> [class*="col-"] {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+
+	.medium-gutters {
+		margin-right: -30px;
+		margin-left: -30px;
+
+		> [class*="col-"] {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
+
+	.large-gutters {
+		margin-right: -45px;
+		margin-left: -45px;
+
+		> [class*="col-"] {
+			padding-right: 45px;
+			padding-left: 45px;
+		}
+	}
+}

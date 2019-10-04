@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{currentSite.language}}">
+	<head>
+		{% block head %}
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta charset="utf-8">
+			<title>{% if title is defined %}{{ title }} - {% endif %}{{ currentSite.name }}</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" type="text/css" href="{{ siteUrl }}dist/theme.css">
+			<link rel="shortcut icon" href="{{ siteUrl }}dist/img/favicon.png">
+		{% endblock %}
+	</head>
+
+	<body class="{{ entry.type ?: 'homepage' }}">
+		{% block body %}
+
+		{% include "base/nav" %}
+
+			<div class="content-wrapper" role="document">
+
+				{% include "base/header" %}
+
+				{% block content %}{% endblock %}
+
+			</div>
+
+		{% include "base/footer" %}
+
+		<script src="{{ siteUrl }}dist/theme.js"></script>
+
+		{% endblock %}
+	</body>
+</html>

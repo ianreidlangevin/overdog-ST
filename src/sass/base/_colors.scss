@@ -1,0 +1,11 @@
+/*
+* COLOR AND GRADIENT
+* -----------------------------------------------------------------------------------------------*/
+.bg-color--grey {
+	background-color: $light-grey;
+}
+
+// example of bg with gradient, remove if not use
+.bg-gradient--vertical {
+	background-image: linear-gradient($light-grey 3%, $white 75%);
+}

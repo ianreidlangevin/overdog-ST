@@ -1,0 +1,59 @@
+/*
+* COPYRIGHT WITH 3E LOGO
+* ----------------------------------------------------------------------------------------------- */
+
+.footer-wrapper {
+	background-color: $light-grey;
+}
+
+
+.copyright {
+	&__logo-3e {
+		font-family: 'icomoon' !important;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		&::before {
+			content: "\e90d";
+			color: $dark-grey;
+			font-size: 2em;
+		}
+	}
+
+	&__block {
+		padding: 0;
+		display: flex;
+		align-items: center;
+	}
+
+	&__details {
+		font-size: 0.8rem;
+		line-height: 1;
+		color: $dark-grey;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media-breakpoint-up(sm) {
+			font-size: 0.9rem;
+		}
+
+		a {
+			color: inherit;
+
+			&:hover,
+			&:hover .copyright__logo-3e::before {
+				color: $secondary;
+			}
+		}
+	}
+
+	&__icon {
+		margin-right: 0.5em;
+	}
+}

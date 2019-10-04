@@ -1,0 +1,31 @@
+/*----------------------------------------------- 404 PAGE  -------------------------------------*/
+.error404 {
+	&__content {
+		text-align: center;
+		@include media-breakpoint-up(sm) {
+			text-align: left;
+			align-items: center;
+		}
+	}
+
+	&__image-wrapper {
+		margin-bottom: 3rem;
+		@include media-breakpoint-up(sm) {
+			padding-right: 3rem;
+			margin-bottom: 0;
+		}
+	}
+
+	&__image {
+		max-width: 60%;
+		height: auto;
+		@include media-breakpoint-up(sm) {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	&__message {
+		line-height: 1.2;
+	}
+}

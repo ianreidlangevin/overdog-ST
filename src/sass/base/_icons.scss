@@ -1,0 +1,29 @@
+/*
+* ICON WITH TEXT RIGHT
+* delete if not used
+* -----------------------------------------------------------------------------------------------*/
+.icon-text {
+	&__item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	&__link {
+		color: $secondary;
+		max-width: 70%;
+	}
+
+	&__icon {
+		font-size: 2em;
+		margin-right: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: color 0.2s linear;
+	}
+
+	&__text {
+		max-width: 80%; // avoid an icon flex squeeze in mobile - to validate if a better solution is possible
+	}
+} // icon-text

@@ -1,0 +1,93 @@
+/*
+* EDIT THIS WITH YOUR ICOMOON VALUE
+* -----------------------------------------------------------------------------------------------*/
+[class^="ud-icon__"],
+[class*="ud-icon__"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-size: 2em;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: $primary;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ud-icon {
+    &__close:before {
+        content: "\e90e";
+    }
+
+    &__plus:before {
+        font-size: 2rem;
+        content: "\e913";
+        color: #fff;
+    }
+
+    &__arrow-right:before {
+        font-size: 1.5em;
+        content: "\e900";
+    }
+
+    &__calendar:before {
+        content: "\e901";
+    }
+
+    &__documents:before {
+        content: "\e901";
+    }
+
+    &__email:before {
+        content: "\e902";
+    }
+
+    &__facebook:before {
+        content: "\e903";
+    }
+
+    &__fax:before {
+        content: "\e904";
+    }
+
+    &__files:before {
+        content: "\e905";
+    }
+
+    &__category:before {
+        content: "\e906";
+    }
+
+    &__link:before {
+        content: "\e907";
+    }
+
+    &__linkedin:before {
+        content: "\e908";
+    }
+
+    &__local:before {
+        content: "\e909";
+    }
+
+    &__map:before {
+        content: "\e90a";
+    }
+
+    &__phone:before {
+        content: "\e90b";
+    }
+
+    &__desktop:before {
+        content: "\e90c";
+    }
+
+    &__share:before {
+        content: "\e90f";
+    }
+}

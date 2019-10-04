@@ -1,0 +1,178 @@
+// For all the editor blocks, add a wysiwyg class on your html output in your templates.
+// It avoids using H tags without context and add control for the styling
+/*
+* TITLES
+* -----------------------------------------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-family-title;
+	font-weight: $font-weight-semibold;
+	color: $primary;
+}
+
+h1 {
+	font-size: 9vw;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 4rem;
+	}
+
+	@include media-breakpoint-up(xxxl) {
+		font-size: 4.8rem;
+	}
+}
+
+h2 {
+	font-size: 2.3rem;
+}
+
+h3 {
+	font-size: 1.7rem;
+}
+
+h4 {
+	font-size: 1.3rem;
+}
+
+h5,
+h6 {
+	font-size: 1.1em;
+}
+
+/*
+* UTILITY CLASSES
+* -----------------------------------------------------------------------------------------------*/
+
+.no-bullet {
+  list-style: none;
+  padding-left: 0;
+}
+
+/*
+* BLOG MAIN SUBTITLE
+* -----------------------------------------------------------------------------------------------*/
+.archive-subtitle,
+.single-subtitle {
+	font-size: 2.3rem;
+	margin-bottom: 4rem;
+	@include media-breakpoint-up(sm) {
+		font-size: 3rem;
+	}
+	@include media-breakpoint-up(md) {
+		font-size: 3.6rem;
+	}
+}
+/*
+* HIGHLIGHT TEXT
+* -----------------------------------------------------------------------------------------------*/
+// this style is already in the format dropdown in backend editor
+// it allows to add a nice lead text to a wysiwyg section
+
+.highlight-text {
+	font-size: 1.05em;
+	line-height: 1.25em;
+	font-weight: 500;
+	margin: 1.5em 0 1em;
+	color: $primary;
+	@include media-breakpoint-up(md) {
+		font-size: 1.2em;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 1.375rem;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+/*
+* LIST AND TITLES INSIDE WYSIWYG CLASS - FOR CLIENT
+* -----------------------------------------------------------------------------------------------*/
+// all text blocks from ACF in your templates must have the wysiwyg class
+.wysiwyg {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 1em 0 0.5em;
+	}
+
+	// remove margins on first and last element to avoid double gap with other elements
+	& > *:first-child {
+		margin-top: 0;
+	}
+
+	&  > *:last-child {
+		margin-bottom: 0;
+	}
+
+	iframe { // prevent overflow for video - add responsive
+		max-width: 100%;
+	}
+
+	//unordered list
+	ul {
+		padding-left: 0;
+		padding-top: 1rem;
+
+		li {
+			list-style: none;
+			text-indent: -3em;
+			padding-left: 3em;
+			padding-bottom: 0.875em;
+
+			&::before {
+				position: relative;
+				content: "";
+				display: inline-block;
+				width: 32px;
+				height: 2px;
+				margin-right: 14px;
+				top: -4px;
+				background-color: $primary;
+				transition: $transition-base;
+			}
+		} //li
+	} // ul
+
+	// ordered list
+	ol {
+		counter-reset: my-counter;
+		padding-left: 0;
+		padding-top: 1rem;
+
+		li {
+			counter-increment: my-counter;
+			list-style: none;
+			margin: 0 0 1.2rem 0;
+			padding-left: 0;
+			position: relative;
+
+			&::before {
+				content: counter(my-counter);
+				color: #313031;
+				font-size: 1em;
+				font-weight: $font-weight-semibold;
+				width: 32px;
+				height: 32px;
+				max-width: 32px;
+				padding: 1rem;
+				border-radius: 50%;
+				margin-right: 2rem;
+				background-color: $light;
+				display: flex;
+    		align-items: center;
+    		justify-content: center;
+				position: absolute;
+				top: 0;
+				left: -4em;
+			}
+		} // ol li
+	} // ol
+}

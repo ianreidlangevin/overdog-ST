@@ -1,0 +1,213 @@
+/*------------------------------------ HIDE MOBILE OR DESKTOP CONTAINER ------------------------*/
+@include media-breakpoint-up(lg) {
+	.mobile-nav {
+		display: none;
+	}
+
+	.classic-nav__hamburger {
+		display: none;
+	}
+}
+/*----------------------------------------- HORIZONTAL MENU DESKTOP  ------------------------------------*/
+.classic-nav {
+	&__menu {
+		display: flex;
+		list-style-type: none;
+		margin-bottom: 0;
+		height: 100%;
+		@include media-breakpoint-down(md) {
+			// hide menu in mobile
+			display: none;
+		}
+	}
+
+	&__item {
+		margin: 0 2rem;
+		display: flex;
+		align-items: center;
+		transition: all 0.25s ease-in-out;
+	}
+
+	&__caret {
+		// little arrow for the dropdown
+		display: inline-block;
+		color: $medium-grey;
+		width: 0;
+		height: 0;
+		margin-left: 0.5em;
+		border-top: 0.3em solid;
+		border-right: 0.3em solid transparent;
+		border-bottom: 0;
+		border-left: 0.3em solid transparent;
+		transition: transform 0.35s ease-in-out;
+
+		.show & {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__link {
+		display: block;
+		color: $body-color;
+		font-size: 16px;
+		position: relative;
+		transition: color 0.25s ease-in-out;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-up(xl) {
+			font-size: 18px;
+		}
+		// line animation on hover - delete if you want to change this effect
+		@include media-breakpoint-up(lg) {
+			&::after {
+				transition: transform 0.3s ease-out,border-color 0.3s ease-out;
+				position: absolute;
+				display: block;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				transform: scaleX(0);
+				border-top: 2px solid #000;
+				content: '';
+				padding-bottom: inherit;
+				border-color: $primary;
+				border-left: none;
+				border-right: none;
+			}
+
+			.show &::after {
+				// keep the line effect active when a dropdown is open
+				transform: scaleX(1);
+			}
+
+			&:hover::after {
+				transform: scaleX(1);
+				transform-origin: 0 0;
+				transition: transform 0.35s cubic-bezier(0.52, 0.01, 0.16, 1);
+				bottom: 0;
+			}
+
+			.current-menu-item & {
+				color: $primary;
+			}
+		}
+		// breakpoint with the line-effect on hover
+	}
+	// link
+}
+// classic-nav
+/*----------------------------------------- DROPDOWN STYLING  ------------------------------------*/
+// this style is replacing the Bootstrap one which is not enqueued in the theme css
+.dropdown {
+	// Bootstrap class name for the js file
+	position: relative;
+}
+
+.dropdown-menu {
+	// Bootstrap class name for the js file
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 14rem;
+	padding: 0.5rem 0;
+	font-size: 1rem;
+	color: $body-color;
+	text-align: left;
+	list-style: none;
+	background-clip: padding-box;
+	@include media-breakpoint-up(lg) {
+		background-color: $white;
+		border: 1px solid rgba(78, 78, 78, 0.15);
+	}
+
+	li.dropdown:last-child & {
+		// useful if the last menu item is a dropdown to right align the drop-menu
+		right: 0;
+		left: auto;
+	}
+
+	.classic-nav__link {
+		font-size: 15px;
+		padding: 10px;
+		@include media-breakpoint-up(xl) {
+			font-size: 17px;
+		}
+
+		&::after {
+			content: none;
+		}
+	}
+
+	.current-menu-item & .classic-nav__link:not(:hover) {
+		// avoid propagating the current item color to the drop-menu links
+		color: $body-color;
+	}
+}
+// drop-down
+/*---------------------------------- MOBILE SIDE-NAV  ---------------------------------*/
+// This is a starter theme simple style,
+.mobile-nav {
+	background-color: $light-grey;
+	color: $primary;
+	position: fixed;
+	top: 0;
+	left: -80%;
+	width: 80%;
+	height: 100%;
+	padding: 60px 20px 20px 2rem;
+	box-shadow: $box-shadow;
+	z-index: 1;
+	transition: left 0.2s ease;
+
+	.dropdown-menu & {
+		padding: 10px 20px 10px 0;
+	}
+
+	.classic-nav__item {
+		display: block;
+		margin: 0;
+		padding: 12px 20px 12px 0;
+	}
+
+	.classic-nav__link {
+		display: block;
+		color: $body-color;
+		font-size: 1.6rem;
+		display: flex; // align the caret
+		align-items: center;
+	}
+
+	.current-menu-item .classic-nav__link {
+		color: $primary;
+	}
+
+	.dropdown-menu .classic-nav__link {
+		font-size: 1.2rem;
+		padding: 0;
+	}
+
+	.dropdown-menu {
+		// Bootstrap class name for the js file
+		position: relative;
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		padding-left: 10px;
+		margin-bottom: 0;
+		list-style: none;
+	}
+
+	&--open {
+		left: 80%;
+
+		.mobile-nav {
+			left: 0;
+		}
+	} // mobile-nav--open
+} // mobile-nav

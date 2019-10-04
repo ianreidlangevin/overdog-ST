@@ -1,0 +1,90 @@
+/*
+* MAIN BUTTON
+* ----------------------------------------------------------------------------------------------- */
+// default is a curtain effect on hover, edit to add your style
+.btn {
+	position: relative; // useful for the hover effect
+	color: $primary;
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.3;
+	padding: 0.8em 2em;
+	border: 2px solid $primary;
+	border-radius: 0;
+	transition: all 0.5s;
+
+	&::before {
+		background-color: $primary;
+	}
+
+	&:hover {
+		color: $white;
+
+		&::before {
+			opacity: 1;
+			width: 100%;
+		}
+	}
+	// add btn--light if button is used on a dark bg
+	&--light {
+		color: $white;
+		border: 2px solid $white;
+		transition: all 0.5s;
+		position: relative;
+		text-align: left;
+
+		&::before {
+			background-color: $white;
+		}
+
+		&:hover {
+			color: $primary;
+
+			&::before {
+				opacity: 1;
+				width: 100%;
+			}
+		}
+	}
+	// the span around the text for curtain effect
+	&--light span,
+	span {
+		z-index: 2;
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	&--light::before,
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		z-index: 1;
+		opacity: 0;
+		transition: all 0.3s;
+	}
+}
+/*
+* INPUT SUBMIT TYPE BUTTON
+* ----------------------------------------------------------------------------------------------- */
+input[type=submit] {
+	font-size: 1em;
+	font-family: $font-family-title;
+	color: $primary;
+	background-color: transparent;
+	padding: 0.6em 2em;
+	border: 2px solid $primary;
+	line-height: 1.5;
+	border-radius: 0;
+}
+
+input[type=submit]:hover {
+	color: $white;
+	background-color: $primary;
+	cursor: pointer;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}

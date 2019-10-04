@@ -1,0 +1,5 @@
+
+{# Use a template for each entry type.
+If an entry type doesn’t have its own template, load the default one #}
+
+{% include ["pages/" ~ entry.type, "pages/default"] %}

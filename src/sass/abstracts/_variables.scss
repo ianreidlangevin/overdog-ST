@@ -1,0 +1,123 @@
+
+
+
+/*
+* TEXT VARIABLES
+* overwrite bootstrap
+* -----------------------------------------------------------------------------------------------*/
+
+
+$font-family-base: "rubik", "helvetica neue", arial, sans-serif;
+$font-family-title: "europa", "helvetica neue", arial, sans-serif;
+
+$line-height-base: 1.5;
+
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold:700;
+
+$base-letter-spacing:2px;
+$link-hover-decoration:none;
+
+
+/*
+* ENABLE RESPONSIVE FONT SIZE
+* enable responsive font size - for Bootstrap 4.3 and up - More information
+* https://css-tricks.com/using-a-mixin-to-take-the-math-out-of-responsive-font-sizes
+* -----------------------------------------------------------------------------------------------*/
+
+
+$enable-responsive-font-sizes: false;
+
+
+/*
+* COLOR VARIABLES
+* -----------------------------------------------------------------------------------------------*/
+
+
+$primary: #DF1F29;
+$secondary: #323031;
+$tertiary: #323031;
+
+$body-color: #47515A;
+$link-hover-color: #DF1F29;
+
+$black: #4E4E4E;
+$white: #ffffff;
+
+$light-grey: #E8EAED;
+$medium-grey:#BFBFBF;
+$dark-grey:#777777;
+
+// useful in a color scheme with a light color ie in background
+$light:#E8EAED;
+
+
+
+/*
+* NAVBAR AND WRAPPER HEIGHT
+* -----------------------------------------------------------------------------------------------*/
+
+// these values are used by the navbar scss and in the reset for the page wrapper
+
+$navbar-height: 70px;
+$navbar-height-md: 80px;
+$navbar-height-lg: 100px;
+
+
+
+/*
+* BASE SPACERS
+* -----------------------------------------------------------------------------------------------*/
+
+
+// overwrite bootstrap spacers variables - change it if you want to
+
+$spacer: 3rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .5),
+  2: $spacer,
+  3: ($spacer * 1.5),
+  4: ($spacer * 2),
+  5: ($spacer * 3)
+), $spacers);
+
+
+
+/*
+* BREAKPOINTS
+* -----------------------------------------------------------------------------------------------*/
+
+
+// add two breakpoints for largers screen xxl and xxxl - do not change that - overwrite Bootstrap variables
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1300px,
+  xxxl:1500px
+) !default;
+
+$container-max-widths: (
+  sm: 90%,
+  md: 90%,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1240px,
+  xxxl:1440px
+) !default;
+
+
+
+/*
+* DESIGN VARIABLES
+* -----------------------------------------------------------------------------------------------*/
+
+
+$border-main: 1px solid $primary;
+$box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);

@@ -1,0 +1,79 @@
+/*
+* NAVBAR
+* ----------------------------------------------------------------------------------------------- */
+// height variables are located in the variables scss file.
+// The values are also used in the reset scss for the page wrapper.
+
+.navbar {
+	background-color: $white;
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	transition: all 0.3s ease;
+	padding: 0;
+	margin: auto;
+	height: $navbar-height;
+	@include media-breakpoint-up(md) {
+		height: $navbar-height-md;
+	}
+	@include media-breakpoint-up(lg) {
+		height: $navbar-height-lg;
+	}
+
+	&--shrink {
+		transition: all 0.3s ease;
+		border-bottom: 1px solid $light-grey;
+		@include media-breakpoint-up(md) {
+			height: 60px;
+		}
+		@include media-breakpoint-up(lg) {
+			height: 80px;
+		}
+	}
+
+	&__logo img {
+		width: 30px;
+		@include media-breakpoint-up(md) {
+			width: 46px;
+			transition: all 0.3s ease;
+
+			.navbar--shrink & {
+				width: 30px;
+				transition: all 0.3s ease;
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			width: 60px;
+
+			.navbar--shrink & {
+				width: 40px;
+			}
+		}
+	}
+
+	.container {
+		height: 100%;
+		z-index: 99;
+		/* show logo and hamburger over the mega-nav dropdown */
+		/* use these if you want your navbar content full width */
+		@include media-breakpoint-up(xxl) {
+			max-width: 1440px;
+			padding-right: 40px;
+			padding-left: 40px;
+		}
+		@include media-breakpoint-up(xxxl) {
+			max-width: 1640px;
+		}
+	}
+} // end navbar prefix
+
+
+.navbar-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
