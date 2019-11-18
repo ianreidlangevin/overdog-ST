@@ -1,0 +1,13 @@
+
+{% macro date_formatted(givenDate, type = 'expanded') %}
+    {% switch type %}
+        {% case 'short' %}
+            {{ givenDate | date('m/d/Y') }}
+        {% case 'expanded' %}
+            {{ givenDate | date('jS F Y') }}
+    {% endswitch %}
+{% endmacro %}
+
+{# use it like that in your template :
+ helpers.date_formatted(entry.postDate, 'short')
+# }
