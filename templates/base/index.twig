@@ -4,10 +4,10 @@
 		{% block head %}
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta charset="utf-8">
-			<title>{% if title is defined %}{{ title }} - {% endif %}{{ currentSite.name }}</title>
+			<title>{{ currentSite.group.name }}</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" type="text/css" href="{{ alias('@web') }}/dist/theme.css">
-			<link rel="shortcut icon" href="{{ alias('@web') }}/dist/img/favicon.png">
+			<link rel="stylesheet" type="text/css" href="{{ alias('@rootUrl') }}/dist/theme.css">
+			<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/dist/img/favicon.png">
 		{% endblock %}
 	</head>
 
@@ -26,7 +26,7 @@
 
 		{% include "base/footer" %}
 
-		<script src="{{ alias('@web') }}/dist/theme.js"></script>
+		<script src="{{ alias('@rootUrl') }}/dist/theme.js"></script>
 
 		{% endblock %}
 	</body>
