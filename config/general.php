@@ -27,9 +27,11 @@ return [
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => true,
 
-        // Aliases
+        // Aliases for 3e joueur workflow
         'aliases' => [
         '@rootUrl' => getenv('DEFAULT_SITE_URL'),
+        '@assetsUrl' => '@rootUrl/assets',
+        '@assetsPath' => 'assets',
         ],
     ],
 
