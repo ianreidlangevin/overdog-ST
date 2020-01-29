@@ -7,7 +7,7 @@
 			<title>{{ currentSite.group.name }}</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" type="text/css" href="{{ alias('@rootUrl') }}/dist/theme.css">
-			<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/dist/img/favicon.png">
+			<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
 		{% endblock %}
 	</head>
 
@@ -16,13 +16,14 @@
 
 		{% include "base/nav" %}
 
-			<div class="content-wrapper" role="document">
+		<div class="document-wrapper" role="document">
 
-				{% include "base/header" %}
+			{% include "base/header" %}
 
+			<main class="content-wrapper"> {# use in gsap anim to fade in the content #}
 				{% block content %}{% endblock %}
-
-			</div>
+			</main>
+		</div>
 
 		{% include "base/footer" %}
 

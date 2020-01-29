@@ -27,18 +27,26 @@ return [
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => true,
 
-        // Aliases for 3e joueur workflow
+        // 3e joueur - use only ascii caracter in auto generated slugs and filename
+        'limitAutoSlugsToAscii' => true,
+        'convertFilenamesToAscii' => true,
+
+        // 3e joueur - Aliases
         'aliases' => [
         '@rootUrl' => getenv('DEFAULT_SITE_URL'),
-        '@assetsUrl' => '@rootUrl/assets',
+        '@assetsUrl' => getenv('DEFAULT_SITE_URL') . '/assets',
         '@assetsPath' => 'assets',
         ],
+
     ],
 
     // Dev environment settings
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
+        // add mamp support for sql dump - uncomment if not use with mamp
+        'backupCommand' => getenv('BACKUP_COMMAND'),
+        'restoreCommand' => getenv('RESTORE_COMMAND'),
     ],
 
     // Staging environment settings

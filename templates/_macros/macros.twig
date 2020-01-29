@@ -1,0 +1,29 @@
+
+
+{# ================================
+ # Active for nav
+ # ================================ #}
+
+{# the hyphen is to remove white spaces, see whitespace control in twig, if questions > ian #}
+ {% macro isActive(navItemSlug) %}
+    {%- if navItemSlug in craft.app.request.segments -%}{{' menu-link--active'}}{%- endif -%}
+ {% endmacro %}
+
+ {# ================================
+  # Link with page ID
+  # ================================ #}
+
+ {% macro pageLink(entryId) %}
+     {% set entry = craft.entries.id(entryId).one() %}
+     {{ entry ? entry.url }}
+ {% endmacro %}
+
+
+ {# ================================
+  # Get a specific page title - useful on single to get the index page name
+  # ================================ #}
+
+ {% macro pageTitle(entryId) %}
+     {% set entry = craft.entries.id(entryId).one() %}
+     {{ entry ? entry.title }}
+ {% endmacro %}

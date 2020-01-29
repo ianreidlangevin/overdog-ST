@@ -26,7 +26,7 @@
 
 // @prepros-prepend ../lib/node_modules/bootstrap/js/dist/util.js
 // @prepros-prepend ../lib/node_modules/bootstrap/js/dist/collapse.js
-// @prepros-prepend ../lib/node_modules/bootstrap/js/dist/dropdown.js
+/* @prepros-prepend ../lib/node_modules/bootstrap/js/dist/dropdown.js */
 
 
 /* OUR THEME SCRIPT */

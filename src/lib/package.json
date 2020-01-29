@@ -1,18 +1,20 @@
 {
   "name": "underdog",
   "version": "1.0.0",
-  "description": "Yarn packages manager for Underdog starter theme",
+  "description": "A short list of useful packages for Underdog",
   "main": "index.js",
   "author": "Ian Reid Langevin",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "aos": "^2.3.4",
-    "bootstrap": "4.3.1",
+    "bootstrap": "4.4.1",
     "flickity": "^2.1.2",
-    "gsap": "^2.0.2",
+    "flickity-fade": "^1.0.0",
+    "gsap": "^3.1.1",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.16.1",
+    "scrollmagic": "^2.0.7"
   }
 }

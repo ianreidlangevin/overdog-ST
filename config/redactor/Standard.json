@@ -1,0 +1,19 @@
+{
+  "buttons": ["formatting", "redo", "undo", "bold", "italic", "unorderedlist", "orderedlist", "link"],
+  "linkNewTab": true,
+  "toolbarFixed": true,
+  "formattingAdd": {
+        "green": {
+            "title": "En vert",
+            "api": "module.inline.format",
+            "args": {
+                "tag": "span",
+                "class": "text-primary",
+                "style": {
+                        "color": "green"
+                    }
+            }
+        }
+  },
+  "formattingHide": ["pre", "h1", "h5", "h6"]
+}

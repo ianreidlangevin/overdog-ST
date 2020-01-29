@@ -52,20 +52,7 @@ h6 {
   padding-left: 0;
 }
 
-/*
-* BLOG MAIN SUBTITLE
-* -----------------------------------------------------------------------------------------------*/
-.archive-subtitle,
-.single-subtitle {
-	font-size: 2.3rem;
-	margin-bottom: 4rem;
-	@include media-breakpoint-up(sm) {
-		font-size: 3rem;
-	}
-	@include media-breakpoint-up(md) {
-		font-size: 3.6rem;
-	}
-}
+
 /*
 * HIGHLIGHT TEXT
 * -----------------------------------------------------------------------------------------------*/
@@ -93,6 +80,7 @@ h6 {
 * LIST AND TITLES INSIDE WYSIWYG CLASS - FOR CLIENT
 * -----------------------------------------------------------------------------------------------*/
 // all text blocks from ACF in your templates must have the wysiwyg class
+
 .wysiwyg {
 	h1,
 	h2,

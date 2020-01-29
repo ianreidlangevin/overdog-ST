@@ -9,11 +9,17 @@
 
 				<div class="page-header">
 
-					<div class="page-header__img" style="background-image: url('{{ alias('@web') }}/img/underdog-placeholder.jpg')">
+					<div class="page-header__img" style="background-image: url('{{ alias('@rootUrl') }}/img/underdog-placeholder.jpg')">
 
 						<div class="page-header__content">
 
-							<h1 class="page-header__title">{{ entry.title }}</h1>
+							{# add the headerTitle var in your page template if you want to overwrite entry title #}
+							<h1 class="page-header__title">
+								{% if headerTitle is defined %}{{ headerTitle }}
+								{% elseif entry is defined %}{{ entry.title }}
+								{% elseif category is defined %}{{ category.title }}
+								{% endif %}
+							</h1>
 
 						</div>
 

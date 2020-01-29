@@ -134,7 +134,7 @@ body {
 * LAYOUT
 * -----------------------------------------------------------------------------------------------*/
 // important, wrapper padding value must be the same as your navbar height
-.content-wrapper {
+.document-wrapper {
 	padding: $navbar-height 0 0;
 	@include media-breakpoint-up(md) {
 		padding: $navbar-height-md 0 0;
