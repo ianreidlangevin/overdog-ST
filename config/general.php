@@ -44,20 +44,20 @@ return [
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
-        // add mamp support for sql dump - uncomment if not use with mamp
-        'backupCommand' => getenv('BACKUP_COMMAND'),
-        'restoreCommand' => getenv('RESTORE_COMMAND'),
+        // add MAMP support for backend sql dump - uncomment if not use with mamp
+        // 'backupCommand' => getenv('BACKUP_COMMAND'),
+        // 'restoreCommand' => getenv('RESTORE_COMMAND'),
     ],
 
     // Staging environment settings
     'staging' => [
-        // Set this to `false` to prevent administrative changes from being made on staging
+        // Set this to false to prevent administrative changes from being made on staging
         'allowAdminChanges' => false,
     ],
 
     // Production environment settings
     'production' => [
-        // Set this to `false` to prevent administrative changes from being made on production
+        // Set this to false to prevent administrative changes from being made on production
         'allowAdminChanges' => false,
     ],
 ];
