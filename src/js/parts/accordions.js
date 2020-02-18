@@ -1,7 +1,7 @@
 
 jQuery(document).ready(function($) {
 
-// scroll to view when accordion collapse
+// Add-on to Bootstrap accordion - Scroll to view when accordion collapse
 
   $('.accordions__content').on('shown.bs.collapse', function(e) {
     var $accordion_item = $(this).closest('.accordions__item');

@@ -3,7 +3,7 @@
 
 	<div class="container-fluid">
 
-		<div class="row padding-row--bottom">
+		<div class="row">
 
 			<div class="col-12 px-0">
 
@@ -13,7 +13,7 @@
 
 						<div class="page-header__content">
 
-							{# add the headerTitle var in your page template if you want to overwrite entry title #}
+							{# add the headerTitle var in your page template if you want to overwrite the entry title #}
 							<h1 class="page-header__title">
 								{% if headerTitle is defined %}{{ headerTitle }}
 								{% elseif entry is defined %}{{ entry.title }}

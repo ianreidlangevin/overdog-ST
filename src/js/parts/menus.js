@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
     $(".classic-nav__hamburger").on('click', mobile_toggle);
 
 
-    // CLASSIC MENU - BOOTSTRAP ADD-ON
+    // CLASSIC MENU - BOOTSTRAP ADD-ON - Delete if you use a mega-nav
 
     // add slide effect to bootstrap dropdown
     $('.dropdown').on('show.bs.dropdown', function(e){
