@@ -1,0 +1,61 @@
+siteGroups:
+  c1436119-37a0-4b5b-9538-52c47b611fd2:
+    name: 'Overdog'
+sites:
+  c4cd22e4-7697-4d4d-b517-c99c99f7df03:
+    baseUrl: '@rootUrl/en'
+    handle: siteEnglish
+    hasUrls: true
+    language: en
+    name: English
+    primary: false
+    siteGroup: c1436119-37a0-4b5b-9538-52c47b611fd2
+    sortOrder: 2
+  fc2cb4bb-e016-46f9-a830-653496da88d7:
+    baseUrl: '@rootUrl'
+    handle: siteFrench
+    hasUrls: true
+    language: fr
+    name: Français
+    primary: true
+    siteGroup: c1436119-37a0-4b5b-9538-52c47b611fd2
+    sortOrder: 1
+volumes:
+  00548086-7b2f-44f0-a0e4-c9d91fcaae9e:
+    handle: assetsPhotos
+    hasUrls: true
+    name: Photos
+    settings:
+      path: '@assetsPath/photos'
+    sortOrder: 2
+    type: craft\volumes\Local
+    url: '@assetsUrl/photos'
+  ca2a274d-ce21-46a0-81e5-cd4dba43a25a:
+    handle: assetsDocuments
+    hasUrls: true
+    name: Documents
+    settings:
+      path: '@assetsPath/documents'
+    sortOrder: 1
+    type: craft\volumes\Local
+    url: '@assetsUrl/documents'
+sections:
+  4647bfbd-61b6-44f7-8536-869ac8dfd57e:
+    enableVersioning: false
+    entryTypes:
+      89a0e5f9-b97b-4fde-8358-adda230038a3:
+    handle: accueil
+    name: Accueil
+    propagationMethod: all
+    siteSettings:
+      c4cd22e4-7697-4d4d-b517-c99c99f7df03:
+        enabledByDefault: true
+        hasUrls: true
+        template:
+        uriFormat: __home__
+      fc2cb4bb-e016-46f9-a830-653496da88d7:
+        enabledByDefault: true
+        hasUrls: true
+        template:
+        uriFormat: __home__
+    type: single
