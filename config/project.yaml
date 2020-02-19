@@ -1,16 +1,29 @@
+dateModified: 1582081461
+sections:
+  4647bfbd-61b6-44f7-8536-869ac8dfd57e:
+    enableVersioning: false
+    entryTypes:
+      89a0e5f9-b97b-4fde-8358-adda230038a3:
+        handle: accueil
+        hasTitleField: false
+        name: Accueil
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: accueil
+    name: Accueil
+    propagationMethod: all
+    siteSettings:
+      fc2cb4bb-e016-46f9-a830-653496da88d7:
+        enabledByDefault: true
+        hasUrls: true
+        template: null
+        uriFormat: __home__
+    type: single
 siteGroups:
   c1436119-37a0-4b5b-9538-52c47b611fd2:
-    name: 'Overdog'
+    name: Overdog
 sites:
-  c4cd22e4-7697-4d4d-b517-c99c99f7df03:
-    baseUrl: '@rootUrl/en'
-    handle: siteEnglish
-    hasUrls: true
-    language: en
-    name: English
-    primary: false
-    siteGroup: c1436119-37a0-4b5b-9538-52c47b611fd2
-    sortOrder: 2
   fc2cb4bb-e016-46f9-a830-653496da88d7:
     baseUrl: '@rootUrl'
     handle: siteFrench
@@ -20,6 +33,12 @@ sites:
     primary: true
     siteGroup: c1436119-37a0-4b5b-9538-52c47b611fd2
     sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: Overdog
+  schemaVersion: 3.4.7
+  timeZone: America/New_York
 volumes:
   00548086-7b2f-44f0-a0e4-c9d91fcaae9e:
     handle: assetsPhotos
@@ -39,23 +58,3 @@ volumes:
     sortOrder: 1
     type: craft\volumes\Local
     url: '@assetsUrl/documents'
-sections:
-  4647bfbd-61b6-44f7-8536-869ac8dfd57e:
-    enableVersioning: false
-    entryTypes:
-      89a0e5f9-b97b-4fde-8358-adda230038a3:
-    handle: accueil
-    name: Accueil
-    propagationMethod: all
-    siteSettings:
-      c4cd22e4-7697-4d4d-b517-c99c99f7df03:
-        enabledByDefault: true
-        hasUrls: true
-        template:
-        uriFormat: __home__
-      fc2cb4bb-e016-46f9-a830-653496da88d7:
-        enabledByDefault: true
-        hasUrls: true
-        template:
-        uriFormat: __home__
-    type: single

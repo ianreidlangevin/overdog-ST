@@ -1,14 +1,7 @@
 {
-  "name": "3ejoueur/craft",
-  "description": "Craft CMS Scaffolding by 3e joueur",
-  "keywords": [
-      "craft",
-      "craftcms",
-  ],
-  "type": "project",
   "require": {
     "craftcms/cms": "3.4.5",
-    "craftcms/redactor": "^2.5.0",
+    "craftcms/redactor": "2.5.0",
     "solspace/craft-freeform": "3.6.2",
     "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"
@@ -25,7 +18,6 @@
   "scripts": {
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-      "@php -r \"copy('.gitignore.example', '.gitignore');\"",
     ]
   }
 }

@@ -11,21 +11,27 @@
 		{% endblock %}
 	</head>
 
-	<body class="{{ entry.type ?: 'homepage' }}">
+	{% if entry is defined %}
+	{% set bodyClass = entry.type ?: 'homepage' %}
+	{% else %}
+	{% set bodyClass = 'page' %}
+	{% endif %}
+
+	<body class="{{ bodyClass }}">
 		{% block body %}
 
-		{% include "base/nav" %}
+		{% include "_base/nav" %}
 
 		<div class="document-wrapper" role="document">
 
-			{% include "base/header" %}
+			{% include "_base/header" %}
 
 			<main class="content-wrapper"> {# use in gsap anim to fade in the content #}
 				{% block content %}{% endblock %}
 			</main>
 		</div>
 
-		{% include "base/footer" %}
+		{% include "_base/footer" %}
 
 		<script src="{{ alias('@rootUrl') }}/dist/theme.js"></script>
 
