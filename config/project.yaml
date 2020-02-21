@@ -1,3 +1,4 @@
+dateModified: 1582255505
 sections:
   4647bfbd-61b6-44f7-8536-869ac8dfd57e:
     enableVersioning: false
@@ -16,7 +17,7 @@ sections:
       fc2cb4bb-e016-46f9-a830-653496da88d7:
         enabledByDefault: true
         hasUrls: true
-        template: null
+        template: index.twig
         uriFormat: __home__
     type: single
 siteGroups:
