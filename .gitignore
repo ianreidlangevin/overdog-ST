@@ -1,21 +1,17 @@
 # Craft CMS 3 .gitignore
 #
 # @author    Ian Reid Langevin
-# @copyright Copyright (c) 2019
+# @copyright Copyright (c) 2020
 # @since     1.0
 # @license   MIT
 
 # Place at the root of your project
 
 # CRAFT ENV
-.env.sh
 .env
 
 # COMPOSER
 /vendor
-
-# CRAFT STORAGE
-/storage/*
 
 # ASSETS
 /web/assets/*
