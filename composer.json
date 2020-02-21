@@ -8,7 +8,7 @@
     "Overdog"
   ],
   "require": {
-    "craftcms/cms": "^3.4.0",
+    "craftcms/cms": "3.4.7",
     "craftcms/redactor": "2.5.0",
     "solspace/craft-freeform": "3.6.2",
     "verbb/super-table": "2.4.4",
