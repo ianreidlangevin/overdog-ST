@@ -1,12 +1,15 @@
 {
   "name": "3ejoueur/overdog",
   "description": "A Craft CMS scaffolding project for 3e joueur",
+  "version": "0.9",
   "keywords": [
     "craft",
     "cms",
     "3ejoueur",
     "Overdog"
   ],
+  "license": "Unlicense",
+  "type": "project",
   "require": {
     "craftcms/cms": "3.4.7",
     "craftcms/redactor": "2.5.0",
