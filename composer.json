@@ -1,10 +1,15 @@
 {
   "name": "3ejoueur/overdog",
   "description": "A Craft CMS scaffolding project for 3e joueur",
-  "version": "0.9",
+  "version": "0.9.1",
+  "authors": [
+    {
+        "name": "Ian Reid Langevin",
+        "email": "ian@3ejoueur.com",
+        "role": "Developer"
+    }
+  ],
   "keywords": [
-    "craft",
-    "cms",
     "3ejoueur",
     "Overdog"
   ],
@@ -12,9 +17,6 @@
   "type": "project",
   "require": {
     "craftcms/cms": "3.4.7",
-    "craftcms/redactor": "2.5.0",
-    "solspace/craft-freeform": "3.6.2",
-    "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
@@ -29,8 +31,13 @@
     }
   },
   "scripts": {
-    "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    "post-create-project-cmd": [
+      "@php -r \"copy('.env.example', '.env');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"unlink('README.md');\"",
+      "@php -r \"rename('composer.json.default', 'composer.json');\"",
+      "@composer dump-autoload -o",
+      "@php craft setup/welcome"
     ]
   }
 }
