@@ -26,7 +26,8 @@ ian@3ejoueur.com
 
 ## Installation
 
-- Créez un host sur votre serveur local, un dossier vide de projet (composer fonctionne uniquement si le dossier est vide) et une base de données
+- Créez un host sur votre serveur local, un dossier vide de projet (composer fonctionne uniquement si le dossier est vide).
+- Créez une base de données MySQL (PostgreSQL est aussi supporté, mais utilisez MySQL)
 - Aller dans le dossier créé via le terminal et faire : composer create-project 3ejoueur/overdog .
 - Si vous souhaitez ne pas créer de dossier préalablement, faire composer create-project 3ejoueur/overdog sans le point. Un dossier sera créé, vous pourrez ensuite le renommer.
 - Suivre les étapes et entrez vos informations de base de données.
