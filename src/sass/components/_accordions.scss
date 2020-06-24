@@ -1,0 +1,139 @@
+/*
+* ACCORDIONS IN CONTENT
+* -----------------------------------------------------------------------------------------------*/
+
+$panelHeightSm: 46px;
+$panelHeightMd: 56px;
+$panelHeightXl: 65px;
+
+.accordions {
+
+  &__item {
+    margin-bottom: 1rem;
+    @include border;
+    &:last-child { margin-bottom: 0;}
+  }
+
+  &__panel {
+    position: relative;
+    @include gradient-bg-grey;
+    cursor: pointer;
+    width: 100%;
+    min-height: $panelHeightSm;
+    padding: 1rem 1rem 1rem 0;
+    display: flex; // usefull to center title if min-height is bigger than padding
+    align-items: center;
+
+    @include media-breakpoint-up(md) { min-height: $panelHeightMd; }
+
+    @include media-breakpoint-up(xl) { min-height: $panelHeightXl;}
+
+    .bg-grey--border & { background: $white; }
+
+    &:hover .accordions__title { color: $turquoise01;}
+  }
+
+  &__subtitle {
+    @include subtitle-listing;
+  }
+
+  &__title {
+    @include title-listing;
+    margin-left: calc(#{$panelHeightSm} + 1em);
+
+    @include media-breakpoint-up(md) { margin-left: calc(#{$panelHeightMd} + 1em); }
+
+    @include media-breakpoint-up(xl) { margin-left: calc(#{$panelHeightXl} + 1em);}
+  }
+
+  &__inside {
+    padding: 3rem 2rem 0 2rem;
+    background-color: $white;
+
+    &--no-pt {
+      padding-top: 0;
+    }
+  }
+
+  // Important - the icon is absolute to allow very long title on multiple lines
+
+  &__icon-wrapper {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include gradient-bg-blue;
+    height: calc(100% + 1px);
+    width: $panelHeightSm; // take the accordion height to add a square behind icon
+
+    @include media-breakpoint-up(md) { width: $panelHeightMd; }
+
+    @include media-breakpoint-up(xl) { width: $panelHeightXl;}
+  }
+
+  &__icon {
+    // edit this section to the closing bracket if you use another icon style
+    box-sizing: border-box;
+    transition: transform 0.3s;
+    width: 16px;
+    height: 16px;
+    transform: rotate(180deg);
+    @include media-breakpoint-up(md) {
+      width: 24px;
+      height: 24px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 0;
+      border-bottom: solid 1px $white;
+      position: absolute;
+      bottom: 8px - 1px;
+      transform: rotate(90deg);
+      transition: width 0.3s;
+      @include media-breakpoint-up(md) {
+        width: 24px;
+        bottom: 12px - 1px;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 0;
+      border-bottom: solid 1px $white;
+      position: absolute;
+      bottom: 8px - 1px;
+      @include media-breakpoint-up(md) {
+        width: 24px;
+        bottom: 12px - 1px;
+      }
+    }
+    // icon animation on collapsed
+    .accordions__panel:not(.collapsed) & {
+      transform: rotate(0deg);
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-bottom: solid 1px $white;
+        position: absolute;
+        bottom: 8px - 1px;
+        transform: rotate(90deg);
+        @include media-breakpoint-up(md) {
+          bottom: 12px - 1px;
+        }
+      }
+
+    } //collapsed
+
+  } //icon
+
+} // accordions prefix

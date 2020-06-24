@@ -1,0 +1,105 @@
+/*
+* HAMBURGER MENU
+* ----------------------------------------------------------------------------------------------- */
+
+.navbar__hamburger {
+  display: inline-block;
+  padding: 11px 13px;
+  cursor: pointer;
+  background-color: #202022;
+  border-radius: 50%;
+  border: 0;
+  overflow: visible;
+  outline: none;
+  margin-left: auto;
+  transition: background-color 0.5s ease-in-out;
+  z-index: 9;
+
+  @include media-breakpoint-up(lg) {
+    padding: 14px;
+  }
+}
+
+.hamburger {
+  &__box {
+    width: 19px;
+    height: 14px;
+    display: inline-block;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      width: 24px;
+      height: 16px;
+    }
+  }
+
+  &__inner,
+  &__inner::after,
+  &__inner::before {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: $white;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+
+    @include media-breakpoint-up(lg) {
+      width: 24px;
+      height: 1px;
+    }
+  }
+
+  &__inner::after,
+  &__inner::before {
+    content: "";
+  }
+
+  &__inner::before {
+    top: 8px;
+    transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    @include media-breakpoint-up(lg) {
+      top: 9px;
+    }
+  }
+
+  &__inner::after {
+    top: 16px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    @include media-breakpoint-up(lg) {
+      top: 18px;
+    }
+  }
+}
+
+.mega-nav--open {
+  .hamburger__inner {
+    transition-delay: 0.22s;
+    background-color: transparent !important;
+
+    &::before {
+      background-color: $white;
+      top: 0;
+      transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate3d(0, 8px, 0) rotate(45deg);
+
+      @include media-breakpoint-up(lg) {
+        transform: translate3d(0, 10px, 0) rotate(45deg);
+      }
+    }
+
+    &::after {
+      background-color: $white;
+      top: 0;
+      transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate3d(0, 8px, 0) rotate(-45deg);
+
+      @include media-breakpoint-up(lg) {
+        transform: translate3d(0, 10px, 0) rotate(-45deg);
+      }
+    }
+  }
+}

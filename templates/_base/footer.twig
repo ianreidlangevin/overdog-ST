@@ -1,42 +1,20 @@
-
+{# MAIN FOOTER LAYOUT #}
 <footer class="footer-wrapper">
-
-	<div class="container">
-
-		<div class="row padding-row--y">
-
-			<div class="col-12">
-
-				<h4 class="text-center">Underdog footer - add content here</h4>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-12 mb-1">
-
-				<div class="copyright__details">
-
-					<a class="copyright__block" href="https://www.3ejoueur.com" target="_blank" rel="noreferrer">
-
-						<div class="copyright__icon"><i class="copyright__logo-3e"></i></div>
-
-						<div class="copyright__text">3e joueur</div>
-
-					</a>
-
+		<div class="container">
+      {# Copyright #}
+      <div class="row">
+				<div class="DELETE-ME col-12" style="min-height:400px; display:flex; align-items:center;">
+					<h1 style="color:#80828A; font-size:2rem;"><span style="color:#fff">_</span>footer</h1>
 				</div>
-
+				<div class="col-12">
+          <div class="footer-copyright">
+            <div class="footer-copyright__text">© Overdog</div>
+            <a class="footer-copyright__icon-wrapper" rel="noopener" href="https://www.3ejoueur.com" target="_blank" rel="external" title="3e joueur">
+              <span class="sr-only">3e joueur</span>
+              <svg class="footer-copyright__icon"><use xlink:href="{{ alias('@iconsUrl') }}#logo-3ejoueur"></use></svg>
+            </a>
+          </div>
+				</div>
 			</div>
-
 		</div>
-
-	</div>
-
 </footer>

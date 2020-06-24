@@ -1,0 +1,25 @@
+// stylelint-disable declaration-no-important
+
+//
+// Visibility utilities
+//
+
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+.no-overflow {
+  overflow: hidden;
+
+  &--x {
+  overflow-x: hidden;
+  }
+
+  &--y {
+  overflow-y: hidden;
+  }
+}

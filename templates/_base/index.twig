@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{currentSite.language}}">
 	<head>
-		{% block head %}
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<meta charset="utf-8">
-			<title>{{ currentSite.group.name }}</title>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" type="text/css" href="{{ alias('@rootUrl') }}/dist/theme.css">
-			<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
-		{% endblock %}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ (entry is defined and entry.id == 1) ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
+		{# PRECONNECT TO EXTERNAL RESSOURCES #}
+		{# SEO #}
+		<meta name="robots" content="index, follow">
+		{# MOBILE #}
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		{# STYLE #}
+		<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
+		{% include "_base/hash/style.twig" %}
+		{# OPEN GRAPH CONTENT #}
+		<meta content="fr_FR" property="og:locale">
+		<meta content="" property="og:site_name">
+		<meta content="website" property="og:type">
+		<meta content="{{ craft.app.request.absoluteUrl }}" property="og:url">
+		<meta content="{{ headerTitle|default(entry.title) }}" property="og:title">
+		{# HUMANS TXT INITIATIVE #}
+		<link type="text/plain" href="{{ alias('@rootUrl') }}/humans.txt" rel="author">
+		{# SCRIPT WITH HASH - do not edit the hash file - added in head with defer attr #}
+		<noscript>{{ 'Please enable JavaScript in your browser to view this site.'|t }}</noscript>
+		{% include "_base/hash/script.twig" %}
 	</head>
 
-	{% if entry is defined %}
-	{% set bodyClass = entry.type ?: 'homepage' %}
-	{% else %}
-	{% set bodyClass = 'page' %}
-	{% endif %}
+	<body style="background-color:#202022;">
+		{# skip navigation for screen readers #}
+		<a class="sr-only" href="#main">{{ 'Skip to main content'|t }}</a>
 
-	<body class="{{ bodyClass }}">
-		{% block body %}
+		{% include "_navigation/navbar" %}
 
-		{% include "_base/nav" %}
+		{% include "_base/header" %}
 
-		<div class="document-wrapper" role="document">
-
-			{% include "_base/header" %}
-
-			<main class="content-wrapper"> {# use in gsap anim to fade in the content #}
-				{% block content %}{% endblock %}
-			</main>
-		</div>
-
+		<main id="#main" class="content-wrapper">
+			{% block content %}{% endblock %}
+		</main>
 		{% include "_base/footer" %}
-
-		<script src="{{ alias('@rootUrl') }}/dist/theme.js"></script>
-
-		{% endblock %}
 	</body>
+
 </html>

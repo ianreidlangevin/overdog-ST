@@ -1,0 +1,122 @@
+
+// Container widths
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+
+.container {
+  width: 100%;
+  padding-right: $grid-gutter-width / 2;
+  padding-left: $grid-gutter-width / 2;
+  margin-right: auto;
+  margin-left: auto;
+  @include make-container-max-widths();
+}
+
+// Fluid container
+
+.container-fluid {
+  width: 100%;
+  padding-right: $grid-gutter-width / 2;
+  padding-left: $grid-gutter-width / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Row
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$grid-gutter-width / 2;
+  margin-left: -$grid-gutter-width / 2;
+
+  // Remove the negative margin from default .row, then the horizontal padding
+  // from all immediate children columns (to prevent runaway style inheritance).
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+
+// Columns
+
+%grid-column {
+  position: relative;
+  width: 100%;
+  padding-right: $grid-gutter-width / 2;
+  padding-left: $grid-gutter-width / 2;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  // Allow columns to stretch full width below their breakpoints
+  @for $i from 1 through $grid-columns {
+    .col#{$infix}-#{$i} {
+      @extend %grid-column;
+    }
+  }
+
+  .col#{$infix},
+
+  .col#{$infix}-auto {
+    @extend %grid-column;
+  }
+
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+
+    .col#{$infix} {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+
+    .col#{$infix}-auto {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: 100%; // Reset earlier grid tiers
+    }
+
+    @for $i from 1 through $grid-columns {
+      .col#{$infix}-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        // Add a max-width to ensure content within each column does not blow out
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+
+    .order#{$infix}-first { order: -1; }
+
+    .order#{$infix}-last { order: $grid-columns + 1; }
+
+    @for $i from 0 through $grid-columns {
+      .order#{$infix}-#{$i} { order: $i; }
+    }
+
+    // `$columns - 1` because offsetting by the width of an entire row isn't possible
+    @for $i from 0 through ($grid-columns - 1) {
+      @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+        .offset#{$infix}-#{$i} {
+          $num: $i / $grid-columns;
+          margin-left: if($num == 0, 0, percentage($num));
+        }
+      }
+    }
+  }
+}

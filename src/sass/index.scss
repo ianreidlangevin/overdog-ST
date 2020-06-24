@@ -1,120 +1,50 @@
 
 /*
-* GOOGLE FONTS AND ADOBE FONTS IMPORT
-*/
-
-@import url('https://fonts.googleapis.com/css?family=Rubik');
-@import url("https://use.typekit.net/ymw4sua.css");
-
-
-/*
-* LOCAL FONTS - ICOMOON (included the copyright logo in footer)
-* The path for the font-face must be from the web/dist folder and not from the src folder
-*/
-
-@font-face {
-    font-family: 'icomoon';
-    src:  url('../fonts/underdog-icomoon/icomoon.eot');
-    src:  url('../fonts/underdog-icomoon/icomoon.eot') format('embedded-opentype'),
-          url('../fonts/underdog-icomoon/icomoon.ttf') format('truetype'),
-          url('../fonts/underdog-icomoon/icomoon.woff') format('woff'),
-          url('../fonts/underdog-icomoon/icomoon.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*
 * OUR THEME VARIABLES - MUST BE ENQUEUED BEFORE BOOTSTRAP
 */
 
-@import "abstracts/_variables";
-@import "abstracts/_mixins";
-
+@import "abstracts/variables";
 
 /*
-* BOOTSTRAP SASS CHERRY PICKING - ENQUEUE ONLY WHAT YOU NEED
+* MIXINS
 */
 
-@import "../lib/node_modules/bootstrap/scss/functions";
-@import "../lib/node_modules/bootstrap/scss/variables";
-@import "../lib/node_modules/bootstrap/scss/mixins";
-/*@import "../lib/node_modules/bootstrap/scss/root";*/
-@import "../lib/node_modules/bootstrap/scss/reboot";
-/*@import "../lib/node_modules/bootstrap/scss/type";*/
-@import "../lib/node_modules/bootstrap/scss/images";
-@import "../lib/node_modules/bootstrap/scss/code";
-@import "../lib/node_modules/bootstrap/scss/grid";
-/*@import "../lib/node_modules/bootstrap/scss/tables";*/
-/*@import "../lib/node_modules/bootstrap/scss/forms";*/
-/*@import "../lib/node_modules/bootstrap/scss/buttons";*/
-@import "../lib/node_modules/bootstrap/scss/transitions";
-/*@import "../lib/node_modules/bootstrap/scss/dropdown";*/
-/*@import "../lib/node_modules/bootstrap/scss/button-group";*/
-/*@import "../lib/node_modules/bootstrap/scss/input-group";*/
-/*@import "../lib/node_modules/bootstrap/scss/custom-forms";*/
-@import "../lib/node_modules/bootstrap/scss/nav";
-@import "../lib/node_modules/bootstrap/scss/navbar";
-/*@import "../lib/node_modules/bootstrap/scss/card";*/
-/*@import "../lib/node_modules/bootstrap/scss/breadcrumb";*/
-/*@import "../lib/node_modules/bootstrap/scss/pagination";*/
-/*@import "../lib/node_modules/bootstrap/scss/alert";*/
-/*@import "../lib/node_modules/bootstrap/scss/progress";*/
-/*@import "../lib/node_modules/bootstrap/scss/media";*/
-/*@import "../lib/node_modules/bootstrap/scss/close";*/
-/*@import "../lib/node_modules/bootstrap/scss/modal";*/
-/*@import "../lib/node_modules/bootstrap/scss/tooltip";*/
-/*@import "../lib/node_modules/bootstrap/scss/popover";*/
-/*@import "../lib/node_modules/bootstrap/scss/carousel";*/
-@import "../lib/node_modules/bootstrap/scss/utilities";
-/*@import "../lib/node_modules/bootstrap/scss/print";*/
-
-
-/*
-* LIB VENDOR SCSS - COMMENT OUT IF NOT USE OR ADD YOURS
-*/
-
-
-@import "../lib/node_modules/flickity/dist/flickity";
-@import "../lib/node_modules/aos/dist/aos";
-
+@import "mixins/breakpoints";
+@import "mixins/colors";
+@import "mixins/fonts";
+@import "mixins/utilities";
+@import "mixins/icon-size";
+@import "mixins/transitions";
 
 /*
 * OUR THEME SCSS
 */
 
-
 // base folder
-@import
-"base/reset",
-"base/typography",
-"base/icomoon",
-"base/icons",
-"base/colors";
+@import "base/reset";
+@import "base/grid";
+@import "base/spacing"; // must be loaded after grid to avoid important on px and py
+@import "base/typography";
+@import "base/wysiwyg";
+@import "base/colors";
+
+// utilities folder
+@import "utilities/embed";
+@import "utilities/screenreaders";
+@import "utilities/stretched-link";
+@import "utilities/transitions";
+@import "utilities/visibility";
 
 // layout folder
-@import
-"layout/navbar",
-"layout/nav-hamburger",
-"layout/nav-meganav",
-//"layout/nav-classic",
-"layout/header",
-"layout/footer";
+@import "layout/header";
+@import "layout/footer";
 
-// components folder
-@import
-"components/buttons",
-"components/sidemenu", // sidemenu with collapse used on blog
-"components/pagination"; // pagination used on blog and custom post types
+// navigation folder
+@import "navigation/navbar";
+@import "navigation/button";
+@import "navigation/menu";
 
-// pages folder
-@import
-"pages/blog",
-"pages/404";
-
-// theme folder
-@import
-"theme/theme";
-
-// vendor folder
-@import
-"vendor/aos-custom";
+// components
+@import "components/buttons";
+@import "components/accordions";
+@import "components/pagination";

@@ -33,9 +33,17 @@ return [
 
         // 3e joueur - Aliases
         'aliases' => [
+        '@webroot' => dirname(__DIR__) . '/web',
         '@rootUrl' => getenv('SITE_URL'),
+        '@iconsUrl' => getenv('SITE_URL') . '/img/svg-sprite.svg',
         '@assetsUrl' => getenv('SITE_URL') . '/assets',
         '@assetsPath' => 'assets',
+        ],
+
+        // 3e joueur - Set the site url per language let admin panel empty
+        'siteUrl' => [
+          'siteFrench' => getenv('SITE_URL') ?: '@web',
+          'siteEnglish' => getenv('SITE_URL') . '/en',
         ],
 
     ],

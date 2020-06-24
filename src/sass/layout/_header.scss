@@ -1,34 +1,91 @@
+
+
 /*
 * PAGES HEADER
 * ----------------------------------------------------------------------------------------------- */
 .page-header {
 	position: relative;
 	width: 100%;
-	z-index: 1;
-	overflow: hidden;
+	height: 35vh;
+	max-height: 250px;
+	margin-bottom: 3rem;
+	overflow: hidden; // usefull for gsap animation
+
+	@include media-breakpoint-up(sm) {
+		height: 35vh;
+	}
+	@include media-breakpoint-up(md) {
+		height: 40vh;
+		max-height: 300px;
+	}
+	@include media-breakpoint-up(xl) {
+		height: 40vh;
+		max-height: 400px;
+	}
+
+	&__wrapper {
+		padding: $navbar-height 0 0;
+		@include media-breakpoint-up(md) {
+			padding: $navbar-height-md 0 0;
+		}
+		@include media-breakpoint-up(lg) {
+			padding: $navbar-height-lg 0 0;
+		}
+	}
+
+	&__col {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	&__divider {
+		width: 70px;
+		height: 21px;
+		fill: $grey01;
+
+		@include media-breakpoint-up(md) {
+			width: 90px;
+			height: 27px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			width: 110px;
+			height: 33px;
+		}
+
+		@include media-breakpoint-up(xxxl) {
+			width: 120px;
+			height: 37px;
+		}
+	}
+
+	&__picture {
+		@include picture;
+	}
 
 	&__img {
-		height: 35vh;
-		width: 100%;
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-size: cover;
-		background-position: center center;
-		
-		@include media-breakpoint-up(sm) {
-			height: 55vh;
-		}
-		@include media-breakpoint-up(md) {
-			height: 55vh;
-		}
+	 @include object-fit(cover, center center);
+	 width: 100%;
+	 height: 100%;
+	}
+
+	&__blur {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	@include blur-bg;
+	}
+
+	&__section {
+		@include make-container-max-widths;
+		margin: 0 auto;
+		padding: 1em 15px;
+		@include title-uppercase($turquoise01);
 	}
 
 	&__title {
-		color: $secondary;
-		text-align: center;
-		hyphens: auto;
-		word-break: break-word;
+		@include title-01;
 	}
+
 }

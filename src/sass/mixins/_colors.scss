@@ -1,0 +1,29 @@
+/*
+* GRADIENTS
+*/
+
+@mixin gradient-bg-blue {
+  background-image: linear-gradient(-60deg, #163a70 0%, $turquoise01 100%);
+}
+
+@mixin gradient-bg-blue--reverse {
+  background-image: linear-gradient(-60deg, $turquoise01 0%, #163a70 100%);
+}
+
+@mixin gradient-bg-grey {
+  background-image: linear-gradient(-20deg, #f8f9fa 5%, $grey01 91%);
+}
+
+@mixin gradient-bg-red {
+  background-image: linear-gradient(-47deg, #c94041 0%, $red01 42%);
+}
+
+@mixin blur-bg {
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+  backdrop-filter: blur(7px);
+  // target seulement firefox qui ne supporte pas backdrop filter encore pour mettre le transparent plus dark
+  @-moz-document url-prefix() {
+    background-color: rgba(255, 255, 255, 0.94);
+    }
+}

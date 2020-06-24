@@ -1,0 +1,103 @@
+
+/*
+* BOX SHADOWS
+*/
+
+@mixin box-shadow-thin {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.11);
+}
+
+@mixin box-shadow-medium {
+box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}
+
+
+/*
+* BORDER RADIUS
+*/
+
+@mixin border-radius-all {
+  border-radius: 8px;
+}
+
+@mixin border-radius-top {
+  border-radius: 8px 8px 0 0;
+}
+
+@mixin border-radius-bottom {
+  border-radius: 0 0 8px 8px;
+}
+
+@mixin border {
+  border: 1px solid $grey02;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid $grey02;
+}
+
+@mixin border-top {
+  border-top: 1px solid $grey02;
+}
+
+
+// utily classes
+
+.border-top {
+	@include border-top;
+}
+
+.border-bottom {
+	@include border-bottom;
+}
+
+
+/*
+* PICTURE TAG - NECESSAIRE POUR EFFET LAZYLOAD
+*/
+
+@mixin picture {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: $grey01;
+}
+
+/*
+* CLEARFIX FOR wysiwyg
+*/
+
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+
+/*
+* This mixin can be used to set the object-fit:
+* @include object-fit(contain);
+* or object-fit and object-position:
+* @include object-fit(cover, top);
+*
+* INSTRUCTIONS
+* Utilisez avec le polyfill suivant à ajouter
+* dans votre fichier yarn dans lib : https://classic.yarnpkg.com/en/package/object-fit-images
+* https://github.com/fregante/object-fit-images
+*/
+
+@mixin object-fit($fit: fill, $position: null){
+  width: 100%;
+  height: 100%;
+  @if $position {
+  	font-family: 'object-fit: #{$fit}; object-position: #{$position}'; //polyfill for IE
+	  -o-object-position: $position;
+	     object-position: $position;
+  } @else {
+  	font-family: 'object-fit: #{$fit}'; //polyfill for IE
+  }
+  -o-object-fit: $fit;
+     object-fit: $fit;
+}

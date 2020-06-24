@@ -1,190 +1,452 @@
+// Reboot
+//
+// Normalization of HTML elements, manually based on Normalize.css for Valleyfield
+
 /*
 * GENERAL
 * -----------------------------------------------------------------------------------------------*/
+
 a,
 button:focus,
 input,
 select,
 textarea {
-	outline: none;
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // 1
+}
+
+
+:focus {outline: none !important;}
+::-moz-focus-inner {border: 0;}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $grey03;
+  opacity: 1; /* Firefox */
+}
+
+input:required { box-shadow: none; }
+input:invalid { box-shadow: none; }
+
+/*
+* HTML AND ROOT
+* -----------------------------------------------------------------------------------------------*/
+
+
+html {
+  font-family: sans-serif; // 2
+  line-height: 1.15; // 3
+  -webkit-text-size-adjust: 100%; // 4
+  -webkit-tap-highlight-color: rgba($black01, 0); // 5
+}
+
+// Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers)
+// TODO: remove in v5
+// stylelint-disable-next-line selector-list-comma-newline-after
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+main section:last-child {
+  border-bottom: 0; // useful to avoid double-border with the footer
+}
+
+:root {
+  // Used for spacing
+  font-size: 12px;
+  /* root font-size = 12px small value add better control for BS spacers padding */
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+    /* root font-size = 14px */
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 16px;
+    /* root font-size = 16px */
+  }
+  @include media-breakpoint-up(xxxl) {
+    font-size: 18px;
+    /* root font-size = 18px */
+  }
 }
 
 /*
-* ROOT SIZE AND BODY
+* BODY
 * -----------------------------------------------------------------------------------------------*/
-:root {
-	font-size: 75%;
-	/* root font-size = 12px small value add better control for BS spacers padding */
-	@include media-breakpoint-up(md) {
-		font-size: 88%;
-		/* root font-size = 14px */
-	}
-	@include media-breakpoint-up(lg) {
-		font-size: 100%;
-		/* root font-size = 16px */
-	}
+
+body {
+  margin: 0; // 1
+  font-family: $font-family-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $body-color;
+  background-color: $white; // 2
+  text-align: left; // 3
 }
 
 body {
-	font-size: 1.25rem;
-	/* 15px*/
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	@include media-breakpoint-up(md) {
-		font-size: 1.15rem;
-		/* 16px*/
-	}
-	@include media-breakpoint-up(lg) {
-		font-size: 1rem;
-		/* 16px*/
-	}
-	@include media-breakpoint-up(xxxl) {
-		font-size: 17px;
-	}
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 17px;
+  }
+  @include media-breakpoint-up(xxxl) {
+    font-size: 18px;
+  }
 }
 
 /*
-* GLOBAL PADDING AND MARGIN
+* LINKS
 * -----------------------------------------------------------------------------------------------*/
-// Use this as your padding on row for a better control site wide and for responsive
-// In a flexible layout page with optionnal content, always use padding-row--bottom to avoid double padding
 
-.padding-row {
-	&--bottom {
-		padding-bottom: 4.5rem;
-		@include media-breakpoint-up(md) {
-			padding-bottom: 6rem;
-		}
-	}
 
-	&--bottom-small {
-	padding-bottom: 2rem;
+a {
+  color: inherit;
+  text-decoration: $link-decoration;
+  background-color: transparent; // Remove the gray background on active links in IE 10.
 
-		@include media-breakpoint-up(md) {
-			padding-bottom: 2.5rem;
-		}
-
-	}
-
-	&--top {
-		padding-top: 4.5rem;
-		@include media-breakpoint-up(md) {
-			padding-top: 6rem;
-		}
-	}
-
-	&--top-small {
-	padding-top: 2rem;
-
-		@include media-breakpoint-up(md) {
-			padding-top: 2.5rem;
-		}
-
-	}
-
-	&--y {
-		// y means the y-axis
-		padding-top: 4.5rem;
-		padding-bottom: 4.5rem;
-		@include media-breakpoint-up(md) {
-			padding-top: 6rem;
-			padding-bottom: 6rem;
-		}
-	}
-
-	&--y-small { // y means the y-axis
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-
-		@include media-breakpoint-up(md) {
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		}
-	}
-
+  &:hover {
+    color: $blue01;
+  }
 }
 
-.margin-row {
-	&--bottom {
-		margin-bottom: 4.5rem;
-		@include media-breakpoint-up(md) {
-			margin-bottom: 6rem;
-		}
-	}
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
 
-	&--top {
-		margin-top: 4.5rem;
-		@include media-breakpoint-up(md) {
-			margin-top: 6rem;
-		}
-	}
+  &:focus {
+    outline: 0;
+  }
+}
 
-	&--y {
-		// y means the y-axis
-		margin-top: 4.5rem;
-		margin-bottom: 4.5rem;
-		@include media-breakpoint-up(md) {
-			margin-top: 6rem;
-			margin-bottom: 6rem;
-		}
-	}
+// Suppress the focus outline on elements that cannot be accessed via keyboard.
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+
+/*
+* TYPOGRAPHY
+* -----------------------------------------------------------------------------------------------*/
+
+
+// Content grouping
+hr {
+  box-sizing: content-box; // 1
+  height: 0; // 1
+  overflow: visible; // 2
+}
+
+abbr[title],
+abbr[data-original-title] { // 1
+  text-decoration: underline; // 2
+  text-decoration: underline dotted; // 2
+  cursor: help; // 3
+  border-bottom: 0; // 4
+  text-decoration-skip-ink: none; // 5
+}
+
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+
+small {
+  font-size: 0.9em;
+}
+
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.8em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub { bottom: -.25em; }
+sup { top: -.5em; }
+
+b,
+strong {
+  font-weight: 500; // Add the correct font weight in Chrome, Edge, and Safari
+  color: $black02;
 }
 
 /*
-* LAYOUT
+* GLOBAL ADOBE LOADING FOR FONT
 * -----------------------------------------------------------------------------------------------*/
-// important, wrapper padding value must be the same as your navbar height
-.document-wrapper {
-	padding: $navbar-height 0 0;
-	@include media-breakpoint-up(md) {
-		padding: $navbar-height-md 0 0;
-	}
-	@include media-breakpoint-up(lg) {
-		padding: $navbar-height-lg 0 0;
-	}
+
+p, blockquote {
+  @include adobe-loading;
 }
 
 /*
-* LAYOUT OPTIONS
+* IMAGE AND FIGURES
 * -----------------------------------------------------------------------------------------------*/
-// Use this on container or row to create a small width textblock
-.narrow-content {
-	max-width: 900px;
-	margin: auto;
+
+
+figure {
+  // Apply a consistent margin strategy (matches our type styles).
+  margin: 0 0 1rem;
+  max-width: 100%;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none; // Remove the border on images inside links in IE 10-.
+  color: transparent; // hide alt on lazyload
+}
+
+svg {
+  // Workaround for the SVG overflow bug in IE10/11 is still required.
+  // See https://github.com/twbs/bootstrap/issues/26878
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+
+/*
+* TABLES
+* -----------------------------------------------------------------------------------------------*/
+
+table {
+  border-collapse: collapse; // Prevent double borders
+}
+
+caption {
+  padding-top: $table-cell-padding;
+  padding-bottom: $table-cell-padding;
+  color: $turquoise01;
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  // Matches default `<td>` alignment by inheriting from the `<body>`, or the
+  // closest parent with a set `text-align`.
+  text-align: inherit;
 }
 
 /*
-* GUTTERS ADD-ON
+* HEADING TAG MARGIN
 * -----------------------------------------------------------------------------------------------*/
-// Use this on a row to have bigger gutter for md and up
-@include media-breakpoint-up(md) {
-	.small-gutters {
-		margin-right: -15px;
-		margin-left: -15px;
 
-		> [class*="col-"] {
-			padding-right: 15px;
-			padding-left: 15px;
-		}
-	}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
 
-	.medium-gutters {
-		margin-right: -30px;
-		margin-left: -30px;
 
-		> [class*="col-"] {
-			padding-right: 30px;
-			padding-left: 30px;
-		}
-	}
+/*
+* LABEL AND FORMS
+* -----------------------------------------------------------------------------------------------*/
 
-	.large-gutters {
-		margin-right: -45px;
-		margin-left: -45px;
+label {
+  // Allow labels to use `margin` for spacing.
+  display: inline-block;
+}
 
-		> [class*="col-"] {
-			padding-right: 45px;
-			padding-left: 45px;
-		}
-	}
+
+/*
+* BUTTONS AND INPUT
+* -----------------------------------------------------------------------------------------------*/
+
+
+button {
+  // stylelint-disable-next-line property-blacklist
+  border-radius: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0; // Remove the margin in Firefox and Safari
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input {
+  overflow: visible; // Show the overflow in Edge
+}
+
+button,
+select {
+  text-transform: none; // Remove the inheritance of text transform in Firefox
+}
+
+// Remove the inheritance of word-wrap in Safari.
+//
+// Details at https://github.com/twbs/bootstrap/issues/24990
+select {
+  word-wrap: normal;
+}
+
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//    controls in Android 4.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+button,
+[type="button"], // 1
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; // 2
+}
+
+// Opinionated: add "hand" cursor to non-disabled button elements.
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box; // 1. Add the correct box sizing in IE 10-
+  padding: 0; // 2. Remove the padding in IE 10-
+}
+
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  // Remove the default appearance of temporal inputs to avoid a Mobile Safari
+  // bug where setting a custom line-height prevents text from being vertically
+  // centered within the input.
+  // See https://bugs.webkit.org/show_bug.cgi?id=139848
+  // and https://github.com/twbs/bootstrap/issues/11266
+  -webkit-appearance: listbox;
+}
+
+textarea {
+  overflow: auto; // Remove the default vertical scrollbar in IE.
+  // Textareas should really only resize vertically so they don't break their (horizontal) containers.
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  // Reset the default outline behavior of fieldsets so they don't affect page layout.
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+// 1. Correct the text wrapping in Edge and IE.
+// 2. Correct the color inheritance from `fieldset` elements in IE.
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%; // 1
+  padding: 0;
+  margin-bottom: .5rem;
+  line-height: inherit;
+  color: inherit; // 2
+  white-space: normal; // 1
+}
+
+progress {
+  vertical-align: baseline; // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+}
+
+// Correct the cursor style of increment and decrement buttons in Chrome.
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  // This overrides the extra rounded corners on search inputs in iOS so that our
+  // `.form-control` class can properly style them. Note that this cannot simply
+  // be added to `.form-control` as it's not specific enough. For details, see
+  // https://github.com/twbs/bootstrap/issues/11586.
+  outline-offset: -2px; // 2. Correct the outline style in Safari.
+  -webkit-appearance: none;
+}
+
+//
+// Remove the inner padding in Chrome and Safari on macOS.
+//
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+//
+// 1. Correct the inability to style clickable types in iOS and Safari.
+// 2. Change font properties to `inherit` in Safari.
+//
+
+::-webkit-file-upload-button {
+  font: inherit; // 2
+  -webkit-appearance: button; // 1
+}
+
+//
+// Correct element displays
+//
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item; // Add the correct display in all browsers
+  cursor: pointer;
+}
+
+template {
+  display: none; // Add the correct display in IE
+}
+
+// Always hide an element with the `hidden` HTML attribute (from PureCSS).
+// Needed for proper display in IE 10-.
+[hidden] {
+  display: none !important;
 }

@@ -1,0 +1,253 @@
+
+/*
+* ADOBE LOADING VIA JS FOR ASYNC AND NOT BLOCKING RENDERING
+*/
+
+@mixin adobe-loading {
+  visibility: hidden;
+  opacity: 0; // hide the font
+
+  .wf-active &,
+  .wf-inactive & { // show the font if fonts are loaded or the fallback if adobe kit is not available
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s linear, opacity 0.2s linear;
+  }
+}
+
+
+/*
+* MAIN FONTS - UTILISEZ CES MIXINS PARTOUT OU IL Y A DU TEXTE
+*
+* Sofia-pro, sans-serif
+* Light - 300
+* Regular - 400
+* Bold - 700
+* ---
+* Neue-haas-unica, sans-serif
+* Regular - 400
+* Medium - 500
+* Heavy - 700
+*
+*/
+
+@mixin font-family-01($color, $weight) {
+  font-family: "sofia-pro", "helvetica neue", arial, sans-serif;
+  font-weight: $weight;
+  color: $color;
+  letter-spacing: 0.02em;
+  @include adobe-loading;
+}
+
+@mixin font-family-02($color, $weight) {
+  font-family: "neue-haas-unica", "helvetica neue", arial, sans-serif;
+  font-weight: $weight;
+  color: $color;
+  @include adobe-loading;
+}
+
+
+/*
+* FONTS SIZING
+*/
+
+/* H1 - Title for page header */
+
+@mixin title-01 {
+  @include font-family-01($black01, 300);
+  font-size: 30px;
+  margin: 0 0 3rem 0;
+  line-height: 1.1;
+
+  @include media-breakpoint-up(sm) { font-size: 38px; }
+  @include media-breakpoint-up(md) { font-size: 44px; }
+  @include media-breakpoint-up(lg) { font-size: 48px; }
+  @include media-breakpoint-up(xl) { font-size: 52px; }
+  @include media-breakpoint-up(xxl) { font-size: 56px; }
+}
+
+
+/* H2 - Title for content title */
+
+@mixin title-02($color) {
+  @include font-family-01($color, 300);
+  font-size: 26px;
+  line-height: 1.15;
+
+  @include media-breakpoint-up(sm) { font-size: 28px; }
+  @include media-breakpoint-up(md) { font-size: 32px; }
+  @include media-breakpoint-up(xl) { font-size: 36px; }
+  @include media-breakpoint-up(xxl) { font-size: 40px; }
+}
+
+
+/* H3 - Title h3 style */
+
+@mixin title-03($color) {
+  @include font-family-01($color, 300);
+  font-size: 21px;
+  line-height: 1.15;
+
+  @include media-breakpoint-up(sm) { font-size: 23px; }
+  @include media-breakpoint-up(md) { font-size: 26px; }
+  @include media-breakpoint-up(xl) { font-size: 28px; }
+  @include media-breakpoint-up(xxl) { font-size: 32px; }
+}
+
+
+/* H4 - Title h4 style */
+
+@mixin title-04($color) {
+  @include font-family-01($color, 300);
+  font-size: 18px;
+  line-height: 1.15;
+
+  @include media-breakpoint-up(sm) { font-size: 20px; }
+  @include media-breakpoint-up(md) { font-size: 22px; }
+  @include media-breakpoint-up(xl) { font-size: 24px; }
+  @include media-breakpoint-up(xxl) { font-size: 26px; }
+}
+
+/* H5 - Title h5 style */
+
+@mixin title-05($color) {
+  @include font-family-01($color, 300);
+  font-size: 16px;
+  line-height: 1.15;
+
+  @include media-breakpoint-up(sm) { font-size: 18px; }
+  @include media-breakpoint-up(md) { font-size: 19px; }
+  @include media-breakpoint-up(xl) { font-size: 20px; }
+  @include media-breakpoint-up(xxl) { font-size: 22px; }
+}
+
+/* UPPERCASE used in some places */
+
+@mixin title-uppercase($color) {
+  @include font-family-02($color, 500);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  font-size: 0.9rem;
+}
+
+
+/* OVERSIZE used in alert menu and homepage */
+@mixin title-oversize($color) {
+  @include font-family-01($color, 300);
+  font-size: 36px;
+  line-height: 1;
+
+  @include media-breakpoint-up(sm) {font-size: 40px;}
+  @include media-breakpoint-up(md) {font-size: 44px;}
+  @include media-breakpoint-up(xl) {font-size: 50px;}
+  @include media-breakpoint-up(xxl) {font-size: 62px;}
+}
+
+
+/* TITLE-CARDS used on all cards */
+@mixin title-cards {
+  @include font-family-01($black02, 400);
+  font-size: 18px;
+  line-height: 1.2;
+
+  @include media-breakpoint-up(sm) {font-size: 19px;}
+  @include media-breakpoint-up(md) {font-size: 20px;}
+  @include media-breakpoint-up(xl) {font-size: 22px;}
+  @include media-breakpoint-up(xxxl) {font-size: 24px;}
+}
+
+
+/* TITLE-LISTING used on listing standard - list style and for accordions title */
+@mixin title-listing {
+  @include font-family-01($black02, 400);
+  font-size: 18px;
+  line-height: 1.2;
+
+  @include media-breakpoint-up(sm) {font-size: 19px;}
+  @include media-breakpoint-up(md) {font-size: 20px;}
+  @include media-breakpoint-up(xl) {font-size: 22px;}
+  @include media-breakpoint-up(xxxl) {font-size: 24px;}
+}
+
+
+/* SUBTITLE-LISTING used on seances du conseil and accordions subtitle */
+@mixin subtitle-listing {
+  @include font-family-01($turquoise01, 400);
+  font-size: 16px;
+  line-height: 1.15;
+  margin: 0 0 1.3em 0;
+
+  @include media-breakpoint-up(sm) { font-size: 18px; }
+  @include media-breakpoint-up(md) { font-size: 19px; }
+  @include media-breakpoint-up(xl) { font-size: 20px; }
+  @include media-breakpoint-up(xxl) { font-size: 21px; }
+}
+
+
+/* TITLE-LISTING WITH IMAGE used on image and text layout */
+@mixin title-listing-img {
+  @include font-family-01($turquoise01, 300);
+  font-size: 20px;
+  line-height: 1.15;
+  margin: 0 0 1em 0;
+
+  @include media-breakpoint-up(sm) {font-size: 22px;}
+  @include media-breakpoint-up(md) {font-size: 26px;}
+  @include media-breakpoint-up(xl) {font-size: 30px;}
+  @include media-breakpoint-up(xxxl) {font-size: 34px;}
+}
+
+
+@mixin accroche {
+  @include font-family-02($grey04, 400);
+  font-size: 16px;
+  line-height: 1.4;
+
+  @include media-breakpoint-up(sm) { font-size: 18px; }
+  @include media-breakpoint-up(md) { font-size: 19px; }
+  @include media-breakpoint-up(xl) { font-size: 20px; }
+  @include media-breakpoint-up(xxl) { font-size: 22px; }
+}
+
+
+@mixin smalltext {
+  font-size: 0.9em;
+  color: #7c838d;
+
+  span { // spacing for the divider between category
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+  }
+}
+
+/*
+* UTILITY FOR TYPOGRAPHY
+*/
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+@mixin no-bullet {
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin link-bg($bg-color) {
+  transition: all 0.2s linear;
+  background: linear-gradient(
+    to bottom,
+    rgba($bg-color, 1) 0%,
+    rgba($bg-color, 1) 98%
+  );
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+  background-position: left 100%;
+}
+
+@mixin link-hover($color) {
+  transition: color 0.4s ease-in-out;
+
+  &:hover {
+    color: $color;
+    transition: color 0.2s ease-in-out;
+  }
+}

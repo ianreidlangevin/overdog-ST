@@ -1,59 +1,38 @@
 /*
-* COPYRIGHT WITH 3E LOGO
+* FOOTER COPYRIGHT
 * ----------------------------------------------------------------------------------------------- */
 
-.footer-wrapper {
-	background-color: $light-grey;
-}
+.footer-copyright {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	padding-bottom: 2rem;
+	color: #869ab3;
 
-
-.copyright {
-	&__logo-3e {
-		font-family: 'icomoon' !important;
-		speak: none;
-		font-style: normal;
-		font-weight: normal;
-		font-variant: normal;
-		text-transform: none;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-
-		&::before {
-			content: "\e90d";
-			color: $dark-grey;
-			font-size: 2em;
-		}
+	@include media-breakpoint-up(md) {
+		flex-direction: row;
 	}
 
-	&__block {
-		padding: 0;
-		display: flex;
-		align-items: center;
-	}
+	&__text {
+		margin-bottom: 10px;
+		font-size: 0.8em;
 
-	&__details {
-		font-size: 0.8rem;
-		line-height: 1;
-		color: $dark-grey;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		@include media-breakpoint-up(sm) {
-			font-size: 0.9rem;
-		}
-
-		a {
-			color: inherit;
-
-			&:hover,
-			&:hover .copyright__logo-3e::before {
-				color: $secondary;
-			}
+		@include media-breakpoint-up(md) {
+			margin-right: 2rem;
+			margin-bottom: 0;
 		}
 	}
 
 	&__icon {
-		margin-right: 0.5em;
+		width: 22px;
+		height: 22px;
+		fill: $white;
+		@include transitionOutEase(fill);
+
+		&:hover {
+			fill: $white;
+			@include transitionInEase(fill);
+		}
 	}
 }

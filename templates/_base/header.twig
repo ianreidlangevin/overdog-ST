@@ -1,36 +1,10 @@
 
-<header>
-
-	<div class="container-fluid">
-
+<header class="header-wrapper">
+	<div class="container">
 		<div class="row">
-
-			<div class="col-12 px-0">
-
-				<div class="page-header">
-
-					<div class="page-header__img" style="background-image: url('{{ alias('@rootUrl') }}/img/underdog-placeholder.jpg')">
-
-						<div class="page-header__content">
-
-							{# add the headerTitle var in your page template if you want to overwrite the entry title #}
-							<h1 class="page-header__title">
-								{% if headerTitle is defined %}{{ headerTitle }}
-								{% elseif entry is defined %}{{ entry.title }}
-								{% elseif category is defined %}{{ category.title }}
-								{% endif %}
-							</h1>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
+			<div class="DELETE-ME col-12" style="min-height:400px; display:flex; align-items:center;">
+				<h1 style="color:#80828A; font-size:2rem;"><span style="color:#fff">_</span>header</h1>
+      </div>
 		</div>
-
 	</div>
-
 </header>

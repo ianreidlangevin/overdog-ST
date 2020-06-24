@@ -1,0 +1,36 @@
+
+
+/*
+* Transitions for hover effect
+*/
+
+@mixin transitionInEase($property) {
+  transition: $property 0.2s ease-in-out;
+}
+
+@mixin transitionOutEase($property) {
+  transition: $property 0.4s ease-in-out;
+}
+
+@mixin transitionCubic($property) {
+  transition: $property .6s cubic-bezier(.19,1,.22,1);
+}
+
+@mixin hoverZoom {
+  &:hover {
+    transform: scale(1.06);
+    @include transitionCubic(transform);
+  }
+}
+
+
+@mixin hoverButtonBlue {
+  background-color: $blue01; // fallback for IE 11 for not supporting the hover effect
+  transition: 0.8s ease;
+
+  &:hover {
+    color: $white;
+    background-color: $black01; // fallback for IE 11 for not supporting the hover effect
+    transition: 0.8s ease;
+  }
+}

@@ -1,0 +1,118 @@
+/* Global margin bottom */
+
+$spacingXs: 4.5rem;
+$spacingSm: 5rem;
+$spacingMd: 5rem;
+$spacingXl: 6rem;
+
+
+@mixin default($property, $orientation) {
+  #{$property}-#{$orientation}: $spacingXs;
+  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm; }
+  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd; }
+  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl; }
+}
+
+.mb { @include default(margin, bottom); }
+.mt{ @include default(margin, top); }
+.pb{ @include default(padding, bottom); }
+.pt { @include default(padding, top); }
+
+
+@mixin one-third($property, $orientation) {
+  #{$property}-#{$orientation}: $spacingXs * 0.33;
+  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.33; }
+  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.33; }
+  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.33; }
+}
+
+.mb-1third { @include one-third(margin, bottom); }
+.mt-1third { @include one-third(margin, top); }
+.pb-1third { @include one-third(padding, bottom); }
+.pt-1third { @include one-third(padding, top); }
+
+
+@mixin two-third($property, $orientation) {
+  #{$property}-#{$orientation}: $spacingXs * 0.66;
+  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.66; }
+  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.66; }
+  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.66; }
+}
+
+
+.mb-2third { @include two-third(margin, bottom); }
+.mt-2third { @include two-third(margin, top); }
+.pb-2third { @include two-third(padding, bottom); }
+.pt-2third { @include two-third(padding, top); }
+
+
+@mixin one-quarter($property, $orientation) {
+  #{$property}-#{$orientation}: $spacingXs * 0.25;
+  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.25; }
+  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.25; }
+  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.25; }
+}
+
+.mb-1quarter { @include one-quarter(margin, bottom); }
+.mt-1quarter { @include one-quarter(margin, top); }
+.pb-1quarter { @include one-quarter(padding, bottom); }
+.pt-1quarter { @include one-quarter(padding, top); }
+
+
+@mixin half($property, $orientation) {
+  #{$property}-#{$orientation}: $spacingXs * 0.5;
+  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.5; }
+  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.5; }
+  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.5; }
+}
+
+.mb-half { @include half(margin, bottom); }
+.mt-half { @include half(margin, top); }
+.pb-half { @include half(padding, bottom); }
+.pt-half { @include half(padding, top); }
+
+
+
+/*
+* SPACING UTILITIES
+* -----------------------------------------------------------------------------------------------*/
+
+
+// Use this on container or row to create a small width textblock
+.narrow-content {
+	max-width: 900px;
+	margin: auto;
+}
+
+.last-child-no-margin *:last-child {
+	margin-bottom: 0;
+}
+
+
+/*
+* GUTTERS ADD-ON
+* -----------------------------------------------------------------------------------------------*/
+// Use this on a row to have bigger gutter for md and xxxl
+
+
+.medium-gutters {
+	@include media-breakpoint-up(xl) {
+	margin-right: -30px;
+	margin-left: -30px;
+
+		> [class*="col-"] {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
+
+	@include media-breakpoint-up(xxxl) {
+	margin-right: -45px;
+	margin-left: -45px;
+
+		> [class*="col-"] {
+			padding-right: 45px;
+			padding-left: 45px;
+		}
+	}
+}

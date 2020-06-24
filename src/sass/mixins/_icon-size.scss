@@ -1,0 +1,52 @@
+
+
+/*
+* Sizing pour icones dans la NAVBAR et le FOOTER - social
+* Permet de changer a ce seul endroit
+*/
+
+@mixin iconWrapperSize {
+  width: 36px;
+  height: 36px;
+  @include media-breakpoint-up(md) {
+    width: 44px;
+    height: 44px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@mixin iconSize($iconColor) {
+  width: 20px;
+  height: 20px;
+  fill: $iconColor;
+  @include media-breakpoint-up(md) {
+    width: 24px;
+    height: 24px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+/*
+* Sizing pour icones dans le contenu avec double background ou non
+*/
+
+@mixin iconDoubleRound($iconColor) {
+  width: 22px;
+  height: 22px;
+  fill: $iconColor;
+  @include media-breakpoint-up(md) {
+    width: 28px;
+    height: 28px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 36px;
+    height: 36px;
+  }
+}

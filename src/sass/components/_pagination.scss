@@ -2,12 +2,41 @@
 * PAGINATION
 * ----------------------------------------------------------------------------------------------- */
 .pagination {
-	padding-top: 1.5rem;
-	list-style-type: none;
-	padding-left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-	li {
+	@include media-breakpoint-up(md) {
+		justify-content: flex-start;
+	}
+
+	&__list {
+	@include no-bullet;
+	margin-bottom: 0;
+	}
+
+	&__item {
 		display: inline-block;
 		margin-right: 1.7rem;
+	}
+
+	&__link {
+		color: $grey04;
+
+		&--current {
+			color: $turquoise01;
+
+			&:hover {
+				color: $turquoise01;
+			}
+		}
+	}
+
+	&__arrow {
+		color: $grey03;
+
+		&--prev {
+			margin-right: 1.7rem;
+		}
 	}
 }

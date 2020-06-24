@@ -1,34 +1,39 @@
 
 
-
 /*
-* TEXT VARIABLES
-* overwrite bootstrap
+* GRID
 * -----------------------------------------------------------------------------------------------*/
 
-
-$font-family-base: "rubik", "helvetica neue", arial, sans-serif;
-$font-family-title: "europa", "helvetica neue", arial, sans-serif;
-
-$line-height-base: 1.5;
-
-$font-weight-normal: 400;
-$font-weight-semibold: 600;
-$font-weight-bold:700;
-
-$base-letter-spacing:2px;
-$link-hover-decoration:none;
-
+$grid-columns: 12;
+$grid-gutter-width: 30px;
 
 /*
-* ENABLE RESPONSIVE FONT SIZE
-* enable responsive font size - for Bootstrap 4.3 and up - More information
-* https://css-tricks.com/using-a-mixin-to-take-the-math-out-of-responsive-font-sizes
+* COLOR VARIABLES
 * -----------------------------------------------------------------------------------------------*/
 
+$primary: #09B8B1; //primary
 
-$enable-responsive-font-sizes: false;
+$turquoise01: #09B8B1; //primary
 
+$blue01: #5595D1; //lighter
+$blue02: #002856; //darker
+
+// grey - see the sketch file, the naming is the same
+
+$grey01: #eef0f3; //light
+$grey02: #d9dce0;
+$grey03: #a5adb9; // medium
+$grey04: #7c838d;
+$grey05: #555e6b; // darker
+
+// complementary
+$red01: #e04f51;
+$red02: #4b1b1c;
+$red03: #ec6163;
+$black01: #2b3037;
+$black02: #3a3c42;
+$white: #fff;
+$green01: #7ed776;
 
 /*
 * COLOR VARIABLES
@@ -52,6 +57,30 @@ $dark-grey:#777777;
 // useful in a color scheme with a light color ie in background
 $light:#E8EAED;
 
+/*
+* TEXT VARIABLES
+* overwrite bootstrap
+* -----------------------------------------------------------------------------------------------*/
+
+
+$font-family-base: arial, sans-serif;
+$font-family-title: arial, sans-serif;
+
+$line-height-base: 1.4;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder; // important for some browser
+
+$base-letter-spacing: 2px;
+$link-decoration: none;
+
+$transition-base: all .2s ease-in-out;
+
+$body-color: #555e6b;
+$link-color: $blue01;
 
 
 /*
@@ -65,6 +94,24 @@ $navbar-height-md: 80px;
 $navbar-height-lg: 100px;
 
 
+/*
+* EMBED RATIO
+* -----------------------------------------------------------------------------------------------*/
+
+
+$embed-responsive-aspect-ratios: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$embed-responsive-aspect-ratios: join(
+(
+(21 9),
+(16 9),
+(4 3),
+(1 1),
+),
+$embed-responsive-aspect-ratios
+);
+
+
 
 /*
 * BASE SPACERS
@@ -73,17 +120,19 @@ $navbar-height-lg: 100px;
 
 // overwrite bootstrap spacers variables - change it if you want to
 
-$spacer: 3rem !default;
-$spacers: () !default;
+$spacer: 3rem;
+$spacers: ();
 $spacers: map-merge((
-  0: 0,
-  1: ($spacer * .5),
-  2: $spacer,
-  3: ($spacer * 1.5),
-  4: ($spacer * 2),
-  5: ($spacer * 3)
+0: 0,
+1: ($spacer * .5),
+2: $spacer,
+3: ($spacer * 1.5),
+4: ($spacer * 2),
+5: ($spacer * 3)
 ), $spacers);
 
+$table-cell-padding: .75rem;
+$table-cell-padding-sm: .3rem;
 
 
 /*
@@ -94,30 +143,23 @@ $spacers: map-merge((
 // add two breakpoints for largers screen xxl and xxxl - do not change that - overwrite Bootstrap variables
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1300px,
-  xxxl:1500px
-) !default;
+xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px,
+xxl: 1300px,
+xxxl: 1500px,
+xxxxl: 1700px
+);
 
 $container-max-widths: (
-  sm: 90%,
-  md: 90%,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1240px,
-  xxxl:1440px
-) !default;
-
-
-
-/*
-* DESIGN VARIABLES
-* -----------------------------------------------------------------------------------------------*/
-
-
-$border-main: 1px solid $primary;
-$box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
+xs: 90%,
+sm: 90%,
+md: 90%,
+lg: 90%,
+xl: 1140px,
+xxl: 1240px,
+xxxl: 1440px,
+xxxxl: 1640px
+);
