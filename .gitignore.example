@@ -12,17 +12,11 @@
 
 # COMPOSER
 /vendor
+/node_modules/*
+/yarn-error.log
 
 # ASSETS
 /web/assets/*
-
-# IMAGER TRANSFORMS
-/web/imager/*
-
-# BUILD FILES
-/node_modules/*
-/build/*
-/yarn-error.log
 
 # MISC FILES
 .cache

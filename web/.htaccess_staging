@@ -1,0 +1,34 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirecte to https
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,N]
+
+    # Redirecte dev domain to primary example
+
+    # Old url to new website example
+
+    # Send would-be 404 requests to Craft
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+    RewriteRule (.+) index.php?p=$1 [QSA,L]
+
+</IfModule>
+
+<IfModule mod_headers.c>
+
+  Header always set X-FRAME-OPTIONS "DENY"
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # Cache images and CSS files
+    #  images expire after 1 month
+    <filesMatch ".(gif|png|jpg|jpeg|ico|pdf|svg|js)$">
+      Header set Cache-Control "max-age=31536000"
+    </filesMatch>
+    # CSS expires after 1 month
+    <filesMatch ".(css)$">
+      Header set Cache-Control "max-age=2592000"
+    </filesMatch>
+</ifModule>

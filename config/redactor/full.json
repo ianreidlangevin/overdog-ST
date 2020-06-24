@@ -1,0 +1,10 @@
+{
+  "buttons": ["formatting", "redo", "undo", "bold", "italic", "underline", "unorderedlist", "orderedlist", "image", "link"],
+  "plugins": ["table", "inlinestyle", "alignment"],
+  "linkNewTab": true,
+  "toolbarFixed": true,
+  "minHeight": "200px",
+  "imagePosition": true,
+  "imageResizable": true,
+  "formattingHide": ["pre", "h1", "h5", "h6"]
+}

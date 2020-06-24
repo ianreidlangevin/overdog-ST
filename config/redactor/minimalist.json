@@ -1,0 +1,5 @@
+{
+  "buttons": ["bold", "italic", "sup"],
+  "breakline": false,
+  "paragraphize": false
+}
