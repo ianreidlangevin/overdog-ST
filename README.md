@@ -21,7 +21,6 @@ ian@3ejoueur.com
 
 - Node.js installé sur votre ordinateur - https://nodejs.org/en/
 - Yarn installé sur votre ordinateur - https://yarnpkg.com/lang/en/docs/install
-- Prepros.io pour compiler le SASS et les fichiers JS - https://prepros.io/
 
 
 ## Installation

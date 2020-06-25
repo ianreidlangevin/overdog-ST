@@ -38,45 +38,6 @@
 		padding-left: 0;
 	}
 
-	&__divider {
-		width: 70px;
-		height: 21px;
-		fill: $grey01;
-
-		@include media-breakpoint-up(md) {
-			width: 90px;
-			height: 27px;
-		}
-
-		@include media-breakpoint-up(xl) {
-			width: 110px;
-			height: 33px;
-		}
-
-		@include media-breakpoint-up(xxxl) {
-			width: 120px;
-			height: 37px;
-		}
-	}
-
-	&__picture {
-		@include picture;
-	}
-
-	&__img {
-	 @include object-fit(cover, center center);
-	 width: 100%;
-	 height: 100%;
-	}
-
-	&__blur {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	@include blur-bg;
-	}
-
 	&__section {
 		@include make-container-max-widths;
 		margin: 0 auto;
