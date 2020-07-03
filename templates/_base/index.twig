@@ -3,9 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ (entry is defined and entry.id == 1) ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
 		{# PRECONNECT TO EXTERNAL RESSOURCES #}
+		<link href="https://p.typekit.net" rel="preconnect" crossorigin>
+		<link href="https://use.typekit.net" rel="preconnect" crossorigin>
+		{# TITLE #}
+		<title>{{ (entry is defined and entry.id == 1) ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
 		{# SEO #}
+		<meta name="description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
+		<meta name="keywords" content="">
 		<meta name="robots" content="index, follow">
 		{# MOBILE #}
 		<meta name="mobile-web-app-capable" content="yes">
@@ -14,17 +19,27 @@
 		{# STYLE #}
 		<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
 		{% include "_base/hash/style.twig" %}
-		{# OPEN GRAPH CONTENT #}
-		<meta content="fr_FR" property="og:locale">
-		<meta content="" property="og:site_name">
-		<meta content="website" property="og:type">
-		<meta content="{{ craft.app.request.absoluteUrl }}" property="og:url">
-		<meta content="{{ headerTitle|default(entry.title) }}" property="og:title">
-		{# HUMANS TXT INITIATIVE #}
-		<link type="text/plain" href="{{ alias('@rootUrl') }}/humans.txt" rel="author">
 		{# SCRIPT WITH HASH - do not edit the hash file - added in head with defer attr #}
 		<noscript>{{ 'Please enable JavaScript in your browser to view this site.'|t }}</noscript>
 		{% include "_base/hash/script.twig" %}
+		{# OPEN GRAPH CONTENT #}
+		<meta property="og:locale" content="fr_FR">
+		<meta property="og:locale:alternate" content="en_EN"/>
+		<meta property="og:site_name" content="{{ currentSite.group.name }}">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{ craft.app.request.absoluteUrl }}">
+		<meta property="og:title" content="{{ headerTitle|default(entry.title ?? '') }}">
+		<meta property="og:description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
+		{# OPEN GRAPH IMAGE #}
+		{% set ogImageField = entry.seoOgImage|default(globalSeo.seoOgImage ?? null ) %}
+		{% if ogImageField ?? null %}
+			{% set ogImage = ogImageField.one() %}
+			<meta property="og:image" content="{{ ogImage.url }}">
+			<meta property="og:image:width" content="{{ ogImage.width }}">
+			<meta property="og:image:height" content="{{ ogImage.height }}">
+		{% endif %}
+		{# HUMANS TXT INITIATIVE #}
+		<link type="text/plain" href="{{ alias('@rootUrl') }}/humans.txt" rel="author">
 	</head>
 
 	<body style="background-color:#202022;">

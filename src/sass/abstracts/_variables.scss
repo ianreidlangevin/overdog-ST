@@ -59,7 +59,6 @@ $light:#E8EAED;
 
 /*
 * TEXT VARIABLES
-* overwrite bootstrap
 * -----------------------------------------------------------------------------------------------*/
 
 
@@ -117,9 +116,6 @@ $embed-responsive-aspect-ratios
 * BASE SPACERS
 * -----------------------------------------------------------------------------------------------*/
 
-
-// overwrite bootstrap spacers variables - change it if you want to
-
 $spacer: 3rem;
 $spacers: ();
 $spacers: map-merge((
@@ -138,9 +134,6 @@ $table-cell-padding-sm: .3rem;
 /*
 * BREAKPOINTS
 * -----------------------------------------------------------------------------------------------*/
-
-
-// add two breakpoints for largers screen xxl and xxxl - do not change that - overwrite Bootstrap variables
 
 $grid-breakpoints: (
 xs: 0,
