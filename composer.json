@@ -38,7 +38,7 @@
       "@php -r \"copy('.env.example', '.env');\"",
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
-    ]
+    ],
     "post-install-cmd": [
       "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \""
     ]
