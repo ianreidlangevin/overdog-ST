@@ -36,6 +36,7 @@
   "scripts": {
     "post-create-project-cmd": [
       "@php -r \"copy('.env.example', '.env');\"",
+      "@php -r \"unlink('config/license.key');\"",
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
     ],

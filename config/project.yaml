@@ -1,4 +1,4 @@
-dateModified: 1593789571
+dateModified: 1593793118
 sections:
   4647bfbd-61b6-44f7-8536-869ac8dfd57e:
     enableVersioning: false
@@ -25,7 +25,7 @@ siteGroups:
     name: Overdog
 sites:
   fc2cb4bb-e016-46f9-a830-653496da88d7:
-    baseUrl: '@rootUrl'
+    baseUrl: $SITE_URL
     handle: siteFrench
     hasUrls: true
     language: fr
