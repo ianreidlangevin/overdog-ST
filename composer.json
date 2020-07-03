@@ -16,7 +16,7 @@
   "license": "Unlicense",
   "type": "project",
   "require": {
-    "craftcms/cms": "3.4.7",
+    "craftcms/cms": "3.4.26",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
