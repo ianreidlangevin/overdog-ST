@@ -1,4 +1,72 @@
-dateModified: 1593793118
+dateModified: 1593793407
+fieldGroups:
+  a7870a18-8ec8-42bd-bb94-ea232c8eb066:
+    name: SEO
+fields:
+  9b18697d-2ce6-492b-b628-1a649bb22eaa:
+    contentColumnType: string
+    fieldGroup: a7870a18-8ec8-42bd-bb94-ea232c8eb066
+    handle: seoOgImage
+    instructions: 'Format requis : 1200px par 630px - Image utilisée pour les tags Open Graph'
+    name: 'Image OG pour SEO'
+    searchable: false
+    settings:
+      allowSelfRelations: ''
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:ca2a274d-ce21-46a0-81e5-cd4dba43a25a'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  d3974314-8390-48bd-af85-f938616558be:
+    contentColumnType: string(640)
+    fieldGroup: a7870a18-8ec8-42bd-bb94-ea232c8eb066
+    handle: seoDescription
+    instructions: ''
+    name: 'Description SEO'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 160
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+globalSets:
+  228f18ac-b71c-4021-8f66-0d34f29a880f:
+    fieldLayouts:
+      ee1c6b87-b3b5-4dff-ad80-5f67ec852520:
+        tabs:
+          -
+            fields:
+              9b18697d-2ce6-492b-b628-1a649bb22eaa:
+                required: false
+                sortOrder: 2
+              d3974314-8390-48bd-af85-f938616558be:
+                required: false
+                sortOrder: 1
+            name: SEO
+            sortOrder: 1
+    handle: globalSeo
+    name: 'SEO global'
 sections:
   4647bfbd-61b6-44f7-8536-869ac8dfd57e:
     enableVersioning: false
