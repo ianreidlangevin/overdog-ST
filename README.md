@@ -2,7 +2,7 @@
 # Overdog - A scaffolding project for Craft CMS 3
 
 ## Version
-0.9.1
+0.9.2
 Project under development - do not use it before a stable version
 
 ## Author
