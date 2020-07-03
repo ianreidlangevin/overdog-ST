@@ -17,6 +17,8 @@
   "type": "project",
   "require": {
     "craftcms/cms": "3.4.26",
+    "craftcms/redactor": "2.5.0",
+    "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
@@ -25,6 +27,7 @@
     }
   },
   "config": {
+    "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {
       "php": "7.0"
@@ -33,11 +36,11 @@
   "scripts": {
     "post-create-project-cmd": [
       "@php -r \"copy('.env.example', '.env');\"",
-      "@php -r \"unlink('composer.json');\"",
-      "@php -r \"unlink('README.md');\"",
-      "@php -r \"rename('composer.json.default', 'composer.json');\"",
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
+    ]
+    "post-install-cmd": [
+      "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \""
     ]
   }
 }
