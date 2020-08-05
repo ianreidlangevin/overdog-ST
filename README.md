@@ -10,9 +10,18 @@ Project under development - do not use it before a stable version
 #### Author
 Ian Reid Langevin (3e joueur) • ian@3ejoueur.com
 
-----
+# Table des matières
+<!-- TOC -->
 
-# Pré-requis
+- [Prérequis](#prérequis)
+- [Téléchargement via Composer (Get the party started!)](#get-the-party-started)
+- [Installation de Craft](#installation)
+- [Installez les paquets.](#installez-les-paquets)
+- [Webpack et compilation](#webpack-et-compilation)
+- [Utilitaires](#utilitaires)
+<!-- /TOC -->
+
+# Prérequis
 
 ### Pour installation
 
@@ -32,8 +41,8 @@ $env:NODE_ENV="production" )
 
 - Clé SSH pour votre ordinateur de development - [Marche à suivre via Gitlab](https://docs.gitlab.com/ee/ssh/)
 - Git installé
--
-----
+
+
 
 # Get the party started!
 
@@ -55,7 +64,7 @@ Dans votre fichier _.env_, allez inscrire votre url de développement, les infos
 
 > Ça y est! On va pouvoir installer. Wouuuut!
 
-----
+
 
 # Installation
 
@@ -90,7 +99,7 @@ yarn install
 
 > Les instructions pour utiliser correctement la config _Webpack_ se trouvent à la fin de ce document.
 
-----
+
 
 # Webpack et compilation
 
@@ -131,7 +140,7 @@ yarn build
 3. Générer un _Critical CSS_ pour la page d'accueil
 4. Supprimer tout le contenu du dossier web/dist avant d'y mettre nos nouveaux fichiers compilés
 
----
+
 
 # Utilitaires
 
@@ -161,7 +170,7 @@ Pour enlever un paquet, faire yarn remove [package]
 
 >[Cliquez ici pour la documentation officielle](https://yarnpkg.com/en/packages)
 
-----
+
 
 #### À noter
 
