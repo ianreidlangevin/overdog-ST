@@ -6,29 +6,8 @@
 
 {% block content %}
 
-<section>
-
-    <div class="container">
-
-      <div class="row py-3 error404__content">
-
-        <div class="col-12 col-sm-5 error404__image-wrapper">
-
-          <img class="error404__image" src="{{ alias('@rootUrl') }}/img/404.svg" alt="canada logo" />
-
-        </div>
-
-        <div class="col-12 col-sm-6">
-
-          <h3 class="loop-title">{{ 'This page does not exist! Please use the main menu to go to another page.'|t }}</h3>
-
-        </div>
-
-      </div>
-
-    </div>
-
-</section>
-
+  <div class="container">
+    <h3 class="title-03 text-center mb">{{ 'This page does not exist! Please use the main menu to go to another page.'|t }}</h3>
+  </div>
 
 {% endblock %}

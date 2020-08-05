@@ -14,4 +14,7 @@ return [
   "All news" => "Toute l'actualité",
   "Website" => "Site Internet",
   "There are no news in this category at the moment." => "Il n'y a pas d'article dans cette catégorie pour l'instant.",
+  /* 404 */
+  "Sorry, wrong path!" => "Désolé, mauvais chemin!",
+  "This page does not exist! Please use the main menu to go to another page." => "Cette page n'existe pas. Veuillez utiliser le menu principal pour naviguer",
 ];

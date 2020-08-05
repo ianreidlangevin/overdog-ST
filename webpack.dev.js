@@ -13,7 +13,6 @@ const devURL = dotenv.parsed.SITE_URL;
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
-
 module.exports = merge(common, {
 
   mode: 'development',
