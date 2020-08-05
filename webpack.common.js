@@ -5,12 +5,9 @@ const path = require('path');
 
 /* PLUGINS ET UTILITIES */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /* DELETE LE CONTENU DU DOSSIER AVANT DE GENERER LES FICHIERS */
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const glob = require('glob')
 const PATHS = {
   src: path.join(__dirname, 'templates')
@@ -72,10 +69,6 @@ module.exports = {
 
   plugins: [
 
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
-
     /* Path resolve is required to retreive the right folder path
     * HtmpwebpackPlugin create via ejs file the twig code to add script and style in our project
     */
@@ -90,13 +83,6 @@ module.exports = {
       filename: path.resolve(__dirname, 'templates/_base/hash/style.twig'),
       template: path.resolve(__dirname, 'src/ejs/style.ejs'),
       inject: false,
-    }),
-
-    // empty folder before creating js and scss files
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [
-        '*',
-      ],
     }),
 
   ], // END PLUGINS

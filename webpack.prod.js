@@ -2,17 +2,41 @@
 /* MERGE CONST */
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const path = require('path');
 
+/* PLUGINS ET UTILITIES */
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /* PRODUCTION */
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+/* DELETE LE CONTENU DU DOSSIER AVANT DE GENERER LES FICHIERS */
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = merge(common, {
 
   mode: 'production',
+
+  output: {
+    filename: '[name].[contenthash].js',
+  },
+
+  plugins: [
+
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
+
+    // empty folder before creating js and scss files
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [
+        '*',
+      ],
+    }),
+
+  ], // END PLUGINS
 
   module: {
     rules: [
@@ -50,11 +74,9 @@ module.exports = merge(common, {
       }),
       new OptimizeCSSAssetsPlugin({})
     ],
-    /* not use for this project - only one chunk
     splitChunks: {
-      // include all types of chunks
       chunks: 'all'
-    }*/
+    }
   },
 
 }); // end module exports

@@ -20,7 +20,6 @@
 		<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
 		{% include "_base/hash/style.twig" %}
 		{# SCRIPT WITH HASH - do not edit the hash file - added in head with defer attr #}
-		<noscript>{{ 'Please enable JavaScript in your browser to view this site.'|t }}</noscript>
 		{% include "_base/hash/script.twig" %}
 		{# OPEN GRAPH CONTENT #}
 		<meta property="og:locale" content="fr_FR">
@@ -32,7 +31,7 @@
 		<meta property="og:description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
 		{# OPEN GRAPH IMAGE #}
 		{% set ogImageField = entry.seoOgImage|default(globalSeo.seoOgImage ?? null ) %}
-		{% if ogImageField ?? null %}
+		{% if ogImageField ?? null and ogImageField|length %}
 			{% set ogImage = ogImageField.one() %}
 			<meta property="og:image" content="{{ ogImage.url }}">
 			<meta property="og:image:width" content="{{ ogImage.width }}">
@@ -42,18 +41,17 @@
 		<link type="text/plain" href="{{ alias('@rootUrl') }}/humans.txt" rel="author">
 	</head>
 
-	<body style="background-color:#202022;">
-		{# skip navigation for screen readers #}
+	<body>
 		<a class="sr-only" href="#main">{{ 'Skip to main content'|t }}</a>
 
 		{% include "_navigation/navbar" %}
-
 		{% include "_base/header" %}
 
 		<main id="#main" class="content-wrapper">
 			{% block content %}{% endblock %}
 		</main>
 		{% include "_base/footer" %}
+		{# ---> ADD LINK TO WEBFONT HERE #}
 	</body>
 
 </html>
