@@ -40,8 +40,16 @@
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
     ],
+    "post-update-cmd": [
+      "@php craft migrate/all",
+      "@php craft project-config/sync",
+      "@php craft clear-caches/all"
+    ],
     "post-install-cmd": [
-      "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \""
+      "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \"",
+      "@php craft migrate/all",
+      "@php craft project-config/sync",
+      "@php craft clear-caches/all"
     ]
   }
 }
