@@ -1,6 +1,6 @@
 {
   "name": "overdog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack and dev dependencies for Overdog",
   "author": "Ian Reid Langevin",
   "license": "MIT",
@@ -44,7 +44,7 @@
     "terser-webpack-plugin": "^1.1.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.3.11",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^5.1.1"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
