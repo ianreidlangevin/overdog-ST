@@ -27,11 +27,11 @@
 	&__icon {
 		width: 22px;
 		height: 22px;
-		fill: $white;
+		fill: #869ab3;
 		@include transitionOutEase(fill);
 
 		&:hover {
-			fill: $white;
+			fill: #333;
 			@include transitionInEase(fill);
 		}
 	}
