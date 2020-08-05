@@ -7,7 +7,7 @@
 		<link href="https://p.typekit.net" rel="preconnect" crossorigin>
 		<link href="https://use.typekit.net" rel="preconnect" crossorigin>
 		{# TITLE #}
-		<title>{{ (entry is defined and entry.id == 1) ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
+		<title>{{ (entry is defined and entry.uri == "__home__") ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
 		{# SEO #}
 		<meta name="description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
 		<meta name="keywords" content="">
@@ -16,10 +16,17 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="default">
-		{# STYLE #}
+		{# FAVICON #}
 		<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
-		{% include "_base/hash/style.twig" %}
-		{# SCRIPT WITH HASH - do not edit the hash file - added in head with defer attr #}
+		{# INLINE CRITICAL CSS FOR HOME IF NOT IN DEV MODE - change it if you need to test #}
+		{% if getenv('ENVIRONMENT') == 'dev' and entry is defined and entry.uri == "__home__" %}
+			<style>{{ source('/_base/critical/critical.css', ignore_missing = true) }}</style>{# inline critical css #}
+			{% include "_base/hash/non-critical.twig" ignore missing %}{# load the full css with on load - see ejs for template #}
+		{% else %}
+			{# STYLE #}
+			{% include "_base/hash/style.twig" %}
+		{% endif %}
+		{# JS SCRIPT - with defer attr #}
 		{% include "_base/hash/script.twig" %}
 		{# OPEN GRAPH CONTENT #}
 		<meta property="og:locale" content="fr_FR">
@@ -40,13 +47,10 @@
 		{# HUMANS TXT INITIATIVE #}
 		<link type="text/plain" href="{{ alias('@rootUrl') }}/humans.txt" rel="author">
 	</head>
-
 	<body>
 		<a class="sr-only" href="#main">{{ 'Skip to main content'|t }}</a>
-
 		{% include "_navigation/navbar" %}
 		{% include "_base/header" %}
-
 		<main id="#main" class="content-wrapper">
 			{% block content %}{% endblock %}
 		</main>

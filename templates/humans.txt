@@ -1,0 +1,47 @@
+
+Bonjour, si vous êtes ici, c'est que vous n'êtes pas un robot !
+
+
+/* PROJET */
+
+Nom:
+URL:
+Date de création:
+
+/* ÉQUIPE DU PROJET */
+
+Architecture de contenu et wireframe:
+Webdesign:
+Programmeur principal:
+Autres programmeurs:
+
+Gestionnaire de projet:
+Relation client:
+
+Intégration de contenu:
+Révision de contenu:
+
+
+/* TECHNOS */
+
+Languages: PHP, Twig, Javascript, SCSS, HTML5
+Dev tools: Webpack, Yarn, Composer
+CMS: Craft CMS
+Assets:
+
+
+/* AGENCE */
+
+3e joueur est une agence web composée des meilleurs programmeurs, développeurs, designers et stratèges.
+De vrais mordus de techno qui donnent leur 110% à chaque projet.
+
+Pour plus d'info ou pour envoyer ton CV : https://3ejoueur.com
+
+
+/* REMERCIEMENTS */
+
+
+
+/* HUMANS TXT */
+
+Humans.txt est une initiative qui a pour but de faire connaitre les personnes derrière un site web.

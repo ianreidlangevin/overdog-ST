@@ -258,7 +258,7 @@
 			counter-increment: my-counter;
 
 			&::before {
-				@include gradient-bg-blue;
+				background-color: $primary;
 				display: flex;
 				position: absolute;
 				top: -0.2em;

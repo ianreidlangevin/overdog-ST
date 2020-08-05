@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {# Homepage #}
+    {% set home = craft.entries.section('accueil').one() %}
+    <url>
+        <loc>{{ siteUrl }}</loc>
+        <lastmod>{{ home.dateUpdated|date("c") }}</lastmod>
+    </url>
+    {# Entries - exclude sections and type in the query #}
+    {% set allEntries = craft.entries()
+    .uri(':notempty:')
+    .all()
+    %}
+    {# Loop through entries #}
+    {% for entry in allEntries %}
+      <url>
+        <loc>{{ entry.url }}</loc>
+        <lastmod>{{ entry.dateUpdated|date("c") }}</lastmod>
+      </url>
+    {% endfor %}
+
+</urlset>

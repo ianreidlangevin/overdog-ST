@@ -27,16 +27,12 @@
 {% endfor %}
 
 
-{# outputting html - in a list if a lot of languages #}
+{# outputting html #}
 {% if showSwitcherInNav == true %}
-<nav class="lang-switch" aria-label="{{'Switch language'|t}}" aria-role="navigation">
-<ul class="lang-switch__list">
+<div class="lang-switch" aria-label="{{'Switch language'|t}}">
 {% for switcherLink in switcherLinks %}
-    <li>
-      <a class="lang-switch__link" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}">{{ switcherLink.title [0:2] }}</a>
-      {# The bracket after site.name is for Twig slice function to only display the 2 first characters #}
-    </li>
+  <a class="lang-switch__link stretched-link" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}">{{ switcherLink.title [0:2] }}</a>
+  {# The bracket after site.name is for Twig slice function to only display the 2 first characters #}
 {% endfor %}
-</ul>
-</nav>
+</div>
 {% endif %}
