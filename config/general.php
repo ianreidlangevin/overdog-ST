@@ -52,6 +52,8 @@ return [
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
+        // comment out or set to true if you want to test local caching
+        'enableTemplateCaching' => false,
         // add mamp support for sql dump
         'backupCommand' => getenv('BACKUP_COMMAND'),
         'restoreCommand' => getenv('RESTORE_COMMAND'),
@@ -59,13 +61,13 @@ return [
 
     // Staging environment settings
     'staging' => [
-        // Set this to `false` to prevent administrative changes from being made on staging
+        // Important - False to prevent administrative changes from being made on staging
         'allowAdminChanges' => false,
     ],
 
     // Production environment settings
     'production' => [
-        // Set this to `false` to prevent administrative changes from being made on production
+        // Important - False to prevent administrative changes from being made on production
         'allowAdminChanges' => false,
     ],
 ];
