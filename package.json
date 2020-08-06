@@ -8,10 +8,8 @@
   "scripts": {
     "start": "webpack --config webpack.dev.js --watch --hide-modules",
     "build": "webpack --config webpack.prod.js --progress --hide-modules",
-    "lint": "sass-lint -v",
     "lint:fix": "sass-lint-auto-fix -c .sass-lint.yml"
   },
-  "sasslintConfig": ".sass-lint.yml",
   "browserslist": [
     "defaults"
   ],
@@ -37,7 +35,6 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "resolve-url-loader": "^3.1.1",
-    "sass-lint": "^1.13.1",
     "sass-lint-auto-fix": "^0.21.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",

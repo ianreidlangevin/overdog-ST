@@ -4615,14 +4615,7 @@ globule@^1.0.0:
     lodash "~4.17.10"
     minimatch "~3.0.2"
 
-gonzales-pe-sl@^4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/gonzales-pe-sl/-/gonzales-pe-sl-4.2.3.tgz#6a868bc380645f141feeb042c6f97fcc71b59fe6"
-  integrity sha1-aoaLw4BkXxQf7rBCxvl/zHG1n+Y=
-  dependencies:
-    minimist "1.1.x"
-
-"gonzales-pe-sl@github:srowhani/gonzales-pe#dev":
+gonzales-pe-sl@^4.2.3, "gonzales-pe-sl@github:srowhani/gonzales-pe#dev":
   version "4.2.3"
   resolved "https://codeload.github.com/srowhani/gonzales-pe/tar.gz/3b052416074edc280f7d04bbe40b2e410693c4a3"
   dependencies:
