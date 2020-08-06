@@ -5,13 +5,13 @@
   "author": "Ian Reid Langevin",
   "license": "MIT",
   "private": true,
-  "sasslintConfig": ".sasslintrc.json",
   "scripts": {
     "start": "webpack --config webpack.dev.js --watch --hide-modules",
     "build": "webpack --config webpack.prod.js --progress --hide-modules",
     "lint": "sass-lint -v",
-    "lint:fix": "sass-lint-auto-fix"
+    "lint:fix": "sass-lint-auto-fix -c .sass-lint.yml"
   },
+  "sasslintConfig": ".sass-lint.yml",
   "browserslist": [
     "defaults"
   ],
