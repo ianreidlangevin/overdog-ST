@@ -4,9 +4,9 @@
   "version": "0.9.3",
   "authors": [
     {
-        "name": "Ian Reid Langevin",
-        "email": "ian@3ejoueur.com",
-        "role": "Developer"
+      "name": "Ian Reid Langevin",
+      "email": "ian@3ejoueur.com",
+      "role": "Developer"
     }
   ],
   "keywords": [
@@ -21,6 +21,9 @@
     "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"
   },
+  "require-dev": {
+  "yiisoft/yii2-shell": "^2.0.3"
+  },
   "autoload": {
     "psr-4": {
       "modules\\": "modules/"
@@ -34,21 +37,15 @@
     }
   },
   "scripts": {
+    "post-root-package-install": [
+      "@php -r \"copy('.env.example', '.env');\""
+    ],
     "post-create-project-cmd": [
-      "@php -r \"copy('.env.example', '.env');\"",
       "@php -r \"unlink('config/license.key');\"",
       "@composer dump-autoload -o"
     ],
-    "post-update-cmd": [
-      "@php craft migrate/all",
-      "@php craft project-config/sync",
-      "@php craft clear-caches/all"
-    ],
     "post-install-cmd": [
-      "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \"",
-      "@php craft migrate/all",
-      "@php craft project-config/sync",
-      "@php craft clear-caches/all"
+      "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \""
     ]
   }
 }

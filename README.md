@@ -14,12 +14,14 @@ Ian Reid Langevin (3e joueur) • ian@3ejoueur.com
 <!-- TOC -->
 
 - [Prérequis](#prérequis)
-- [Téléchargement via Composer (Get the party started!)](#get-the-party-started)
-- [Installation de Craft](#installation)
-- [Installez les paquets.](#installez-les-paquets)
+- [Configurations de départ (Get the party started!)](#configurations-de-départ-get-the-party-started)
+- [Installation de Craft](#installation-de-craft)
 - [Webpack et compilation](#webpack-et-compilation)
 - [Utilitaires](#utilitaires)
+
 <!-- /TOC -->
+
+
 
 # Prérequis
 
@@ -44,7 +46,7 @@ $env:NODE_ENV="production" )
 
 
 
-# Get the party started!
+# Configurations de départ (Get the party started!)
 
 ### Base de données et dossier de projet
 1. Créez un host sur votre serveur local, un dossier vide de projet (Composer fonctionne uniquement si le dossier est vide, donc ne pas utiliser un repo Git existant).
@@ -66,13 +68,13 @@ Dans votre fichier _.env_, allez inscrire votre url de développement, les infos
 
 
 
-# Installation
+# Installation de Craft
 
 ### Installez Craft CMS
 
 1. Dans votre dossier de projet, faire dans le terminal :
 ```
-./craft setup
+./craft setup/welcome
 ```
 2. Inscrire les renseignements de votre base de données, host, etc.
 3. Cela va aussi générer une SECURITY_KEY dans votre fichier .env. Cette clé sera la même pour tous, donc à garder dans le trousseau.
@@ -87,7 +89,7 @@ Dans votre dossier de projet, faire dans le terminal :
 ./craft project-config/apply
 ```
 
-### Installez les paquets.
+### Installez des modules Node
 
 Encore dans le dossier de projet ? Faites :
 ```
@@ -158,19 +160,19 @@ yarn lint:fix
 Si un paquet pour le développement (Webpack, etc.) :
 
 ```
-Yarn add [package] -D
+yarn add [package] -D
 ```
 Si un paquet pour le projet (Bootstrap, Flickity, etc.) :
 
 ```
-Yarn add [package]
+yarn add [package]
 ```
 
 Pour enlever un paquet, faire yarn remove [package]
 
 >[Cliquez ici pour la documentation officielle](https://yarnpkg.com/en/packages)
 
-
+---
 
 #### À noter
 
