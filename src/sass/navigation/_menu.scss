@@ -3,12 +3,12 @@
 * ----------------------------------------------------------------------------------------------- */
 
 .mega-nav {
-  -webkit-overflow-scrolling: touch; // apple device smooth elastic scroll
   background-color: $white;
   color: $black;
   height: 100vh;
   left: 0;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch; // apple device smooth elastic scroll
   overflow-x: hidden;
   padding: 100px 12px 40px 8px; // clear the navbar
   position: fixed;

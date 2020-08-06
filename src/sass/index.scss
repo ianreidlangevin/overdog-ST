@@ -3,37 +3,37 @@
 * OUR THEME VARIABLES - MUST BE ENQUEUED BEFORE BOOTSRAP OR OTHER CSS FRAMEWORK
 */
 
-@import "abstracts/variables";
+@import 'abstracts/variables';
 
 /*
 * MIXINS
 */
 
-@import "mixins/breakpoints";
-@import "mixins/colors";
-@import "mixins/fonts";
-@import "mixins/utilities";
-@import "mixins/icon-size";
-@import "mixins/transitions";
+@import 'mixins/breakpoints';
+@import 'mixins/colors';
+@import 'mixins/fonts';
+@import 'mixins/utilities';
+@import 'mixins/icon-size';
+@import 'mixins/transitions';
 
 /*
 * OUR THEME SCSS
 */
 
 // base folder
-@import "base/reset";
-@import "base/utilities";
-@import "base/grid";
-@import "base/spacing"; // must be loaded after grid to avoid important on px and py
-@import "base/typography";
-@import "base/wysiwyg";
+@import 'base/reset';
+@import 'base/utilities';
+@import 'base/grid';
+@import 'base/spacing'; // must be loaded after grid to avoid important on px and py
+@import 'base/typography';
+@import 'base/wysiwyg';
 
 // layout folder
-@import "layout/footer";
+@import 'layout/footer';
 
 // navigation folder
-@import "navigation/navbar";
-@import "navigation/button";
-@import "navigation/menu";
+@import 'navigation/navbar';
+@import 'navigation/button';
+@import 'navigation/menu';
 
 // components

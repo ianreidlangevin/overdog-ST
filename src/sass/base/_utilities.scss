@@ -7,7 +7,7 @@
   &::after {
     background-color: rgba(0, 0, 0, 0);
     bottom: 0;
-    content: "";
+    content: '';
     left: 0;
     pointer-events: auto;
     position: absolute;
@@ -35,8 +35,8 @@
 
   &.lazyloaded,
   &.ls-is-cached {
-    opacity: 1;
     @include transitionInEase(all);
+    opacity: 1;
   }
 
 }
@@ -47,7 +47,7 @@
 
 
 .fade {
-  transition: opacity .15s linear;
+  transition: opacity 0.15s linear;
 
   &:not(.show) {
     opacity: 0;
@@ -64,7 +64,7 @@
   height: 0;
   overflow: hidden;
   position: relative;
-  transition: height .45s ease;
+  transition: height 0.45s ease;
 }
 
 

@@ -76,7 +76,7 @@ $font-weight-bolder: bolder; // important for some browser
 $base-letter-spacing: 2px;
 $link-decoration: none;
 
-$transition-base: all .2s ease-in-out;
+$transition-base: all 0.2s ease-in-out;
 
 $body-color: #555e6b;
 $link-color: $blue01;
@@ -100,15 +100,13 @@ $navbar-height-lg: 100px;
 
 $embed-responsive-aspect-ratios: ();
 // stylelint-disable-next-line scss/dollar-variable-default
-$embed-responsive-aspect-ratios: join(
-  (
-    (21 9),
-    (16 9),
-    (4 3),
-    (1 1),
-  ),
-  $embed-responsive-aspect-ratios
-);
+$embed-responsive-aspect-ratios: join((
+  (21 9),
+  (16 9),
+  (4 3),
+  (1 1),
+),
+$embed-responsive-aspect-ratios);
 
 
 
@@ -120,15 +118,15 @@ $spacer: 3rem;
 $spacers: ();
 $spacers: map-merge((
   0: 0,
-  1: ($spacer * .5),
+  1: ($spacer * 0.5),
   2: $spacer,
   3: ($spacer * 1.5),
   4: ($spacer * 2),
   5: ($spacer * 3)
 ), $spacers);
 
-$table-cell-padding: .75rem;
-$table-cell-padding-sm: .3rem;
+$table-cell-padding: 0.75rem;
+$table-cell-padding-sm: 0.3rem;
 
 
 /*

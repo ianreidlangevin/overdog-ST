@@ -7,11 +7,21 @@
 
 
 .wysiwyg {
+
+  /*
+  * SPACING variables
+  * Les variables servent a aligner le blockquote et les listes uniformement
+  */
+
+  $spacingLeftDesktop: 2em;
+  $spacingLeftMobile: 0;
   @include clearfix; // important if image in editor
 
 
   // only h2 to h4 are available in editor
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     strong {
       color: $turquoise01;
       font-weight: 300; // remove the habilities to add bold to h tag in editor
@@ -20,17 +30,17 @@
 
   h2 {
     @include title-02($turquoise01);
-    margin: 1.5em 0 1em 0;
+    margin: 1.5em 0 1em;
   }
 
   h3 {
     @include title-03($turquoise01);
-    margin: 1.5em 0 0.6em 0;
+    margin: 1.5em 0 0.6em;
   }
 
   h4 {
     @include title-04($turquoise01);
-    margin: 1.5em 0 0.6em 0;
+    margin: 1.5em 0 0.6em;
   }
 
 
@@ -63,11 +73,11 @@
   */
 
   a {
+    @include link-bg($grey01);
+    @include link-hover($black01);
     background-color: transparent; // Remove the gray background on active links in IE 10.
     color: $blue01;
     text-decoration: $link-decoration;
-    @include link-bg($grey01);
-    @include link-hover($black01);
   }
 
   /*
@@ -120,7 +130,8 @@
   * IMAGES
   */
 
-  img, svg {
+  img,
+  svg {
     height: auto;
     max-width: 100%;
   }
@@ -135,20 +146,12 @@
     border-radius: 2px;
     color: $black01;
     display: inline-block;
-    font-size: .85em;
+    font-size: 0.85em;
     font-weight: 500;
     line-height: 1;
     padding: 2px 8px;
     white-space: nowrap;
   }
-
-  /*
-  * SPACING variables
-  * Les variables servent a aligner le blockquote et les listes uniformement
-  */
-
-  $spacingLeftDesktop: 2em;
-  $spacingLeftMobile: 0;
 
 
   /*
@@ -169,7 +172,7 @@
 
     &::before {
       background-color: $grey01;
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       left: 0;
@@ -199,13 +202,13 @@
 
     > li {
       list-style: none;
-      margin: 0 0 0.5em 0;
+      margin: 0 0 0.5em;
       padding-left: 2em;
       position: relative;
 
       &::before {
         color: $turquoise01;
-        content: "•";
+        content: '•';
         left: 0;
         margin-right: 1.5em;
         position: absolute;
@@ -223,7 +226,7 @@
 
       &::before {
         color: $grey03;
-        content: "—";
+        content: '—';
         left: 0;
         margin-right: 1.5em;
         position: absolute;
@@ -240,7 +243,7 @@
   * Tous les units sont en EM pour faciliter la coherence entre mobile et desktop
   */
 
-  > ol  {
+  > ol {
     counter-reset: my-counter;
     margin-bottom: 2rem;
     padding-left: $spacingLeftMobile;
@@ -253,7 +256,7 @@
     > li {
       counter-increment: my-counter;
       list-style: none;
-      margin: 0 0 1.2em 0;
+      margin: 0 0 1.2em;
       padding-left: 3.5em;
       position: relative;
 
@@ -270,7 +273,7 @@
         line-height: 1;
         margin-right: 2em;
         max-width: 1.8em;
-        padding: 0.96em 1em 1em 1em;
+        padding: 0.96em 1em 1em;
         position: absolute;
         top: -0.2em;
         width: 1.8em;

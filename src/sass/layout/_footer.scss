@@ -25,14 +25,14 @@
   }
 
   &__icon {
+    @include transitionOutEase(fill);
     fill: #869ab3;
     height: 22px;
     width: 22px;
-    @include transitionOutEase(fill);
 
     &:hover {
-      fill: #333;
       @include transitionInEase(fill);
+      fill: #333;
     }
   }
 }

@@ -4,11 +4,11 @@
 */
 
 @mixin box-shadow-thin {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.11);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.11);
 }
 
 @mixin box-shadow-medium {
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 
@@ -70,7 +70,7 @@
 @mixin clearfix {
   &::after {
     clear: both;
-    content: "";
+    content: '';
     display: block;
   }
 }
@@ -88,16 +88,16 @@
 * https://github.com/fregante/object-fit-images
 */
 
-@mixin object-fit($fit: fill, $position: null){
-  -o-object-fit: $fit;
+@mixin object-fit($fit: fill, $position: null) {
   height: 100%;
+  -o-object-fit: $fit;
+  object-fit: $fit;
+  width: 100%;
   @if $position {
     -o-object-position: $position;
     font-family: 'object-fit: #{$fit}; object-position: #{$position}'; //polyfill for IE
     object-position: $position;
-    } @else {
+  } @else {
     font-family: 'object-fit: #{$fit}'; //polyfill for IE
   }
-  object-fit: $fit;
-  width: 100%;
 }
