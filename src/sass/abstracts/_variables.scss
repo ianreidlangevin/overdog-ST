@@ -1,61 +1,21 @@
-
-
-/*
-* GRID
-* -----------------------------------------------------------------------------------------------*/
-
-$grid-columns: 12;
-$grid-gutter-width: 30px;
-
 /*
 * COLOR VARIABLES
 * -----------------------------------------------------------------------------------------------*/
 
-$primary: #09b8b1; //primary
-
-$turquoise01: #09b8b1; //primary
-
-$blue01: #5595d1; //lighter
-$blue02: #002856; //darker
-
-// grey - see the sketch file, the naming is the same
-
-$grey01: #eef0f3; //light
-$grey02: #d9dce0;
-$grey03: #a5adb9; // medium
-$grey04: #7c838d;
-$grey05: #555e6b; // darker
-
-// complementary
-$red01: #e04f51;
-$red02: #4b1b1c;
-$red03: #ec6163;
-$black01: #2b3037;
-$black02: #3a3c42;
-$white: #fff;
-$green01: #7ed776;
-
-/*
-* COLOR VARIABLES
-* -----------------------------------------------------------------------------------------------*/
-
-
+// project color scheme
 $primary: #df1f29;
 $secondary: #323031;
-$tertiary: #323031;
 
-$body-color: #47515a;
-$link-hover-color: #df1f29;
-
+// base
 $black: #4e4e4e;
 $white: #fff;
 
-$light-grey: #e8eaed;
-$medium-grey: #bfbfbf;
-$dark-grey: #777;
+// grey
+$grey01: #eef0f3; //light
+$grey02: #a5adb9; // medium
+$grey03: #555e6b; // darker
 
-// useful in a color scheme with a light color ie in background
-$light: #e8eaed;
+
 
 /*
 * TEXT VARIABLES
@@ -65,21 +25,22 @@ $light: #e8eaed;
 $font-family-base: arial, sans-serif;
 $font-family-title: arial, sans-serif;
 
+$body-color: #555e6b;
+$link-color: $primary;
+
 $line-height-base: 1.4;
 
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-$font-weight-bolder: bolder; // important for some browser
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
 
-$base-letter-spacing: 2px;
+$base-letter-spacing: 0.03em;
 $link-decoration: none;
 
 $transition-base: all 0.2s ease-in-out;
 
-$body-color: #555e6b;
-$link-color: $blue01;
 
 
 /*
@@ -93,10 +54,10 @@ $navbar-height-md: 80px;
 $navbar-height-lg: 100px;
 
 
+
 /*
 * EMBED RATIO
 * -----------------------------------------------------------------------------------------------*/
-
 
 $embed-responsive-aspect-ratios: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -125,8 +86,15 @@ $spacers: map-merge((
   5: ($spacer * 3)
 ), $spacers);
 
-$table-cell-padding: 0.75rem;
-$table-cell-padding-sm: 0.3rem;
+
+
+/*
+* GRID
+* -----------------------------------------------------------------------------------------------*/
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
 
 
 /*

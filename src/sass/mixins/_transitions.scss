@@ -1,7 +1,7 @@
 
-
 /*
-* Transitions for hover effect
+* TRANSITIONS MIXINS
+* Add your mixins for consistant transitions everywhere
 */
 
 @mixin transitionInEase($property) {
@@ -13,24 +13,5 @@
 }
 
 @mixin transitionCubic($property) {
-  transition: $property 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-@mixin hoverZoom {
-  &:hover {
-    @include transitionCubic(transform);
-    transform: scale(1.06);
-  }
-}
-
-
-@mixin hoverButtonBlue {
-  background-color: $blue01; // fallback for IE 11 for not supporting the hover effect
-  transition: 0.8s ease;
-
-  &:hover {
-    background-color: $black01; // fallback for IE 11 for not supporting the hover effect
-    color: $white;
-    transition: 0.8s ease;
-  }
+  transition: $property .6s cubic-bezier(.19,1,.22,1);
 }

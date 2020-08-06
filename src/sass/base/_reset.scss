@@ -1,6 +1,63 @@
-// Reboot
-//
-// Normalization of HTML elements, manually based on Normalize.css for Valleyfield
+/*
+* Normalization of HTML elements, manually based on Normalize.css
+* -----------------------------------------------------------------------------------------------*/
+
+
+/*
+* HTML AND ROOT
+* -----------------------------------------------------------------------------------------------*/
+
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-tap-highlight-color: rgba($black, 0);
+  -webkit-text-size-adjust: 100%;
+}
+
+
+:root {
+  // Used for spacing with rem
+  font-size: 12px;
+  /* root font-size = 12px small value add better control for BS spacers padding */
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 16px;
+  }
+  @include media-breakpoint-up(xxxl) {
+    font-size: 18px;
+  }
+}
+
+/*
+* BODY
+* -----------------------------------------------------------------------------------------------*/
+
+body {
+  color: $body-color;
+  font-family: $font-family-base;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $font-weight-400;
+  line-height: $line-height-base;
+  margin: 0;
+  text-align: left;
+
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 17px;
+  }
+  @include media-breakpoint-up(xxxl) {
+    font-size: 18px;
+  }
+
+}
+
 
 /*
 * GENERAL
@@ -32,105 +89,6 @@ textarea {
 
 input:required { box-shadow: none; }
 input:invalid { box-shadow: none; }
-
-/*
-* HTML AND ROOT
-* -----------------------------------------------------------------------------------------------*/
-
-
-html {
-  font-family: sans-serif; // 2
-  line-height: 1.15; // 3
-  -webkit-tap-highlight-color: rgba($black01, 0); // 5
-  -webkit-text-size-adjust: 100%; // 4
-}
-
-// Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers)
-// TODO: remove in v5
-// stylelint-disable-next-line selector-list-comma-newline-after
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block;
-}
-
-main section:last-child {
-  border-bottom: 0; // useful to avoid double-border with the footer
-}
-
-:root {
-  // Used for spacing
-  font-size: 12px;
-  /* root font-size = 12px small value add better control for BS spacers padding */
-  @include media-breakpoint-up(md) {
-    font-size: 14px;
-    /* root font-size = 14px */
-  }
-  @include media-breakpoint-up(lg) {
-    font-size: 16px;
-    /* root font-size = 16px */
-  }
-  @include media-breakpoint-up(xxxl) {
-    font-size: 18px;
-    /* root font-size = 18px */
-  }
-}
-
-/*
-* BODY
-* -----------------------------------------------------------------------------------------------*/
-
-body {
-  background-color: $white; // 2
-  color: $body-color;
-  font-family: $font-family-base;
-  font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: $font-weight-normal;
-  line-height: $line-height-base;
-  margin: 0; // 1
-  text-align: left; // 3
-}
-
-body {
-  @include media-breakpoint-up(md) {
-    font-size: 16px;
-  }
-  @include media-breakpoint-up(xxl) {
-    font-size: 17px;
-  }
-  @include media-breakpoint-up(xxxl) {
-    font-size: 18px;
-  }
-}
-
-/*
-* LINKS
-* -----------------------------------------------------------------------------------------------*/
-
-
-a {
-  background-color: transparent; // Remove the gray background on active links in IE 10.
-  color: inherit;
-  text-decoration: $link-decoration;
-
-  &:hover {
-    color: $blue01;
-  }
-}
-
-a:not([href]):not([tabindex]) {
-  color: inherit;
-  text-decoration: none;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-// Suppress the focus outline on elements that cannot be accessed via keyboard.
-[tabindex='-1']:focus {
-  outline: 0 !important;
-}
 
 
 /*
@@ -191,17 +149,10 @@ sup { top: -0.5em; }
 
 b,
 strong {
-  color: $black02;
+  color: $black;
   font-weight: 500; // Add the correct font weight in Chrome, Edge, and Safari
 }
 
-/*
-* GLOBAL ADOBE LOADING FOR FONT
-* -----------------------------------------------------------------------------------------------*/
-
-p, blockquote {
-  @include adobe-loading;
-}
 
 /*
 * IMAGE AND FIGURES
@@ -238,9 +189,9 @@ table {
 
 caption {
   caption-side: bottom;
-  color: $turquoise01;
-  padding-bottom: $table-cell-padding;
-  padding-top: $table-cell-padding;
+  color: $primary;
+  padding-bottom: 0.75rem;
+  padding-top: 0.3rem;
   text-align: left;
 }
 
@@ -269,7 +220,7 @@ h6 {
 * -----------------------------------------------------------------------------------------------*/
 
 label {
-  // Allow labels to use `margin` for spacing.
+  // Allow labels to use margin for spacing
   display: inline-block;
 }
 
@@ -283,7 +234,6 @@ button {
   appearance: none;
   background: none;
   border: 0;
-  // stylelint-disable-next-line property-blacklist
   border-radius: 0;
   color: inherit;
 }
@@ -321,7 +271,7 @@ select {
 //    controls in Android 4.
 // 2. Correct the inability to style clickable types in iOS and Safari.
 button,
-[type='button'], 
+[type='button'],
 [type='reset'],
 [type='submit'] {
   -webkit-appearance: button; // 2
@@ -411,26 +361,21 @@ progress {
   outline-offset: -2px; // 2. Correct the outline style in Safari.
 }
 
-//
 // Remove the inner padding in Chrome and Safari on macOS.
-//
+
 [type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-//
 // 1. Correct the inability to style clickable types in iOS and Safari.
 // 2. Change font properties to `inherit` in Safari.
-//
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button; // 1
   font: inherit; // 2
 }
 
-//
 // Correct element displays
-//
 
 output {
   display: inline-block;

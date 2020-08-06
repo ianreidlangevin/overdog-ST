@@ -1,22 +1,5 @@
 
 /*
-* ADOBE LOADING VIA JS FOR ASYNC AND NOT BLOCKING RENDERING
-*/
-
-@mixin adobe-loading {
-  opacity: 0; // hide the font
-  visibility: hidden;
-
-  .wf-active &,
-  .wf-inactive & { // show the font if fonts are loaded or the fallback if adobe kit is not available
-    opacity: 1;
-    transition: visibility 0.2s linear, opacity 0.2s linear;
-    visibility: visible;
-  }
-}
-
-
-/*
 * MAIN FONTS - UTILISEZ CES MIXINS PARTOUT OU IL Y A DU TEXTE
 *
 * Sofia-pro, sans-serif
@@ -32,18 +15,32 @@
 */
 
 @mixin font-family-01($color, $weight) {
-  @include adobe-loading;
-  color: $color;
-  font-family: 'sofia-pro', 'helvetica neue', arial, sans-serif;
+  font-family: arial, sans-serif;
   font-weight: $weight;
+  color: $color;
+  opacity: 0; // smooth the font swap
   letter-spacing: 0.02em;
+
+  .fonts-loaded & {
+    font-family: "sofia-pro";
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
+
+  .fonts-not-loaded & {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
 }
 
 @mixin font-family-02($color, $weight) {
-  @include adobe-loading;
-  color: $color;
-  font-family: 'neue-haas-unica', 'helvetica neue', arial, sans-serif;
+  font-family: arial, sans-serif;
   font-weight: $weight;
+  color: $color;
+
+  .fonts-loaded & {
+    font-family: "neue-haas-unica";
+  }
 }
 
 
@@ -119,133 +116,4 @@
   @include media-breakpoint-up(md) { font-size: 19px; }
   @include media-breakpoint-up(xl) { font-size: 20px; }
   @include media-breakpoint-up(xxl) { font-size: 22px; }
-}
-
-/* UPPERCASE used in some places */
-
-@mixin title-uppercase($color) {
-  @include font-family-02($color, 500);
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  text-transform: uppercase;
-}
-
-
-/* OVERSIZE used in alert menu and homepage */
-@mixin title-oversize($color) {
-  @include font-family-01($color, 300);
-  font-size: 36px;
-  line-height: 1;
-
-  @include media-breakpoint-up(sm) {font-size: 40px;}
-  @include media-breakpoint-up(md) {font-size: 44px;}
-  @include media-breakpoint-up(xl) {font-size: 50px;}
-  @include media-breakpoint-up(xxl) {font-size: 62px;}
-}
-
-
-/* TITLE-CARDS used on all cards */
-@mixin title-cards {
-  @include font-family-01($black02, 400);
-  font-size: 18px;
-  line-height: 1.2;
-
-  @include media-breakpoint-up(sm) {font-size: 19px;}
-  @include media-breakpoint-up(md) {font-size: 20px;}
-  @include media-breakpoint-up(xl) {font-size: 22px;}
-  @include media-breakpoint-up(xxxl) {font-size: 24px;}
-}
-
-
-/* TITLE-LISTING used on listing standard - list style and for accordions title */
-@mixin title-listing {
-  @include font-family-01($black02, 400);
-  font-size: 18px;
-  line-height: 1.2;
-
-  @include media-breakpoint-up(sm) {font-size: 19px;}
-  @include media-breakpoint-up(md) {font-size: 20px;}
-  @include media-breakpoint-up(xl) {font-size: 22px;}
-  @include media-breakpoint-up(xxxl) {font-size: 24px;}
-}
-
-
-/* SUBTITLE-LISTING used on seances du conseil and accordions subtitle */
-@mixin subtitle-listing {
-  @include font-family-01($turquoise01, 400);
-  font-size: 16px;
-  line-height: 1.15;
-  margin: 0 0 1.3em;
-
-  @include media-breakpoint-up(sm) { font-size: 18px; }
-  @include media-breakpoint-up(md) { font-size: 19px; }
-  @include media-breakpoint-up(xl) { font-size: 20px; }
-  @include media-breakpoint-up(xxl) { font-size: 21px; }
-}
-
-
-/* TITLE-LISTING WITH IMAGE used on image and text layout */
-@mixin title-listing-img {
-  @include font-family-01($turquoise01, 300);
-  font-size: 20px;
-  line-height: 1.15;
-  margin: 0 0 1em;
-
-  @include media-breakpoint-up(sm) {font-size: 22px;}
-  @include media-breakpoint-up(md) {font-size: 26px;}
-  @include media-breakpoint-up(xl) {font-size: 30px;}
-  @include media-breakpoint-up(xxxl) {font-size: 34px;}
-}
-
-
-@mixin accroche {
-  @include font-family-02($grey04, 400);
-  font-size: 16px;
-  line-height: 1.4;
-
-  @include media-breakpoint-up(sm) { font-size: 18px; }
-  @include media-breakpoint-up(md) { font-size: 19px; }
-  @include media-breakpoint-up(xl) { font-size: 20px; }
-  @include media-breakpoint-up(xxl) { font-size: 22px; }
-}
-
-
-@mixin smalltext {
-  color: #7c838d;
-  font-size: 0.9em;
-
-  span { // spacing for the divider between category
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-  }
-}
-
-/*
-* UTILITY FOR TYPOGRAPHY
-*/
-
-// Unstyled keeps list items block level, just removes default browser padding and list-style
-@mixin no-bullet {
-  list-style: none;
-  padding-left: 0;
-}
-
-@mixin link-bg($bg-color) {
-  background: linear-gradient(to bottom,
-  rgba($bg-color, 1) 0%,
-  rgba($bg-color, 1) 98%);
-  background-position: left 100%;
-  background-repeat: no-repeat;
-  background-size: 100% 40%;
-  transition: all 0.2s linear;
-}
-
-@mixin link-hover($color) {
-  transition: color 0.4s ease-in-out;
-
-  &:hover {
-    color: $color;
-    transition: color 0.2s ease-in-out;
-  }
 }

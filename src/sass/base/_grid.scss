@@ -12,22 +12,20 @@
 
 
 .container {
-  @include make-container-max-widths();
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $grid-gutter-width / 2;
-  padding-right: $grid-gutter-width / 2;
   width: 100%;
+  padding-right: $grid-gutter-width / 2;
+  padding-left: $grid-gutter-width / 2;
+  margin-right: auto;
+  margin-left: auto;
+  @include make-container-max-widths();
 }
 
 // Fluid container
 
 .container-fluid {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $grid-gutter-width / 2;
-  padding-right: $grid-gutter-width / 2;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 // Row
@@ -35,20 +33,46 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -$grid-gutter-width / 2;
   margin-right: -$grid-gutter-width / 2;
+  margin-left: -$grid-gutter-width / 2;
+
+  &--block {
+    display: block;
+  }
 
   // Remove the negative margin from default .row, then the horizontal padding
   // from all immediate children columns (to prevent runaway style inheritance).
   .no-gutters {
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
 
     > .col,
-    > [class*='col-'] {
-      padding-left: 0;
+    > [class*="col-"] {
       padding-right: 0;
+      padding-left: 0;
     }
+  }
+
+  .medium-gutters {
+  	@include media-breakpoint-up(xl) {
+  	margin-right: -30px;
+  	margin-left: -30px;
+
+  		> [class*="col-"] {
+  			padding-right: 30px;
+  			padding-left: 30px;
+  		}
+  	}
+
+  	@include media-breakpoint-up(xxxl) {
+  	margin-right: -45px;
+  	margin-left: -45px;
+
+  		> [class*="col-"] {
+  			padding-right: 45px;
+  			padding-left: 45px;
+  		}
+  	}
   }
 }
 
@@ -56,10 +80,10 @@
 // Columns
 
 %grid-column {
-  padding-left: $grid-gutter-width / 2;
-  padding-right: $grid-gutter-width / 2;
   position: relative;
   width: 100%;
+  padding-right: $grid-gutter-width / 2;
+  padding-left: $grid-gutter-width / 2;
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {
@@ -89,13 +113,9 @@
 
     .col#{$infix}-auto {
       flex: 0 0 auto;
-      max-width: 100%; // Reset earlier grid tiers
       width: auto;
+      max-width: 100%; // Reset earlier grid tiers
     }
-
-    .order#{$infix}-first { order: -1; }
-
-    .order#{$infix}-last { order: $grid-columns + 1; }
 
     @for $i from 1 through $grid-columns {
       .col#{$infix}-#{$i} {
@@ -105,13 +125,17 @@
       }
     }
 
+    .order#{$infix}-first { order: -1; }
+
+    .order#{$infix}-last { order: $grid-columns + 1; }
+
     @for $i from 0 through $grid-columns {
       .order#{$infix}-#{$i} { order: $i; }
     }
 
     // `$columns - 1` because offsetting by the width of an entire row isn't possible
     @for $i from 0 through ($grid-columns - 1) {
-      @if not ($infix == '' and $i == 0) { // Avoid emitting useless .offset-0
+      @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
         .offset#{$infix}-#{$i} {
           $num: $i / $grid-columns;
           margin-left: if($num == 0, 0, percentage($num));

@@ -10,10 +10,8 @@
 */
 
 @import 'mixins/breakpoints';
-@import 'mixins/colors';
 @import 'mixins/fonts';
-@import 'mixins/utilities';
-@import 'mixins/icon-size';
+@import 'mixins/objectfit';
 @import 'mixins/transitions';
 
 /*
@@ -27,6 +25,10 @@
 @import 'base/spacing'; // must be loaded after grid to avoid important on px and py
 @import 'base/typography';
 @import 'base/wysiwyg';
+
+// components folder
+@import 'components/buttons';
+@import 'components/links';
 
 // layout folder
 @import 'layout/footer';

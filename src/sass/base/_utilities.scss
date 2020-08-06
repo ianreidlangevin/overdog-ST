@@ -1,29 +1,7 @@
 /*
-* Stretched link
-* -----------------------------------------------------------------------------------------------*/
-
-
-.stretched-link {
-  &::after {
-    background-color: rgba(0, 0, 0, 0);
-    bottom: 0;
-    content: '';
-    left: 0;
-    pointer-events: auto;
-    position: absolute;
-    // Just in case pointer-events: none is set on a parent
-    right: 0;
-    top: 0;
-    // IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
-    z-index: 1;
-  }
-}
-
-
-/*
 * CSS LAZYLOAD OPACITY
 *
-* Par Ian, plus doux que le blur. Color appliqué sur le picture tag et image qui load en opacity.
+* Couleur appliquée sur le picture tag et image qui load en opacity.
 * Voir le site de Youtube pour inspiration - placeholder de couleur
 * Le background color doit etre mise sur le picture tag
 *
@@ -35,7 +13,7 @@
 
   &.lazyloaded,
   &.ls-is-cached {
-    @include transitionInEase(all);
+    @include transitionInEase(opacity);
     opacity: 1;
   }
 
@@ -43,6 +21,7 @@
 
 /*
 * Collapse and fade
+* Used for bootstrap accordions
 * -----------------------------------------------------------------------------------------------*/
 
 

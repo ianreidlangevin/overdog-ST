@@ -5,41 +5,44 @@
 *
 * -----------------------------------------------------------------------------------------------*/
 
+/*
+* SPACING variables
+* Les variables servent a aligner le blockquote et les listes uniformement
+*/
+$spacingLeftDesktop: 2em;
+$spacingLeftMobile: 0;
 
 .wysiwyg {
 
-  /*
-  * SPACING variables
-  * Les variables servent a aligner le blockquote et les listes uniformement
-  */
-
-  $spacingLeftDesktop: 2em;
-  $spacingLeftMobile: 0;
-  @include clearfix; // important if image in editor
-
+  // clearfix - important if image in editor
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
 
   // only h2 to h4 are available in editor
   h2,
   h3,
   h4 {
     strong {
-      color: $turquoise01;
-      font-weight: 300; // remove the habilities to add bold to h tag in editor
+      color: $primary;
+      font-weight: 300; // remove the habilities to add bold to h tag in editor - style as you want
     }
   }
 
   h2 {
-    @include title-02($turquoise01);
+    @include title-02($primary);
     margin: 1.5em 0 1em;
   }
 
   h3 {
-    @include title-03($turquoise01);
+    @include title-03($primary);
     margin: 1.5em 0 0.6em;
   }
 
   h4 {
-    @include title-04($turquoise01);
+    @include title-04($primary);
     margin: 1.5em 0 0.6em;
   }
 
@@ -73,10 +76,7 @@
   */
 
   a {
-    @include link-bg($grey01);
-    @include link-hover($black01);
-    background-color: transparent; // Remove the gray background on active links in IE 10.
-    color: $blue01;
+    color: $link-color;
     text-decoration: $link-decoration;
   }
 
@@ -110,7 +110,7 @@
     }
 
     th {
-      @include font-family-01($turquoise01, 400);
+      @include font-family-01($primary, 400);
       background-color: $grey01;
       font-size: 1.06em;
     }
@@ -122,8 +122,8 @@
   */
 
   mark {
-    @include link-bg(#f9f93d);
-    color: $black02;
+    background-color:#f9f93d;
+    color: $black;
   }
 
   /*
@@ -144,7 +144,7 @@
     background-color: $grey01;
     border: 1px solid $grey02;
     border-radius: 2px;
-    color: $black01;
+    color: $black;
     display: inline-block;
     font-size: 0.85em;
     font-weight: 500;
@@ -159,7 +159,7 @@
   */
 
   blockquote {
-    color: $grey04;
+    color: $grey02;
     font-style: italic;
     margin-left: $spacingLeftMobile;
     padding: 1rem 2em;
@@ -179,10 +179,6 @@
       position: absolute;
       top: 0;
       width: 4px;
-
-      .wysiwyg-wrapper--bg & {
-        background-color: $grey02;
-      }
     }
   }
 
@@ -192,7 +188,6 @@
   */
 
   > ul {
-    @include adobe-loading;
     margin-bottom: 2rem;
     padding-left: $spacingLeftMobile;
 
@@ -207,7 +202,7 @@
       position: relative;
 
       &::before {
-        color: $turquoise01;
+        color: $primary;
         content: '•';
         left: 0;
         margin-right: 1.5em;
