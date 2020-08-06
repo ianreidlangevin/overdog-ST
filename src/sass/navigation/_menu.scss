@@ -3,20 +3,20 @@
 * ----------------------------------------------------------------------------------------------- */
 
 .mega-nav {
+  -webkit-overflow-scrolling: touch; // apple device smooth elastic scroll
   background-color: $white;
   color: $black;
+  height: 100vh;
+  left: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 100px 12px 40px 8px; // clear the navbar
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  padding: 100px 12px 40px 8px; // clear the navbar
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch; // apple device smooth elastic scroll
-  overflow-x: hidden;
   transform: translateY(-100%);
   transition: 0.2s;
   transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  width: 100%;
 
   @include media-breakpoint-up(lg) {
     padding: 140px 0 40px; // clear the navbar

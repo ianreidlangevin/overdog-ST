@@ -29,8 +29,8 @@
   transition: 0.8s ease;
 
   &:hover {
-    color: $white;
     background-color: $black01; // fallback for IE 11 for not supporting the hover effect
+    color: $white;
     transition: 0.8s ease;
   }
 }

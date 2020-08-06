@@ -6,36 +6,36 @@
 * -----------------------------------------------------------------------------------------------*/
 
 .no-bullet {
-	@include no-bullet;
+  @include no-bullet;
 }
 
 
 .title-02 {
-	@include title-02($turquoise01);
-	margin: 0 0 1.3em 0;
+  @include title-02($turquoise01);
+  margin: 0 0 1.3em 0;
 }
 
 .title-03 {
-	@include title-03($turquoise01);
-	margin: 0 0 1.3em 0;
+  @include title-03($turquoise01);
+  margin: 0 0 1.3em 0;
 }
 
 .title-04 {
-	@include title-04($turquoise01);
-	margin: 0 0 1.3em 0;
+  @include title-04($turquoise01);
+  margin: 0 0 1.3em 0;
 }
 
 .title-05 {
-	@include title-05($turquoise01);
-	margin: 0 0 1.3em 0;
+  @include title-05($turquoise01);
+  margin: 0 0 1.3em 0;
 }
 
 .accroche {
-	@include accroche;
+  @include accroche;
 }
 
 .smaller-note {
-	color: $grey04;
-	font-size: 0.9em;
-	font-style: italic;
+  color: $grey04;
+  font-size: 0.9em;
+  font-style: italic;
 }

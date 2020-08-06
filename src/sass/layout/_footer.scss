@@ -3,36 +3,36 @@
 * ----------------------------------------------------------------------------------------------- */
 
 .footer-copyright {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-end;
-	padding-bottom: 2rem;
-	color: #869ab3;
+  align-items: center;
+  color: #869ab3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
 
-	@include media-breakpoint-up(md) {
-		flex-direction: row;
-	}
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
 
-	&__text {
-		margin-bottom: 10px;
-		font-size: 0.8em;
+  &__text {
+    font-size: 0.8em;
+    margin-bottom: 10px;
 
-		@include media-breakpoint-up(md) {
-			margin-right: 2rem;
-			margin-bottom: 0;
-		}
-	}
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+      margin-right: 2rem;
+    }
+  }
 
-	&__icon {
-		width: 22px;
-		height: 22px;
-		fill: #869ab3;
-		@include transitionOutEase(fill);
+  &__icon {
+    fill: #869ab3;
+    height: 22px;
+    width: 22px;
+    @include transitionOutEase(fill);
 
-		&:hover {
-			fill: #333;
-			@include transitionInEase(fill);
-		}
-	}
+    &:hover {
+      fill: #333;
+      @include transitionInEase(fill);
+    }
+  }
 }

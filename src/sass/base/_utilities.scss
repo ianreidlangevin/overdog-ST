@@ -5,17 +5,17 @@
 
 .stretched-link {
   &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-color: rgba(0, 0, 0, 0);
-    // Just in case pointer-events: none is set on a parent
+    bottom: 0;
     content: "";
-    z-index: 1;
-    // IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
+    left: 0;
     pointer-events: auto;
+    position: absolute;
+    // Just in case pointer-events: none is set on a parent
+    right: 0;
+    top: 0;
+    // IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
+    z-index: 1;
   }
 }
 
@@ -36,7 +36,7 @@
   &.lazyloaded,
   &.ls-is-cached {
     opacity: 1;
-  	@include transitionInEase(all);
+    @include transitionInEase(all);
   }
 
 }
@@ -61,10 +61,10 @@
 }
 
 .collapsing {
-  position: relative;
   height: 0;
-  transition: height .45s ease;
   overflow: hidden;
+  position: relative;
+  transition: height .45s ease;
 }
 
 
@@ -74,24 +74,24 @@
 
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
   border: 0;
-  white-space: nowrap;
-  overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .sr-only-focusable {
   &:active,
   &:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    white-space: normal;
-    overflow: visible;
     clip: auto;
+    height: auto;
+    overflow: visible;
+    position: static;
+    white-space: normal;
+    width: auto;
   }
 }

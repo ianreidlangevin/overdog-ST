@@ -80,12 +80,12 @@ $spacingXl: 6rem;
 
 // Use this on container or row to create a small width textblock
 .narrow-content {
-	max-width: 900px;
-	margin: auto;
+  max-width: 900px;
+  margin: auto;
 }
 
 .last-child-no-margin *:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 
@@ -96,23 +96,23 @@ $spacingXl: 6rem;
 
 
 .medium-gutters {
-	@include media-breakpoint-up(xl) {
-	margin-right: -30px;
-	margin-left: -30px;
+  @include media-breakpoint-up(xl) {
+    margin-right: -30px;
+    margin-left: -30px;
 
-		> [class*="col-"] {
-			padding-right: 30px;
-			padding-left: 30px;
-		}
-	}
+    > [class*="col-"] {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
 
-	@include media-breakpoint-up(xxxl) {
-	margin-right: -45px;
-	margin-left: -45px;
+  @include media-breakpoint-up(xxxl) {
+    margin-right: -45px;
+    margin-left: -45px;
 
-		> [class*="col-"] {
-			padding-right: 45px;
-			padding-left: 45px;
-		}
-	}
+    > [class*="col-"] {
+      padding-right: 45px;
+      padding-left: 45px;
+    }
+  }
 }

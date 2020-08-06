@@ -4,57 +4,57 @@
 // height variables are located in the variables scss file.
 
 .navbar {
-	display: flex;
-	position: fixed;
-	background-color: $light-grey;
-	right: 0;
-	left: 0;
-	width: 100%;
-	height: $navbar-height;
-	margin: auto;
-	padding: 0;
-	z-index: 100;
-	transition: all 0.3s ease;
+  background-color: $light-grey;
+  display: flex;
+  height: $navbar-height;
+  left: 0;
+  margin: auto;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 100;
 
-	@include media-breakpoint-up(md) {
-		height: $navbar-height-md;
-	}
-	@include media-breakpoint-up(lg) {
-		height: $navbar-height-lg;
-	}
+  @include media-breakpoint-up(md) {
+    height: $navbar-height-md;
+  }
+  @include media-breakpoint-up(lg) {
+    height: $navbar-height-lg;
+  }
 
-	.navbar--shrink & {
-		transition: height 0.3s ease;
-		@include media-breakpoint-up(md) {
-			height: 60px;
-		}
-		@include media-breakpoint-up(lg) {
-			height: 80px;
-		}
-	}
+  .navbar--shrink & {
+    transition: height 0.3s ease;
+    @include media-breakpoint-up(md) {
+      height: 60px;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 80px;
+    }
+  }
 
-	&__container {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		z-index: 99; // keeps the logo and button hover the open nav
-	}
+  &__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    z-index: 99; // keeps the logo and button hover the open nav
+  }
 
-	&__logo-img {
-		width: 126px;
-		height: 20px;
-		transition: all 0.3s ease;
+  &__logo-img {
+    height: 20px;
+    transition: all 0.3s ease;
+    width: 126px;
 
-		@include media-breakpoint-up(lg) {
-			width: 54px;
-			height: 68px;
+    @include media-breakpoint-up(lg) {
+      height: 68px;
+      width: 54px;
 
-			.navbar--shrink & {
-				width: 90px;
-				height: 50px;
-				transition: all 0.3s ease;
-			}
-		}
-	}
+      .navbar--shrink & {
+        height: 50px;
+        transition: all 0.3s ease;
+        width: 90px;
+      }
+    }
+  }
 
 } // end navbar prefix

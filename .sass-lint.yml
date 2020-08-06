@@ -28,3 +28,7 @@ resolvers:
   final-newline: 1
 options:
   optOut: false
+rules:
+  leading-zero:
+    - 1
+    - include: true

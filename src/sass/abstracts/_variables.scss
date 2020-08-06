@@ -11,11 +11,11 @@ $grid-gutter-width: 30px;
 * COLOR VARIABLES
 * -----------------------------------------------------------------------------------------------*/
 
-$primary: #09B8B1; //primary
+$primary: #09b8b1; //primary
 
-$turquoise01: #09B8B1; //primary
+$turquoise01: #09b8b1; //primary
 
-$blue01: #5595D1; //lighter
+$blue01: #5595d1; //lighter
 $blue02: #002856; //darker
 
 // grey - see the sketch file, the naming is the same
@@ -40,22 +40,22 @@ $green01: #7ed776;
 * -----------------------------------------------------------------------------------------------*/
 
 
-$primary: #DF1F29;
+$primary: #df1f29;
 $secondary: #323031;
 $tertiary: #323031;
 
-$body-color: #47515A;
-$link-hover-color: #DF1F29;
+$body-color: #47515a;
+$link-hover-color: #df1f29;
 
-$black: #4E4E4E;
-$white: #ffffff;
+$black: #4e4e4e;
+$white: #fff;
 
-$light-grey: #E8EAED;
-$medium-grey:#BFBFBF;
-$dark-grey:#777777;
+$light-grey: #e8eaed;
+$medium-grey: #bfbfbf;
+$dark-grey: #777;
 
 // useful in a color scheme with a light color ie in background
-$light:#E8EAED;
+$light: #e8eaed;
 
 /*
 * TEXT VARIABLES
@@ -101,13 +101,13 @@ $navbar-height-lg: 100px;
 $embed-responsive-aspect-ratios: ();
 // stylelint-disable-next-line scss/dollar-variable-default
 $embed-responsive-aspect-ratios: join(
-(
-(21 9),
-(16 9),
-(4 3),
-(1 1),
-),
-$embed-responsive-aspect-ratios
+  (
+    (21 9),
+    (16 9),
+    (4 3),
+    (1 1),
+  ),
+  $embed-responsive-aspect-ratios
 );
 
 
@@ -119,12 +119,12 @@ $embed-responsive-aspect-ratios
 $spacer: 3rem;
 $spacers: ();
 $spacers: map-merge((
-0: 0,
-1: ($spacer * .5),
-2: $spacer,
-3: ($spacer * 1.5),
-4: ($spacer * 2),
-5: ($spacer * 3)
+  0: 0,
+  1: ($spacer * .5),
+  2: $spacer,
+  3: ($spacer * 1.5),
+  4: ($spacer * 2),
+  5: ($spacer * 3)
 ), $spacers);
 
 $table-cell-padding: .75rem;
@@ -136,23 +136,23 @@ $table-cell-padding-sm: .3rem;
 * -----------------------------------------------------------------------------------------------*/
 
 $grid-breakpoints: (
-xs: 0,
-sm: 576px,
-md: 768px,
-lg: 992px,
-xl: 1200px,
-xxl: 1300px,
-xxxl: 1500px,
-xxxxl: 1700px
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1300px,
+  xxxl: 1500px,
+  xxxxl: 1700px
 );
 
 $container-max-widths: (
-xs: 90%,
-sm: 90%,
-md: 90%,
-lg: 90%,
-xl: 1140px,
-xxl: 1240px,
-xxxl: 1440px,
-xxxxl: 1640px
+  xs: 90%,
+  sm: 90%,
+  md: 90%,
+  lg: 90%,
+  xl: 1140px,
+  xxl: 1240px,
+  xxxl: 1440px,
+  xxxxl: 1640px
 );

@@ -7,287 +7,287 @@
 
 
 .wysiwyg {
-	@include clearfix; // important if image in editor
+  @include clearfix; // important if image in editor
 
 
-	// only h2 to h4 are available in editor
-	h2, h3, h4 {
-		strong {
-			color: $turquoise01;
-			font-weight: 300; // remove the habilities to add bold to h tag in editor
-		}
-	}
+  // only h2 to h4 are available in editor
+  h2, h3, h4 {
+    strong {
+      color: $turquoise01;
+      font-weight: 300; // remove the habilities to add bold to h tag in editor
+    }
+  }
 
-	h2 {
-		@include title-02($turquoise01);
-		margin: 1.5em 0 1em 0;
-	}
+  h2 {
+    @include title-02($turquoise01);
+    margin: 1.5em 0 1em 0;
+  }
 
-	h3 {
-		@include title-03($turquoise01);
-		margin: 1.5em 0 0.6em 0;
-	}
+  h3 {
+    @include title-03($turquoise01);
+    margin: 1.5em 0 0.6em 0;
+  }
 
-	h4 {
-		@include title-04($turquoise01);
-		margin: 1.5em 0 0.6em 0;
-	}
+  h4 {
+    @include title-04($turquoise01);
+    margin: 1.5em 0 0.6em 0;
+  }
 
 
-	// remove margins on first and last element to avoid double gap with other elements
-	& > *:first-child {
-		margin-top: 0;
-	}
+  // remove margins on first and last element to avoid double gap with other elements
+  & > *:first-child {
+    margin-top: 0;
+  }
 
-	&  > *:last-child {
-		margin-bottom: 0;
-	}
+  &  > *:last-child {
+    margin-bottom: 0;
+  }
 
-	p {
-		margin-top: 0;
-		margin-bottom: 2rem;
-		text-overflow: ellipsis;
-		overflow: hidden; // avoid email overflow in mobile
-	}
+  p {
+    margin-bottom: 2rem;
+    margin-top: 0;
+    overflow: hidden; // avoid email overflow in mobile
+    text-overflow: ellipsis;
+  }
 
-	li p {
-		margin-bottom: 1rem;
-	}
+  li p {
+    margin-bottom: 1rem;
+  }
 
-	iframe { // prevent overflow for video - add responsive
-		max-width: 100%;
-	}
+  iframe { // prevent overflow for video - add responsive
+    max-width: 100%;
+  }
 
-	/*
-	* LINKS
-	*/
+  /*
+  * LINKS
+  */
 
-	a {
-	  background-color: transparent; // Remove the gray background on active links in IE 10.
-	  color: $blue01;
-		text-decoration: $link-decoration;
-		@include link-bg($grey01);
-		@include link-hover($black01);
-	}
+  a {
+    background-color: transparent; // Remove the gray background on active links in IE 10.
+    color: $blue01;
+    text-decoration: $link-decoration;
+    @include link-bg($grey01);
+    @include link-hover($black01);
+  }
 
-	/*
-	* TABLES
-	*/
+  /*
+  * TABLES
+  */
 
-	table {
-		display: table;
-	  width: 100%;
-	  height: 100%;
-		margin: 4rem auto 4rem 0;
-	  border-collapse: collapse;
-	  border-spacing: 0;
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    height: 100%;
+    margin: 4rem auto 4rem 0;
+    width: 100%;
 
-		@include media-breakpoint-down(sm) {
-			width: 100%;
-			overflow-x: auto;
-			-webkit-overflow-scrolling: touch;
-		}
+    @include media-breakpoint-down(sm) {
+      -webkit-overflow-scrolling: touch;
+      overflow-x: auto;
+      width: 100%;
+    }
 
-		td,
-		th {
-		  min-width: 2em;
-		  padding: 1em;
-		  border: 1px solid $grey02;
+    td,
+    th {
+      border: 1px solid $grey02;
+      min-width: 2em;
+      padding: 1em;
 
-			&  > *:last-child {
-				margin-bottom: 0; // avoid the p margin on the last p or on a single
-			}
-		}
+      &  > *:last-child {
+        margin-bottom: 0; // avoid the p margin on the last p or on a single
+      }
+    }
 
-		th {
-			@include font-family-01($turquoise01, 400);
-		  background-color: $grey01;
-			font-size: 1.06em;
-		}
+    th {
+      @include font-family-01($turquoise01, 400);
+      background-color: $grey01;
+      font-size: 1.06em;
+    }
 
-	} //table
+  } //table
 
-	/*
-	* MARK
-	*/
+  /*
+  * MARK
+  */
 
-	mark {
-		@include link-bg(#f9f93d);
-	  color: $black02;
-	}
+  mark {
+    @include link-bg(#f9f93d);
+    color: $black02;
+  }
 
-	/*
-	* IMAGES
-	*/
+  /*
+  * IMAGES
+  */
 
-	img, svg {
-	  max-width: 100%;
-		height: auto;
-	}
+  img, svg {
+    height: auto;
+    max-width: 100%;
+  }
 
-	/*
-	* KEYBOARD STYLE
-	*/
+  /*
+  * KEYBOARD STYLE
+  */
 
-	kbd {
-    display: inline-block;
-    padding: 2px 8px;
+  kbd {
+    background-color: $grey01;
     border: 1px solid $grey02;
     border-radius: 2px;
-    background-color: $grey01;
     color: $black01;
+    display: inline-block;
     font-size: .85em;
     font-weight: 500;
     line-height: 1;
+    padding: 2px 8px;
     white-space: nowrap;
-   }
+  }
 
-	/*
-	* SPACING variables
-	* Les variables servent a aligner le blockquote et les listes uniformement
-	*/
+  /*
+  * SPACING variables
+  * Les variables servent a aligner le blockquote et les listes uniformement
+  */
 
-	$spacingLeftMobile: 0;
-	$spacingLeftDesktop: 2em;
-
-
-	/*
-	* Blockquote
-	*/
-
-	blockquote {
-		position: relative;
-		margin-left: $spacingLeftMobile;
-		padding: 1rem 2em;
-		color: $grey04;
-		font-style: italic;
-
-		@include media-breakpoint-up(sm) {
-			margin-left: $spacingLeftDesktop;
-			padding-right: $spacingLeftDesktop;
-		}
-
-			&::before {
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 4px;
-				height: 100%;
-				background-color: $grey01;
-				content: "";
-
-				.wysiwyg-wrapper--bg & {
-					background-color: $grey02;
-				}
-			}
-	}
+  $spacingLeftDesktop: 2em;
+  $spacingLeftMobile: 0;
 
 
-	/*
-	* Unordered list
-	*/
+  /*
+  * Blockquote
+  */
 
-	> ul {
-		@include adobe-loading;
-		margin-bottom: 2rem;
-		padding-left: $spacingLeftMobile;
+  blockquote {
+    color: $grey04;
+    font-style: italic;
+    margin-left: $spacingLeftMobile;
+    padding: 1rem 2em;
+    position: relative;
 
-		@include media-breakpoint-up(lg) {
-			padding-left: $spacingLeftDesktop;
-		}
+    @include media-breakpoint-up(sm) {
+      margin-left: $spacingLeftDesktop;
+      padding-right: $spacingLeftDesktop;
+    }
 
-		> li {
-			position: relative;
-			margin: 0 0 0.5em 0;
-			padding-left: 2em;
-			list-style: none;
+    &::before {
+      background-color: $grey01;
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 4px;
 
-			&::before {
-				position: absolute;
-				left: 0;
-				margin-right: 1.5em;
-				color: $turquoise01;
-				content: "•";
-			}
-		} //li
-	} // ul
+      .wysiwyg-wrapper--bg & {
+        background-color: $grey02;
+      }
+    }
+  }
 
-	> ul ul {
-		margin: 1em 0;
 
-		li {
-			position: relative;
-			padding-left: 2em;
-			list-style: none;
+  /*
+  * Unordered list
+  */
 
-			&::before {
-				position: absolute;
-				left: 0;
-				margin-right: 1.5em;
-				color: $grey03;
-				content: "—";
-			}
-		}
-	}
+  > ul {
+    @include adobe-loading;
+    margin-bottom: 2rem;
+    padding-left: $spacingLeftMobile;
 
-	> ul ul ul {
-		margin: 0.5em 0;
-	}
+    @include media-breakpoint-up(lg) {
+      padding-left: $spacingLeftDesktop;
+    }
 
-	/*
-	* OL list with 3 levels
-	* Tous les units sont en EM pour faciliter la coherence entre mobile et desktop
-	*/
+    > li {
+      list-style: none;
+      margin: 0 0 0.5em 0;
+      padding-left: 2em;
+      position: relative;
 
-	> ol  {
-		margin-bottom: 2rem;
-		padding-top: 1rem;
-		padding-left: $spacingLeftMobile;
-		counter-reset: my-counter;
+      &::before {
+        color: $turquoise01;
+        content: "•";
+        left: 0;
+        margin-right: 1.5em;
+        position: absolute;
+      }
+    } //li
+  } // ul
 
-		@include media-breakpoint-up(sm) {
-			padding-left: $spacingLeftDesktop;
-		}
+  > ul ul {
+    margin: 1em 0;
 
-		> li {
-			position: relative;
-			margin: 0 0 1.2em 0;
-			padding-left: 3.5em;
-			list-style: none;
-			counter-increment: my-counter;
+    li {
+      list-style: none;
+      padding-left: 2em;
+      position: relative;
 
-			&::before {
-				background-color: $primary;
-				display: flex;
-				position: absolute;
-				top: -0.2em;
-				left: 0;
-    		align-items: center;
-    		justify-content: center;
-				width: 1.8em;
-				max-width: 1.8em;
-				height: 1.8em;
-				margin-right: 2em;
-				padding: 0.96em 1em 1em 1em;
-				border-radius: 50%;
-				color: $white;
-				line-height: 1;
-				content: counter(my-counter);
-			}
-		} // ol li
-	} // ol
+      &::before {
+        color: $grey03;
+        content: "—";
+        left: 0;
+        margin-right: 1.5em;
+        position: absolute;
+      }
+    }
+  }
 
-	> ol ol {
-		margin: 1em 0;
+  > ul ul ul {
+    margin: 0.5em 0;
+  }
 
-		li {
-			padding: 2px 0;
-		}
-	}
+  /*
+  * OL list with 3 levels
+  * Tous les units sont en EM pour faciliter la coherence entre mobile et desktop
+  */
 
-	> ol ol ol {
-		margin: 0.5em 0;
-	}
+  > ol  {
+    counter-reset: my-counter;
+    margin-bottom: 2rem;
+    padding-left: $spacingLeftMobile;
+    padding-top: 1rem;
+
+    @include media-breakpoint-up(sm) {
+      padding-left: $spacingLeftDesktop;
+    }
+
+    > li {
+      counter-increment: my-counter;
+      list-style: none;
+      margin: 0 0 1.2em 0;
+      padding-left: 3.5em;
+      position: relative;
+
+      &::before {
+        align-items: center;
+        background-color: $primary;
+        border-radius: 50%;
+        color: $white;
+        content: counter(my-counter);
+        display: flex;
+        height: 1.8em;
+        justify-content: center;
+        left: 0;
+        line-height: 1;
+        margin-right: 2em;
+        max-width: 1.8em;
+        padding: 0.96em 1em 1em 1em;
+        position: absolute;
+        top: -0.2em;
+        width: 1.8em;
+      }
+    } // ol li
+  } // ol
+
+  > ol ol {
+    margin: 1em 0;
+
+    li {
+      padding: 2px 0;
+    }
+  }
+
+  > ol ol ol {
+    margin: 0.5em 0;
+  }
 
 }

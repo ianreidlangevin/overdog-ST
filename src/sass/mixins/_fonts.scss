@@ -9,9 +9,9 @@
 
   .wf-active &,
   .wf-inactive & { // show the font if fonts are loaded or the fallback if adobe kit is not available
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0.2s linear, opacity 0.2s linear;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
   }
 }
 

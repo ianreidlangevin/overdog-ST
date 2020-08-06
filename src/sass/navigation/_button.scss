@@ -3,15 +3,15 @@
 * ----------------------------------------------------------------------------------------------- */
 
 .navbar__hamburger {
-  display: inline-block;
-  padding: 11px 13px;
-  cursor: pointer;
   background-color: #202022;
-  border-radius: 50%;
   border: 0;
-  overflow: visible;
-  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
   margin-left: auto;
+  outline: none;
+  overflow: visible;
+  padding: 11px 13px;
   transition: background-color 0.5s ease-in-out;
   z-index: 9;
 
@@ -22,32 +22,32 @@
 
 .hamburger {
   &__box {
-    width: 19px;
-    height: 14px;
     display: inline-block;
+    height: 14px;
     position: relative;
+    width: 19px;
 
     @include media-breakpoint-up(lg) {
-      width: 24px;
       height: 16px;
+      width: 24px;
     }
   }
 
   &__inner,
   &__inner::after,
   &__inner::before {
-    display: block;
-    width: 20px;
-    height: 1px;
     background-color: $white;
+    display: block;
+    height: 1px;
     position: absolute;
-    transition-property: transform;
     transition-duration: 0.15s;
+    transition-property: transform;
     transition-timing-function: ease;
+    width: 20px;
 
     @include media-breakpoint-up(lg) {
-      width: 24px;
       height: 1px;
+      width: 24px;
     }
   }
 
@@ -77,14 +77,14 @@
 
 .mega-nav--open {
   .hamburger__inner {
-    transition-delay: 0.22s;
     background-color: transparent !important;
+    transition-delay: 0.22s;
 
     &::before {
       background-color: $white;
       top: 0;
-      transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
       transform: translate3d(0, 8px, 0) rotate(45deg);
+      transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
 
       @include media-breakpoint-up(lg) {
         transform: translate3d(0, 10px, 0) rotate(45deg);
@@ -94,8 +94,8 @@
     &::after {
       background-color: $white;
       top: 0;
-      transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
       transform: translate3d(0, 8px, 0) rotate(-45deg);
+      transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
 
       @include media-breakpoint-up(lg) {
         transform: translate3d(0, 10px, 0) rotate(-45deg);
