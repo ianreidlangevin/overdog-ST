@@ -1,0 +1,8 @@
+handle: assetsDocuments
+hasUrls: true
+name: Documents
+settings:
+  path: '@assetsPath/documents'
+sortOrder: 1
+type: craft\volumes\Local
+url: '@assetsUrl/documents'

@@ -1,7 +1,7 @@
 {
   "name": "3ejoueur/overdog",
   "description": "A Craft CMS scaffolding project for 3e joueur",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "authors": [
     {
       "name": "Ian Reid Langevin",
@@ -16,7 +16,7 @@
   "license": "Unlicense",
   "type": "project",
   "require": {
-    "craftcms/cms": "3.4.26",
+    "craftcms/cms": "3.5.7",
     "craftcms/redactor": "2.5.0",
     "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"

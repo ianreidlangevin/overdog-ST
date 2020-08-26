@@ -1,0 +1,28 @@
+contentColumnType: string
+fieldGroup: a7870a18-8ec8-42bd-bb94-ea232c8eb066
+handle: seoOgImage
+instructions: 'Format requis : 1200px par 630px - Image utilisée pour les tags Open Graph'
+name: 'Image OG pour SEO'
+searchable: false
+settings:
+  allowSelfRelations: ''
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:ca2a274d-ce21-46a0-81e5-cd4dba43a25a'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

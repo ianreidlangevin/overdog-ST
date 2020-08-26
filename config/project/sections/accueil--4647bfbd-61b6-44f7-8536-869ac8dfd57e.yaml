@@ -1,0 +1,11 @@
+enableVersioning: false
+handle: accueil
+name: Accueil
+propagationMethod: all
+siteSettings:
+  fc2cb4bb-e016-46f9-a830-653496da88d7:
+    enabledByDefault: true
+    hasUrls: true
+    template: index.twig
+    uriFormat: __home__
+type: single

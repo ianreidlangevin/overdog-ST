@@ -1,0 +1,15 @@
+fieldLayouts:
+  ee1c6b87-b3b5-4dff-ad80-5f67ec852520:
+    tabs:
+      -
+        fields:
+          9b18697d-2ce6-492b-b628-1a649bb22eaa:
+            required: false
+            sortOrder: 2
+          d3974314-8390-48bd-af85-f938616558be:
+            required: false
+            sortOrder: 1
+        name: SEO
+        sortOrder: 1
+handle: globalSeo
+name: 'SEO global'
