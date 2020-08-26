@@ -4,7 +4,7 @@
 _Following documentation is only in French for the moment_
 
 #### Version
-0.9.4
+0.9.3
 Project under development - do not use it before a stable version
 
 #### Author
