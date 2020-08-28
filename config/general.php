@@ -37,7 +37,7 @@ return [
         '@rootUrl' => getenv('SITE_URL'),
         '@iconsUrl' => getenv('SITE_URL') . '/img/svg-sprite.svg',
         '@assetsUrl' => getenv('SITE_URL') . '/assets',
-        '@assetsPath' => 'assets',
+        '@assetsPath' => dirname(__DIR__) . '/web/assets',
         ],
 
         // 3e joueur - Set the site url per language let admin panel empty
