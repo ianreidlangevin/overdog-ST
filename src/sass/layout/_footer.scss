@@ -26,13 +26,18 @@
   }
 
   &__icon {
-    @include transitionOutEase(fill);
-    fill: #869ab3;
     height: 22px;
     width: 22px;
 
-    &:hover {
+    path {
+      @include transitionOutEase(fill);
+
+      fill: #869ab3;
+    }
+
+    &:hover path {
       @include transitionInEase(fill);
+
       fill: #333;
     }
   }

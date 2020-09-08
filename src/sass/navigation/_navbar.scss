@@ -19,15 +19,18 @@
   @include media-breakpoint-up(md) {
     height: $navbar-height-md;
   }
+
   @include media-breakpoint-up(lg) {
     height: $navbar-height-lg;
   }
 
   .navbar--shrink & {
     transition: height 0.3s ease;
+
     @include media-breakpoint-up(md) {
       height: 60px;
     }
+
     @include media-breakpoint-up(lg) {
       height: 80px;
     }
@@ -41,9 +44,9 @@
   }
 
   &__logo-img {
-    height: 20px;
+    height: 40px;
     transition: all 0.3s ease;
-    width: 126px;
+    width: 32px;
 
     @include media-breakpoint-up(lg) {
       height: 68px;
@@ -52,9 +55,8 @@
       .navbar--shrink & {
         height: 50px;
         transition: all 0.3s ease;
-        width: 90px;
+        width: 40px;
       }
     }
   }
-
 } // end navbar prefix

@@ -2,5 +2,7 @@
   "extends": "stylelint-config-sass-guidelines",
   "defaultSeverity": "warning",
   "rules": {
+    "max-nesting-depth": 3,
+    "selector-no-qualifying-type" : true
   }
 }
