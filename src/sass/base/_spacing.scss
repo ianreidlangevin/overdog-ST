@@ -15,8 +15,8 @@ $spacingXl: 6rem;
 }
 
 .mb { @include default(margin, bottom); }
-.mt{ @include default(margin, top); }
-.pb{ @include default(padding, bottom); }
+.mt { @include default(margin, top); }
+.pb { @include default(padding, bottom); }
 .pt { @include default(padding, top); }
 
 
@@ -83,7 +83,7 @@ $spacingXl: 6rem;
 .mb-1\/2 { @include half(margin, bottom); }
 .mt-1\/2 { @include half(margin, top); }
 .pb-1\/2 { @include half(padding, bottom); }
-.pt-1\/2{ @include half(padding, top); }
+.pt-1\/2 { @include half(padding, top); }
 
 
 
@@ -94,10 +94,10 @@ $spacingXl: 6rem;
 
 // Use this on container or row to create a small width textblock
 .narrow-content {
-	max-width: 900px;
-	margin: auto;
+  margin: auto;
+  max-width: 900px;
 }
 
 .last-child-no-margin *:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }

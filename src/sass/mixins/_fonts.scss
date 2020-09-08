@@ -15,14 +15,14 @@
 */
 
 @mixin font-family-01($color, $weight) {
+  color: $color;
   font-family: arial, sans-serif;
   font-weight: $weight;
-  color: $color;
-  opacity: 0; // smooth the font swap
   letter-spacing: 0.02em;
+  opacity: 0; // smooth the font swap
 
   .fonts-loaded & {
-    font-family: "sofia-pro";
+    font-family: 'sofia-pro';
     opacity: 1;
     transition: opacity 0.2s linear;
   }
@@ -34,12 +34,12 @@
 }
 
 @mixin font-family-02($color, $weight) {
+  color: $color;
   font-family: arial, sans-serif;
   font-weight: $weight;
-  color: $color;
 
   .fonts-loaded & {
-    font-family: "neue-haas-unica";
+    font-family: 'neue-haas-unica';
   }
 }
 
