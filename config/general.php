@@ -35,7 +35,7 @@ return [
         'aliases' => [
         '@webroot' => dirname(__DIR__) . '/web',
         '@rootUrl' => getenv('SITE_URL'),
-        '@iconsUrl' => getenv('SITE_URL') . '/img/svg-sprite.svg',
+        '@svgPath' => getenv('SITE_URL') . '/img/svg-sprite.svg',
         '@assetsUrl' => getenv('SITE_URL') . '/assets',
         '@assetsPath' => dirname(__DIR__) . '/web/assets',
         ],
