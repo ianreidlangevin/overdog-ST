@@ -4,7 +4,7 @@
 _Following documentation is only in French for the moment_
 
 #### Version
-0.9.5
+0.9.6
 Project under development - do not use it before a stable version
 
 #### Author
@@ -18,6 +18,7 @@ Ian Reid Langevin (3e joueur) • ian@3ejoueur.com
 - [Installation de Craft](#installation-de-craft)
 - [Webpack et compilation](#webpack-et-compilation)
 - [Utilitaires](#utilitaires)
+- [Roadmap](#roadmap)
 
 <!-- /TOC -->
 
@@ -68,7 +69,7 @@ Dans votre fichier _.env_, allez inscrire votre url de développement, les infos
 
 
 
-# Installation de Craft
+# Installation
 
 ### Installez Craft CMS
 
@@ -77,19 +78,13 @@ Dans votre fichier _.env_, allez inscrire votre url de développement, les infos
 ./craft setup/welcome
 ```
 2. Inscrire les renseignements de votre base de données, host, etc.
-3. Cela va aussi générer une SECURITY_KEY dans votre fichier .env. Cette clé sera la même pour tous, donc à garder dans le trousseau.
+3. Cela va aussi générer une SECURITY_KEY dans votre fichier .env. Cette clé sera la même pour tous, donc à garder dans votre app trousseau (LastPass, 1password, etc.).
 
 > Pour le nom du site, faitez seulement _Enter_. Votre installation va se synchroniser avec les paramètres de Overdog par la suite.
 
-### Synchronisez les paramètres de départ de Overdog
 
-Dans votre dossier de projet, faire dans le terminal :
 
-```
-./craft project-config/apply
-```
-
-### Installez des modules Node
+### Installez les modules Node
 
 Encore dans le dossier de projet ? Faites :
 ```
@@ -99,7 +94,7 @@ yarn install
 - Cela va installer toutes les dépendances pour les _builds_ du projet. Webpack, Browsersync, etc.
 - C'est aussi via cet outil que vous pourrez installer des plugins ou librairies Javascript.
 
-> Les instructions pour utiliser correctement la config _Webpack_ se trouvent à la fin de ce document.
+> Les instructions pour utiliser Yarn se trouvent dans la section Utilitaires de ce document.
 
 
 
@@ -113,6 +108,11 @@ Pour commencer à développer, allez dans le dossier du projet et faites dans vo
 yarn start
 ```
 
+
+Cela va démarrer la surveillance de vos fichiers, fusionner votre scss et JS.
+
+> Pour afficher les changements sans page reload, utilisez http://localhost:3000 Cela va prendre dans votre fichier .env la variable SITE_URL
+
 Pour arrêter le live watch, Browsersync et le proxy, faire :
 
 ```
@@ -120,16 +120,9 @@ CTRL + C
 ```
 
 
-Cela va démarrer la surveillance de vos fichiers, fusionner votre scss et JS.
-
-> Pour afficher les changements sans page reload, utilisez http://localhost:3000
-
-Cela va prendre dans votre fichier .env la variable SITE_URL
-
-
 ## Créer un build de production
 
-Avant tout déploiement en ligne, que ce soit staging ou prod, faites :
+AVANT TOUT DÉPLOIEMENT EN LIGNE, que ce soit staging ou prod, faites :
 
 ```
 yarn build
@@ -137,16 +130,30 @@ yarn build
 
 ### Cela va :
 1. Ajouter un hash devant les fichiers compilés pour le _cache busting_
-1. Minifier et créer les _chunks_ du code du projet
+1. Minifier et créer les _chunks_ du code du projet, en séparant les vendors dans un fichier distinct
 2. Appliquer les _polyfills_ selon notre config Babel
-3. Générer un _Critical CSS_ pour la page d'accueil
-4. Supprimer tout le contenu du dossier web/dist avant d'y mettre nos nouveaux fichiers compilés
+3. Générer un _Critical CSS_ pour la page d'accueil, le site doit être en mode Staging ou Production pour qu'il soit ajouté dans le head
+4. Supprimer tout le contenu du dossier web/dist avant d'y mettre les nouveaux fichiers compilés
 
 
 
 # Utilitaires
 
-### Sasslint
+
+### SVGO - création du sprite SVG
+
+Faire à la racine du projet :
+
+```
+yarn svg
+```
+
+> Cela va prendre tous les Svg dans le dossier src/svg et créer des versions optimisées dans src/svg/temp-optimized. Ces fichiers seront ensuite combinéS en _symbol_ dans un sprite disponible dans web/img. Le ID de chaque _symbol_ est le nom du fichier svg.
+
+ATTENTION : les versions optimisées sont supprimées lors de chaque commande yarn svg. Il s'agit de fichiers temporaires qui sont joints au sprite et ne sont pas _commités_. Cela peut être aussi utile si vous souhaitez copier un code svg optimisé pour le joindre de manière Inline dans votre code. Ne jamais pointer sur ces fichiers directement de votre code.
+
+
+### Stylelint
 
 Pour _linter_ et _autofixer_ le Scss du projet :
 
@@ -155,17 +162,19 @@ yarn lint:fix
 ```
 
 
-### Ajouter ou supprimer un paquet
+### Ajouter ou supprimer un paquet Node
 
-Si un paquet pour le développement (Webpack, etc.) :
 
-```
-yarn add [package] -D
-```
-Si un paquet pour le projet (Bootstrap, Flickity, etc.) :
+1. Si un paquet pour le projet (Bootstrap, Flickity, etc.) :
 
 ```
 yarn add [package]
+```
+
+2. Si un paquet pour le développement (Webpack, etc.) :
+
+```
+yarn add [package] -D
 ```
 
 Pour enlever un paquet, faire yarn remove [package]
@@ -176,5 +185,15 @@ Pour enlever un paquet, faire yarn remove [package]
 
 #### À noter
 
-1. Votre fichier _.env_ ne doit jamais être dans un commit. Les infos s'y trouvant doivent être ajoutés dans un trousseau (LastPass, 1password, etc.).
+1. Votre fichier _.env_ ne doit jamais être dans un _commit_. Les infos s'y trouvant doivent être ajoutées dans un trousseau (LastPass, 1password, etc.).
 2. Si vous ajoutez des variables au fichier env (exemple, une clé API, un token, etc.), n'oubliez pas de modifier le fichier .env.example pour faciliter le partage du projet.
+
+
+
+# Roadmap
+
+### To do
+- Linter avec un hook pre-commit via Husky et lint-staged
+- Ajouter Eslint pour le Javascript
+- Enlever les styles de base et JS et les mettre dans une librairie externe. Plus facile pour la maintenance future. Overdog sera la structure fonctionnelle du projet, la librairie sera l'habillage.
+- Créer une librairie de composantes html/twig.
