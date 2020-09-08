@@ -10,7 +10,7 @@
     "build": "webpack --config webpack.prod.js --progress --hide-modules",
     "lint": "yarn stylelint src/sass/**/*.scss",
     "lint:fix": "yarn stylelint src/sass/**/*.scss --fix",
-    "svg": "node .imagemin-svgo.js && yarn svgstore -o web/img/svg-sprite.svg src/svg/temp-optimized/*.svg --inline && yarn rimraf src/svg/temp-optimized"
+    "svg": "yarn rimraf src/svg/temp-optimized/* && node .imagemin-svgo.js && yarn svgstore -o web/img/svg-sprite.svg src/svg/temp-optimized/*.svg --inline"
   },
   "browserslist": [
     "defaults"
