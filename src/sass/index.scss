@@ -1,45 +1,37 @@
-
-/*
-* OUR THEME VARIABLES - MUST BE ENQUEUED BEFORE BOOTSRAP OR OTHER CSS FRAMEWORK
-*/
-
+// Variables and configs
 @import 'abstracts/variables';
 
-/*
-* MIXINS
-*/
-
+// Mixins
 @import 'mixins/objectfit';
 @import 'mixins/transitions';
 @import 'mixins/typography';
 
-/*
-* OUR THEME SCSS
-*/
-
-
-// base folder
+// Base
 @import 'base/breakpoints';
 @import 'base/grid';
 @import 'base/reset';
 @import 'base/spacing'; // must be loaded after grid to avoid important on px and py
 
-// display folder
+// Typography
 @import 'typography/titles';
 @import 'typography/wysiwyg';
 
-// components folder
+// Components
 
 
-// layout folder
+// Layout
 @import 'layout/footer';
 
-// navigation folder
+// Navigation
 @import 'navigation/menu';
 @import 'navigation/navbar';
 
-// utilities folder
+// Utilities classes
+@import 'utilities/colors';
+@import 'utilities/display';
+@import 'utilities/embed';
+@import 'utilities/flex';
 @import 'utilities/lazyload';
 @import 'utilities/screenreaders';
-
-// components
+@import 'utilities/stretched-link';
+@import 'utilities/text';

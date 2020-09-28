@@ -56,22 +56,7 @@ $navbar-height-lg: 100px;
 
 
 /*
-* EMBED RATIO
-* -----------------------------------------------------------------------------------------------*/
-
-$embed-responsive-aspect-ratios: ();
-$embed-responsive-aspect-ratios: join((
-  (21 9),
-  (16 9),
-  (4 3),
-  (1 1),
-),
-$embed-responsive-aspect-ratios);
-
-
-
-/*
-* BASE SPACERS
+* BASE SPACERS MAP
 * -----------------------------------------------------------------------------------------------*/
 
 $spacer: 3rem;
@@ -86,18 +71,8 @@ $spacers: map-merge((
 ), $spacers);
 
 
-
 /*
-* GRID
-* -----------------------------------------------------------------------------------------------*/
-
-$grid-columns: 12;
-$grid-gutter-width: 30px;
-
-
-
-/*
-* BREAKPOINTS
+* BREAKPOINTS MAP
 * -----------------------------------------------------------------------------------------------*/
 
 $grid-breakpoints: (
@@ -111,6 +86,11 @@ $grid-breakpoints: (
   xxxxl: 1700px
 );
 
+/*
+* CONTAINER WIDTH MAP
+* -----------------------------------------------------------------------------------------------*/
+
+
 $container-max-widths: (
   xs: 90%,
   sm: 90%,
@@ -121,3 +101,11 @@ $container-max-widths: (
   xxxl: 1440px,
   xxxxl: 1640px
 );
+
+
+/*
+* GRID COLUMNS AND WIDTH
+* -----------------------------------------------------------------------------------------------*/
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;
