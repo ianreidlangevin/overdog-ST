@@ -5,10 +5,10 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 
 // Add-on to Bootstrap accordion - Scroll to view when accordion collapse
-// USE ONLY FOR ACCORDIONS WITH VIDEO IN CONSEIL
 
-  $('.accordions__video').on('shown.bs.collapse', function(e) {
-    $('html,body').animate({
-      scrollTop: $(this).offset().top - 160
-    }, 500);
-  });
+$('.accordions__content').on('shown.bs.collapse', function(e) {
+  var $accordionItem = $(this).closest('.accordions__item');
+  $('html,body').animate({
+    scrollTop: $accordionItem.offset().top - 120
+  }, 500);
+});

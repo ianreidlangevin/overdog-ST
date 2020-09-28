@@ -6,9 +6,7 @@
 				<svg class="navbar__logo-img"><use xlink:href="{{ alias('@svgPath') }}#logo-overdog"></use></svg>
 			</a>
 		</div>
-		<button class="navbar__hamburger" type="button" aria-label="menu button">
-			<span class="hamburger__box"><span class="hamburger__inner"></span></span>
-		</button>
+		<button class="navbar__menu-button" type="button" aria-label="{{ 'Menu button'|t }}" aria-haspopup="true" aria-expanded="false">Menu</button>
 	</div>
 	{% include "_navigation/menu" %}
 </div>

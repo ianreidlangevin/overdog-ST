@@ -1,11 +1,16 @@
 
 var $ = require('jquery');
 
-var body = $("body");
 
 // MEGA MENU
 
-function meganav_toggle(){
-  body.toggleClass("mega-nav--open");
-}
-$(".navbar__hamburger").on('click', meganav_toggle);
+$(".navbar__menu-button").on('click', function () {
+
+  // toggle class on body
+  $("body").toggleClass("mega-nav--open");
+  // change aria expanded
+  $(this).attr('aria-expanded', function (index, attr) {
+    return attr == 'true' ? 'false' : 'true'
+  });
+
+});

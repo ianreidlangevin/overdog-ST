@@ -30,13 +30,13 @@
     width: 22px;
 
     path {
-      @include transitionOutEase(fill);
+      @include transition-out-ease(fill);
 
       fill: #869ab3;
     }
 
     &:hover path {
-      @include transitionInEase(fill);
+      @include transition-in-ease(fill);
 
       fill: #333;
     }

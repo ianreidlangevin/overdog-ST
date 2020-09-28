@@ -5,16 +5,10 @@
 *
 * -----------------------------------------------------------------------------------------------*/
 
-/*
-* SPACING variables
-* Les variables servent a aligner le blockquote et les listes uniformement
-*/
-$spacingLeftDesktop: 2em;
-$spacingLeftMobile: 0;
 
 .wysiwyg {
 
-  // clearfix - important if image in editor
+  // clear - important if image in editor
   &::after {
     clear: both;
     content: '';
@@ -25,24 +19,21 @@ $spacingLeftMobile: 0;
   h2,
   h3,
   h4 {
-    strong {
-      color: $primary;
-      font-weight: 300; // remove the habilities to add bold to h tag in editor - style as you want
-    }
+    @include font-family-01($primary, 400);
   }
 
   h2 {
-    @include title-02($primary);
+    font-size: 2rem;
     margin: 1.5em 0 1em;
   }
 
   h3 {
-    @include title-03($primary);
+    font-size: 1.6rem;
     margin: 1.5em 0 0.6em;
   }
 
   h4 {
-    @include title-04($primary);
+    font-size: 1.4rem;
     margin: 1.5em 0 0.6em;
   }
 
@@ -136,23 +127,6 @@ $spacingLeftMobile: 0;
     max-width: 100%;
   }
 
-  /*
-  * KEYBOARD STYLE
-  */
-
-  kbd {
-    background-color: $grey01;
-    border: 1px solid $grey02;
-    border-radius: 2px;
-    color: $black;
-    display: inline-block;
-    font-size: 0.85em;
-    font-weight: 500;
-    line-height: 1;
-    padding: 2px 8px;
-    white-space: nowrap;
-  }
-
 
   /*
   * Blockquote
@@ -161,14 +135,8 @@ $spacingLeftMobile: 0;
   blockquote {
     color: $grey02;
     font-style: italic;
-    margin-left: $spacingLeftMobile;
     padding: 1rem 2em;
     position: relative;
-
-    @include media-breakpoint-up(sm) {
-      margin-left: $spacingLeftDesktop;
-      padding-right: $spacingLeftDesktop;
-    }
 
     &::before {
       background-color: $grey01;
@@ -189,10 +157,9 @@ $spacingLeftMobile: 0;
 
   > ul {
     margin-bottom: 2rem;
-    padding-left: $spacingLeftMobile;
 
     @include media-breakpoint-up(lg) {
-      padding-left: $spacingLeftDesktop;
+      padding-left: 2em;
     }
 
     > li {
@@ -241,11 +208,10 @@ $spacingLeftMobile: 0;
   > ol {
     counter-reset: my-counter;
     margin-bottom: 2rem;
-    padding-left: $spacingLeftMobile;
     padding-top: 1rem;
 
     @include media-breakpoint-up(sm) {
-      padding-left: $spacingLeftDesktop;
+      padding-left: 2em;
     }
 
     > li {

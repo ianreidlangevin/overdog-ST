@@ -4,14 +4,14 @@
 * Add your mixins for consistant transitions everywhere
 */
 
-@mixin transitionInEase($property) {
+@mixin transition-in-ease($property) {
   transition: $property 0.2s ease-in-out;
 }
 
-@mixin transitionOutEase($property) {
+@mixin transition-out-ease($property) {
   transition: $property 0.4s ease-in-out;
 }
 
-@mixin transitionCubic($property) {
+@mixin transition-cubic($property) {
   transition: $property 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }

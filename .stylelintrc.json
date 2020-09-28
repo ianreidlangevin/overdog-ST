@@ -1,5 +1,8 @@
 {
   "extends": "stylelint-config-sass-guidelines",
+  "ignoreFiles": [
+    "src/sass/base/*.scss"
+  ],
   "defaultSeverity": "warning",
   "rules": {
     "max-nesting-depth": 3,

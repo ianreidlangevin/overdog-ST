@@ -1,0 +1,20 @@
+/*
+* CSS LAZYLOAD OPACITY
+*
+* Couleur appliquée sur le picture tag et image qui load en opacity.
+* Voir le site de Youtube pour inspiration - placeholder de couleur
+* Le background color doit etre mise sur le picture tag
+*
+* -----------------------------------------------------------------------------------------------*/
+
+
+.lazyload-opacity {
+  opacity: 0;
+
+  &.lazyloaded,
+  &.ls-is-cached {
+    @include transition-in-ease(opacity);
+    opacity: 1;
+  }
+
+}

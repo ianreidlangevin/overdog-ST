@@ -9,33 +9,37 @@
 * MIXINS
 */
 
-@import 'mixins/breakpoints';
-@import 'mixins/fonts';
 @import 'mixins/objectfit';
 @import 'mixins/transitions';
+@import 'mixins/typography';
 
 /*
 * OUR THEME SCSS
 */
 
+
 // base folder
-@import 'base/reset';
-@import 'base/utilities';
+@import 'base/breakpoints';
 @import 'base/grid';
+@import 'base/reset';
 @import 'base/spacing'; // must be loaded after grid to avoid important on px and py
-@import 'base/typography';
-@import 'base/wysiwyg';
+
+// display folder
+@import 'typography/titles';
+@import 'typography/wysiwyg';
 
 // components folder
-@import 'components/buttons';
-@import 'components/links';
+
 
 // layout folder
 @import 'layout/footer';
 
 // navigation folder
-@import 'navigation/navbar';
-@import 'navigation/button';
 @import 'navigation/menu';
+@import 'navigation/navbar';
+
+// utilities folder
+@import 'utilities/lazyload';
+@import 'utilities/screenreaders';
 
 // components

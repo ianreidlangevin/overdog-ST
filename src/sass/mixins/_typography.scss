@@ -1,0 +1,33 @@
+/*
+* MIXINS FONTS
+*
+*/
+
+@mixin font-family-01($color, $weight) {
+  color: $color;
+  font-family: arial, sans-serif;
+  font-weight: $weight;
+  opacity: 0; // smooth the font swap
+
+  .fonts-loaded & {
+    font-family: $font-family-title; // add your custom font here
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
+
+  .fonts-not-loaded & {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
+}
+
+
+@mixin font-family-02($color, $weight) {
+  color: $color;
+  font-family: $font-family-title;
+  font-weight: $weight;
+
+  .fonts-loaded & {
+    font-family: arial, sans-serif; // add your custom font here
+  }
+}

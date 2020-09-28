@@ -63,22 +63,12 @@ body {
 * GENERAL
 * -----------------------------------------------------------------------------------------------*/
 
-a,
-button:focus,
-input,
-select,
-textarea {
-  outline: none;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box; // 1
 }
 
-
-:focus {outline: none !important;}
 ::-moz-focus-inner {border: 0;}
 
 
