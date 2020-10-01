@@ -80,7 +80,7 @@ Dans votre fichier _.env_, allez inscrire votre url de développement, les infos
 2. Inscrire les renseignements de votre base de données, host, etc.
 3. Cela va aussi générer une SECURITY_KEY dans votre fichier .env. Cette clé sera la même pour tous, donc à garder dans votre app trousseau (LastPass, 1password, etc.).
 
-> Pour le nom du site, faitez seulement _Enter_. Votre installation va se synchroniser avec les paramètres de Overdog par la suite.
+> Pour le nom du site, le site url et la langue, faites seulement _Enter_. Votre installation va se synchroniser avec les paramètres de Overdog par la suite.
 
 
 
@@ -127,6 +127,8 @@ AVANT TOUT DÉPLOIEMENT EN LIGNE, que ce soit staging ou prod, faites :
 ```
 yarn build
 ```
+
+Important : Votre serveur local doit etre actif lors du build.
 
 ### Cela va :
 1. Ajouter un hash devant les fichiers compilés pour le _cache busting_

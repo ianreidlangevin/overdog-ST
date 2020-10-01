@@ -1,103 +1,50 @@
+/*
+--------------------------------------------------------------------------
+  Spacing utility classes based on a default value for each breakpoint
+  Author : Ian Reid Langevin @3ejoueur - 2020
+--------------------------------------------------------------------------
 
-/* Global margin bottom */
+  1. Set your primary spacing for each breakpoint in rem.
+  2. Use the full spacing default value like this : mb-full for margin-bottom or pt-full for padding-top
+  3. Use mb-half or pt-twothird to create spacing based on default values. It allowed full consistancy accross project.
 
-$spacingXs: 4.5rem;
-$spacingSm: 5rem;
-$spacingMd: 5rem;
-$spacingXl: 6rem;
-
-
-@mixin default($property, $orientation) {
-  #{$property}-#{$orientation}: $spacingXs;
-  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm; }
-  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd; }
-  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl; }
-}
-
-.mb { @include default(margin, bottom); }
-.mt { @include default(margin, top); }
-.pb { @include default(padding, bottom); }
-.pt { @include default(padding, top); }
-
-
-@mixin one-third($property, $orientation) {
-  #{$property}-#{$orientation}: $spacingXs * 0.33;
-  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.33; }
-  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.33; }
-  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.33; }
-}
-
-.mb-1\/3 { @include one-third(margin, bottom); }
-.mt-1\/3 { @include one-third(margin, top); }
-.pb-1\/3 { @include one-third(padding, bottom); }
-.pt-1\/3 { @include one-third(padding, top); }
-
-
-@mixin two-third($property, $orientation) {
-  #{$property}-#{$orientation}: $spacingXs * 0.66;
-  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.66; }
-  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.66; }
-  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.66; }
-}
-
-
-.mb-2\/3 { @include two-third(margin, bottom); }
-.mt-2\/3 { @include two-third(margin, top); }
-.pb-2\/3 { @include two-third(padding, bottom); }
-.pt-2\/3 { @include two-third(padding, top); }
-
-
-@mixin one-quarter($property, $orientation) {
-  #{$property}-#{$orientation}: $spacingXs * 0.25;
-  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.25; }
-  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.25; }
-  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.25; }
-}
-
-.mb-1\/4 { @include one-quarter(margin, bottom); }
-.mt-1\/4 { @include one-quarter(margin, top); }
-.pb-1\/4 { @include one-quarter(padding, bottom); }
-.pt-1\/4 { @include one-quarter(padding, top); }
-
-@mixin three-quarter($property, $orientation) {
-  #{$property}-#{$orientation}: $spacingXs * 0.75;
-  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.75; }
-  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.75; }
-  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.75; }
-}
-
-.mb-3\/4 { @include three-quarter(margin, bottom); }
-.mt-3\/4 { @include three-quarter(margin, top); }
-.pb-3\/4 { @include three-quarter(padding, bottom); }
-.pt-3\/4 { @include three-quarter(padding, top); }
-
-
-
-@mixin half($property, $orientation) {
-  #{$property}-#{$orientation}: $spacingXs * 0.5;
-  @include media-breakpoint-up(sm) { #{$property}-#{$orientation}: $spacingSm * 0.5; }
-  @include media-breakpoint-up(md) { #{$property}-#{$orientation}: $spacingMd * 0.5; }
-  @include media-breakpoint-up(xl) { #{$property}-#{$orientation}: $spacingXl * 0.5; }
-}
-
-.mb-1\/2 { @include half(margin, bottom); }
-.mt-1\/2 { @include half(margin, top); }
-.pb-1\/2 { @include half(padding, bottom); }
-.pt-1\/2 { @include half(padding, top); }
-
-
+*/
 
 /*
-* SPACING UTILITIES
-* -----------------------------------------------------------------------------------------------*/
+  Map Full values
+  Values are examples
+  Add your value and breakpoints prefix if you want to
+*/
 
+$fullvalues: (
+  xs: 4rem,
+  sm: 5rem,
+  md: 6rem,
+  xl: 7rem,
+);
 
-// Use this on container or row to create a small width textblock
-.narrow-content {
-  margin: auto;
-  max-width: 900px;
-}
+/* Fractions used in classes */
+$fractions: (
+  "full": 1, /* default full */
+  "threequarter": 0.75, /* 3/4 of the full value for each breakpoint */
+  "twothird": 0.66, /* 2/3 of the full value for each breakpoint */
+  "half": 0.5, /* 1/2 of the full value for each breakpoint */
+  "third": 0.33, /* 1/3 of the full value for each breakpoint */
+  "quarter": 0.25, /* 1/4 of the full value for each breakpoint */
+);
 
-.last-child-no-margin *:last-child {
-  margin-bottom: 0;
+@each $fraction, $percentage in $fractions {
+  @each $property, $abbr in (margin: m, padding: p) {
+    @each $orientation, $orientationabbr in (bottom: b, top: t) {
+
+      @each $name, $fullvalue in $fullvalues {
+        .#{$abbr}#{$orientationabbr}-#{$fraction} {
+          @include media-breakpoint-up($name) {
+            #{$property}-#{$orientation}: $fullvalue * $percentage;
+          }
+        }
+      }
+
+    }
+  }
 }

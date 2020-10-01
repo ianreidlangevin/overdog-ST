@@ -1,12 +1,13 @@
 /*
-* NAVBAR
-* ----------------------------------------------------------------------------------------------- */
-// height variables are located in the variables scss file.
+ |--------------------------------------------------------------------------
+ | Navbar
+ |--------------------------------------------------------------------------
+*/
 
 .navbar {
   background-color: $grey01;
   display: flex;
-  height: $navbar-height;
+  height: 70px;
   left: 0;
   margin: auto;
   padding: 0;
@@ -17,11 +18,11 @@
   z-index: 100;
 
   @include media-breakpoint-up(md) {
-    height: $navbar-height-md;
+    height: 80px;
   }
 
   @include media-breakpoint-up(lg) {
-    height: $navbar-height-lg;
+    height: 100px;
   }
 
   .navbar--shrink & {

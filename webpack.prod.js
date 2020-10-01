@@ -6,6 +6,9 @@ const path = require('path');
 
 /* PLUGINS ET UTILITIES */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+
+/* CRITICAL CSS */
 const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
 const devURL = dotenv.parsed.SITE_URL;
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
@@ -17,6 +20,12 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 /* DELETE LE CONTENU DU DOSSIER AVANT DE GENERER LES FICHIERS */
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+/* Glob and Path used by PURGE CSS to easily get a list of files */
+const glob = require('glob')
+const PATHS = {
+  src: path.join(__dirname, 'templates')
+}
 
 
 module.exports = merge(common, {
@@ -31,6 +40,10 @@ module.exports = merge(common, {
 
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
+    }),
+    
+    new PurgecssPlugin({
+        paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
     }),
 
     new HtmlCriticalWebpackPlugin({

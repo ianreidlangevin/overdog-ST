@@ -7,12 +7,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-/* DELETE LE CONTENU DU DOSSIER AVANT DE GENERER LES FICHIERS */
-const glob = require('glob')
-const PATHS = {
-  src: path.join(__dirname, 'templates')
-}
-
 module.exports = {
 
   entry: {

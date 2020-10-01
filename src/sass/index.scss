@@ -1,4 +1,16 @@
-// Variables and configs
+/*
+--------------------------------------------------------------------------
+  Main SCSS file
+--------------------------------------------------------------------------
+
+  1. Do not remove the purgeCSS ignore comment in this file around your project elements.
+  2. PurgeCSS will only remove all base and utility classes not used in your templates folder on Yarn build process.
+  3. If you prefer to use Bootstrap, replace all the base and utilities folder.
+
+*/
+
+
+// Variables
 @import 'abstracts/variables';
 
 // Mixins
@@ -12,20 +24,6 @@
 @import 'base/reset';
 @import 'base/spacing'; // must be loaded after grid to avoid important on px and py
 
-// Typography
-@import 'typography/titles';
-@import 'typography/wysiwyg';
-
-// Components
-
-
-// Layout
-@import 'layout/footer';
-
-// Navigation
-@import 'navigation/menu';
-@import 'navigation/navbar';
-
 // Utilities classes
 @import 'utilities/colors';
 @import 'utilities/display';
@@ -35,3 +33,23 @@
 @import 'utilities/screenreaders';
 @import 'utilities/stretched-link';
 @import 'utilities/text';
+
+
+/*! purgecss start ignore */
+
+  // Typography
+  @import 'typography/titles';
+  @import 'typography/wysiwyg';
+
+  // Components
+
+
+  // Navigation
+  @import 'navigation/menu';
+  @import 'navigation/navbar';
+
+  // Layout
+  @import 'layout/footer';
+
+
+/*! purgecss end ignore */

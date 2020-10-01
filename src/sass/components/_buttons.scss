@@ -1,0 +1,43 @@
+
+
+// Buttons
+.btn {
+  appearance: none;
+  background: $bg-color-light;
+  border: $border-width solid $primary-color;
+  border-radius: $border-radius;
+  color: $primary-color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size;
+  height: $control-size;
+  line-height: $line-height;
+  outline: none;
+  padding: $control-padding-y $control-padding-x;
+  text-align: center;
+  text-decoration: none;
+  transition: background .2s, border .2s, box-shadow .2s, color .2s;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  &:focus {
+    @include control-shadow();
+  }
+  &:focus,
+  &:hover {
+    background: $secondary-color;
+    border-color: $primary-color-dark;
+    text-decoration: none;
+  }
+  &:active {
+    background: $primary-color-dark;
+    color: $light-color;
+    text-decoration: none;
+  }
+  &[disabled],
+  &:disabled,
+  &.disabled {
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
+  }

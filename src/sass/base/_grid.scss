@@ -1,7 +1,11 @@
+/*
+--------------------------------------------------------------------------
+  Grid layout mixins and classes
+--------------------------------------------------------------------------
+*/
 
-// Container widths
 
-// For each breakpoint, define the maximum width of the container in a media query
+/* For each breakpoint, define the maximum width of the container in a media query */
 @mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
   @each $breakpoint, $container-max-width in $max-widths {
     @include media-breakpoint-up($breakpoint, $breakpoints) {
@@ -10,6 +14,7 @@
   }
 }
 
+/* Container with max-width */
 .container {
   @include make-container-max-widths();
   margin-left: auto;
@@ -19,16 +24,15 @@
   width: 100%;
 }
 
-// Fluid container
-
+/* Container full-width */
 .container-fluid {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
-// Row
 
+/* Row */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -74,7 +78,7 @@
 }
 
 
-// Columns
+/* Columns */
 
 %grid-column {
   padding-left: $grid-gutter-width / 2;
@@ -140,4 +144,18 @@
       }
     }
   }
+}
+
+/*
+--------------------------------------------------------------------------
+  Narrow and add-on classes for grid
+--------------------------------------------------------------------------
+
+  Use this on container or row to create a small width textblock
+
+*/
+
+.narrow-content {
+  margin: auto;
+  max-width: 900px;
 }
