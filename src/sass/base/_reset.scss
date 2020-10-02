@@ -1,22 +1,22 @@
 /*
 --------------------------------------------------------------------------
-  Normalization of HTML elements on Normalize.css (Opinionated)
+  Normalization of HTML elements based on Normalize.css and Suit CSS Base
+  (Opinionated @3ejoueur)
 --------------------------------------------------------------------------
 */
 
 
 html {
-  font-family: sans-serif;
   line-height: 1.15;
-  -webkit-tap-highlight-color: rgba($black, 0);
-  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba($black, 0); // Change the default tap highlight to be completely transparent in iOS
+  -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
 }
 
 
+// root use smaller font-size for better spacing consistency when using rem
 :root {
-  // Used for spacing with rem
   font-size: 12px;
-  /* root font-size = 12px small value add better control for BS spacers padding */
+
   @include media-breakpoint-up(md) {
     font-size: 14px;
   }
@@ -29,10 +29,13 @@ html {
 }
 
 /*
-* BODY
-* -----------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------
+  Body
+--------------------------------------------------------------------------
+*/
 
 body {
+  background-color: $white; // As a best practice, apply a default background-color
   color: $body-color;
   font-family: $font-family-base;
   font-size: 15px;
@@ -57,21 +60,20 @@ body {
 
 
 /*
-* GENERAL
-* -----------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------
+  General
+--------------------------------------------------------------------------
+*/
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box; // 1
+  box-sizing: border-box;
 }
 
-::-moz-focus-inner {border: 0;}
-
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
   color: $grey03;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
 input:required { box-shadow: none; }
@@ -79,118 +81,10 @@ input:invalid { box-shadow: none; }
 
 
 /*
-* TYPOGRAPHY
-* -----------------------------------------------------------------------------------------------*/
-
-
-// Content grouping
-hr {
-  box-sizing: content-box; // 1
-  height: 0; // 1
-  overflow: visible; // 2
-}
-
-abbr[title],
-abbr[data-original-title] { // 1
-  border-bottom: 0; // 4
-  cursor: help; // 3
-  text-decoration: underline; // 2
-  text-decoration: underline dotted; // 2
-  text-decoration-skip-ink: none; // 5
-}
-
-address {
-  font-style: normal;
-  line-height: inherit;
-}
-
-ul,
-dl {
-  margin-bottom: 1rem;
-  margin-top: 0;
-}
-
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  margin-bottom: 0;
-}
-
-
-small {
-  font-size: 0.9em;
-}
-
-
-sub,
-sup {
-  font-size: 0.8em;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub { bottom: -0.25em; }
-sup { top: -0.5em; }
-
-b,
-strong {
-  color: $black;
-  font-weight: 500; // Add the correct font weight in Chrome, Edge, and Safari
-}
-
-
-/*
-* IMAGE AND FIGURES
-* -----------------------------------------------------------------------------------------------*/
-
-
-figure {
-  // Apply a consistent margin strategy (matches our type styles).
-  margin: 0 0 1rem;
-  max-width: 100%;
-}
-
-img {
-  border-style: none; // Remove the border on images inside links in IE 10-.
-  color: transparent; // hide alt on lazyload
-  vertical-align: middle;
-}
-
-svg {
-  // Workaround for the SVG overflow bug in IE10/11 is still required.
-  // See https://github.com/twbs/bootstrap/issues/26878
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-
-/*
-* TABLES
-* -----------------------------------------------------------------------------------------------*/
-
-table {
-  border-collapse: collapse; // Prevent double borders
-}
-
-caption {
-  caption-side: bottom;
-  color: $primary;
-  padding-bottom: 0.75rem;
-  padding-top: 0.3rem;
-  text-align: left;
-}
-
-th {
-  // Matches default `<td>` alignment by inheriting from the `<body>`, or the
-  // closest parent with a set `text-align`.
-  text-align: inherit;
-}
-
-/*
-* HEADING TAG MARGIN
-* -----------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------
+  Text-level semantics
+--------------------------------------------------------------------------
+*/
 
 h1,
 h2,
@@ -201,184 +95,201 @@ h6 {
   margin: 0;
 }
 
+b,
+strong {
+  font-weight: bolder; // Add the correct font weight in Chrome, Edge, and Safari
+}
 
-/*
-* LABEL AND FORMS
-* -----------------------------------------------------------------------------------------------*/
+ol,
+dl,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-label {
-  // Allow labels to use margin for spacing
-  display: inline-block;
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+abbr[title] {
+  border-bottom: none; // Remove the bottom border in Chrome 57-
+  text-decoration: underline; // Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted; // Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari
+}
+
+small {
+  font-size: 80%;
+}
+
+
+// Prevent sub and sup elements from affecting the line height in all browsers
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 
 /*
-* BUTTONS AND INPUT
-* -----------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------
+  Media and embed content
+--------------------------------------------------------------------------
+*/
 
 
-button {
-  appearance: none;
-  background: none;
-  border: 0;
-  border-radius: 0;
-  color: inherit;
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
 }
 
-input,
+img,
+figure,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*
+--------------------------------------------------------------------------
+  Tables
+--------------------------------------------------------------------------
+*/
+
+table {
+  border-collapse: collapse; // Prevent double borders
+}
+
+
+/*
+--------------------------------------------------------------------------
+  Forms and buttons
+--------------------------------------------------------------------------
+*/
+
+
 button,
-select,
+input,
 optgroup,
+select,
 textarea {
-  font-family: inherit;
-  font-size: inherit;
+  font-family: inherit; // Change the font styles in all browsers
+  font-size: 100%;
   line-height: inherit;
   margin: 0; // Remove the margin in Firefox and Safari
 }
 
 button,
-input {
-  overflow: visible; // Show the overflow in Edge
+input { // Show the overflow in Edge
+  overflow: visible;
 }
 
 button,
-select {
-  text-transform: none; // Remove the inheritance of text transform in Firefox
+select { // Remove the inheritance of text transform in Edge and Firefox
+  text-transform: none;
 }
 
-// Remove the inheritance of word-wrap in Safari.
-//
-// Details at https://github.com/twbs/bootstrap/issues/24990
-select {
-  word-wrap: normal;
-}
-
-
-// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-//    controls in Android 4.
-// 2. Correct the inability to style clickable types in iOS and Safari.
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button; // 2
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; // Correct the inability to style clickable types in iOS and Safari
 }
 
-// Opinionated: add "hand" cursor to non-disabled button elements.
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  &:not(:disabled) {
-    cursor: pointer;
-  }
-}
-
-// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  border-style: none;
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none; // Remove the inner border and padding in Firefox
   padding: 0;
 }
 
-input[type='radio'],
-input[type='checkbox'] {
-  box-sizing: border-box; // 1. Add the correct box sizing in IE 10-
-  padding: 0; // 2. Remove the padding in IE 10-
-}
-
-
-input[type='date'],
-input[type='time'],
-input[type='datetime-local'],
-input[type='month'] {
-  // Remove the default appearance of temporal inputs to avoid a Mobile Safari
-  // bug where setting a custom line-height prevents text from being vertically
-  // centered within the input.
-  // See https://bugs.webkit.org/show_bug.cgi?id=139848
-  // and https://github.com/twbs/bootstrap/issues/11266
-  -webkit-appearance: listbox;
-}
-
-textarea {
-  overflow: auto; // Remove the default vertical scrollbar in IE.
-  // Textareas should really only resize vertically so they don't break their (horizontal) containers.
-  resize: vertical;
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted; // Restore the focus styles unset by the previous rule
 }
 
 fieldset {
-  border: 0;
-  margin: 0;
-  min-width: 0;
-  // Reset the default outline behavior of fieldsets so they don't affect page layout.
-  padding: 0;
+  padding: 0.35em 0.75em 0.625em; // Correct the padding in Firefox
 }
 
-// 1. Correct the text wrapping in Edge and IE.
-// 2. Correct the color inheritance from `fieldset` elements in IE.
+textarea {
+  overflow: auto; // Remove the default vertical scrollbar in IE 10+
+}
+
+/*
+  1. Correct the text wrapping in Edge and IE.
+  2. Correct the color inheritance from fieldset elements in IE.
+  3. Remove the padding so developers are not caught out when they zero out fieldset elements in all browsers.
+*/
 legend {
+  box-sizing: border-box; // 1
   color: inherit; // 2
-  display: block;
-  line-height: inherit;
-  margin-bottom: 0.5rem;
+  display: table; // 1
   max-width: 100%; // 1
-  padding: 0;
+  padding: 0; // 3
   white-space: normal; // 1
-  width: 100%;
 }
 
 progress {
-  vertical-align: baseline; // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+  vertical-align: baseline; // Add the correct vertical alignment in Chrome, Firefox, and Opera
 }
 
-// Correct the cursor style of increment and decrement buttons in Chrome.
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; // Correct the cursor style of increment and decrement buttons in Chrome
 }
 
-[type='search'] {
-  -webkit-appearance: none;
-  // This overrides the extra rounded corners on search inputs in iOS so that our
-  // `.form-control` class can properly style them. Note that this cannot simply
-  // be added to `.form-control` as it's not specific enough. For details, see
-  // https://github.com/twbs/bootstrap/issues/11586.
-  outline-offset: -2px; // 2. Correct the outline style in Safari.
+
+[type="search"] {
+  -webkit-appearance: textfield; // Correct the odd appearance in Chrome and Safari
+  outline-offset: -2px; // Correct the outline style in Safari
 }
 
-// Remove the inner padding in Chrome and Safari on macOS.
 
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; // Remove the inner padding in Chrome and Safari on macOS
 }
-
-// 1. Correct the inability to style clickable types in iOS and Safari.
-// 2. Change font properties to `inherit` in Safari.
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; // 1
-  font: inherit; // 2
-}
-
-// Correct element displays
-
-output {
-  display: inline-block;
-}
-
-summary {
-  cursor: pointer;
-  display: list-item; // Add the correct display in all browsers
-}
-
-template {
-  display: none; // Add the correct display in IE
-}
-
-// Always hide an element with the `hidden` HTML attribute (from PureCSS).
-// Needed for proper display in IE 10-.
-[hidden] {
-  display: none !important;
+  -webkit-appearance: button; // Correct the inability to style clickable types in iOS and Safari
+  font: inherit; // Change font properties to inherit in Safari
 }
