@@ -4,7 +4,6 @@
 --------------------------------------------------------------------------
 */
 
-
 /* For each breakpoint, define the maximum width of the container in a media query */
 @mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
   @each $breakpoint, $container-max-width in $max-widths {
@@ -150,9 +149,7 @@
 --------------------------------------------------------------------------
   Narrow and add-on classes for grid
 --------------------------------------------------------------------------
-
   Use this on container or row to create a small width textblock
-
 */
 
 .narrow-content {

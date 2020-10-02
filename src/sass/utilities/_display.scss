@@ -1,15 +1,19 @@
+/*
+--------------------------------------------------------------------------
+  Displays utility classes
+--------------------------------------------------------------------------
+*/
 
 /*
-* Displays list
-* -----------------------------------------------------------------------------------------------*/
+  Map values
+*/
 
 $displays: none, block, flex;
 
+
 /*
-* Classes
-* Output is .d-{breakpoint}-{value} for all breakpoints
-*
-* -----------------------------------------------------------------------------------------------*/
+  Output is .d-{breakpoint}-{value} for all breakpoints
+*/
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {

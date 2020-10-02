@@ -1,20 +1,47 @@
 /*
-* CSS LAZYLOAD OPACITY
-*
-* Couleur appliquée sur le picture tag et image qui load en opacity.
-* Voir le site de Youtube pour inspiration - placeholder de couleur
-* Le background color doit etre mise sur le picture tag
-*
-* -----------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------
+  Lazyload utility classes
+--------------------------------------------------------------------------
+*/
+
+// TO BE TESTED
 
 
-.lazyload-opacity {
-  opacity: 0;
+/* Important : a wrapper div must be set around the picture tag.
+The wrapper must have a width and a height or a padding-top for responsive ratio.
 
-  &.lazyloaded,
-  &.ls-is-cached {
-    @include transition-in-ease(opacity);
-    opacity: 1;
+  Add this class to the picture tag
+  Structure will be :
+  wrapper with lazy-wrapper class
+    picture tag with
+      source tag for webp with data-srcset and sizes
+      source tag for jpg with data-srcset and sizes
+      img tag with lazyload class on it
+*/
+
+.lazy-wrapper {
+  & > picture {
+    background-color: #eef0f3; // light grey
+    display: flex;
+    height: 100%;
+    width: 100%;
   }
 
+  & > img {
+    @include object-fit(cover, center center);
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.lazyloaded,
+    &.ls-is-cached {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+  } // img
 }

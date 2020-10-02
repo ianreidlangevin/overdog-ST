@@ -25,12 +25,12 @@ $fullvalues: (
 
 /* Fractions used in classes */
 $fractions: (
-  "full": 1, /* default full */
-  "threequarter": 0.75, /* 3/4 of the full value for each breakpoint */
-  "twothird": 0.66, /* 2/3 of the full value for each breakpoint */
-  "half": 0.5, /* 1/2 of the full value for each breakpoint */
-  "third": 0.33, /* 1/3 of the full value for each breakpoint */
-  "quarter": 0.25, /* 1/4 of the full value for each breakpoint */
+  'full': 1, 
+  'threequarter': 0.75, 
+  'twothird': 0.66, 
+  'half': 0.5, 
+  'third': 0.33, 
+  'quarter': 0.25, 
 );
 
 @each $fraction, $percentage in $fractions {

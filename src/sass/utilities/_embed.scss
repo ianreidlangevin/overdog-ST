@@ -1,8 +1,14 @@
-// Credit: Nicolas Gallagher and SUIT CSS.
 
 /*
-* EMBED RATIO MAP
-* -----------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------
+  Embed utility classes
+  Credit: Nicolas Gallagher and SUIT CSS
+--------------------------------------------------------------------------
+*/
+
+/*
+  Map values
+*/
 
 $embed-responsive-aspect-ratios: ();
 $embed-responsive-aspect-ratios: join((
@@ -15,19 +21,19 @@ $embed-responsive-aspect-ratios);
 
 
 /*
-* EMBED RATIO CLASSES
-* -----------------------------------------------------------------------------------------------*/
+  Classes
+*/
 
 .embed-responsive {
-  position: relative;
   display: block;
-  width: 100%;
-  padding: 0;
   overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
 
   &::before {
+    content: '';
     display: block;
-    content: "";
   }
 
   .embed-responsive-item,
@@ -35,13 +41,13 @@ $embed-responsive-aspect-ratios);
   embed,
   object,
   video {
+    border: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    border: 0;
   }
 }
 

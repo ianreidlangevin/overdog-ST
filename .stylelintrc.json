@@ -1,7 +1,9 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "ignoreFiles": [
-    "src/sass/base/*.scss"
+    "src/sass/base/*.scss",
+    "src/sass/mixins/*.scss",
+    "src/sass/utilities/*.scss"
   ],
   "defaultSeverity": "warning",
   "rules": {

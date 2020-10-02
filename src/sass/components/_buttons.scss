@@ -1,43 +1,27 @@
 
-
-// Buttons
 .btn {
   appearance: none;
-  background: $bg-color-light;
-  border: $border-width solid $primary-color;
-  border-radius: $border-radius;
-  color: $primary-color;
+  background: $primary;
+  color: $white;
   cursor: pointer;
   display: inline-block;
-  font-size: $font-size;
-  height: $control-size;
-  line-height: $line-height;
+  font-size: 1em;
   outline: none;
-  padding: $control-padding-y $control-padding-x;
+  padding: 0.5em 1em;
   text-align: center;
-  text-decoration: none;
-  transition: background .2s, border .2s, box-shadow .2s, color .2s;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  &:focus {
-    @include control-shadow();
-  }
+
   &:focus,
-  &:hover {
-    background: $secondary-color;
-    border-color: $primary-color-dark;
-    text-decoration: none;
-  }
+  &:hover,
   &:active {
-    background: $primary-color-dark;
-    color: $light-color;
-    text-decoration: none;
+    background: $secondary;
   }
+
   &[disabled],
   &:disabled,
   &.disabled {
     cursor: default;
-    opacity: .5;
+    opacity: 0.5;
     pointer-events: none;
   }
+
+}

@@ -1,16 +1,18 @@
-//
-// Stretched link
-//
+/*
+--------------------------------------------------------------------------
+  Streched link utility class
+--------------------------------------------------------------------------
+*/
 
 .stretched-link {
   &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
     bottom: 0;
+    content: '';
     left: 0;
-    z-index: 1;
     pointer-events: auto;
-    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
   }
 }

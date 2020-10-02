@@ -1,28 +1,15 @@
 
-/*
-* FOOTER COPYRIGHT
-*/
-
 .footer-copyright {
   align-items: center;
   color: #869ab3;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-end;
   padding-bottom: 2rem;
 
-  @include media-breakpoint-up(md) {
-    flex-direction: row;
-  }
-
   &__text {
     font-size: 0.8em;
-    margin-bottom: 10px;
-
-    @include media-breakpoint-up(md) {
-      margin-bottom: 0;
-      margin-right: 2rem;
-    }
+    margin-right: 2rem;
   }
 
   &__icon {

@@ -1,5 +1,10 @@
 
-// Text overflow utilities
+/*
+--------------------------------------------------------------------------
+  Text utility classes
+--------------------------------------------------------------------------
+*/
+
 .text-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -11,8 +16,8 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .text#{$infix}-left   { text-align: left; }
-    .text#{$infix}-right  { text-align: right; }
+    .text#{$infix}-left { text-align: left; }
+    .text#{$infix}-right { text-align: right; }
     .text#{$infix}-center { text-align: center; }
   }
 }
