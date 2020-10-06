@@ -1,9 +1,11 @@
 /*
-* MEGA-NAV MENU
-* ----------------------------------------------------------------------------------------------- */
+--------------------------------------------------------------------------
+  Mega-menu
+--------------------------------------------------------------------------
+*/
 
 .mega-nav {
-  background-color: $white;
+  background-color: #bef0ff;
   color: $black;
   height: 100vh;
   left: 0;
@@ -12,10 +14,9 @@
   overflow-x: hidden;
   padding: 100px 12px 40px 8px; // clear the navbar
   position: fixed;
-  top: 0;
-  transform: translateY(-100%);
-  transition: 0.2s;
-  transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  top: -100%;
+  transform: translateY(0);
+  @include transition-cubic(transform, 0.6s);
   width: 100%;
 
   @include media-breakpoint-up(lg) {
@@ -23,9 +24,8 @@
   }
 
   &--open & {
-    transform: translateY(0);
-    transition: 0.3s;
-    transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    transform: translateY(100%);
+    @include transition-cubic(transform, 0.6s);
   }
 } // end mega-nav
 

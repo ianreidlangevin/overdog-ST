@@ -1,17 +1,18 @@
-
 /*
-* TRANSITIONS MIXINS
-* Add your mixins for consistant transitions everywhere
+--------------------------------------------------------------------------
+  Transitions mixins
+  + Add yours
+--------------------------------------------------------------------------
 */
 
-@mixin transition-in-ease($property) {
-  transition: $property 0.2s ease-in-out;
+@mixin transition-in-out($property, $duration) {
+  transition: $property $duration ease-in-out;
 }
 
-@mixin transition-out-ease($property) {
-  transition: $property 0.4s ease-in-out;
+@mixin transition-cubic($property, $duration) {
+  transition: $property $duration cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-@mixin transition-cubic($property) {
-  transition: $property 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+@mixin transition-linear($property, $duration) {
+  transition: $property $duration linear;
 }

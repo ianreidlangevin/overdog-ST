@@ -1,13 +1,18 @@
+/*
+--------------------------------------------------------------------------
+  Function to shrink nav on scroll 
+--------------------------------------------------------------------------
+*/
 
 var $ = require('jquery');
-var body = $("body");
+var navbar = $('.navbar');
 
 // shrink header function
 
 $(window).on('load scroll resize orientationchange', function () {
 	if ($(document).scrollTop() > 100) {
-	  body.addClass('navbar--shrink');
+	  navbar.addClass('navbar--shrink');
 	} else {
-	  body.removeClass('navbar--shrink');
+	  navbar.removeClass('navbar--shrink');
 	}
 });

@@ -1,19 +1,22 @@
 
 .btn {
   appearance: none;
-  background: $primary;
+  border:none;
+  background-color: $primary;
   color: $white;
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 0.5em 2em;
   text-align: center;
+  border-radius: 2em;
+  @include transition-in-out(background-color, 0.4s);
 
-  &:focus,
   &:hover,
   &:active {
-    background: $secondary;
+    background-color: $secondary;
+    @include transition-in-out(background-color, 0.2s);
   }
 
   &[disabled],

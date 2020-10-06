@@ -59,6 +59,7 @@
     "lazysizes": "^5.2.0",
     "object-fit-images": "^3.2.4",
     "popper.js": "^1.16.1",
+    "rfs": "^9.0.3",
     "svg4everybody": "^2.1.9"
   }
 }

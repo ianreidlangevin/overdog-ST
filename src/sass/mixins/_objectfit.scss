@@ -1,14 +1,18 @@
 /*
-* This mixin can be used to set the object-fit:
-* @include object-fit(contain);
-* or object-fit and object-position:
-* @include object-fit(cover, top);
-* Ask Ian @ 3ejoueur for info.
-*
-* INSTRUCTIONS
-* Utilisez avec le polyfill suivant à ajouter
-* dans votre fichier yarn dans lib : https://classic.yarnpkg.com/en/package/object-fit-images
-* https://github.com/fregante/object-fit-images
+--------------------------------------------------------------------------
+  Main SCSS file
+--------------------------------------------------------------------------
+
+  This mixin can be used to set the object-fit for an image : @include object-fit(contain);
+  or object-fit and object-position: @include object-fit(cover, top);
+
+  See utilities - lazyload for an example.
+
+  INSTRUCTIONS
+  Use with polyfill for IE11, Edge 9-14, Android <5, Safari <10
+  dans votre fichier yarn dans lib : https://classic.yarnpkg.com/en/package/object-fit-images
+  https://github.com/fregante/object-fit-images
+
 */
 
 @mixin object-fit($fit: fill, $position: null) {
@@ -18,9 +22,9 @@
   width: 100%;
   @if $position {
     -o-object-position: $position;
-    font-family: 'object-fit: #{$fit}; object-position: #{$position}'; //polyfill for IE
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}'; //only for the JS polyfill
     object-position: $position;
   } @else {
-    font-family: 'object-fit: #{$fit}'; //polyfill for IE
+    font-family: 'object-fit: #{$fit}'; //only for the JS polyfill
   }
 }

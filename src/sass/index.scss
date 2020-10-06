@@ -5,7 +5,7 @@
 
   1. Do not remove the purgeCSS ignore comments in this file around your project elements and around reset.
   2. PurgeCSS will only remove all base and utility classes - except reset - not used in your templates folder on Yarn build process.
-  3. If you prefer to use Bootstrap, replace all the base and utilities folder.
+  3. If you prefer to use Bootstrap, replace all the base and utilities folder except lazyload.
 
 */
 
@@ -16,9 +16,11 @@
 @import 'mixins/objectfit';
 @import 'mixins/transitions';
 @import 'mixins/typography';
+// Responsive font-size - see https://github.com/twbs/rfs for usage
+@import "../../node_modules/rfs/scss";
+
 
 // Base
-
 @import 'base/breakpoints';
 @import 'base/grid';
 /*! purgecss start ignore */
@@ -28,15 +30,14 @@
 
 // Utilities classes
 @import 'utilities/spacing'; // must be loaded after grid to avoid important on px and py
-@import 'utilities/colors';
 @import 'utilities/display';
 @import 'utilities/embed';
 @import 'utilities/flex';
-@import 'utilities/lazyload';
 @import 'utilities/screenreaders';
 @import 'utilities/stretched-link';
+@import 'utilities/colors';
 @import 'utilities/text';
-
+@import 'utilities/lazyload';
 
 /*! purgecss start ignore */
 
