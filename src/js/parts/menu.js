@@ -4,15 +4,8 @@
 --------------------------------------------------------------------------
 */
 
-var $ = require('jquery');
+const menuButton = document.querySelector('.navbar__menu-button');
 
-
-$('.navbar__menu-button').on('click', function () {
-
-  $('body').toggleClass('mega-nav--open');
-  // change aria expanded
-  $(this).attr('aria-expanded', function (index, attr) {
-    return attr == 'true' ? 'false' : 'true'
-  });
-
-});
+menuButton.onclick = function() {
+  document.body.classList.toggle('mega-nav--open')
+}

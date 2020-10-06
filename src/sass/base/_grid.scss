@@ -1,6 +1,7 @@
 /*
 --------------------------------------------------------------------------
   Grid layout mixins and classes
+  Opinionated from Bootstrap https://getbootstrap.com/
 --------------------------------------------------------------------------
 */
 
@@ -21,6 +22,7 @@
   padding-left: $grid-gutter-width / 2;
   padding-right: $grid-gutter-width / 2;
   width: 100%;
+  position: relative;
 }
 
 /* Container full-width */
@@ -28,6 +30,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  position: relative;
 }
 
 
