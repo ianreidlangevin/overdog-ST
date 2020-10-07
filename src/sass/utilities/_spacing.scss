@@ -1,21 +1,28 @@
 /*
---------------------------------------------------------------------------
-  Spacing utility classes based on a default value for each breakpoint
+----------------------------------------------------------------------------------------------
+  Spacing utility classes with value for each breakpoint or RFS to auto calculate from 1 value
   Author : Ian Reid Langevin @3ejoueur - 2020
---------------------------------------------------------------------------
-
-  1. Set your primary spacing for each breakpoint in rem.
-  2. Use the full spacing default value like this : mb-full for margin-bottom or pt-full for padding-top
-  3. Use mb-half or pt-twothird to create spacing based on default values. It allowed full consistancy accross project.
-
+----------------------------------------------------------------------------------------------
+  PurgeCSS will remove any unused class in your templates
 */
 
 /*
-  Map Full values
-  Values are examples
-  Add your value and breakpoints prefix if you want to
+  Map with Full control values - see below for RFS option
+
+  1. Set your primary spacing for each breakpoint in rem.
+  2. Use the full spacing default value like this : mb-full for margin-bottom or pt-full for padding-top
+  3. Use mb-half or pt-twothird to create spacing based on default values.
+  4. Classes available :
+    mb-full, mt-full, pb-full, pt-full
+    mb-threequarter, mt-threequarter, pb-threequarter, pt-threequarter
+    mb-twothird, mt-twothird, pb-twothird, pt-twothird
+    mb-half, mt-half, pb-half, pt-half
+    mb-third, mt-third, pb-third, pt-third
+    mb-quarter, mt-quarter, pb-quarter, pt-quarter
+
 */
 
+/* You can add breakpoints with value if you want */
 $fullvalues: (
   xs: 4rem,
   sm: 5rem,
@@ -23,14 +30,14 @@ $fullvalues: (
   xl: 7rem,
 );
 
-/* Fractions used in classes */
+/* Fractions used in classes like mt-quarter or pb-third */
 $fractions: (
-  'full': 1, 
-  'threequarter': 0.75, 
-  'twothird': 0.66, 
-  'half': 0.5, 
-  'third': 0.33, 
-  'quarter': 0.25, 
+  'full': 1,
+  'threequarter': 0.75,
+  'twothird': 0.66,
+  'half': 0.5,
+  'third': 0.33,
+  'quarter': 0.25,
 );
 
 @each $fraction, $percentage in $fractions {
@@ -42,6 +49,54 @@ $fractions: (
           @include media-breakpoint-up($name) {
             #{$property}-#{$orientation}: $fullvalue * $percentage;
           }
+        }
+      }
+
+    }
+  }
+}
+
+
+
+/*
+  RFS with only one base value - same as responsive font size
+
+  1. Set your primary spacing value(value for 1200px up) with the $rfsFull variable
+  2. Use the full spacing default value like this : rmb-full for margin-bottom or rpt-full for padding-top
+  ( you add r for responsive before mt, mb or pt, pb )
+  3. Classes available :
+    rmb-full, rmt-full, rpb-full, rpt-full
+    rmb-threequarter, rmt-threequarter, rpb-threequarter, rpt-threequarter
+    rmb-twothird, rmt-twothird, rpb-twothird, rpt-twothird
+    rmb-half, rmt-half, rpb-half, rpt-half
+    rmb-third, rmt-third, rpb-third, rpt-third
+    rmb-quarter, rmt-quarter, rpb-quarter, rpt-quarter
+
+*/
+
+
+/* Primary spacing Value - Rem and px allowed */
+$rfsFull: 7rem;
+
+
+/* Fractions used in classes like rmt-quarter or rpb-third */
+$rfsFractions: (
+  'full': $rfsFull,
+  'threequarter': $rfsFull * 0.75,
+  'twothird': $rfsFull * 0.66,
+  'half': $rfsFull * 0.5,
+  'third': $rfsFull * 0.33,
+  'quarter': $rfsFull * 0.25,
+);
+
+
+@each $rfsFraction, $rfsValue in $rfsFractions {
+  @each $property, $abbr in (margin: m, padding: p) {
+    @each $orientation, $orientationabbr in (bottom: b, top: t) {
+
+      @each $name, $fullvalue in $fullvalues {
+        .r#{$abbr}#{$orientationabbr}-#{$rfsFraction} {
+          @include rfs($rfsValue, #{$property}-#{$orientation})
         }
       }
 

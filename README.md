@@ -5,7 +5,6 @@ _Following documentation is only in French for the moment_
 
 #### Version
 1.0.0
-Project under development - do not use it before a stable version
 
 #### Author
 Ian Reid Langevin (3e joueur) • ian@3ejoueur.com

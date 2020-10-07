@@ -5,6 +5,7 @@
 */
 
 .mega-nav {
+  @include transition-cubic(transform, 0.6s);
   background-color: #bef0ff;
   color: $black;
   height: 100vh;
@@ -16,7 +17,6 @@
   position: fixed;
   top: -100%;
   transform: translateY(0);
-  @include transition-cubic(transform, 0.6s);
   width: 100%;
 
   @include media-breakpoint-up(lg) {
@@ -24,8 +24,8 @@
   }
 
   &--open & {
-    transform: translateY(100%);
     @include transition-cubic(transform, 0.6s);
+    transform: translateY(100%);
   }
 } // end mega-nav
 
