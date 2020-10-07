@@ -39,10 +39,20 @@ $font-weight-500: 500;
 $font-weight-600: 600;
 $font-weight-700: 700;
 
-$base-letter-spacing: 0.03em;
-$link-decoration: none;
 
-$transition-base: all 0.2s ease-in-out;
+/*
+--------------------------------------------------------------------------
+  RFS - Responsive font size values
+--------------------------------------------------------------------------
+
+  1. Responsive font size breakpoint - default is 1200
+  2. Spacing Value for your bigger breakpoint if you use rfs spacing classes (see spacing utility for all classes list) - Rem and px allowed
+
+*/
+
+$rfs-breakpoint: 1300; // 1
+$rfsFull: 7rem; // 2
+
 
 
 /*

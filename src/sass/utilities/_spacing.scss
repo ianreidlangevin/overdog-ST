@@ -61,7 +61,7 @@ $fractions: (
 /*
   RFS with only one base value - same as responsive font size
 
-  1. Set your primary spacing value(value for 1200px up) with the $rfsFull variable
+  1. Set your primary spacing value(value for big screen) with the $rfsFull variable in the variable file.
   2. Use the full spacing default value like this : rmb-full for margin-bottom or rpt-full for padding-top
   ( you add r for responsive before mt, mb or pt, pb )
   3. Classes available :
@@ -75,8 +75,6 @@ $fractions: (
 */
 
 
-/* Primary spacing Value - Rem and px allowed */
-$rfsFull: 7rem;
 
 
 /* Fractions used in classes like rmt-quarter or rpb-third */
