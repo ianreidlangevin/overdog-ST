@@ -9,6 +9,9 @@ _Following documentation is only in French for the moment_
 #### Author
 Ian Reid Langevin (3e joueur) • ian@3ejoueur.com
 
+### Changelog
+[Voir le changelog](https://gitlab.com/public-3e-joueur/overdog/-/blob/develop/CHANGELOG.md)
+
 # Table des matières
 <!-- TOC -->
 
