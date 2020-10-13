@@ -1,11 +1,11 @@
 enableVersioning: false
-handle: accueil
+handle: home
 name: Accueil
 propagationMethod: all
 siteSettings:
   fc2cb4bb-e016-46f9-a830-653496da88d7:
     enabledByDefault: true
     hasUrls: true
-    template: index.twig
+    template: _sections/singles/home/index
     uriFormat: __home__
 type: single

@@ -92,11 +92,9 @@ $rfsFractions: (
   @each $property, $abbr in (margin: m, padding: p) {
     @each $orientation, $orientationabbr in (bottom: b, top: t) {
 
-      @each $name, $fullvalue in $fullvalues {
         .r#{$abbr}#{$orientationabbr}-#{$rfsFraction} {
-          @include rfs($rfsValue, #{$property}-#{$orientation})
+          @include rfs($rfsValue, #{$property}-#{$orientation});
         }
-      }
 
     }
   }

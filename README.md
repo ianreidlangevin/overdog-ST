@@ -20,7 +20,6 @@ Ian Reid Langevin (3e joueur) • ian@3ejoueur.com
 - [Installation de Craft](#installation-de-craft)
 - [Webpack et compilation](#webpack-et-compilation)
 - [Utilitaires](#utilitaires)
-- [Roadmap](#roadmap)
 
 <!-- /TOC -->
 
@@ -44,7 +43,8 @@ $env:NODE_ENV="production" )
 
 ### Pour les déploiements _(pas nécessaire pour installation)_
 
-- Clé SSH pour votre ordinateur de development - [Marche à suivre via Gitlab](https://docs.gitlab.com/ee/ssh/)
+- Clé SSH pour votre ordinateur de development - [Marche à suivre via Github Docs](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- Utilisez RSA avec 4096 keys
 - Git installé
 
 
@@ -191,13 +191,3 @@ Pour enlever un paquet, faire yarn remove [package]
 
 1. Votre fichier _.env_ ne doit jamais être dans un _commit_. Les infos s'y trouvant doivent être ajoutées dans un trousseau (LastPass, 1password, etc.).
 2. Si vous ajoutez des variables au fichier env (exemple, une clé API, un token, etc.), n'oubliez pas de modifier le fichier .env.example pour faciliter le partage du projet.
-
-
-
-# Roadmap
-
-### To do
-- Linter avec un hook pre-commit via Husky et lint-staged
-- Ajouter Eslint pour le Javascript
-- Enlever les styles de base et JS et les mettre dans une librairie externe. Plus facile pour la maintenance future. Overdog sera la structure fonctionnelle du projet, la librairie sera l'habillage.
-- Créer une librairie de composantes html/twig.
