@@ -23,7 +23,7 @@
 */
 
 /* You can add breakpoints with value if you want */
-$fullvalues: (
+$spacing-values: (
   xs: 4rem,
   sm: 5rem,
   md: 6rem,
@@ -31,7 +31,7 @@ $fullvalues: (
 );
 
 /* Fractions used in classes like mt-quarter or pb-third */
-$fractions: (
+$spacing-fractions: (
   'full': 1,
   'threequarter': 0.75,
   'twothird': 0.66,
@@ -40,12 +40,12 @@ $fractions: (
   'quarter': 0.25,
 );
 
-@each $fraction, $percentage in $fractions {
+@each $spacing-fraction, $percentage in $spacing-fractions {
   @each $property, $abbr in (margin: m, padding: p) {
     @each $orientation, $orientationabbr in (bottom: b, top: t) {
 
-      @each $name, $fullvalue in $fullvalues {
-        .#{$abbr}#{$orientationabbr}-#{$fraction} {
+      @each $name, $fullvalue in $spacing-values {
+        .#{$abbr}#{$orientationabbr}-#{$spacing-fraction} {
           @include media-breakpoint-up($name) {
             #{$property}-#{$orientation}: $fullvalue * $percentage;
           }
@@ -61,7 +61,8 @@ $fractions: (
 /*
   RFS with only one base value - same as responsive font size
 
-  1. Set your primary spacing value(value for big screen) with the $rfsFull variable in the variable file.
+  1. Set your primary spacing value(value for big screen) with the $rfs-base-spacing variable.
+     You can change the RFS breakpoint value in the variables file.
   2. Use the full spacing default value like this : rmb-full for margin-bottom or rpt-full for padding-top
   ( you add r for responsive before mt, mb or pt, pb )
   3. Classes available :
@@ -75,25 +76,27 @@ $fractions: (
 */
 
 
+/* Set your value for the full spacing - RFS will calculate each breakpoint */
+$rfs-base-spacing: 7rem;
 
 
 /* Fractions used in classes like rmt-quarter or rpb-third */
-$rfsFractions: (
-  'full': $rfsFull,
-  'threequarter': $rfsFull * 0.75,
-  'twothird': $rfsFull * 0.66,
-  'half': $rfsFull * 0.5,
-  'third': $rfsFull * 0.33,
-  'quarter': $rfsFull * 0.25,
+$rfs-fractions: (
+  'full': $rfs-base-spacing,
+  'threequarter': $rfs-base-spacing * 0.75,
+  'twothird': $rfs-base-spacing * 0.66,
+  'half': $rfs-base-spacing * 0.5,
+  'third': $rfs-base-spacing * 0.33,
+  'quarter': $rfs-base-spacing * 0.25,
 );
 
 
-@each $rfsFraction, $rfsValue in $rfsFractions {
+@each $rfs-fraction, $rfs-value in $rfs-fractions {
   @each $property, $abbr in (margin: m, padding: p) {
     @each $orientation, $orientationabbr in (bottom: b, top: t) {
 
-        .r#{$abbr}#{$orientationabbr}-#{$rfsFraction} {
-          @include rfs($rfsValue, #{$property}-#{$orientation});
+        .r#{$abbr}#{$orientationabbr}-#{$rfs-fraction} {
+          @include rfs($rfs-value, #{$property}-#{$orientation});
         }
 
     }
