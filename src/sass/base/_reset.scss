@@ -81,6 +81,31 @@ input:invalid { box-shadow: none; }
 
 /*
 --------------------------------------------------------------------------
+  Focus
+--------------------------------------------------------------------------
+
+  Focus outline is set to none, but if user press the Tab key,
+  the outline focus class is added to body with JS for a11y
+
+*/
+
+:focus {
+  outline: none;
+
+  .outline-focus & {
+    outline: thin dotted;
+    outline-color: #80828a;
+  }
+}
+
+::-moz-focus-inner {
+  border-style: none; // Remove the inner border and padding in Firefox
+  padding: 0;
+}
+
+
+/*
+--------------------------------------------------------------------------
   Text-level semantics
 --------------------------------------------------------------------------
 */
@@ -228,21 +253,6 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; // Correct the inability to style clickable types in iOS and Safari
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none; // Remove the inner border and padding in Firefox
-  padding: 0;
-}
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted; // Restore the focus styles unset by the previous rule
 }
 
 fieldset {
