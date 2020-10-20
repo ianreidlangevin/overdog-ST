@@ -11,9 +11,13 @@
   ],
   "keywords": [
     "3ejoueur",
-    "Overdog"
+    "Overdog",
+    "Craft CMS",
   ],
-  "license": "Unlicense",
+  "support": {
+    "docs": "https://public-3e-joueur.gitlab.io/overdog-docs/"
+  },
+  "license": "MIT License",
   "type": "project",
   "require": {
     "craftcms/cms": "3.5.12.1",
@@ -39,7 +43,8 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "@php -r \"copy('.env.example', '.env');\""
+      "@php -r \"copy('.env.example', '.env');\"",
+      "@php -r \"copy('README.example', 'README.md');\""
     ],
     "post-create-project-cmd": [
       "@php -r \"unlink('config/license.key');\"",

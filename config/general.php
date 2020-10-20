@@ -32,11 +32,13 @@ return [
         '@webroot' => dirname(__DIR__) . '/web',
         '@rootUrl' => getenv('SITE_URL'),
         '@svgPath' => getenv('SITE_URL') . '/img/svg-sprite.svg',
+        // only use the next alias in the control panel if client assets are local in your project
         '@assetsUrl' => getenv('SITE_URL') . '/assets',
         '@assetsPath' => dirname(__DIR__) . '/web/assets',
         ],
 
-        // 3e joueur - Set the site url per language let admin panel empty
+        // 3e joueur - Set the site URL for each language handle
+        // Let field Base URL empty in control panel
         'siteUrl' => [
           'siteFrench' => getenv('SITE_URL') ?: '@web',
           'siteEnglish' => getenv('SITE_URL') . '/en',
