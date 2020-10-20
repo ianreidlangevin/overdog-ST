@@ -2,10 +2,9 @@
 .btn {
   @include transition-in-out(background-color, 0.4s);
   appearance: none;
-  background-color: $primary;
+  background-color: #cdd7d9;
   border: none;
   border-radius: 2em;
-  color: $white;
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
