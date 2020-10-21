@@ -10,7 +10,7 @@
     "build": "webpack --config webpack.prod.js --progress --hide-modules",
     "lint": "yarn stylelint src/sass/**/*.scss",
     "lint:fix": "yarn stylelint src/sass/**/*.scss --fix",
-    "svg": "yarn rimraf src/svg/temp-optimized/* && node .imagemin-svgo.js && yarn svgstore -o web/img/svg-sprite.svg src/svg/temp-optimized/*.svg --inline"
+    "svg": "yarn rimraf src/svg/temp-optimized/* && node .imagemin-svgo.js && yarn svgstore -o web/img/svg-sprite.svg src/svg/temp-optimized/*.svg"
   },
   "browserslist": [
     "defaults"
@@ -59,7 +59,6 @@
     "lazysizes": "^5.2.0",
     "object-fit-images": "^3.2.4",
     "popper.js": "^1.16.1",
-    "rfs": "^9.0.3",
-    "svg4everybody": "^2.1.9"
+    "rfs": "^9.0.3"
   }
 }
