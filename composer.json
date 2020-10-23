@@ -20,6 +20,7 @@
   "license": "MIT License",
   "type": "project",
   "require": {
+    "craftcms/aws-s3": "^1.2",
     "craftcms/cms": "3.5.12.1",
     "craftcms/redactor": "2.5.0",
     "fortrabbit/craft-auto-migrate": "^2.1",

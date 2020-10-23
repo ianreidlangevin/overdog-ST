@@ -1,8 +1,13 @@
-dateModified: 1602595322
+dateModified: 1603480190
 graphql:
   publicToken:
     enabled: false
     expiryDate: null
+plugins:
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '1.2'
 system:
   edition: solo
   live: true
