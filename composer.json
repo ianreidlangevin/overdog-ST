@@ -17,7 +17,7 @@
   "support": {
     "docs": "https://public-3e-joueur.gitlab.io/overdog-docs/"
   },
-  "license": "MIT License",
+  "license": "MIT",
   "type": "project",
   "require": {
     "craftcms/aws-s3": "^1.2",
