@@ -34,17 +34,17 @@ name: Documents
 settings:
   addSubfolderToRootUrl: '1'
   autoFocalPoint: ''
-  bucket: $DOCUMENTS_BUCKET
+  bucket: $S3_BUCKET_DOCS
   bucketSelectionMode: manual
-  cfDistributionId: $DOCUMENTS_DISTRIBUTION_ID
+  cfDistributionId: $S3_DOCS_DIST_ID
   cfPrefix: ''
   expires: '1 years'
-  keyId: $S3_KEY_ID
+  keyId: $S3_USER_ID
   makeUploadsPublic: ''
-  region: $BUCKET_REGION
-  secret: $S3_SECRET
+  region: $S3_BUCKET_REGION
+  secret: $S3_USER_SECRET
   storageClass: ''
-  subfolder: $BUCKET_SUBFOLDER
+  subfolder: $S3_BUCKET_SUBFOLDER
 sortOrder: 1
 type: craft\awss3\Volume
-url: $DOCUMENTS_URL
+url: $S3_DOCS_URL

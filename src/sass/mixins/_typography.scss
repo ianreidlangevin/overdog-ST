@@ -7,12 +7,12 @@
 
 @mixin font-family-01($color, $weight) {
   color: $color;
-  font-family: arial, sans-serif;
+  font-family: arial, sans-serif; // change it for the default font that you want
   font-weight: $weight;
   opacity: 0; // smooth the font swap
 
   .fonts-loaded & {
-    font-family: $font-family-title; // add your custom font here
+    font-family: $font-family-title; // custom font
     opacity: 1;
     transition: opacity 0.2s linear;
   }
@@ -26,10 +26,10 @@
 
 @mixin font-family-02($color, $weight) {
   color: $color;
-  font-family: $font-family-title;
+  font-family: arial, sans-serif; // change it for the default font that you want
   font-weight: $weight;
 
   .fonts-loaded & {
-    font-family: arial, sans-serif; // add your custom font here
+    font-family: $font-family-base; // custom font
   }
 }
