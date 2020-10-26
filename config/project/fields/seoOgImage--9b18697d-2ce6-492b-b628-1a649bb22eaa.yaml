@@ -5,23 +5,27 @@ instructions: 'Format requis : 1200px par 630px - Image utilisée pour les tags 
 name: 'Image OG pour SEO'
 searchable: false
 settings:
-  allowSelfRelations: ''
+  allowSelfRelations: false
+  allowUploads: true
   allowedKinds: null
   defaultUploadLocationSource: 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e'
-  defaultUploadLocationSubpath: ''
+  defaultUploadLocationSubpath: /seo
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: ''
   selectionLabel: ''
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:ca2a274d-ce21-46a0-81e5-cd4dba43a25a'
-  singleUploadLocationSubpath: ''
+  singleUploadLocationSource: 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e'
+  singleUploadLocationSubpath: /seo
   source: null
-  sources: '*'
+  sources:
+    - 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e'
   targetSiteId: null
-  useSingleFolder: false
-  validateRelatedElements: ''
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
 translationMethod: site
