@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fa7f25fbe8134884a1824063f9e023d",
+    "content-hash": "caa41c9c5534d91e520fd4aa42a5e23b",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1079,53 +1079,6 @@
                 "html"
             ],
             "time": "2020-06-29T00:56:53+00:00"
-        },
-        {
-            "name": "fortrabbit/craft-auto-migrate",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fortrabbit/craft-auto-migrate.git",
-                "reference": "d64f7aa2650b961e2f9b0c029f99427cb0e6477b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fortrabbit/craft-auto-migrate/zipball/d64f7aa2650b961e2f9b0c029f99427cb0e6477b",
-                "reference": "d64f7aa2650b961e2f9b0c029f99427cb0e6477b",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "fortrabbit\\CraftAutoMigrate\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "fortrabbit\\CraftAutoMigrate\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oliver Stark",
-                    "homepage": "https://www.fortrabbit.com/"
-                }
-            ],
-            "description": "Runs migrations automatically",
-            "keywords": [
-                "composer",
-                "craftcms",
-                "development"
-            ],
-            "time": "2020-09-07T16:07:37+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

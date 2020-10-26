@@ -23,7 +23,6 @@
     "craftcms/aws-s3": "^1.2",
     "craftcms/cms": "3.5.14",
     "craftcms/redactor": "2.5.0",
-    "fortrabbit/craft-auto-migrate": "^2.1",
     "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"
   },
@@ -44,12 +43,12 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "@php -r \"unlink('README.md');\"",
       "@php -r \"copy('.env.example', '.env');\"",
       "@php -r \"copy('README.example', 'README.md');\""
     ],
     "post-create-project-cmd": [
       "@php -r \"unlink('config/license.key');\"",
+      "@php -r \"unlink('README.example');\"",
       "@composer dump-autoload -o"
     ],
     "post-install-cmd": [
