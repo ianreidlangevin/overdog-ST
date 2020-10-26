@@ -40,7 +40,7 @@ return [
         // 3e joueur - Set the site URL for each language handle
         // Let field Base URL empty in control panel
         'siteUrl' => [
-          'siteFrench' => getenv('SITE_URL') ?: '@web',
+          'siteFrench' => getenv('SITE_URL'),
           'siteEnglish' => getenv('SITE_URL') . '/en',
         ],
 
