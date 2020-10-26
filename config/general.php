@@ -29,12 +29,12 @@ return [
 
         // 3e joueur - Aliases
         'aliases' => [
-        '@webroot' => dirname(__DIR__) . '/web',
-        '@rootUrl' => getenv('SITE_URL'),
-        '@svgPath' => getenv('SITE_URL') . '/img/svg-sprite.svg',
-        // only use the next alias in the control panel if client assets are local in your project
-        '@assetsUrl' => getenv('SITE_URL') . '/assets',
-        '@assetsPath' => dirname(__DIR__) . '/web/assets',
+          '@webroot' => dirname(__DIR__) . '/web',
+          '@rootUrl' => getenv('SITE_URL'),
+          '@svgPath' => getenv('SITE_URL') . '/img/svg-sprite.svg',
+          // S3 and Imgix - used in head to preconnect - without subfolder
+          '@imagesUrl' => getenv('S3_IMAGES_URL'),
+          '@docsUrl' => getenv('S3_DOCS_URL'),
         ],
 
         // 3e joueur - Set the site URL for each language handle

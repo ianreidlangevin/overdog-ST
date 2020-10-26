@@ -28,7 +28,7 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: home
+handle: homeSingle
 hasTitleField: false
 name: Accueil
 section: 4647bfbd-61b6-44f7-8536-869ac8dfd57e
