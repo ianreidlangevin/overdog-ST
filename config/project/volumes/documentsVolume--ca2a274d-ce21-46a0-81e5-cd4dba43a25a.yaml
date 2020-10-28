@@ -37,7 +37,7 @@ settings:
   bucket: $S3_BUCKET_DOCS
   bucketSelectionMode: manual
   cfDistributionId: $S3_DOCS_DIST_ID
-  cfPrefix: ''
+  cfPrefix: $S3_BUCKET_SUBFOLDER
   expires: '1 years'
   keyId: $S3_USER_ID
   makeUploadsPublic: ''
