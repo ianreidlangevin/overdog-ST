@@ -1,62 +1,3 @@
-/*
---------------------------------------------------------------------------
-  Normalization of HTML elements
-  Opinionated from Normalize.css and Suit CSS Base
---------------------------------------------------------------------------
-*/
-
-html {
-  line-height: 1.15;
-  -webkit-tap-highlight-color: rgba($black, 0); // Change the default tap highlight to be completely transparent in iOS
-  -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
-}
-
-
-// root use smaller font-size for better spacing consistency when using rem
-:root {
-  font-size: 12px;
-
-  @include media-breakpoint-up(md) {
-    font-size: 14px;
-  }
-  @include media-breakpoint-up(lg) {
-    font-size: 16px;
-  }
-  @include media-breakpoint-up(xxxl) {
-    font-size: 18px;
-  }
-}
-
-/*
---------------------------------------------------------------------------
-  Body
---------------------------------------------------------------------------
-*/
-
-body {
-  background-color: $white; // As a best practice, apply a default background-color
-  color: $body-color;
-  font-family: $font-family-base;
-  font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: $font-weight-400;
-  line-height: $line-height-base;
-  margin: 0;
-  text-align: left;
-
-  @include media-breakpoint-up(md) {
-    font-size: 16px;
-  }
-  @include media-breakpoint-up(xxl) {
-    font-size: 17px;
-  }
-  @include media-breakpoint-up(xxxl) {
-    font-size: 18px;
-  }
-
-}
-
 
 /*
 --------------------------------------------------------------------------
@@ -71,37 +12,12 @@ body {
 }
 
 ::placeholder {
-  color: $grey03;
+  color: $placeholder;
   opacity: 1;
 }
 
 input:required { box-shadow: none; }
 input:invalid { box-shadow: none; }
-
-
-/*
---------------------------------------------------------------------------
-  Focus
---------------------------------------------------------------------------
-
-  Focus outline is set to none, but if user press the Tab key,
-  the outline focus class is added to body with JS for a11y
-
-*/
-
-:focus {
-  outline: none;
-
-  .outline-focus & {
-    outline: thin dotted;
-    outline-color: #80828a;
-  }
-}
-
-::-moz-focus-inner {
-  border-style: none; // Remove the inner border and padding in Firefox
-  padding: 0;
-}
 
 
 /*

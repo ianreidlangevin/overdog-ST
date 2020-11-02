@@ -18,15 +18,10 @@
 
 .lazy-wrapper {
   position: relative;
-
-  > picture {
-    background-color: #333; // light grey
-    display: flex;
-    height: 100%;
-    width: 100%;
+  background-color: #e3e3e3; // light grey
 
     img {
-      @include object-fit(cover, center center);
+      @include object-fit(cover, center center); // if you want the image to fit the lazy-wrapper
       display: block;
       height: 100%;
       left: 0;
@@ -35,12 +30,11 @@
       top: 0;
       width: 100%;
 
-      &.lazyloaded,
+      &.lazyloaded, // used by lazysizes.js
       &.ls-is-cached {
         opacity: 1;
         transition: opacity 0.2s ease-in-out;
       }
 
     } // img
-  } // picture
 }
