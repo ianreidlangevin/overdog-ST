@@ -1,29 +1,23 @@
 /*
 --------------------------------------------------------------------------
-  Normalization of HTML elements
-  Opinionated from Normalize.css and Suit CSS Base
+  Root
 --------------------------------------------------------------------------
+
+  root use smaller font-size for better spacing consistency when using rem
+
 */
 
-html {
-  line-height: 1.15;
-  -webkit-tap-highlight-color: rgba($black, 0); // Change the default tap highlight to be completely transparent in iOS
-  -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
-}
-
-
-// root use smaller font-size for better spacing consistency when using rem
 :root {
-  font-size: 12px;
+  font-size: 75%; // 12px
 
   @include media-breakpoint-up(md) {
-    font-size: 14px;
+    font-size: 87.5%; // 14px
   }
   @include media-breakpoint-up(lg) {
-    font-size: 16px;
+    font-size: 100%; // 16px
   }
   @include media-breakpoint-up(xxxl) {
-    font-size: 18px;
+    font-size: 112.5%; // 18px
   }
 }
 
@@ -32,13 +26,16 @@ html {
 --------------------------------------------------------------------------
   Body
 --------------------------------------------------------------------------
+
+  Font-size values are based on the :root percentage. Be sure to adjust both if needed.
+
 */
 
 body {
   background-color: $white; // As a best practice, apply a default background-color
   color: $body-color;
   font-family: $font-family-base;
-  font-size: 15px;
+  font-size: 1.25rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: $font-weight-400;
@@ -47,17 +44,28 @@ body {
   text-align: left;
 
   @include media-breakpoint-up(md) {
-    font-size: 16px;
+    font-size: 1.14rem; // 16px
   }
   @include media-breakpoint-up(xxl) {
-    font-size: 17px;
+    font-size: 1.06rem; // 17px
   }
   @include media-breakpoint-up(xxxl) {
-    font-size: 18px;
+    font-size: 1rem; // 18 px
   }
 
 }
 
+
+/*
+--------------------------------------------------------------------------
+  Placeholder
+--------------------------------------------------------------------------
+*/
+
+::placeholder {
+  color: $placeholder;
+  opacity: 1;
+}
 
 /*
 --------------------------------------------------------------------------
@@ -81,4 +89,59 @@ body {
 ::-moz-focus-inner {
   border-style: none; // Remove the inner border and padding in Firefox
   padding: 0;
+}
+
+/*
+--------------------------------------------------------------------------
+  Selection
+--------------------------------------------------------------------------
+*/
+
+/*
+
+Uncomment if you want to change the selection color
+Be sure to keep a good contrast ratio
+
+::selection {
+  background: #ffb7b7; // WebKit/Blink Browsers
+}
+::-moz-selection {
+  background: #ffb7b7; // Gecko Browsers
+}
+
+*/
+
+
+/*
+--------------------------------------------------------------------------
+  Horizontal rules
+--------------------------------------------------------------------------
+*/
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid $black;
+}
+
+
+/*
+--------------------------------------------------------------------------
+  Emphasis
+--------------------------------------------------------------------------
+*/
+
+small,
+.small {
+  @include font-size(80%);
+  font-weight: $font-weight-400;
+  line-height: 1.4;
+}
+
+mark,
+.mark {
+  padding: 0.2em;
+  background-color: #fcf8e3;
+  color: $black;
 }

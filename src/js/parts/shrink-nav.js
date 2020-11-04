@@ -4,12 +4,12 @@
 --------------------------------------------------------------------------
 */
 
-const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector(".navbar");
 
-window.onscroll = function() {
+window.onscroll = () => {
   if (document.documentElement.scrollTop > 100) {
-		navbar.classList.add('navbar--shrink');
+		navbar.classList.add("navbar--shrink");
   } else {
-		navbar.classList.remove('navbar--shrink');
+		navbar.classList.remove("navbar--shrink");
   }
-}
+};

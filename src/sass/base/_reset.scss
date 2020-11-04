@@ -5,15 +5,17 @@
 --------------------------------------------------------------------------
 */
 
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-tap-highlight-color: rgba($black, 0); // Change the default tap highlight to be completely transparent in iOS
+  -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-::placeholder {
-  color: $placeholder;
-  opacity: 1;
 }
 
 input:required { box-shadow: none; }
@@ -84,11 +86,6 @@ sup {
   top: -0.5em;
 }
 
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
 
 pre,
 code,
