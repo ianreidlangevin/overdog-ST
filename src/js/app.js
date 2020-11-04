@@ -1,5 +1,5 @@
 
-// polyfill for objectfit and svg def
+// polyfills
 import './parts/objectfit.js';
 // app
 import './parts/a11y.js';

@@ -1,6 +1,10 @@
-
 /*
-* Detect if user press the TAB key, then add class focus
+--------------------------------------------------------------------------
+  FOCUS OUTLINE ON TAB PRESS
+--------------------------------------------------------------------------
+
+  Detect if user press the TAB key, then add class focus
+
 */
 
 window.addEventListener("keydown", event => {
