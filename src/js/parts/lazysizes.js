@@ -10,7 +10,7 @@
 
 */
 
-import lazySizes from 'lazysizes';
+// import lazySizes from "lazysizes"
 
 /*
 * Set your options here if you need, defaults should be good

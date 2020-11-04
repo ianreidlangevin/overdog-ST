@@ -4,8 +4,8 @@
 --------------------------------------------------------------------------
 */
 
-const menuButton = document.querySelector('.navbar__menu-button');
+const menuButton = document.querySelector(".navbar__menu-button")
 
-menuButton.onclick = function() {
-  document.body.classList.toggle('mega-nav--open')
-}
+menuButton.addEventListener("click", () => {
+  document.body.classList.toggle("mega-nav--open")
+})

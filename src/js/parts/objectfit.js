@@ -8,7 +8,7 @@
 
 */
 
-import objectFitImages from 'object-fit-images';
+import objectFitImages from "object-fit-images"
 
 // initialization
-objectFitImages();
+objectFitImages()
