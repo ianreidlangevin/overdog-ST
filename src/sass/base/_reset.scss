@@ -139,6 +139,14 @@ table {
 --------------------------------------------------------------------------
 */
 
+button {
+  // stylelint-disable-next-line property-blacklist
+  border-radius: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: inherit;
+}
 
 button,
 input,

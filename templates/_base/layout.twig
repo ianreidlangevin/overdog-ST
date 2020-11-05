@@ -32,9 +32,15 @@
 		{% endif %}
 		{# JS SCRIPT - with defer attr #}
 		{% include "_base/hash/script.twig" ignore missing %}
-		{# OPEN GRAPH CONTENT #}
-		<meta property="og:locale" content="fr_FR">
-		<meta property="og:locale:alternate" content="en_EN"/>
+		{# OPEN GRAPH LANG - loop through all sites if many #}
+		<meta property="og:locale" content="{{ currentSite.language }}">
+		{% set sites = currentSite.group.sites|without(currentSite) %}
+		{% if sites|length %}
+			{% for site in sites %}
+				<meta property="og:locale:alternate" content="{{ site.language }}"/>
+			{% endfor %}
+		{% endif %}
+		{# OPEN GRAPH INFO #}
 		<meta property="og:site_name" content="{{ currentSite.group.name }}">
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="{{ craft.app.request.absoluteUrl }}">

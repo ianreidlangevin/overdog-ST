@@ -134,7 +134,7 @@ hr {
 
 small,
 .small {
-  @include font-size(80%);
+  font-size: 0.9em;
   font-weight: $font-weight-400;
   line-height: 1.4;
 }

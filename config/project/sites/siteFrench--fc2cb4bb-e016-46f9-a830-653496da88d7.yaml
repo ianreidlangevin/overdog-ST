@@ -2,7 +2,7 @@ baseUrl: $SITE_URL
 enabled: true
 handle: siteFrench
 hasUrls: true
-language: fr
+language: fr-CA
 name: Français
 primary: true
 siteGroup: c1436119-37a0-4b5b-9538-52c47b611fd2
