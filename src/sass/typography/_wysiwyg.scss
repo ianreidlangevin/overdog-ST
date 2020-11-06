@@ -39,11 +39,11 @@
 
 
   // remove margins on first and last element to avoid double gap with other elements
-  & > *:first-child {
+  > *:first-child {
     margin-top: 0;
   }
 
-  &  > *:last-child {
+  > *:last-child {
     margin-bottom: 0;
   }
 
@@ -95,7 +95,7 @@
       padding: 1em;
       border: 1px solid $grey02;
 
-      &  > *:last-child {
+      > *:last-child {
         margin-bottom: 0; // avoid the p margin on the last p or on a single
       }
     }
