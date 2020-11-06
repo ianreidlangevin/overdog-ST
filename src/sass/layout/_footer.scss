@@ -1,20 +1,20 @@
 
 .footer-copyright {
-  align-items: center;
-  color: #869ab3;
   display: flex;
+  padding-bottom: 2rem;
+  color: #869ab3;
+  align-items: center;
   flex-direction: row;
   justify-content: flex-end;
-  padding-bottom: 2rem;
 
   &__text {
-    font-size: 0.8em;
     margin-right: 2rem;
+    font-size: 0.8em;
   }
 
   &__icon {
-    height: 22px;
     width: 22px;
+    height: 22px;
 
     path {
       @include transition-in-out(fill, 0.4s);

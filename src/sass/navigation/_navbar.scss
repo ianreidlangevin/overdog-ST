@@ -5,17 +5,17 @@
 */
 
 .navbar {
-  background-color: $grey01;
-  display: flex;
-  height: 70px;
+  position: fixed;
+  z-index: 100;
+  right: 0;
   left: 0;
+  display: flex;
+  width: 100%;
+  height: 70px;
   margin: auto;
   padding: 0;
-  position: fixed;
-  right: 0;
+  background-color: $grey01;
   transition: all 0.3s ease;
-  width: 100%;
-  z-index: 100;
 
   @include media-breakpoint-up(md) {
     height: 80px;
@@ -38,8 +38,8 @@
   }
 
   &__container {
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -48,18 +48,18 @@
   }
 
   &__logo-img {
+    width: 32px;
     height: 40px;
     transition: all 0.3s ease;
-    width: 32px;
 
     @include media-breakpoint-up(lg) {
-      height: 68px;
       width: 54px;
+      height: 68px;
 
       .navbar--shrink & {
+        width: 40px;
         height: 50px;
         transition: all 0.3s ease;
-        width: 40px;
       }
     }
   }
