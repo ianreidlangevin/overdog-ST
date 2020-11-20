@@ -46,7 +46,7 @@ body {
   @include media-breakpoint-up(md) {
     font-size: 1.14rem; // 16px
   }
-  @include media-breakpoint-up(xxl) {
+  @include media-breakpoint-up(lg) {
     font-size: 1.06rem; // 17px
   }
   @include media-breakpoint-up(xxxl) {
