@@ -21,7 +21,7 @@
   "type": "project",
   "require": {
     "craftcms/aws-s3": "^1.2",
-    "craftcms/cms": "3.5.15.1",
+    "craftcms/cms": "3.5.16",
     "craftcms/redactor": "2.5.0",
     "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"

@@ -23,12 +23,10 @@
     img {
       @include object-fit(cover, center center); // if you want the image to fit the lazy-wrapper
       display: block;
-      height: 100%;
       left: 0;
       opacity: 0;
       position: absolute;
       top: 0;
-      width: 100%;
 
       &.lazyloaded, // used by lazysizes.js
       &.ls-is-cached {
