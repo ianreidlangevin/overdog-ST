@@ -1,0 +1,18 @@
+
+{# ================================
+# Active for nav
+# ================================ #}
+
+{# the hyphen is to remove white spaces, see whitespace control in twig, if questions > ian #}
+{% macro isActive(navItemSlug) %}
+  {%- if navItemSlug in craft.app.request.segments -%}{{' menu-link--active'}}{%- endif -%}
+{% endmacro %}
+
+{# ================================
+# Link from entry ID
+# ================================ #}
+
+{% macro pageLink(entryId) %}
+  {% set entry = craft.entries.id(entryId).one() %}
+  {{ entry ? entry.url }}
+{% endmacro %}
