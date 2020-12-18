@@ -22,12 +22,7 @@
   Header always set Strict-Transport-Security "max-age=31536000"
 
   # Cache images and CSS files
-    #  images expire after 1 month
-    <filesMatch ".(gif|png|jpg|jpeg|ico|pdf|svg|js)$">
+    <filesMatch ".(css|js|svg|woff2|gif|png|jpg|jpeg|ico|pdf)$">
       Header set Cache-Control "max-age=31536000"
-    </filesMatch>
-    # CSS expires after 1 month
-    <filesMatch ".(css)$">
-      Header set Cache-Control "max-age=2592000"
     </filesMatch>
 </ifModule>
