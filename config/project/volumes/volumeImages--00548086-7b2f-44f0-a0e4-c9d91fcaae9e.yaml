@@ -28,7 +28,7 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: imagesVolume
+handle: volumeImages
 hasUrls: true
 name: Images
 settings:
