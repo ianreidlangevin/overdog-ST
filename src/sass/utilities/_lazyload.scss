@@ -4,18 +4,6 @@
 --------------------------------------------------------------------------
 */
 
-/* Important : a wrapper div must be set around the picture tag.
-  The wrapper must have a width and a height or a padding-top for responsive ratio.
-  Add the lazy-wrapper class to your own wrapper with custom style for height, width, etc.
-
-  Your markup will look like :
-  wrapper with lazy-wrapper class and your own class for styling
-    picture tag
-      source tag for webp with data-srcset and sizes
-      source tag for jpg with data-srcset and sizes
-      img tag with lazyload class on it
-*/
-
 .lazy-wrapper {
   position: relative;
   background-color: #e3e3e3; // light grey
@@ -27,12 +15,7 @@
       opacity: 0;
       position: absolute;
       top: 0;
-
-      &.lazyloaded, // used by lazysizes.js
-      &.ls-is-cached {
-        opacity: 1;
-        transition: opacity 0.2s ease-in-out;
-      }
-
-    } // img
+      transition:opacity 0.2s linear;
+      color: #999; //alt color
+    }
 }
