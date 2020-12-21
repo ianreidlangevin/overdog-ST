@@ -9,7 +9,6 @@
 		<link rel="preconnect" href="https://use.typekit.net" crossorigin>
 		<link rel="preconnect" href="{{ alias('@imagesUrl') }}" crossorigin>
 		<link rel="preconnect" href="{{ alias('@docsUrl') }}/" crossorigin>
-		<link rel="prefetch" href="{{ alias('@rootUrl') }}/img/svg-sprite.svg" as="image" type="image/svg+xml">
 		{# TITLE #}
 		<title>{{ (entry is defined and entry.uri == "__home__") ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
 		{# SEO #}
