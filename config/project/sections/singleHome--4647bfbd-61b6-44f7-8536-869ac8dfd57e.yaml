@@ -1,5 +1,5 @@
 enableVersioning: false
-handle: homeSingle
+handle: singleHome
 name: Accueil
 propagationMethod: all
 siteSettings:
