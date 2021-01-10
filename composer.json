@@ -22,7 +22,7 @@
   "require": {
     "craftcms/aws-s3": "^1.2",
     "craftcms/cms": "3.5.17.1",
-    "craftcms/redactor": "2.5.0",
+    "craftcms/redactor": "2.8.5",
     "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"
   },
