@@ -27,6 +27,9 @@ return [
         'limitAutoSlugsToAscii' => true,
         'convertFilenamesToAscii' => true,
 
+        // remove the X-Powered-By Craft header should be sent, helping to identify that the site is running on Craft
+        'sendPoweredByHeader' => false,
+
         // 3e joueur - Aliases
         'aliases' => [
           '@webroot' => dirname(__DIR__) . '/web',
