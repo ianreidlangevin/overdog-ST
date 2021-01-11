@@ -1,13 +1,12 @@
 {# 404 - Disable dev mode to see this page #}
-
-{% extends "_base/layout" %}
+{% extends '_base/layout' %}
 
 {% set headerTitle = 'Sorry, wrong path!'|t %}
 
 {% block content %}
 
   <div class="container">
-    <h3 class="text-center mb">{{ 'This page does not exist! Please use the main menu to go to another page.'|t }}</h3>
+    <h3 class="text-center mb-full">{{ 'This page does not exist! Please use the main menu to go to another page.'|t }}</h3>
   </div>
 
 {% endblock %}
