@@ -1,1 +1,2 @@
-<link rel="stylesheet" href="{{ alias('@rootUrl') }}<%= htmlWebpackPlugin.files.css %>" media="print" onload="this.media='all'">
+<% htmlWebpackPlugin.files.css.forEach(function(css){ %><link rel="stylesheet" href="{{ alias('@rootUrl') }}<%= css %>" media="print" onload="this.media='all'" />
+<% }) %>
