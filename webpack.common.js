@@ -16,7 +16,6 @@ module.exports = {
   output: {
     publicPath: '/dist/', // important for path in htmlWebpackPlugin
     path: path.resolve(__dirname, 'web/dist/'),
-    filename: '[name].[contenthash].js',
   },
 
   module: {
@@ -70,7 +69,6 @@ module.exports = {
       filename: path.resolve(__dirname, 'templates/_base/hash/script.twig'),
       template: path.resolve(__dirname, 'src/ejs/script.ejs'),
       inject: false,
-
     }),
 
     new HtmlWebpackPlugin({

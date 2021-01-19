@@ -15,13 +15,6 @@
     content: '';
   }
 
-  // only h2 to h4 are available in editor
-  h2,
-  h3,
-  h4 {
-    @include font-family-01($primary, 400);
-  }
-
   h2 {
     margin: 1.5em 0 1em;
     font-size: 2rem;
@@ -51,7 +44,6 @@
     overflow: hidden; // avoid email overflow in mobile
     margin-top: 0;
     margin-bottom: 2rem;
-    text-overflow: ellipsis;
   }
 
   li p {
@@ -101,7 +93,6 @@
     }
 
     th {
-      @include font-family-01($primary, 400);
       background-color: $grey01;
       font-size: 1.06em;
     }
