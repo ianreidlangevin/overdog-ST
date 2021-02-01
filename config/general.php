@@ -40,13 +40,6 @@ return [
           '@docsUrl' => getenv('S3_DOCS_URL'),
         ],
 
-        // 3e joueur - Set the site URL for each language handle
-        // Let field Base URL empty in control panel
-        'siteUrl' => [
-          'siteFrench' => getenv('SITE_URL'),
-          'siteEnglish' => getenv('SITE_URL') . '/en',
-        ],
-
     ],
 
     // Dev environment settings

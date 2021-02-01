@@ -21,9 +21,8 @@
   "type": "project",
   "require": {
     "craftcms/aws-s3": "^1.2",
-    "craftcms/cms": "3.5.17.1",
+    "craftcms/cms": "3.6.2",
     "craftcms/redactor": "2.8.5",
-    "verbb/super-table": "2.4.4",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
@@ -38,7 +37,7 @@
     "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {
-      "php": "7.0"
+      "php": "7.2.5"
     }
   },
   "scripts": {
