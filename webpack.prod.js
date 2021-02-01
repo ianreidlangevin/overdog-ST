@@ -29,12 +29,21 @@ const PATHS = {
 
 module.exports = merge(common, {
 
+  // mode is required
   mode: 'production',
-
+  // output with hash for production
   output: {
     filename: '[name].[contenthash].js',
   },
+  // webpack 5 new config for output comment
+  stats: {
+    assets: true,
+    builtAt: true,
+    entrypoints: false,
+    outputPath: false,
+  },
 
+  // plugins
   plugins: [
 
     new MiniCssExtractPlugin({
@@ -95,13 +104,22 @@ module.exports = merge(common, {
 
 
   /*
-  * Minify tool
+  * Minify tool - default webpack settings
   */
   optimization: {
     minimize: true,
     minimizer: [
-      new CssMinimizerPlugin()
-    ],
+          new CssMinimizerPlugin({
+            minimizerOptions: {
+              preset: [
+                'default',
+                {
+                  discardComments: { removeAll: true },
+                },
+              ],
+            },
+          }),
+        ],
     splitChunks: {
       chunks: 'all'
     }

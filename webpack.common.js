@@ -17,15 +17,6 @@ module.exports = {
     publicPath: '/dist/', // important for path in htmlWebpackPlugin
     path: path.resolve(__dirname, 'web/dist/'),
   },
-  // webpack 5 new config for output comment
-  stats: {
-    assets: true,
-    builtAt: true,
-    modules: false,
-    entrypoints: false,
-    moduleAssets: false,
-    outputPath: false,
-  },
 
   module: {
     rules: [

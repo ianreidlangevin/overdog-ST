@@ -18,6 +18,18 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
 
+  // webpack 5 new config for output comment
+  stats: {
+    assets: true,
+    groupAssetsByEmitStatus: false,
+    builtAt: true,
+    modules: false,
+    entrypoints: false,
+    moduleAssets: false,
+    outputPath: false,
+  },
+
+  // plugins
   plugins: [
 
     new MiniCssExtractPlugin({

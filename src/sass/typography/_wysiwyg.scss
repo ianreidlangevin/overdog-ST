@@ -125,10 +125,10 @@
 
   blockquote {
     position: relative;
+    margin-bottom: 2rem;
     padding: 1rem 2em;
     color: $grey02;
     font-style: italic;
-    margin-bottom: 2rem;
 
     &::before {
       position: absolute;
