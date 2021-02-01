@@ -15,8 +15,7 @@ const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /* PRODUCTION OPTIMIZATION */
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 /* DELETE LE CONTENU DU DOSSIER AVANT DE GENERER LES FICHIERS */
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -41,7 +40,7 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
-    
+
     new PurgecssPlugin({
         paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
     }),
@@ -101,15 +100,7 @@ module.exports = merge(common, {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          output: {
-            comments: false,
-          },
-        },
-        extractComments: false,
-      }),
-      new OptimizeCSSAssetsPlugin({})
+      new CssMinimizerPlugin()
     ],
     splitChunks: {
       chunks: 'all'

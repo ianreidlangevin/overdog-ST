@@ -18,10 +18,6 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
 
-  output: {
-    filename: '[name].js',
-  },
-
   plugins: [
 
     new MiniCssExtractPlugin({
