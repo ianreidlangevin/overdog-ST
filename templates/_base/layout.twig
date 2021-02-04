@@ -4,9 +4,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{# PRECONNECT TO EXTERNAL RESSOURCES #}
-		{# Delete typekit if not use or change it for google fonts #}
-		<link rel="preconnect" href="https://p.typekit.net" crossorigin>
-		<link rel="preconnect" href="https://use.typekit.net" crossorigin>
 		<link rel="preconnect" href="{{ alias('@imagesUrl') }}" crossorigin>
 		<link rel="preconnect" href="{{ alias('@docsUrl') }}/" crossorigin>
 		{# TITLE #}
@@ -64,8 +61,7 @@
 			{% block content %}{% endblock %}
 		</main>
 		{% include '_base/footer' ignore missing %}
-		{# ---> ADD LINK TO WEBFONT HERE #}
-
+		{# ADD LINK TO WEBFONT HERE if needed and preconnect in head #}
 		{# SCHEMA.ORG INFO - see Overdog SEO docs for how to use it #}
 		{% block schema %}{% endblock %}
 	</body>

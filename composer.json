@@ -1,7 +1,7 @@
 {
   "name": "3ejoueur/overdog",
   "description": "A Craft CMS scaffolding project for 3e joueur",
-  "version": "1.1.5",
+  "version": "1.2",
   "authors": [
     {
       "name": "Ian Reid Langevin",
@@ -52,9 +52,9 @@
     ],
     "post-install-cmd": [
       "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \"",
-      "@php craft install/check && php craft migrate/all || return 0",
-      "@php craft install/check && php craft project-config/apply || return 0",
-      "@php craft install/check && php craft clear-caches/all || return 0"
+      "@php craft install/check && php craft clear-caches/all --interactive=0 || exit 0",
+      "@php craft install/check && php craft migrate/all --interactive=0 || exit 0",
+      "@php craft install/check && php craft project-config/apply --interactive=0 || return 0"
     ]
   }
 }
