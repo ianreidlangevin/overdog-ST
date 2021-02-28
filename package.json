@@ -47,6 +47,7 @@
     "stylelint": "^13.7.2",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "svgstore-cli": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
     "webpack": "^5.19.0",
     "webpack-cli": "^4.4.0",
     "webpack-merge": "^5.7.3"

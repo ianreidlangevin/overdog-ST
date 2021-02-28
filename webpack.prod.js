@@ -15,6 +15,7 @@ const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /* PRODUCTION OPTIMIZATION */
+const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 /* DELETE LE CONTENU DU DOSSIER AVANT DE GENERER LES FICHIERS */
@@ -109,17 +110,25 @@ module.exports = merge(common, {
   optimization: {
     minimize: true,
     minimizer: [
-          new CssMinimizerPlugin({
-            minimizerOptions: {
-              preset: [
-                'default',
-                {
-                  discardComments: { removeAll: true },
-                },
-              ],
+      new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          preset: [
+            'default',
+            {
+              discardComments: { removeAll: true },
             },
-          }),
-        ],
+          ],
+        },
+      }),
+    ],
     splitChunks: {
       chunks: 'all'
     }
