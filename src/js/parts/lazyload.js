@@ -9,7 +9,7 @@
 */
 
 // if browser support native loading attr
-const lazyimages = document.querySelectorAll(".lazyload")
+const lazyimages = document.querySelectorAll('[loading="lazy"]')
 
 // common function - rename data-srset and data-src and remove them after
 function renameDataSet (element) {
