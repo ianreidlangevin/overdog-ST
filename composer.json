@@ -21,7 +21,7 @@
   "type": "project",
   "require": {
     "craftcms/aws-s3": "^1.2",
-    "craftcms/cms": "3.6.4",
+    "craftcms/cms": "3.6.10",
     "craftcms/redactor": "2.8.5",
     "vlucas/phpdotenv": "^3.4.0"
   },
