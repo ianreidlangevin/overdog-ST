@@ -15,16 +15,12 @@
   &__icon {
     width: 22px;
     height: 22px;
-
-    path {
-      @include transition-in-out(fill, 0.4s);
-
-      fill: #869ab3;
+    @include transition-in-out(fill, 0.4s);
+    fill: #869ab3;
     }
 
-    &:hover path {
+    &:hover {
       @include transition-in-out(fill, 0.2s);
-
       fill: #333;
     }
   }

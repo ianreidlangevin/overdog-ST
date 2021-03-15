@@ -36,7 +36,7 @@ module.exports = {
               url: false,
             }
           },
-          // parse and add autoprefixer - config in postcss.config.js file
+          // parse and add autoprefixer with postCSS preset env
           {
             loader: "postcss-loader",
             options: {
