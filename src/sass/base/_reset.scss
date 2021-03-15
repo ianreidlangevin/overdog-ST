@@ -8,7 +8,7 @@
 html {
   font-family: sans-serif;
   line-height: 1.15;
-  -webkit-tap-highlight-color: rgba($black, 0); // Change the default tap highlight to be completely transparent in iOS
+  -webkit-tap-highlight-color: rgba(0,0,0, 0); // Change the default tap highlight to be completely transparent in iOS
   -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
 }
 
@@ -184,6 +184,7 @@ button,
 }
 
 fieldset {
+  border: none;
   padding: 0.35em 0.75em 0.625em; // Correct the padding in Firefox
 }
 
