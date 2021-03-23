@@ -27,6 +27,11 @@ return [
         'limitAutoSlugsToAscii' => true,
         'convertFilenamesToAscii' => true,
 
+        // 3e joueur - search option to enable fuzzy search from both directions GLOBALLY FOR ALL FORMS
+        'defaultSearchTermOptions' => [
+          'subLeft' => true,
+        ],
+
         // remove the X-Powered-By Craft header should be sent, helping to identify that the site is running on Craft
         'sendPoweredByHeader' => false,
 

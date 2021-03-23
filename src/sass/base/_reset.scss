@@ -185,7 +185,7 @@ button,
 
 fieldset {
   border: none;
-  padding: 0.35em 0.75em 0.625em; // Correct the padding in Firefox
+  padding: 0; // Correct the padding in Firefox
 }
 
 textarea {

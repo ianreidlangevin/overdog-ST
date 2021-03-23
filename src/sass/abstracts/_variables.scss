@@ -62,14 +62,13 @@ $rfs-breakpoint: 1300; // 1
 */
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1300px,
-  xxxl: 1500px,
-  xxxxl: 1700px
+  xs: 0, // mobile small
+  sm: 576px, // mobile HD
+  md: 768px, // tablet portrait
+  lg: 1024px, // tablet landscape
+  xl: 1200px, // desktop HD
+  xxl: 1400px, // desktop wide
+  xxxl: 1500px, // desktop extra wide
 );
 
 
@@ -85,9 +84,8 @@ $container-max-widths: (
   md: 90%,
   lg: 90%,
   xl: 1140px,
-  xxl: 1240px,
+  xxl: 1320px,
   xxxl: 1440px,
-  xxxxl: 1640px
 );
 
 
