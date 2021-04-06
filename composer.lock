@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b79d8b6e29f1c8971827b4af9ba1d0a4",
+    "content-hash": "f70d4cf4b888da52ed65c7f58c8f61ea",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -358,11 +358,11 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "1.4.5",
+            "version": "1.4.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/f28d44c286812c714741478d968104c5e604a1d4",
-                "reference": "f28d44c286812c714741478d968104c5e604a1d4",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/f27e06cd9675801df441b3656569b328e04aa37c",
+                "reference": "f27e06cd9675801df441b3656569b328e04aa37c",
                 "shasum": ""
             },
             "require": {
@@ -389,7 +389,7 @@
                 "Xdebug",
                 "performance"
             ],
-            "time": "2020-11-13T08:04:11+00:00"
+            "time": "2021-03-25T17:01:18+00:00"
         },
         {
             "name": "craftcms/aws-s3",
@@ -445,11 +445,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.6.10",
+            "version": "3.6.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/3f88316387ca91ceaf9b63dc9983e17b77b510e2",
-                "reference": "3f88316387ca91ceaf9b63dc9983e17b77b510e2",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/3a2ab820b75ef50b78223f1222a5fe534cc60ba2",
+                "reference": "3a2ab820b75ef50b78223f1222a5fe534cc60ba2",
                 "shasum": ""
             },
             "require": {
@@ -527,7 +527,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2021-03-09T20:10:02+00:00"
+            "time": "2021-03-29T18:52:48+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -823,17 +823,17 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.25",
+            "version": "3.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0dbf5d78455d4d6a41d186da50adc1122ec066f4",
-                "reference": "0dbf5d78455d4d6a41d186da50adc1122ec066f4",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/c81f18a3efb941d8c4d2e025f6183b5c6d697307",
+                "reference": "c81f18a3efb941d8c4d2e025f6183b5c6d697307",
                 "shasum": ""
             },
             "require": {
-                "doctrine/lexer": "^1.0.1",
-                "php": ">=5.5",
-                "symfony/polyfill-intl-idn": "^1.10"
+                "doctrine/lexer": "^1.2",
+                "php": ">=7.2",
+                "symfony/polyfill-intl-idn": "^1.15"
             },
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
@@ -841,7 +841,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -866,7 +866,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-12-29T14:50:06+00:00"
+            "time": "2021-04-01T18:37:14+00:00"
         },
         {
             "name": "elvanto/litemoji",
@@ -970,17 +970,17 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.2.0",
+            "version": "7.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0aa74dfb41ae110835923ef10a9d803a22d50e79",
-                "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7008573787b430c1c1f650e3722d9bba59967628",
+                "reference": "7008573787b430c1c1f650e3722d9bba59967628",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^1.4",
-                "guzzlehttp/psr7": "^1.7",
+                "guzzlehttp/psr7": "^1.7 || ^2.0",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0"
             },
@@ -995,7 +995,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.1-dev"
+                    "dev-master": "7.3-dev"
                 }
             },
             "autoload": {
@@ -1034,7 +1034,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2020-10-10T11:47:56+00:00"
+            "time": "2021-03-23T11:33:13+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1080,11 +1080,11 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.7.0",
+            "version": "1.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/53330f47520498c0ae1f61f7e2c90f55690c06a3",
-                "reference": "53330f47520498c0ae1f61f7e2c90f55690c06a3",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/35ea11d335fd638b5882ff1725228b3d35496ab1",
+                "reference": "35ea11d335fd638b5882ff1725228b3d35496ab1",
                 "shasum": ""
             },
             "require": {
@@ -1137,7 +1137,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2020-09-30T07:37:11+00:00"
+            "time": "2021-03-21T16:25:00+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1569,11 +1569,11 @@
         },
         {
             "name": "mikehaertl/php-shellcommand",
-            "version": "1.6.3",
+            "version": "1.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/fe86ec847877b83bf61a96719e7f2e3b3e516a6b",
-                "reference": "fe86ec847877b83bf61a96719e7f2e3b3e516a6b",
+                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/3488d7803df1e8f1a343d3d0ca452d527ad8d5e5",
+                "reference": "3488d7803df1e8f1a343d3d0ca452d527ad8d5e5",
                 "shasum": ""
             },
             "require": {
@@ -1598,7 +1598,7 @@
             "keywords": [
                 "shell"
             ],
-            "time": "2020-11-23T17:31:15+00:00"
+            "time": "2021-03-17T06:54:33+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -2382,11 +2382,11 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.2.4",
+            "version": "v5.2.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d6d0cc30d8c0fda4e7b213c20509b0159a8f4556",
-                "reference": "d6d0cc30d8c0fda4e7b213c20509b0159a8f4556",
+                "url": "https://api.github.com/repos/symfony/console/zipball/35f039df40a3b335ebf310f244cb242b3a83ac8d",
+                "reference": "35f039df40a3b335ebf310f244cb242b3a83ac8d",
                 "shasum": ""
             },
             "require": {
@@ -2443,7 +2443,7 @@
                 "console",
                 "terminal"
             ],
-            "time": "2021-02-23T10:08:49+00:00"
+            "time": "2021-03-28T09:42:18+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -2491,11 +2491,11 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v5.2.4",
+            "version": "v5.2.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/710d364200997a5afde34d9fe57bd52f3cc1e108",
-                "reference": "710d364200997a5afde34d9fe57bd52f3cc1e108",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/8c86a82f51658188119e62cff0a050a12d09836f",
+                "reference": "8c86a82f51658188119e62cff0a050a12d09836f",
                 "shasum": ""
             },
             "require": {
@@ -2526,7 +2526,7 @@
             ],
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
-            "time": "2021-02-12T10:38:38+00:00"
+            "time": "2021-03-28T14:30:26+00:00"
         },
         {
             "name": "symfony/finder",
@@ -3185,11 +3185,11 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.2.4",
+            "version": "v5.2.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/4e78d7d47061fa183639927ec40d607973699609",
-                "reference": "4e78d7d47061fa183639927ec40d607973699609",
+                "url": "https://api.github.com/repos/symfony/string/zipball/ad0bd91bce2054103f5eaa18ebeba8d3bc2a0572",
+                "reference": "ad0bd91bce2054103f5eaa18ebeba8d3bc2a0572",
                 "shasum": ""
             },
             "require": {
@@ -3235,15 +3235,15 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2021-02-16T10:20:28+00:00"
+            "time": "2021-03-17T17:12:15+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/7d6ae0cce3c33965af681a4355f1c4de326ed277",
-                "reference": "7d6ae0cce3c33965af681a4355f1c4de326ed277",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/298a08ddda623485208506fcee08817807a251dd",
+                "reference": "298a08ddda623485208506fcee08817807a251dd",
                 "shasum": ""
             },
             "require": {
@@ -3284,7 +3284,7 @@
             ],
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
-            "time": "2021-02-22T15:48:39+00:00"
+            "time": "2021-03-06T07:59:01+00:00"
         },
         {
             "name": "true/punycode",
@@ -3324,11 +3324,11 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.14.3",
+            "version": "v2.14.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8bc568d460d88b25c00c046256ec14a787ea60d9",
-                "reference": "8bc568d460d88b25c00c046256ec14a787ea60d9",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/0b4ba691fb99ec7952d25deb36c0a83061b93bbf",
+                "reference": "0b4ba691fb99ec7952d25deb36c0a83061b93bbf",
                 "shasum": ""
             },
             "require": {
@@ -3375,7 +3375,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2021-01-05T15:34:33+00:00"
+            "time": "2021-03-10T10:05:55+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3451,11 +3451,11 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.31",
+            "version": "4.1.32",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/22dea9be8dbffa466995ea87a12da5f3bce874bb",
-                "reference": "22dea9be8dbffa466995ea87a12da5f3bce874bb",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/159b49a50cf3f6cf72ee43b0dcf7c2580a0c12d1",
+                "reference": "159b49a50cf3f6cf72ee43b0dcf7c2580a0c12d1",
                 "shasum": ""
             },
             "require": {
@@ -3484,7 +3484,7 @@
                 {
                     "name": "Lars Moelleken",
                     "email": "lars@moelleken.org",
-                    "homepage": "http://www.moelleken.org/"
+                    "homepage": "https://www.moelleken.org/"
                 }
             ],
             "description": "anti xss-library",
@@ -3495,15 +3495,15 @@
                 "security",
                 "xss"
             ],
-            "time": "2020-12-02T02:10:30+00:00"
+            "time": "2021-03-29T14:29:34+00:00"
         },
         {
             "name": "voku/arrayy",
-            "version": "7.8.8",
+            "version": "7.8.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/8b6ba81b9fbfdc3631af175d398a4dc58370c52f",
-                "reference": "8b6ba81b9fbfdc3631af175d398a4dc58370c52f",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/d26e7d59ac2f6eb891b77c48bfdb9fe1e76afa60",
+                "reference": "d26e7d59ac2f6eb891b77c48bfdb9fe1e76afa60",
                 "shasum": ""
             },
             "require": {
@@ -3528,7 +3528,7 @@
                 {
                     "name": "Lars Moelleken",
                     "email": "lars@moelleken.org",
-                    "homepage": "http://www.moelleken.org/",
+                    "homepage": "https://www.moelleken.org/",
                     "role": "Maintainer"
                 }
             ],
@@ -3542,7 +3542,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2021-03-09T13:07:20+00:00"
+            "time": "2021-03-29T13:31:10+00:00"
         },
         {
             "name": "voku/email-check",
