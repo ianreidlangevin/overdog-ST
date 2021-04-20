@@ -8,8 +8,8 @@
   "scripts": {
     "start": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js --progress",
-    "lint:scss": "yarn stylelint src/sass/**/*.scss",
-    "lint:js": "yarn eslint src/js/**/*.js",
+    "lint:scss": "yarn stylelint src .scss",
+    "lint:js": "yarn eslint src --ext .js",
     "svg": "yarn rimraf src/svg/temp-optimized/* && node .imagemin-svgo.js && yarn svgstore -o web/img/svg-sprite.svg src/svg/temp-optimized/*.svg"
   },
   "browserslist": [
