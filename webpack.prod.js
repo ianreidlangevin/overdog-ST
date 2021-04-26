@@ -18,9 +18,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-/* DELETE LE CONTENU DU DOSSIER AVANT DE GENERER LES FICHIERS */
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 /* Glob and Path used by PURGE CSS to easily get a list of files */
 const glob = require('glob')
 const PATHS = {
@@ -35,6 +32,7 @@ module.exports = merge(common, {
   // output with hash for production
   output: {
     filename: '[name].[contenthash].js',
+    clean: true
   },
   // webpack 5 new config for output comment
   stats: {
@@ -73,13 +71,6 @@ module.exports = merge(common, {
       filename: path.resolve(__dirname, 'templates/_base/hash/non-critical.twig'),
       template: path.resolve(__dirname, 'src/ejs/non-critical.ejs'),
       inject: false,
-    }),
-
-    // empty folder before creating js and scss files
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [
-        '*',
-      ],
     }),
 
   ], // END PLUGINS
