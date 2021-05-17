@@ -67,7 +67,6 @@ module.exports = {
 
 
   plugins: [
-
     /* Path resolve is required to retreive the right folder path
     * HtmpwebpackPlugin create via ejs file the twig code to add script and style in our project
     */
@@ -82,8 +81,11 @@ module.exports = {
       template: path.resolve(__dirname, 'src/ejs/style.ejs'),
       inject: false,
     }),
-
   ], // END PLUGINS
 
+  // split runtime chunk
+  optimization: {
+    runtimeChunk: 'single'
+  },
 
 }; // end module exports
