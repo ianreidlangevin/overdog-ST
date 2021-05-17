@@ -32,7 +32,8 @@ module.exports = merge(common, {
   // output with hash for production
   output: {
     filename: '[name].[contenthash].js',
-    clean: true
+    clean: true,
+    chunkFilename: 'chunks/chunk~[name].[contenthash].js',
   },
   // webpack 5 new config for output comment
   stats: {
@@ -47,10 +48,15 @@ module.exports = merge(common, {
 
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
+      chunkFilename: 'chunks/chunk~[name].[contenthash].css',
     }),
 
     new PurgecssPlugin({
-        paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+      defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+      safelist: {
+        deep: [/active/, /open/, /current/, /richtext/, /wysiwyg/, ]
+      }
     }),
 
     new HtmlCriticalWebpackPlugin({
@@ -93,7 +99,6 @@ module.exports = merge(common, {
       },
     ] // end rules
   }, // end modules for production
-
 
   /*
   * Minify tool - default webpack settings

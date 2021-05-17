@@ -18,6 +18,11 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
 
+  // output
+  output: {
+    chunkFilename: 'chunks/chunk~[name].js',
+  },
+  
   // webpack 5 new config for output comment
   stats: {
     assets: true,
@@ -34,6 +39,7 @@ module.exports = merge(common, {
 
     new MiniCssExtractPlugin({
       filename: '[name].css',
+      chunkFilename: 'chunks/chunk~[name].css',
     }),
 
     new BrowserSyncPlugin({
