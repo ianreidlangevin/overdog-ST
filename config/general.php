@@ -20,6 +20,9 @@ return [
         // Control Panel trigger word
         'cpTrigger' => 'admin',
 
+        // limit revision to avoid adding lot to db
+        'maxRevisions' => 6,
+
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
 
