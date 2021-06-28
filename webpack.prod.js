@@ -6,7 +6,7 @@ const path = require('path');
 
 /* PLUGINS ET UTILITIES */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 /* CRITICAL CSS */
 const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
