@@ -20,25 +20,29 @@ return [
         // Control Panel trigger word
         'cpTrigger' => 'admin',
 
-        // limit revision to avoid adding lot to db
-        'maxRevisions' => 6,
-
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
 
-        // 3e joueur - use only ascii caracter in auto generated slugs and filename
+        // Overdog opinionated - db backup on update - set to false to avoid backing up large db on git deploy
+        // Do the backup with your db provider before deploying a Craft update.
+        'backupOnUpdate' => false,
+
+        // Overdog opinionated - limit revision to avoid adding lot to db
+        'maxRevisions' => 6,
+
+        // Overdog opinionated - use only ascii caracter in auto generated slugs and filename
         'limitAutoSlugsToAscii' => true,
         'convertFilenamesToAscii' => true,
 
-        // 3e joueur - search option to enable fuzzy search from both directions GLOBALLY FOR ALL FORMS
+        // Overdog opinionated - search option to enable fuzzy search from both directions GLOBALLY FOR ALL FORMS
         'defaultSearchTermOptions' => [
           'subLeft' => true,
         ],
 
-        // remove the X-Powered-By Craft header should be sent, helping to identify that the site is running on Craft
+        // Overdog opinionated - remove the X-Powered-By Craft header should be sent, helping to identify that the site is running on Craft
         'sendPoweredByHeader' => false,
 
-        // 3e joueur - Aliases
+        // Overdog opinionated - Aliases
         'aliases' => [
           '@webroot' => dirname(__DIR__) . '/web',
           '@rootUrl' => getenv('SITE_URL'),
