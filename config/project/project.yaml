@@ -1,4 +1,4 @@
-dateModified: 1617719958
+dateModified: 1624973694
 graphql:
   publicToken:
     enabled: false
@@ -12,5 +12,5 @@ system:
   edition: solo
   live: true
   name: Overdog
-  schemaVersion: 3.6.7
+  schemaVersion: 3.6.8
   timeZone: America/New_York
