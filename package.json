@@ -53,7 +53,5 @@
     "webpack-cli": "^4.4.0",
     "webpack-merge": "^5.7.3"
   },
-  "dependencies": {
-    "rfs": "^9.0.4"
-  }
+  "dependencies": {}
 }
