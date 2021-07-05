@@ -21,7 +21,7 @@
 
 body {
   margin: 0;
-  background-color: var(--black-light); // As a best practice, apply a default background-color
+  background-color: var(--white); // As a best practice, apply a default background-color
   color: var(--text);
   font-family: var(--font-family-body);
   font-size: var(--body-size); // edit body sizes for each breakpoint in config.scss
