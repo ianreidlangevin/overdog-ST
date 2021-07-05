@@ -11,6 +11,7 @@ module.exports = {
 
   entry: {
     app: ['./src/js/app.js', './src/sass/index.scss'], // scss can also be import in each js file - usefull for js component method
+    svg: './src/svg/svg.js'
   },
 
   output: {
@@ -20,6 +21,15 @@ module.exports = {
 
   module: {
     rules: [
+      // SVG LOADER
+      {
+        test: /\.svg$/,
+        use: [
+          'svg-sprite-loader',
+          'svgo-loader'
+        ]
+      },
+      // CSS & SCSS LOADER
       {
         test: /\.scss$/,
         use: [

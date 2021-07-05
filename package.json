@@ -9,8 +9,7 @@
     "start": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js --progress",
     "lint:scss": "yarn stylelint src .scss",
-    "lint:js": "yarn eslint src --ext .js",
-    "svg": "yarn rimraf src/svg/temp-optimized/* && node .imagemin-svgo.js && yarn svgstore -o web/img/svg-sprite.svg src/svg/temp-optimized/*.svg"
+    "lint:js": "yarn eslint src --ext .js"
   },
   "browserslist": [
     "defaults"
@@ -41,13 +40,12 @@
     "postcss-loader": "^6.1.0",
     "postcss-preset-env": "^6.7.0",
     "purgecss-webpack-plugin": "^4.0.0",
-    "rimraf": "^3.0.2",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
     "stylelint": "^13.7.2",
     "stylelint-config-sass-guidelines": "^8.0.0",
-    "svgo": "^2.3.1",
-    "svgstore-cli": "^2.0.0",
+    "svg-sprite-loader": "^6.0.9",
+    "svgo-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.1.4",
     "webpack": "^5.41.0",
     "webpack-cli": "^4.4.0",

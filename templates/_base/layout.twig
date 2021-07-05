@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{# PRECONNECT TO EXTERNAL RESSOURCES #}
 		<link rel="preconnect" href="{{ alias('@imagesUrl') }}" crossorigin>
-		<link rel="preconnect" href="{{ alias('@docsUrl') }}/" crossorigin>
+		<link rel="preconnect" href="{{ alias('@docsUrl') }}" crossorigin>
 		{# TITLE #}
 		<title>{{ (entry is defined and entry.uri == "__home__") ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
 		{# SEO #}

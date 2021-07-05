@@ -15,9 +15,6 @@
 // Mixins
 @import 'mixins/objectfit';
 @import 'mixins/transitions';
-// Responsive font-size - see https://github.com/twbs/rfs for usage
-@import "../../node_modules/rfs/scss";
-
 
 // Base
 @import 'base/breakpoints';
