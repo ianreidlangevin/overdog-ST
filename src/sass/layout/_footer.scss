@@ -1,3 +1,8 @@
+/*
+--------------------------------------------------------------------------
+  Footer
+--------------------------------------------------------------------------
+*/
 
 .footer-copyright {
   display: flex;
@@ -13,13 +18,13 @@
   }
 
   &__icon {
+    transition: fill 0.4s ease-in-out;
     width: 22px;
     height: 22px;
-    @include transition-in-out(fill, 0.4s);
     fill: #869ab3;
 
     &:hover {
-      @include transition-in-out(fill, 0.2s);
+      transition: fill 0.2s ease-in-out;
       fill: #333;
     }
   }

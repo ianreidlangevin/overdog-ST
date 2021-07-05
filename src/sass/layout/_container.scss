@@ -1,8 +1,13 @@
-
 /*
 --------------------------------------------------------------------------
-  Colors utility classes
+  CONTAINER
 --------------------------------------------------------------------------
 */
 
-// Add your colors classes here like bg-primary or text-primary if you want
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 1640px;
+  margin-right: auto;
+  margin-left: auto;
+}

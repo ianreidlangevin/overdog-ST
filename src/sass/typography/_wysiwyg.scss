@@ -1,5 +1,6 @@
 /*
 --------------------------------------------------------------------------
+  RICH TEXT STYLES
   Styles for the client CMS editor field
   IMPORTANT - add the wysiwyg class on your template div
 --------------------------------------------------------------------------
@@ -59,7 +60,7 @@
   */
 
   a {
-    color: $link-color;
+    color: var(--primary);
     text-decoration: none;
   }
 
@@ -75,7 +76,7 @@
     border-collapse: collapse;
     border-spacing: 0;
 
-    @include media-breakpoint-down(sm) {
+    @media (max-width: 576px) {
       width: 100%;
       -webkit-overflow-scrolling: touch;
       overflow-x: auto;
@@ -85,7 +86,7 @@
     th {
       min-width: 2em;
       padding: 1em;
-      border: 1px solid $grey02;
+      border: 1px solid var(--primary);
 
       > *:last-child {
         margin-bottom: 0; // avoid the p margin on the last p or on a single
@@ -93,7 +94,7 @@
     }
 
     th {
-      background-color: $grey01;
+      background-color: var(--primary);
       font-size: 1.06em;
     }
 
@@ -105,7 +106,7 @@
 
   mark {
     background-color: #f9f93d;
-    color: $black;
+    color: var(--black);
   }
 
   /*
@@ -127,7 +128,7 @@
     position: relative;
     margin-bottom: 2rem;
     padding: 1rem 2em;
-    color: $grey02;
+    color: var(--primary);
     font-style: italic;
 
     &::before {
@@ -137,7 +138,7 @@
       display: block;
       width: 4px;
       height: 100%;
-      background-color: $grey01;
+      background-color: var(--primary);
       content: '';
     }
   }
@@ -149,10 +150,7 @@
 
   > ul {
     margin-bottom: 2rem;
-
-    @include media-breakpoint-up(lg) {
-      padding-left: 2em;
-    }
+    padding-left: 2em;
 
     > li {
       position: relative;
@@ -164,7 +162,7 @@
         position: absolute;
         left: 0;
         margin-right: 1.5em;
-        color: $primary;
+        color: var(--primary);
         content: '•';
       }
     } //li
@@ -182,7 +180,7 @@
         position: absolute;
         left: 0;
         margin-right: 1.5em;
-        color: $grey03;
+        color: var(--primary);
         content: '—';
       }
     }
@@ -201,10 +199,7 @@
     counter-reset: my-counter;
     margin-bottom: 2rem;
     padding-top: 1rem;
-
-    @include media-breakpoint-up(sm) {
-      padding-left: 2em;
-    }
+    padding-left: 2em;
 
     > li {
       position: relative;
@@ -223,8 +218,8 @@
         height: 1.8em;
         margin-right: 2em;
         padding: 0.96em 1em 1em;
-        background-color: $primary;
-        color: $white;
+        background-color: var(--primary);
+        color: var(--white);
         line-height: 1;
         content: counter(my-counter);
         align-items: center;

@@ -1,53 +1,41 @@
 /*
 --------------------------------------------------------------------------
-  Main SCSS file
+  MAIN SCSS FILE
 --------------------------------------------------------------------------
-
-  1. Do not remove the purgeCSS ignore comments in this file around your project elements and around reset.
-  2. PurgeCSS will only remove all base and utility classes - except reset - not used in your templates folder on Yarn build process.
-  3. If you prefer to use Bootstrap, replace all the base and utilities folder except lazyload.
-
 */
 
-// Variables
+// ABSTRACT
+// If you use Sailor CSS, add your config file in abstracts folder and uncomment the next lines
+
+// @import 'abstracts/config';
+// @import 'sailorcss'; // in node module
 @import 'abstracts/variables';
+@import 'abstracts/fontface';
 
-// Mixins
-@import 'mixins/objectfit';
-@import 'mixins/transitions';
 
-// Base
-@import 'base/breakpoints';
-@import 'base/grid';
+// BASE - do not remove purgeCSS comments around reset and root
 /*! purgecss start ignore */
-  @import 'base/reset'; // do not purge reset
-  @import 'base/root'; // do not purge root
+@import 'base/reset';
+@import 'base/root';
 /*! purgecss end ignore */
 
 
-// Utilities classes
-@import 'utilities/spacing'; // must be loaded after grid to avoid important on px and py
-@import 'utilities/display';
-@import 'utilities/embed';
-@import 'utilities/flex';
-@import 'utilities/screenreaders';
-@import 'utilities/colors';
-@import 'utilities/text';
-@import 'utilities/lazyload';
-
-/*! purgecss start ignore */
-
-  // Typography
-  @import 'typography/titles';
-  @import 'typography/wysiwyg';
-
-  // Components
-  @import 'components/buttons';
-
-  // Navigation - add yours
-
-  // Layout
-  @import 'layout/footer';
+// MIXINS - add your mixins under this comment
 
 
-/*! purgecss end ignore */
+// LAYOUT
+@import 'layout/container';
+@import 'layout/footer';
+
+
+// COMPONENTS
+@import 'components/buttons';
+
+
+// TYPOGRAPHY
+@import 'typography/wysiwyg';
+
+
+// NAVIGATION - add navigation folder files under this comment
+
+// UTILITIES - add utilities folder files under this comment
