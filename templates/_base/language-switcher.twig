@@ -1,5 +1,4 @@
-
-{# logic #}
+{# LOGIC #}
 {% set currentElement = craft.app.urlManager.matchedElement %}
 {% set sites = craft.app.getSites().getGroupById(currentSite.groupId).getSites()|without(currentSite) %}
 {% set switcherLinks = [] %}
@@ -27,12 +26,12 @@
 {% endfor %}
 
 
-{# outputting html #}
+{# LAYOUT #}
 {% if showSwitcherInNav == true %}
-<div class="lang-switch" aria-label="{{'Switch language'|t}}">
-{% for switcherLink in switcherLinks %}
-  <a class="lang-switch__link stretched-link" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}">{{ switcherLink.title [0:2] }}</a>
-  {# The bracket after site.name is for Twig slice function to only display the 2 first characters #}
-{% endfor %}
-</div>
+  <div class="lang-switch" aria-label="{{'Switch language'|t}}">
+  {% for switcherLink in switcherLinks %}
+    <a class="lang-switch__link stretched-link" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}">{{ switcherLink.title [0:2] }}</a>
+    {# The bracket after site.name is for Twig slice function to only display the 2 first characters #}
+  {% endfor %}
+  </div>
 {% endif %}
