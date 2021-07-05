@@ -46,7 +46,6 @@ return [
         'aliases' => [
           '@webroot' => dirname(__DIR__) . '/web',
           '@rootUrl' => getenv('SITE_URL'),
-          '@svgPath' => getenv('SITE_URL') . '/img/svg-sprite.svg',
           // S3 and Imgix - used in head to preconnect - without subfolder
           '@imagesUrl' => getenv('S3_IMAGES_URL'),
           '@docsUrl' => getenv('S3_DOCS_URL'),
