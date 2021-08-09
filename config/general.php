@@ -30,6 +30,9 @@ return [
         // Overdog opinionated - limit revision to avoid adding lot to db
         'maxRevisions' => 6,
 
+        // Overdog opinionated - important for assets cache replacement
+        'revAssetUrls' => true,
+
         // Overdog opinionated - use only ascii caracter in auto generated slugs and filename
         'limitAutoSlugsToAscii' => true,
         'convertFilenamesToAscii' => true,
@@ -59,7 +62,7 @@ return [
         'devMode' => true,
         // comment out or set to true if you want to test local caching
         'enableTemplateCaching' => false,
-        // add mamp support for sql dump
+        // add MAMP support for sql dump
         'backupCommand' => getenv('BACKUP_COMMAND'),
         'restoreCommand' => getenv('RESTORE_COMMAND'),
     ],
