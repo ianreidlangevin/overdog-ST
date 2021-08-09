@@ -1,8 +1,11 @@
-dateModified: 1624973694
+dateModified: 1628530663
 graphql:
   publicToken:
     enabled: false
     expiryDate: null
+meta:
+  __names__:
+    228f18ac-b71c-4021-8f66-0d34f29a880f: 'SEO global' # SEO global
 plugins:
   aws-s3:
     edition: standard
@@ -12,5 +15,5 @@ system:
   edition: solo
   live: true
   name: Overdog
-  schemaVersion: 3.6.8
+  schemaVersion: 3.7.7
   timeZone: America/New_York

@@ -20,8 +20,8 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "craftcms/aws-s3": "^1.2",
-    "craftcms/cms": "3.6.17",
+    "craftcms/aws-s3": "1.2.15",
+    "craftcms/cms": "3.7.8",
     "craftcms/redactor": "2.8.5",
     "vlucas/phpdotenv": "^3.4.0"
   },
