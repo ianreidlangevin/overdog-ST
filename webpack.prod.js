@@ -55,7 +55,7 @@ module.exports = merge(common, {
       paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
       safelist: {
-        deep: [/active/, /open/, /current/, /richtext/, /wysiwyg/, ]
+        deep: [/active/, /open/, /current/, /richtext/, /wysiwyg/, /flickity/, /carousel/, /show/, ]
       }
     }),
 
