@@ -23,6 +23,9 @@ return [
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
 
+        // Overdog opinionated - set default same site cookie value
+        'sameSiteCookieValue' => 'Lax',
+
         // Overdog opinionated - db backup on update - set to false to avoid backing up large db on git deploy
         // Do the backup with your db provider before deploying a Craft update.
         'backupOnUpdate' => false,
