@@ -19,5 +19,5 @@
  */
 
 return [
-
+  // Can support language base url siteHandle -> see https://craftcms.com/docs/3.x/routing.html#advanced-routing-with-url-rules
 ];
