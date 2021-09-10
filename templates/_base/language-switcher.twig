@@ -1,37 +1,50 @@
-{# LOGIC #}
+{# FOR PAGES WITH NO CONTROL PANEL ENTRY
+   The showLangSwitcherInNav is only used for custom pages with no CP entry
+   If you want to use the same slug after the site url, just set showInNav in the variable params
+   Use it like this in your page template :
+   {% set langSwitcher = { showInNav: true, 'siteFrench': 'panier', 'siteEnglish': 'cart' } %}
+#}
+{% set showLangSwitcherInNav = langSwitcher.showInNav|default(false) %}
+
+{# Get current element in CP if exists and otherSites than the current one #}
 {% set currentElement = craft.app.urlManager.matchedElement %}
-{% set sites = craft.app.getSites().getGroupById(currentSite.groupId).getSites()|without(currentSite) %}
+{% set otherSites = craft.app.getSites().getGroupById(currentSite.groupId).getSites()|without(currentSite) %}
 {% set switcherLinks = [] %}
-{% set showSwitcherInNav = false %}
 
-{% for site in sites if site.baseUrl is not empty %}
-
-    {% set title = craft.app.i18n.getLocaleById(site.language).displayName() %}
-    {% set url = site.getBaseUrl() %}
-    {% if currentElement %}
-        {% set otherLocaleElement = craft.app.getElements().getElementById(currentElement.id, currentElement.className(), site.id) %}
-        {% if otherLocaleElement and otherLocaleElement.enabledForSite %}
-            {% set url = otherLocaleElement.url %}
-            {% set showSwitcherInNav = true %}
-        {% endif %}
-    {% endif %}
-
-    {% set switcherLinks = switcherLinks|merge([{
+{# LOGIC #}
+{% for otherSite in otherSites if otherSite.baseUrl is not empty %}
+	{% set title = craft.app.i18n.getLocaleById(otherSite.language).displayName() %}
+	{% set url = otherSite.getBaseUrl() %}
+   {# if current element - get the other sites infos for this element #}
+	{% if currentElement %}
+		{% set otherLocaleElement = craft.app.getElements().getElementById(currentElement.id, currentElement.className(), otherSite.id) %}
+		{% if otherLocaleElement and otherLocaleElement.enabledForSite %}
+			{% set url = otherLocaleElement.url %}
+         {% set showLangSwitcherInNav = true %}
+		{% endif %}
+   {# else, pages that are not in CP but have the langSwitcher.showInNav set to true in template -> rebuild the url #}
+   {% elseif showLangSwitcherInNav == true %}
+      {# if sites handles with custom slugs are in the variable params, build the url with these values #}
+      {% if langSwitcher[otherSite.handle] is defined %}
+         {% set url = otherSite.baseUrl ~ langSwitcher[otherSite.handle] %}
+      {# else, keep the same slug but replace the baseUrl with the one from the other site #}
+      {% else %}
+         {% set url = craft.app.request.absoluteUrl|replace(currentSite.baseUrl, otherSite.baseUrl) %}
+      {% endif %}
+	{% endif %}
+   {# merge the info for each sites #}
+	{% set switcherLinks = switcherLinks|merge([{
         url: url,
         title: title,
-        current: site.id == currentSite.id ? true : false,
-        language: site.language,
+        current: otherSite.id == currentSite.id ? true : false,
+        language: otherSite.language,
     }]) %}
-
 {% endfor %}
 
-
 {# LAYOUT #}
-{% if showSwitcherInNav == true %}
-  <div class="lang-switch" aria-label="{{'Switch language'|t}}">
-  {% for switcherLink in switcherLinks %}
-    <a class="lang-switch__link stretched-link" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}">{{ switcherLink.title [0:2] }}</a>
-    {# The bracket after site.name is for Twig slice function to only display the 2 first characters #}
-  {% endfor %}
-  </div>
+{% if showLangSwitcherInNav == true %}
+   {% for switcherLink in switcherLinks %}
+      <a class="top-navbar__lang" href="{{switcherLink.url}}" hreflang="{{switcherLink.language}}" lang="{{switcherLink.language}}" aria-label="{{ 'Switch language'|t }}">{{ switcherLink.title [0:2]|capitalize }}</a>
+      {# The bracket after site.name is for Twig slice function to only display the 2 first characters #}
+   {% endfor %}
 {% endif %}
