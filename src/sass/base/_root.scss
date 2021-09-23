@@ -23,7 +23,7 @@ body {
   margin: 0;
   background-color: var(--white); // As a best practice, apply a default background-color
   color: var(--text);
-  font-family: var(--font-family-body);
+  font-family: var(--ff-body);
   font-size: var(--body-size); // edit body sizes for each breakpoint in config.scss
   font-weight: normal;
   line-height: 1.6;
