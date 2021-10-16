@@ -4,13 +4,20 @@
 --------------------------------------------------------------------------
 */
 
-// ABSTRACT
-// If you use Sailor CSS, add your config file in abstracts folder and uncomment the next lines
+// SAILOR CSS - If you use Sailor CSS, uncomment the two next lines
 
-// @import 'abstracts/config';
-// @import 'sailorcss'; // in node module
+// @import 'abstracts/config'; // add your config file in the abstracts folder
+// @import 'sailorcss'; // resolved in node module by Webpack
+
+
+// ABSTRACTS
 @import 'abstracts/variables';
 @import 'abstracts/fontface';
+
+
+// SCSS mixins and placeholders
+@import 'abstracts/placeholders';
+@import 'abstracts/mixins';
 
 
 // BASE - do not remove purgeCSS comments around reset and root
@@ -18,9 +25,6 @@
 @import 'base/reset';
 @import 'base/root';
 /*! purgecss end ignore */
-
-
-// MIXINS - add your mixins under this comment
 
 
 // LAYOUT
