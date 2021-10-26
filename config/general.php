@@ -8,6 +8,8 @@
  * @see \craft\config\GeneralConfig
  */
 
+use craft\helpers\App;
+
 return [
     // Global settings
     '*' => [
@@ -21,7 +23,7 @@ return [
         'cpTrigger' => 'admin',
 
         // The secure key Craft will use for hashing and encrypting data
-        'securityKey' => getenv('SECURITY_KEY'),
+        'securityKey' => App::env('SECURITY_KEY'),
 
         // Overdog opinionated - set default same site cookie value
         'sameSiteCookieValue' => 'Lax',
@@ -51,10 +53,14 @@ return [
         // Overdog opinionated - Aliases
         'aliases' => [
           '@webroot' => dirname(__DIR__) . '/web',
-          '@rootUrl' => getenv('SITE_URL'),
-          // S3 and Imgix - used in head to preconnect - without subfolder
-          '@imagesUrl' => getenv('S3_IMAGES_URL'),
-          '@docsUrl' => getenv('S3_DOCS_URL'),
+          '@rootUrl' => App::env('SITE_URL'),
+          /**
+           *  AWS Cloudfront and Imgix URLs
+           *  Used in layout.twig with the preconnect attribute 
+           *  Remove or edit if you use a different setup
+           */
+          '@imagesUrl' => App::env('S3_IMAGES_URL') ?: '',
+          '@docsUrl' => App::env('S3_DOCS_URL') ?: '',
         ],
 
     ],
@@ -63,11 +69,11 @@ return [
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
-        // comment out or set to true if you want to test local caching
+        // Comment out or set to true if you want to test local caching
         'enableTemplateCaching' => false,
-        // add MAMP support for sql dump
-        'backupCommand' => getenv('BACKUP_COMMAND'),
-        'restoreCommand' => getenv('RESTORE_COMMAND'),
+        // Overdog opinionated - Add MAMP support for sql dump
+        'backupCommand' => App::env('BACKUP_COMMAND'),
+        'restoreCommand' => App::env('RESTORE_COMMAND'),
     ],
 
     // Staging environment settings
