@@ -3,10 +3,10 @@ fieldLayouts:
     tabs:
       -
         fields:
-          9b18697d-2ce6-492b-b628-1a649bb22eaa:
+          9b18697d-2ce6-492b-b628-1a649bb22eaa: # Image OG pour SEO
             required: false
             sortOrder: 2
-          d3974314-8390-48bd-af85-f938616558be:
+          d3974314-8390-48bd-af85-f938616558be: # Description SEO
             required: false
             sortOrder: 1
         name: SEO

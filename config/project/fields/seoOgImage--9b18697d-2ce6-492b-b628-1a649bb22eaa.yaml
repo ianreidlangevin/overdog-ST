@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: a7870a18-8ec8-42bd-bb94-ea232c8eb066
+fieldGroup: a7870a18-8ec8-42bd-bb94-ea232c8eb066 # SEO
 handle: seoOgImage
 instructions: 'Format requis : 1200px par 630px - Image utilisée pour les tags Open Graph'
 name: 'Image OG pour SEO'
