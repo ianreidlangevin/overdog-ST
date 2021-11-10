@@ -18,7 +18,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="default">
 		{# FAVICON #}
 		<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
-		{# INLINE CRITICAL CSS FOR HOME IF NOT IN DEV MODE - change it if you need to test #}
+      {# INLINE CRITICAL CSS FOR HOME IF CRITICALCSS IS SET TO TRUE - change it if you need to test #}
 		{% if getenv('CRITICALCSS') == "true" and entry is defined and entry.uri == "__home__" %}
 			<style>{{ source('/_base/critical/critical.css', ignore_missing = true) }}</style>{# inline critical css #}
 			{{ include('_base/hash/non-critical.twig', ignore_missing = true) }} {# load the full css with on load - see ejs for template #}
