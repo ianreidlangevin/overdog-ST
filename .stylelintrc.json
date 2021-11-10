@@ -1,13 +1,13 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "ignoreFiles": [
-    "src/sass/base/*.scss",
-    "src/sass/mixins/*.scss",
-    "src/sass/utilities/*.scss"
+    "src/sass/abstracts/*.scss",
+    "src/sass/base/*.scss"
   ],
   "defaultSeverity": "warning",
   "rules": {
     "max-nesting-depth": [ 3, { "ignore": ["blockless-at-rules"] }],
+    "selector-class-pattern":"^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
     "selector-max-compound-selectors": 4,
     "selector-no-qualifying-type" : [ true, { "ignore": [ "attribute", "class", "id" ] }],
     "order/properties-alphabetical-order": null,
