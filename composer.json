@@ -52,7 +52,7 @@
     ],
     "post-install-cmd": [
       "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \"",
-      "@php craft install/check && php craft clear-caches/all --interactive=0 || exit 0",
+      "@php craft install/check && php craft clear-caches/compiled-templates --interactive=0 || exit 0",
       "@php craft install/check && php craft up/index --interactive=0 || exit 0"
     ]
   }
