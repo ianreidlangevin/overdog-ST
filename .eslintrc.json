@@ -12,6 +12,7 @@
     },
     "rules": {
       "semi": 2,
+      "indent": ["error", 3],
       "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
       "quotes": [1, "double"]
     }
