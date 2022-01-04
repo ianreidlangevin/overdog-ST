@@ -5,27 +5,27 @@
 */
 
 .footer-copyright {
-  display: flex;
-  padding-bottom: 2rem;
-  color: #869ab3;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-end;
+   display: flex;
+   padding-bottom: 2rem;
+   color: #869ab3;
+   align-items: center;
+   flex-direction: row;
+   justify-content: flex-end;
 
-  &__text {
-    margin-right: 2rem;
-    font-size: 0.8em;
-  }
+   &__text {
+      margin-right: 2rem;
+      font-size: 0.8em;
+   }
 
-  &__icon {
-    transition: fill 0.4s ease-in-out;
-    width: 22px;
-    height: 22px;
-    fill: #869ab3;
+   &__icon {
+      transition: fill 0.4s ease-in-out;
+      width: 22px;
+      height: 22px;
+      fill: #869ab3;
 
-    &:hover {
-      transition: fill 0.2s ease-in-out;
-      fill: #333;
-    }
-  }
+      &:hover {
+         transition: fill 0.2s ease-in-out;
+         fill: #333;
+      }
+   }
 }

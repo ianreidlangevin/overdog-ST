@@ -5,30 +5,30 @@
 */
 
 .btn {
-  display: inline-block;
-  padding: 0.5em 2em;
-  border: 0;
-  outline: none;
-  background-color: #cdd7d9;
-  font-size: 1em;
-  text-align: center;
-  cursor: pointer;
-  appearance: none;
-  border-radius: 2em;
-  transition: background-color 0.4s ease-in-out;
+   display: inline-block;
+   padding: 0.5em 2em;
+   border: 0;
+   outline: none;
+   background-color: #cdd7d9;
+   font-size: 1em;
+   text-align: center;
+   cursor: pointer;
+   appearance: none;
+   border-radius: 2em;
+   transition: background-color 0.4s ease-in-out;
 
-  &:hover,
-  &:active {
-    transition: background-color 0.2s ease-in-out;
-    background-color: #2c3e50;
-  }
+   &:hover,
+   &:active {
+      transition: background-color 0.2s ease-in-out;
+      background-color: #2c3e50;
+   }
 
-  &[disabled],
-  &:disabled,
-  &.disabled {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
-  }
+   &[disabled],
+   &:disabled,
+   &.disabled {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+   }
 
 }

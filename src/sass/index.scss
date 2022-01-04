@@ -11,33 +11,33 @@
 
 
 // ABSTRACTS
-@import 'abstracts/variables';
-@import 'abstracts/fontface';
+@import "abstracts/variables";
+@import "abstracts/fontface";
 
 
 // SCSS mixins and placeholders
-@import 'abstracts/placeholders';
-@import 'abstracts/mixins';
+@import "abstracts/placeholders";
+@import "abstracts/mixins";
 
 
 // BASE - do not remove purgeCSS comments around reset and root
 /*! purgecss start ignore */
-@import 'base/reset';
-@import 'base/root';
+@import "base/reset";
+@import "base/root";
 /*! purgecss end ignore */
 
 
 // LAYOUT
-@import 'layout/container';
-@import 'layout/footer';
+@import "layout/container";
+@import "layout/footer";
 
 
 // COMPONENTS
-@import 'components/buttons';
+@import "components/buttons";
 
 
 // TYPOGRAPHY
-@import 'typography/wysiwyg';
+@import "typography/wysiwyg";
 
 
 // NAVIGATION - add navigation folder files under this comment
