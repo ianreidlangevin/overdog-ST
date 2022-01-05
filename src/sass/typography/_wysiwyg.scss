@@ -6,9 +6,7 @@
 --------------------------------------------------------------------------
 */
 
-
 .wysiwyg {
-
    // clear - important if image in editor
    &::after {
       display: block;
@@ -31,7 +29,6 @@
       font-size: 1.4rem;
    }
 
-
    // remove margins on first and last element to avoid double gap with other elements
    > *:first-child {
       margin-top: 0;
@@ -51,7 +48,8 @@
       margin-bottom: 1rem;
    }
 
-   iframe { // prevent overflow for video - add responsive
+   iframe {
+      // prevent overflow for video - add responsive
       max-width: 100%;
    }
 
@@ -97,7 +95,6 @@
          background-color: var(--primary);
          font-size: 1.06em;
       }
-
    } //table
 
    /*
@@ -118,7 +115,6 @@
       max-width: 100%;
       height: auto;
    }
-
 
    /*
   * Blockquote
@@ -142,7 +138,6 @@
          content: "";
       }
    }
-
 
    /*
   * Unordered list
@@ -240,5 +235,4 @@
    > ol ol ol {
       margin: 0.5em 0;
    }
-
 }
