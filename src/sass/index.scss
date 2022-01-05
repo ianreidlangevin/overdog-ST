@@ -6,38 +6,27 @@
 
 // SAILOR CSS - If you use Sailor CSS, uncomment the two next lines
 
-// @import 'abstracts/config'; // add your config file in the abstracts folder
-// @import 'sailorcss'; // resolved in node module by Webpack
-
+// @use 'abstracts/config'; // add your config file in the abstracts folder
+// @use 'sailorcss/reset'; // use the reset from SailorCSS
 
 // ABSTRACTS
-@import "abstracts/variables";
-@import "abstracts/fontface";
-
-
-// SCSS mixins and placeholders
-@import "abstracts/placeholders";
-@import "abstracts/mixins";
-
+@forward "abstracts";
 
 // BASE - do not remove purgeCSS comments around reset and root
 /*! purgecss start ignore */
-@import "base/reset";
-@import "base/root";
+@use "base/fontface";
+@use "base/root";
 /*! purgecss end ignore */
 
-
 // LAYOUT
-@import "layout/container";
-@import "layout/footer";
-
+@use "layout/container";
+@use "layout/footer";
 
 // COMPONENTS
-@import "components/buttons";
-
+@use "components/buttons";
 
 // TYPOGRAPHY
-@import "typography/wysiwyg";
+@use "typography/wysiwyg";
 
 
 // NAVIGATION - add navigation folder files under this comment
