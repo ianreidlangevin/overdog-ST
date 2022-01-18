@@ -1,10 +1,9 @@
 /*
 --------------------------------------------------------------------------
-  MAIN SCSS FILE
+  ABSTRACTS
+  use in your scss partial with @use "../abstracts";
 --------------------------------------------------------------------------
 */
 
-// ABSTRACTS
-@forward "variables";
 @forward "placeholders";
 @forward "mixins";
