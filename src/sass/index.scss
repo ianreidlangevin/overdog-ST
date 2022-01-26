@@ -1,34 +1,21 @@
 /*
 --------------------------------------------------------------------------
   MAIN SCSS FILE
+  Add partials inside each folder index (not here)
 --------------------------------------------------------------------------
 */
 
-// SAILOR CSS - If you use Sailor CSS, uncomment the two next lines
-
-// @use 'abstracts/config'; // add your config file in the abstracts folder
-// @use 'sailorcss/reset'; // use the reset from SailorCSS
+// SAILOR CSS - If do not you use Sailor CSS, remove the two next lines
+@use "config";
+@use "sailorcss/reset";
 
 // ABSTRACTS
+// add your mixins, variables and placeholders in this folder
 @forward "abstracts";
-
-// BASE - do not remove purgeCSS comments around reset and root
-/*! purgecss start ignore */
-@use "base/fontface";
-@use "base/root";
-/*! purgecss end ignore */
-
-// LAYOUT
-@use "layout/container";
-@use "layout/footer";
-
-// COMPONENTS
-@use "components/buttons";
-
-// TYPOGRAPHY
-@use "typography/wysiwyg";
-
-
-// NAVIGATION - add navigation folder files under this comment
-
-// UTILITIES - add utilities folder files under this comment
+// PARTIALS FOLDERS
+@use "base";
+@use "layout";
+@use "components";
+@use "typography";
+@use "navigation";
+@use "utilities";

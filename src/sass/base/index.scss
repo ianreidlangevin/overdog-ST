@@ -1,7 +1,10 @@
 /*
 --------------------------------------------------------------------------
-  TITLES
-  You can use @extend with placeholder classes to avoid duplication
+  BASE
 --------------------------------------------------------------------------
 */
 
+/*! purgecss start ignore */
+@use "fontface";
+@use "root";
+/*! purgecss end ignore */

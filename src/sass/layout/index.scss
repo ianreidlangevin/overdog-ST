@@ -1,7 +1,8 @@
 /*
 --------------------------------------------------------------------------
-  TITLES
-  You can use @extend with placeholder classes to avoid duplication
+  LAYOUT
 --------------------------------------------------------------------------
 */
 
+@use "container";
+@use "footer";
