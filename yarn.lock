@@ -6734,6 +6734,11 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
+sailorcss@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/sailorcss/-/sailorcss-2.0.1.tgz#04e336a0a16bba795e42d79e136897d29c441aed"
+  integrity sha512-O9gLbLno0T7+ocd1GPV+4Fq6hi9M0p/PFkxQGdk2YORZ0ryovx59Aeytf7leadvcCKuozeMn21tnp87X5banHg==
+
 sass-loader@^12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-12.1.0.tgz#b73324622231009da6fba61ab76013256380d201"
