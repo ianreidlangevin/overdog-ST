@@ -1,8 +1,5 @@
-
 /* CONFIG */
-const webpack = require("webpack")
 const path = require("path")
-
 /* PLUGINS ET UTILITIES */
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
@@ -42,7 +39,7 @@ module.exports = {
                {
                   loader: "css-loader",
                   options: {
-                     sourceMap: true,
+                     sourceMap: false,
                      url: false
                   }
                },
@@ -66,7 +63,7 @@ module.exports = {
                {
                   loader: "sass-loader",
                   options: {
-                     sourceMap: true
+                     sourceMap: false
                   }
                }
             ]

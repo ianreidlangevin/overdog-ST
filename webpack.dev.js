@@ -1,12 +1,13 @@
 /* MERGE CONST */
 const { merge } = require("webpack-merge")
 const common = require("./webpack.common.js")
+const path = require("path")
 
 /* PLUGINS ET UTILITIES */
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 // extract the Site url from the root env file for Browsersync
-const dotenv = require("dotenv").config({ path: __dirname + "/.env" })
+const dotenv = require("dotenv").config(path.resolve(__dirname, ".env"))
 const devURL = dotenv.parsed.SITE_URL
 
 /* BROWSERSYNC LIVE RELOAD */
