@@ -1,2 +1,2 @@
 // app
-import "./accessibility/focus.js";
+import "./accessibility/focus.js"
