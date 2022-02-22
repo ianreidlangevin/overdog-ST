@@ -9,7 +9,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const PurgecssPlugin = require("purgecss-webpack-plugin")
 
 /* CRITICAL CSS */
-const dotenv = require("dotenv").config({ path: __dirname + "/.env" })
+const dotenv = require("dotenv").config(path.resolve(__dirname, ".env"))
 const devURL = dotenv.parsed.SITE_URL
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
@@ -54,7 +54,7 @@ module.exports = merge(common, {
          paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
          defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
          safelist: {
-            deep: [/active/, /open/, /shrink/, /data/, /current/, /richtext/, /wysiwyg/, /flickity/, /carousel/, /show/]
+            deep: [/active/, /open/, /shrink/, /shrinked/, /data/, /current/, /richtext/, /wysiwyg/, /swiper/, /carousel/, /show/]
          }
       }),
 
