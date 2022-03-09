@@ -28,7 +28,7 @@ module.exports = {
          },
          // CSS & SCSS LOADER
          {
-            test: /\.scss$/,
+            test: /\.(sass|css|scss)$/,
             use: [
                // extract the css
                {
