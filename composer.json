@@ -1,59 +1,63 @@
 {
-  "name": "3ejoueur/overdog",
-  "description": "A Craft CMS scaffolding project for 3e joueur",
-  "version": "1.4.2",
-  "authors": [
-    {
-      "name": "Ian Reid Langevin",
-      "email": "ian@3ejoueur.com",
-      "role": "Developer"
-    }
-  ],
-  "keywords": [
-    "3ejoueur",
-    "Overdog",
-    "Craft CMS"
-  ],
-  "support": {
-    "docs": "https://overdog.3ejoueur.com/"
-  },
-  "license": "MIT",
-  "type": "project",
-  "require": {
-    "craftcms/aws-s3": "1.3.0",
-    "craftcms/cms": "3.7.30.1",
-    "craftcms/redactor": "^2.8",
-    "vlucas/phpdotenv": "^3.4.0"
-  },
-  "require-dev": {
-  "yiisoft/yii2-shell": "^2.0.3"
-  },
-  "autoload": {
-    "psr-4": {
-      "modules\\": "modules/"
-    }
-  },
-  "config": {
-    "sort-packages": true,
-    "optimize-autoloader": true,
-    "platform": {
-      "php": "7.2.5"
-    }
-  },
-  "scripts": {
-    "post-root-package-install": [
-      "@php -r \"copy('.env.example', '.env');\"",
-      "@php -r \"copy('README.example', 'README.md');\""
-    ],
-    "post-create-project-cmd": [
-      "@php -r \"unlink('config/license.key');\"",
-      "@php -r \"unlink('README.example');\"",
-      "@composer dump-autoload -o"
-    ],
-    "post-install-cmd": [
-      "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \"",
-      "@php craft install/check && php craft clear-caches/compiled-templates --interactive=0 || exit 0",
-      "@php craft install/check && php craft up/index --interactive=0 || exit 0"
-    ]
-  }
+   "name": "3ejoueur/overdog",
+   "description": "A Craft CMS scaffolding project for 3e joueur",
+   "version": "1.4.2",
+   "authors": [
+      {
+         "name": "Ian Reid Langevin",
+         "email": "ian@3ejoueur.com",
+         "role": "Developer"
+      }
+   ],
+   "keywords": [
+      "3ejoueur",
+      "Overdog",
+      "Craft CMS"
+   ],
+   "support": {
+      "docs": "https://overdog.3ejoueur.com/"
+   },
+   "license": "MIT",
+   "type": "project",
+   "require": {
+      "craftcms/aws-s3": "1.3.0",
+      "craftcms/cms": "3.7.30.1",
+      "craftcms/redactor": "^2.8",
+      "vlucas/phpdotenv": "^3.4.0"
+   },
+   "require-dev": {
+      "yiisoft/yii2-shell": "^2.0.3"
+   },
+   "autoload": {
+      "psr-4": {
+         "modules\\": "modules/"
+      }
+   },
+   "config": {
+      "allow-plugins": {
+         "craftcms/plugin-installer": true,
+         "yiisoft/yii2-composer": true
+      },
+      "sort-packages": true,
+      "optimize-autoloader": true,
+      "platform": {
+         "php": "8.0"
+      }
+   },
+   "scripts": {
+      "post-root-package-install": [
+         "@php -r \"copy('.env.example', '.env');\"",
+         "@php -r \"copy('README.example', 'README.md');\""
+      ],
+      "post-create-project-cmd": [
+         "@php -r \"unlink('config/license.key');\"",
+         "@php -r \"unlink('README.example');\"",
+         "@composer dump-autoload -o"
+      ],
+      "post-install-cmd": [
+         "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \"",
+         "@php craft install/check && php craft clear-caches/compiled-templates --interactive=0 || exit 0",
+         "@php craft install/check && php craft up/index --interactive=0 || exit 0"
+      ]
+   }
 }
