@@ -1,6 +1,6 @@
 {
   "name": "overdog",
-  "version": "1.4.3.1",
+  "version": "1.4.3.2",
   "description": "Webpack and dev dependencies for Overdog",
   "author": "Ian Reid Langevin x 3e joueur",
   "license": "MIT",
@@ -52,6 +52,6 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "sailorcss": "^2.0.1"
+    "sailorcss": "^2.1.1"
   }
 }

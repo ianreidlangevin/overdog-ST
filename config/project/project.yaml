@@ -1,4 +1,4 @@
-dateModified: 1643226704
+dateModified: 1647620944
 graphql:
   publicToken:
     enabled: false
@@ -21,5 +21,5 @@ system:
   live: $SYSTEM_STATUS
   name: $SYSTEM_NAME
   retryDuration: null
-  schemaVersion: 3.7.8
+  schemaVersion: 3.7.33
   timeZone: America/New_York
