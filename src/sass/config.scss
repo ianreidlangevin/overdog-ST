@@ -135,112 +135,60 @@
    
    /*
    --------------------------------------------------------------------------
-      GRID FLOW
+      CUSTOM CLASSES AND PROPERTIES
+      Class x Property x Value
+      Add yours or delete unused ones
    --------------------------------------------------------------------------
    */
-   $s-grid-flow: (
-      "grid-flow-column": column,
-      "grid-flow-row": row
-   ),
-
-   /*
-
-   --------------------------------------------------------------------------
-      DISPLAY AND POSITIONING
-   --------------------------------------------------------------------------
-   */
-
-   $s-displays: (
-      "d-none": none,
-      "d-block": block,
-      "d-flex": flex,
-      "d-inline-block": inline-block,
-      "d-inline-flex": inline-flex,
-   ),
-
-
-   $s-positions: (
-      "p-relative": relative,
-      "p-absolute": absolute,
-   ),
-
-
-   /*
-   --------------------------------------------------------------------------
-      FLEXBOX
-   --------------------------------------------------------------------------
-   */
-
-   $s-flex-direction: (
-      "direction-row": row,
-      "direction-column": column,
-      "direction-row-reverse": row-reverse,
-      "direction-column-reverse": column-reverse,
-   ),
-
-
-   $s-justify-content: (
-      "justify-content-start": flex-start,
-      "justify-content-end": flex-end,
-      "justify-content-center": center,
-      "justify-content-between": space-between,
-      "justify-content-around": space-around,
-   ),
-
-
-   $s-align-items: (
-      "align-items-start": flex-start,
-      "align-items-end": flex-end,
-      "align-items-center": center,
-      "align-items-stretch": stretch,
+   $s-custom-classes: (
+      // grid flow
+      "grid-flow-column": ( "grid-auto-flow": column ),
+      "grid-flow-row": ( "grid-auto-flow": row ),
+      // display
+      "d-none": ("display": none),
+      "d-block": ("display": block),
+      "d-flex": ("display": flex),
+      "d-inline-block": ("display": inline-block),
+      "d-inline-flex": ("display": inline-flex),
+      // position
+      "p-relative": ("position": relative),
+      "p-absolute": ("position": absolute),
+      // flex-direction
+      "direction-row": ("flex-direction": row),
+      "direction-column": ("flex-direction": column),
+      "direction-row-reverse": ("flex-direction": row-reverse),
+      "direction-column-reverse": ("flex-direction": column-reverse),
+      // flex justify content
+      "justify-content-start": ("justify-content": flex-start),
+      "justify-content-end": ("justify-content": flex-end),
+      "justify-content-center": ("justify-content": center),
+      "justify-content-between": ("justify-content": space-between),
+      // align items
+      "align-items-start": ("align-items": flex-start),
+      "align-items-end": ("align-items": flex-end),
+      "align-items-center": ("align-items": center),
+      "align-items-stretch": ("align-items": stretch),
+      // text 
+      "text-left": ("text-align": left),
+      "text-center": ("text-align": center),
+      "text-right": ("text-align": right),
+      "text-uppercase": ("text-transform": uppercase),
+      // NEW aspect ratio
+      // "aspect-ratio-1x1": ("aspect-ratio": "1/1"),
+      // "aspect-ratio-4x3": ("aspect-ratio": "4/3"),
+      // "aspect-ratio-16x9": ("aspect-ratio": "16/9"),
    ),
 
 
    /*
    --------------------------------------------------------------------------
-      RATIO
+      OLD RATIO - PADDING HACK
    --------------------------------------------------------------------------
    */
-
    $s-ratios: (
       "ratio-1x1": 1 1,
       "ratio-4x3": 4 3,
       "ratio-16x9": 16 9,
-   ),
-
-   /*
-   --------------------------------------------------------------------------
-      NEW ASPECT-RATIO
-      Only if you target only modern browsers
-  
-   $s-aspect-ratios: (
-   "aspect-ratio-1x1": "1/1",
-   "aspect-ratio-3x2": "4/3",
-   "aspect-ratio-16x9": "16/9",
-   ),
-
-    --------------------------------------------------------------------------
-   */
-
-
-   /*
-   --------------------------------------------------------------------------
-      TEXT
-   --------------------------------------------------------------------------
-   */
-
-   $s-text-align: (
-      "text-left": left,
-      "text-center": center,
-      "text-right": right,
-   ),
-
-   $s-text-transform: (
-      "text-uppercase": uppercase,
-   ),
-
-   $s-text-decoration: (
-      "text-underline": underline,
    ),
 
 

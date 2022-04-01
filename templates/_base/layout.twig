@@ -63,7 +63,7 @@
       {# header or hero #}
       {% set headerPartialName = entry is defined and entry.uri == "__home__" ? "hero" : "header" %}      
 		{{ include("_base/#{headerPartialName}", ignore_missing = true) }}
-		<main id="#main" class="content-wrapper">
+		<main id="#main">
 			{% block content %}{% endblock %}
 		</main>
 		{{ include('_base/footer', ignore_missing = true) }}

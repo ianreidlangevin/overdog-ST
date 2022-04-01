@@ -38,7 +38,7 @@
     "mini-css-extract-plugin": "^1.6.2",
     "postcss": "^8.3.5",
     "postcss-loader": "^6.1.0",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^7.4.3",
     "purgecss-webpack-plugin": "^4.0.0",
     "sass": "^1.49.8",
     "sass-loader": "^12.6",
@@ -52,6 +52,6 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "sailorcss": "^2.1.1"
+    "sailorcss": "^2.2.0"
   }
 }
