@@ -1,0 +1,34 @@
+
+@layer utilities {
+
+   .lazy-fit {
+      position: relative;
+      @apply text-foreground;
+
+      img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         display: block;
+         width: 100%;
+         height: 100%;
+         @apply text-foreground;
+         object-fit: cover;
+         object-position: center center;
+      }
+   }
+
+   /*
+      Use lazy-img for a client side uploaded image > height and width attribute must be setted on the img tag
+   */
+   .lazy-img {
+      img {
+         max-width: 100%;
+         height: auto;
+         @apply bg-gray-80;
+         @apply text-foreground;
+      }
+
+   }
+
+}

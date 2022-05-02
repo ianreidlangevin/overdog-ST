@@ -1,0 +1,13 @@
+
+/* base layer */
+@import "./base/root.css";
+@import "./base/titles.css";
+@import "./base/container.css";
+
+/* utilities layer */
+@import "./utilities/lazyload.css";
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
