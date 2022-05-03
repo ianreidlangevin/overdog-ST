@@ -72,6 +72,22 @@ module.exports = {
             "16/9": "16/9",
             "4/3": "4/3",
             "3/4": "3/4"
+         },
+         /* extend transition-duration */
+         transitionDuration: {
+            250: "250ms",
+            350: "350ms",
+            400: "400ms",
+            600: "600ms"
+         },
+         zIndex: {
+            1: "1"
+         },
+         transitionTimingFunction: {
+            "nav-in": "cubic-bezier(0, 0, 0.58, 1)",
+            "nav-out": "cubic-bezier(0.42, 0, 1, 1)",
+            "in-expo": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+            "out-expo": "cubic-bezier(0.19, 1, 0.22, 1)"
          }
       },
       /*
