@@ -1,5 +1,4 @@
 module.exports = {
-
    /*
    --------------------------------------------------------------------------
    CONTENT TO WATCH
@@ -8,7 +7,6 @@ module.exports = {
    */
    content: [
       "./templates/_base/**/*",
-      "./templates/_lib/**/*",
       "./templates/_macros/**/*",
       "./templates/_navigation/**/*",
       "./templates/_sections/**/*",
@@ -88,104 +86,75 @@ module.exports = {
             "nav-out": "cubic-bezier(0.42, 0, 1, 1)",
             "in-expo": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
             "out-expo": "cubic-bezier(0.19, 1, 0.22, 1)"
+         },
+         keyframes: {
+            "fade-in": {
+               "0%": { opacity: "0" },
+               "100%": { opacity: "1" }
+            }
+         },
+         animation: {
+            "fade-in": "fade-in 0.150s ease-in-out"
+         },
+         spacing: {
+            // PIXELS - SMALL UNIT SCALE FOR PIXELS
+            0: "0px",
+            px: "1px",
+            "2px": "2px",
+            "3px": "3px",
+            "4px": "4px",
+            "5px": "5px",
+            "6px": "6px",
+            "7px": "7px",
+            "8px": "8px",
+            "9px": "9px",
+            "10px": "10px",
+            "11px": "11px",
+            "12px": "12px",
+            // FLUID SPACING - based on a value on the :root
+            full: "var(--spacing)",
+            threequarter: "calc(var(--spacing) * 0.75)",
+            twothird: "calc(var(--spacing) * 0.66)",
+            half: "calc(var(--spacing) * 0.5)",
+            third: "calc(var(--spacing) * 0.33)",
+            quarter: "calc(var(--spacing) * 0.25)",
+            sixth: "calc(var(--spacing) * 0.16)",
+            // SAME SCALING AS REM BUT FOR EM UNIT
+            "0.5/em": "0.125em",
+            "1/em": "0.25em",
+            "1.5/em": "0.375em",
+            "2/em": "0.5rem",
+            "2.5/em": "0.625em",
+            "3/em": "0.75em",
+            "3.5/em": "0.875em",
+            "4/em": "1em",
+            "5/em": "1.25em",
+            "6/em": "1.5em",
+            "7/em": "1.75em",
+            "8/em": "2em",
+            "9/em": "2.25em",
+            "10/em": "2.5em",
+            "11/em": "2.75em",
+            "12/em": "3em",
+            "14/em": "3.5em",
+            "16/em": "4em",
+            "20/em": "5em",
+            "24/em": "6em",
+            "28/em": "7em",
+            "32/em": "8em",
+            "36/em": "9em",
+            "40/em": "10em",
+            "44/em": "11em",
+            "48/em": "12em",
+            "52/em": "13em",
+            "56/em": "14em",
+            "60/em": "15em",
+            "64/em": "16em",
+            "72/em": "18em",
+            "80/em": "20em",
+            "96/em": "24em"
          }
-      },
-      /*
-      -------------------------------------
-      SPACING
-      Real ratio value
-      -------------------------------------
-      */
-      spacing: {
-         // PIXEL
-         0: "0px",
-         px: "1px",
-         "2px": "2px",
-         "3px": "3px",
-         "4px": "4px",
-         "5px": "5px",
-         "6px": "6px",
-         "7px": "7px",
-         "8px": "8px",
-         "9px": "9px",
-         "10px": "10px",
-         "11px": "11px",
-         "12px": "12px",
-         // FLUID SPACING - based on a value on the :root
-         full: "var(--spacing)",
-         threequarter: "calc(var(--spacing) * 0.75)",
-         twothird: "calc(var(--spacing) * 0.66)",
-         half: "calc(var(--spacing) * 0.5)",
-         third: "calc(var(--spacing) * 0.33)",
-         quarter: "calc(var(--spacing) * 0.25)",
-         sixth: "calc(var(--spacing) * 0.16)",
-         // EM
-         "0.125em": "0.125em",
-         "0.25em": "0.25em",
-         "0.3em": "0.3em",
-         "0.375em": "0.375rem",
-         "0.5em": "0.5em",
-         "0.75em": "0.75em",
-         "1em": "1em",
-         "1.125em": "1.125em",
-         "1.25em": "1.25em",
-         "1.5em": "1.5em",
-         "1.6em": "1.6em",
-         "1.75em": "1.75em",
-         "2em": "2em",
-         "2.25em": "2.25em",
-         "2.5em": "2.5em",
-         "2.75em": "2.75em",
-         "3em": "3em",
-         "3.5em": "3.5em",
-         "4em": "4em",
-         "5em": "5em",
-         "6em": "6em",
-         "7em": "7em",
-         "8em": "8em",
-         "9em": "9em",
-         "10em": "10em",
-         "11em": "11em",
-         "12em": "12em",
-         // REM
-         0.125: "0.125rem",
-         0.25: "0.25rem",
-         0.375: "0.375rem",
-         0.5: "0.5rem",
-         0.625: "0.625rem",
-         0.75: "0.75rem",
-         0.875: "0.875rem",
-         1: "1rem",
-         1.25: "1.25rem",
-         1.5: "1.5rem",
-         1.75: "1.75rem",
-         2: "2rem",
-         2.25: "2.25rem",
-         2.5: "2.5rem",
-         2.75: "2.75rem",
-         3: "3rem",
-         3.5: "3.5rem",
-         4: "4rem",
-         5: "5rem",
-         6: "6rem",
-         7: "7rem",
-         8: "8rem",
-         9: "9rem",
-         10: "10rem",
-         11: "11rem",
-         12: "12rem"
-      },
-      /*
-      -------------------------------------
-      BORDER RADIUS
-      Will use all value from spacing
-      -------------------------------------
-      */
-      borderRadius: ({ theme }) => ({
-         DEFAULT: "0.25rem",
-         full: "9999px",
-         ...theme("spacing")
-      })
+      }
    },
    /*
    --------------------------------------------------------------------------

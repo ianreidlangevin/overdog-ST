@@ -21,7 +21,7 @@
    */
    body {
       background-color: #fff;
-      color: theme('colors.body');
+      color: theme('colors.slate.600');
       font-family: theme('fontFamily.body');
       font-size: 1.25rem;
       margin: 0;
@@ -44,4 +44,20 @@
       @screen xxxl { font-size: 112.5%; }
    }
 
+}
+
+/*
+--------------------------------------------------------------------------
+  FOCUS
+--------------------------------------------------------------------------
+*/
+
+:focus {
+   outline: thin dotted !important;
+   outline-color: #80828a !important;
+}
+
+::-moz-focus-inner {
+   border-style: none;
+   padding: 0;
 }

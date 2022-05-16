@@ -44,39 +44,26 @@ module.exports = {
       },
       /*
       -------------------------------------
-      COLORS
-      -------------------------------------
-      */
-      colors: {
-         transparent: "transparent", // NEEDED BY TAILWIND
-         white: "hsl(0, 0%, 100%)",
-         black: "hsl(0, 0%, 0%)",
-         body: "hsl(210, 14%, 40%)",
-         primary: {
-            DEFAULT: "hsl(356, 85%, 57%)",
-            90: "hsl(356, 85%, 90%)"
-         },
-         secondary: {
-            DEFAULT: "hsl(230, 60%, 16%)",
-            92: "hsl(230, 60%, 92%)",
-            96: "hsl(230, 60%, 96%)",
-            99: "hsl(230, 60%, 99%)"
-         },
-         gray: {
-            24: "hsl(210, 14%, 24%)",
-            40: "hsl(210, 14%, 40%)",
-            65: "hsl(210, 14%, 65%)",
-            70: "hsl(210, 14%, 70%)",
-            80: "hsl(210, 14%, 80%)"
-         }
-      },
-      /*
-      -------------------------------------
-      EXTEND DEFAULT TW CONFIG
+      EXTEND
       -------------------------------------
       */
       extend: {
-         // See Tailwind doc for info
+         colors: {
+            // example
+            "brand-primary": {
+               DEFAULT: "#2A669F",
+               50: "#E4F7F8",
+               100: "#CCEEF2",
+               200: "#9CD7E5",
+               300: "#6CB9D8",
+               400: "#3B94CB",
+               500: "#2A669F",
+               600: "#234B83",
+               700: "#1B3366",
+               800: "#14204A",
+               900: "#0C102E"
+            }
+         }
       }
    },
    /*
@@ -86,15 +73,9 @@ module.exports = {
    */
    plugins: [
       plugin(function ({ addVariant }) {
-         // for navig mega-nav
-         addVariant("menu-open", "[data-nav-open='menu'] &")
-         addVariant("menu-back", "&[data-nav-transition]")
-         addVariant("menu-body", "&[data-nav-open]")
-         // for accordions
-         addVariant("accordion-open", "[data-navig-accordions-heading='open'] &")
-         // swiper
-         addVariant("swiper-disabled", "&.swiper-button-disabled")
-         addVariant("swiper-lock", "&.swiper-button-lock")
+         // SWIPER
+         // addVariant("swiper-disabled", "&.swiper-button-disabled")
+         // addVariant("swiper-lock", "&.swiper-button-lock")
       }),
       require("@3ejoueur/tailwindcss-fluid-properties")
    ]
