@@ -1,27 +1,29 @@
 {#
-ACTIVE FOR NAV
-@param {string} navItemSlug
-#}
+  ACTIVE FOR NAV
+  @param {string} navItemSlug
+ #}
 {% macro isActive(navItemSlug) %}
-   {%- if navItemSlug in craft.app.request.segments -%}
-      {{ ' menu-link--active' }}
-   {%- endif -%}
+	{%- if navItemSlug in craft.app.request.segments -%}
+		{{' menu-link--active'}}
+	{%- endif -%}
 {% endmacro %}
 
+
 {#
-LINK FROM ENTRY ID
-@param {integer number} entryId
+  LINK FROM ENTRY ID
+  @param {integer number} entryId
 #}
 {% macro pageLink(entryId) %}
-{% set entry = craft.entries.id(entryId).one() %}
-   {{ entry ? entry.url }}
+	{% set entry = craft.entries.id(entryId).one() %}
+	{{ entry ? entry.url }}
 {% endmacro %}
 
+
 {#
-FORMAT PHONE NUMBER
-@param {string} phoneNumber
-Example use -> href="{{ call the macro here }}"
+  FORMAT PHONE NUMBER
+  @param {string} phoneNumber
+  Example use -> href="{{ call the macro here }}"
 #}
 {%- macro phoneFormat(phoneNumber) -%}
-   tel:{{ phoneNumber|replace({ '.': '', '-': '', '(': '', ')': '', ' ': '' }) }}
+	tel:{{ phoneNumber|replace({'.': "", '-': "", '(': "", ')': "", " " : ""}) }}
 {%- endmacro -%}
