@@ -4,8 +4,9 @@
 --------------------------------------------------------------------------
 */
 
-window.addEventListener("keydown", event => {
-   if (event.key === "Tab") { // if the tab key is pressed
+window.addEventListener("keydown", (event) => {
+   if (event.key === "Tab") {
+      // if the tab key is pressed
       document.body.classList.add("outline-focus")
    }
 })

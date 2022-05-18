@@ -1,27 +1,15 @@
-{  
-   // tab size is important to keep to match the linter rules
-   "editor.tabSize": 3,
-   "[html]": {
-      "editor.defaultFormatter": "vscode.html-language-features"
-   },
-   // Twig formatter and settings, see recommandations to install
-   "[twig]": { "editor.defaultFormatter": "mblode.twig-language" },
-   "twig-language.preserveComment": true,
-   "twig-language.formatObject": "indent",
-   "twig-language.formatArray": "indent",
-   // JS settings
-   "eslint.format.enable": true,
-   "[javascript]": {
-      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-   },
-   // keep detect to false to match linter rules
-   "editor.detectIndentation": false
-
+{
+   "editor.tabSize": 3, // tab size is important to keep to match the Prettier rules
+   "editor.defaultFormatter": "esbenp.prettier-vscode",
+   "editor.formatOnSave": true,
+   "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+   "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+   "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+   "[twig]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
    // OPTIONS - following settings are opinionated
    // "editor.lineHeight": 24,
    // "editor.fontSize": 14,
    // "editor.minimap.enabled": false,
    // "workbench.tree.indent": 24,
    // "window.zoomLevel": 0.5,
-   
 }

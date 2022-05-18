@@ -1,0 +1,23 @@
+{
+   "endOfLine": "lf",
+   "semi": false,
+   "tabWidth": 3,
+   "useTabs": false,
+   "trailingComma": "es5",
+   "bracketSpacing": true,
+   "bracketLine": true,
+   "printWidth": 100,
+   "twigPrintWidth": 120,
+   "twigOutputEndblockName": true,
+   "twigAlwaysBreakObjects": false,
+   "twigFollowOfficialCodingStandards": true,
+   "twigMultiTags": [
+      "block,endblock",
+      "for, endfor",
+      "nav,endnav",
+      "switch,case,default,endswitch",
+      "ifchildren,endifchildren",
+      "cache,endcache",
+      "js,endjs"
+   ]
+}

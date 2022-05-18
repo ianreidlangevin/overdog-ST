@@ -1,70 +1,75 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="{{currentSite.language}}">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		{# PRECONNECT TO EXTERNAL RESSOURCES #}
-		<link rel="preconnect" href="{{ alias('@imagesUrl') }}" crossorigin>
-		<link rel="preconnect" href="{{ alias('@docsUrl') }}" crossorigin>
-		{# TITLE - id is used for realisations - content is changed by JS #}
-		<title>{{ (entry is defined and entry.uri == "__home__") ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
-		{# SEO #}
-		<meta name="description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
-		<meta name="robots" content="index, follow">
-		{# MOBILE #}
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="default">
-		{# FAVICON #}
-		<link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ currentSite.language }}">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      {# PRECONNECT TO EXTERNAL RESSOURCES #}
+      <link rel="preconnect" href="{{ alias('@imagesUrl') }}" crossorigin />
+      <link rel="preconnect" href="{{ alias('@docsUrl') }}" crossorigin />
+      {# TITLE - id is used for realisations - content is changed by JS #}
+      <title>
+         {{ entry is defined and entry.uri == '__home__'
+            ? currentSite.group.name
+            : headerTitle ?? entry.title ~ ' |
+      ' ~ currentSite.group.name }}
+      </title>
+      {# SEO #}
+      <meta name="description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}" />
+      <meta name="robots" content="index, follow" />
+      {# MOBILE #}
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      {# FAVICON #}
+      <link rel="shortcut icon" href="{{ alias('@rootUrl') }}/img/favicon.png" />
       {# FONT DECLARATION - BEST PRACTICE TO INLINE - 2022 #}
       {{ include('_abstracts/font-face.twig', ignore_missing = true) }}
-		{{ include('_abstracts/style.twig', ignore_missing = true) }}
-		{{ include('_abstracts/script.twig', ignore_missing = true) }}
-		{# JS SCRIPT - with defer attr #}
-		{% include '_base/hash/script.twig' ignore missing %}
-		{# OPEN GRAPH LANG - loop through all sites if many #}
-		<meta property="og:locale" content="{{ currentSite.language }}">
-		{% set sites = currentSite.group.sites|without(currentSite) %}
-		{% if sites|length %}
-			{% for site in sites %}
-				<meta property="og:locale:alternate" content="{{ site.language }}"/>
-			{% endfor %}
-		{% endif %}
-		{# OPEN GRAPH INFO #}
-		<meta property="og:site_name" content="{{ currentSite.group.name }}">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="{{ craft.app.request.absoluteUrl }}">
-		<meta property="og:title" content="{{ headerTitle|default(entry.title ?? '') }}">
-		<meta property="og:description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
-		{# OPEN GRAPH IMAGE #}
-		{% set ogImageField = entry.seoOgImage|default(globalSeo.seoOgImage ?? null ) %}
-		{% if ogImageField %}
-			{% set ogImage = ogImageField.one() %}
+      {{ include('_abstracts/style.twig', ignore_missing = true) }}
+      {{ include('_abstracts/script.twig', ignore_missing = true) }}
+      {# JS SCRIPT - with defer attr #}
+      {% include '_base/hash/script.twig' %}
+      {# OPEN GRAPH LANG - loop through all sites if many #}
+      <meta property="og:locale" content="{{ currentSite.language }}" />
+      {% set sites = currentSite.group.sites|without(currentSite) %}
+      {% if sites|length %}
+         {% for site in sites %}
+            <meta property="og:locale:alternate" content="{{ site.language }}" />
+         {% endfor %}
+      {% endif %}
+      {# OPEN GRAPH INFO #}
+      <meta property="og:site_name" content="{{ currentSite.group.name }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="{{ craft.app.request.absoluteUrl }}" />
+      <meta property="og:title" content="{{ headerTitle|default(entry.title ?? '') }}" />
+      <meta property="og:description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}" />
+      {# OPEN GRAPH IMAGE #}
+      {% set ogImageField = entry.seoOgImage|default(globalSeo.seoOgImage ?? null) %}
+      {% if ogImageField %}
+         {% set ogImage = ogImageField.one() %}
          {% if ogImage %}
-            <meta property="og:image" content="{{ ogImage.url }}&w=1200&h=630&fm=jpg&fit=crop">
+            <meta property="og:image" content="{{ ogImage.url }}&w=1200&h=630&fm=jpg&fit=crop" />
             <meta property="og:image:type" content="image/jpeg" />
-            <meta property="og:image:width" content="1200">
-            <meta property="og:image:height" content="630">
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
          {% endif %}
-		{% endif %}
-		{# HUMANS TXT INITIATIVE #}
-		<link type="text/plain" href="{{ alias('@rootUrl') }}/humans.txt" rel="author">
-	</head>
-	<body>
-		<a class="sr-only" href="#main">{{ 'Skip to main content'|t }}</a>
-      {# navbar #}
-		{{ include('_navigation/navbar', ignore_missing = true) }}
-      {# header or hero #}
-      {% set headerPartialName = entry is defined and entry.uri == "__home__" ? "hero" : "header" %}      
-		{{ include("_base/#{headerPartialName}", ignore_missing = true) }}
-		<main id="#main">
-			{% block content %}{% endblock %}
-		</main>
-		{{ include('_base/footer', ignore_missing = true) }}
-		{# ADD LINK TO WEBFONT HERE if needed and preconnect in head #}
-		{# SCHEMA.ORG INFO - see Overdog SEO docs for how to use it #}
-		{% block schema %}{% endblock %}
-	</body>
+      {% endif %}
+      {# HUMANS TXT INITIATIVE #}
+      <link type="text/plain" href="{{ alias('@rootUrl') }}/humans.txt" rel="author" />
+   </head>
 
+   <body>
+      <a class="sr-only" href="#main">{{ 'Skip to main content'|t }}</a>
+      {# navbar #}
+      {{ include('_navigation/navbar', ignore_missing = true) }}
+      {# header or hero #}
+      {% set headerPartialName = entry is defined and entry.uri == '__home__' ? 'hero' : 'header' %}
+      {{ include("_base/#{headerPartialName}", ignore_missing = true) }}
+      <main id="#main">
+         {% block content %}{% endblock content %}
+      </main>
+      {{ include('_base/footer', ignore_missing = true) }}
+      {# ADD LINK TO WEBFONT HERE if needed and preconnect in head #}
+      {# SCHEMA.ORG INFO - see Overdog SEO docs for how to use it #}
+      {% block schema %}{% endblock schema %}
+   </body>
 </html>
