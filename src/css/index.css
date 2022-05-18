@@ -6,6 +6,7 @@
 
 /* utilities layer */
 @import "./utilities/lazyload.css";
+@import "./utilities/wysiwyg.css";
 
 /* Tailwind */
 @tailwind base;
