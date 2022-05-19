@@ -43,7 +43,7 @@ module.exports = merge(common, {
       }),
 
       new BrowserSyncPlugin({
-      // BrowserSync options
+         // BrowserSync options
          proxy: devURL,
          host: "localhost",
          notify: false,
@@ -52,7 +52,8 @@ module.exports = merge(common, {
          reloadOnRestart: true,
          injectChanges: true,
          files: [
-            "./web/dist/*", // watch css and js
+            "./src/js/*", // watch js - CSS is watched by Tailwind
+            "./src/css/*",
             "./templates/**/*" // watch html and twig
          ]
       }, {

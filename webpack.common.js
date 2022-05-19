@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
 
    entry: {
-      app: ["./src/js/app.js", "./src/sass/index.scss"], // scss can also be import in each js file - usefull for js component method
+      app: ["./src/js/app.js", "./src/css/index.css"], // css can also be import in each js file - usefull for js components method
       svg: "./src/svg/svg.js"
    },
 
@@ -28,62 +28,28 @@ module.exports = {
          },
          // CSS & SCSS LOADER
          {
-            test: /\.(sass|css|scss)$/,
+            test: /\.css$/,
             use: [
-               // extract the css
-               {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {}
-               },
-               // load css to js module
-               {
-                  loader: "css-loader",
-                  options: {
-                     sourceMap: false,
-                     url: false
-                  }
-               },
-               // parse and add autoprefixer with postCSS preset env
-               {
-                  loader: "postcss-loader",
-                  options: {
-                     postcssOptions: {
-                        plugins: [
-                           [
-                              "postcss-preset-env",
-                              {
-                                 // Options
-                              }
-                           ]
-                        ]
-                     }
-                  }
-               },
-               // run all the scss @import commands in scss files
-               {
-                  loader: "sass-loader",
-                  options: {
-                     sourceMap: false
-                  }
-               }
+               MiniCssExtractPlugin.loader,
+               "css-loader",
+               "postcss-loader"
             ]
          }
-
-      ] // end rules
-   }, // end modules
+      ]
+   },
 
    plugins: [
       /* Path resolve is required to retreive the right folder path
     * HtmpwebpackPlugin create via ejs file the twig code to add script and style in our project
     */
       new HtmlWebpackPlugin({
-         filename: path.resolve(__dirname, "templates/_base/hash/script.twig"),
+         filename: path.resolve(__dirname, "templates/_abstracts/script.twig"),
          template: path.resolve(__dirname, "src/ejs/script.ejs"),
          inject: false
       }),
 
       new HtmlWebpackPlugin({
-         filename: path.resolve(__dirname, "templates/_base/hash/style.twig"),
+         filename: path.resolve(__dirname, "templates/_abstracts/style.twig"),
          template: path.resolve(__dirname, "src/ejs/style.ejs"),
          inject: false
       })

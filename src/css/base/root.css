@@ -1,0 +1,63 @@
+
+@layer base {
+
+   /*
+   --------------------------------------------------------------------------
+   CSS VARS
+   --------------------------------------------------------------------------
+   */
+   :root {
+      --spacing: 6rem;
+      @screen md { --spacing: 7rem; }
+      @screen xl { --spacing: 8rem; }
+   }
+
+
+   /*
+   --------------------------------------------------------------------------
+   BODY AND HTML
+   Edit on a per-project basis
+   --------------------------------------------------------------------------
+   */
+   body {
+      background-color: #fff;
+      color: theme('colors.slate.600');
+      font-family: theme('fontFamily.body');
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: normal;
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;    
+
+      @screen md { font-size: 1.14rem; }
+      @screen lg { font-size: 1.06rem; }
+      @screen xxxl { font-size: 1rem; }
+   }
+
+   html {
+      font-size: 75%;
+      
+      @screen md { font-size: 87.5%; }
+      @screen lg { font-size: 100%; }
+      @screen xxxl { font-size: 112.5%; }
+   }
+
+}
+
+/*
+--------------------------------------------------------------------------
+  FOCUS
+--------------------------------------------------------------------------
+*/
+
+:focus {
+   outline: thin dotted !important;
+   outline-color: #80828a !important;
+}
+
+::-moz-focus-inner {
+   border-style: none;
+   padding: 0;
+}
