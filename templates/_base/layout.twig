@@ -63,6 +63,9 @@
 		</main>
 		{{ include('_base/footer', ignore_missing = true) }}
 		{# ADD LINK TO WEBFONT HERE if needed and preconnect in head #}
+		{% if getenv('TRACKING_CODE') == 1 %}
+         {# ADD TRACKING CODE HERE #}
+      {% endif %}
 		{# SCHEMA.ORG INFO - see Overdog SEO docs for how to use it #}
 		{% block schema %}{% endblock %}
 	</body>
