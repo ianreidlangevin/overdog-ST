@@ -23,28 +23,17 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: bc8fc5a5-c53a-4434-a83f-396099aaa290
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: c3963486-64b1-4451-8a4c-e466dcf5a99e
+fs: fileSystemsImages
 handle: volumeImages
-hasUrls: true
 name: Images
-settings:
-  addSubfolderToRootUrl: '1'
-  autoFocalPoint: ''
-  bucket: $S3_BUCKET_IMAGES
-  bucketSelectionMode: manual
-  cfDistributionId: ''
-  cfPrefix: ''
-  expires: '1 years'
-  keyId: $S3_USER_ID
-  makeUploadsPublic: ''
-  region: $S3_BUCKET_REGION
-  secret: $S3_USER_SECRET
-  storageClass: ''
-  subfolder: $S3_BUCKET_SUBFOLDER
 sortOrder: 2
-type: craft\awss3\Volume
-url: $S3_IMAGES_URL
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: null
+transformSubpath: ''

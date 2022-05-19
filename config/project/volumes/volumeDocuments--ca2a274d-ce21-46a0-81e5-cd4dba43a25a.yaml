@@ -23,28 +23,17 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 6ff760a4-f64a-4298-aac1-9574d1381222
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 65d64273-5a45-417d-a08a-65b683c0eb0f
+fs: fileSystemsDocuments
 handle: volumeDocuments
-hasUrls: true
 name: Documents
-settings:
-  addSubfolderToRootUrl: '1'
-  autoFocalPoint: ''
-  bucket: $S3_BUCKET_DOCS
-  bucketSelectionMode: manual
-  cfDistributionId: $S3_DOCS_DIST_ID
-  cfPrefix: $S3_BUCKET_SUBFOLDER
-  expires: '1 years'
-  keyId: $S3_USER_ID
-  makeUploadsPublic: ''
-  region: $S3_BUCKET_REGION
-  secret: $S3_USER_SECRET
-  storageClass: ''
-  subfolder: $S3_BUCKET_SUBFOLDER
 sortOrder: 1
-type: craft\awss3\Volume
-url: $S3_DOCS_URL
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: null
+transformSubpath: ''

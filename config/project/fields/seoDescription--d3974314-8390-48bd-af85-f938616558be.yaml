@@ -1,3 +1,4 @@
+columnSuffix: null
 contentColumnType: string(640)
 fieldGroup: a7870a18-8ec8-42bd-bb94-ea232c8eb066 # SEO
 handle: seoDescription
@@ -11,7 +12,8 @@ settings:
   columnType: null
   initialRows: '4'
   multiline: ''
-  placeholder: ''
+  placeholder: null
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\PlainText
