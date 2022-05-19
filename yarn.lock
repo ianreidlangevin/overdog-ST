@@ -2,9 +2,10 @@
 # yarn lockfile v1
 
 
-"@3ejoueur/tailwindcss-fluid-properties@3ejoueur/tailwindcss-fluid-properties":
+"@3ejoueur/tailwindcss-fluid-properties@^1.0.0":
   version "1.0.0"
-  resolved "https://codeload.github.com/3ejoueur/tailwindcss-fluid-properties/tar.gz/9498d04979a3b2460552fd27f0617c7166cdfccc"
+  resolved "https://registry.yarnpkg.com/@3ejoueur/tailwindcss-fluid-properties/-/tailwindcss-fluid-properties-1.0.0.tgz#6289f70a08582dc3d6c085c4719d3178702c7f2c"
+  integrity sha512-CTEP95qrkPJV+tMlY1HiT09QRz6NRTKfH1HliwWE8MjWUyGatJW8S2fmhb2Phf2cR/iArvcMlqoUXFE8adM1eQ==
 
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
@@ -1006,6 +1007,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@overdog/fn@^1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@overdog/fn/-/fn-1.0.0-beta.0.tgz#daa7b92c6b5fc822a6a8bcfc91d5d1e6a125b899"
+  integrity sha512-vJkTVOWUJMcY324wQiX/TBSc9tJdDdj8fxQa8xCohShpWtr8YqTq0dN8MACDVvHDNWgwMmbspEYW070O2F82kA==
 
 "@socket.io/component-emitter@~3.1.0":
   version "3.1.0"
