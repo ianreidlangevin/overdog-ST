@@ -17,7 +17,7 @@ module.exports = {
       fluidCSS: {
          // Exemple for a logo
          "fluid-logo": { prop: "width", minSize: "30px", maxSize: "42px", minScreen: "sm", maxScreen: "xxl" },
-         // Exemple for a title - use it with the @apply directive in a CSS file if you want to set line-height, spacing, etc. and create a global class
+         // Exemple for a title - Take a look in preset for a list of predefined fluid text styles
          "fluid-title-page": { prop: "font-size", minSize: "32px", maxSize: "92px", minScreen: "500px", maxScreen: "xxl" }
       },
       /*
