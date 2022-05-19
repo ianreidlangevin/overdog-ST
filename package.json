@@ -1,6 +1,6 @@
 {
   "name": "overdog",
-  "version": "1.4.3",
+  "version": "2.0.0",
   "description": "Webpack and dev dependencies for Overdog",
   "author": "Ian Reid Langevin x 3e joueur",
   "license": "MIT",
@@ -46,6 +46,7 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "@3ejoueur/tailwindcss-fluid-properties": "3ejoueur/tailwindcss-fluid-properties"
+    "@3ejoueur/tailwindcss-fluid-properties": "^1.0.0",
+    "@overdog/fn": "^1.0.0-beta.0"
   }
 }
