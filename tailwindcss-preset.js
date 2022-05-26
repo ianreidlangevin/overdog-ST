@@ -86,10 +86,12 @@ module.exports = {
          /* extend aspect-ratio (aspect-{value}) */
          aspectRatio: {
             "1/1": "1/1",
+            "2/3": "2/3",
             "3/2": "3/2",
             "16/9": "16/9",
             "4/3": "4/3",
-            "3/4": "3/4"
+            "3/4": "3/4",
+            "4/5": "4/5"
          },
          /* extend transition-duration */
          transitionDuration: {
