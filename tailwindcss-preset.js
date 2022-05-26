@@ -182,6 +182,13 @@ module.exports = {
    --------------------------------------------------------------------------
    */
    corePlugins: {
-      container: false
+      container: false,
+      // the following plugins will be removed in the future from Tailwind 4
+      textOpacity: false,
+      backgroundOpacity: false,
+      borderOpacity: false,
+      divideOpacity: false,
+      placeholderOpacity: false,
+      ringOpacity: false
    }
 }
