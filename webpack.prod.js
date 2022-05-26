@@ -2,6 +2,7 @@
 /* MERGE CONST */
 const { merge } = require("webpack-merge")
 const common = require("./webpack.common.js")
+const path = require("path")
 
 /* PLUGINS ET UTILITIES */
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -9,6 +10,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 /* PRODUCTION OPTIMIZATION */
 const TerserPlugin = require("terser-webpack-plugin")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+
+/* CRITICAL CSS */
+const dotenv = require("dotenv").config(path.resolve(__dirname, ".env"))
+const devURL = dotenv.parsed.SITE_URL
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = merge(common, {
 
@@ -34,6 +41,26 @@ module.exports = merge(common, {
       new MiniCssExtractPlugin({
          filename: "[name].[contenthash].css",
          chunkFilename: "chunks/chunk~[name].[contenthash].css"
+      }),
+
+      new HtmlCriticalWebpackPlugin({
+         base: path.resolve(__dirname, "templates/_abstracts/critical"),
+         src: devURL,
+         dest: "critical.css",
+         inline: false,
+         minify: true,
+         extract: false,
+         width: 1440,
+         height: 900,
+         penthouse: {
+            blockJSRequests: false
+         }
+      }),
+
+      new HtmlWebpackPlugin({
+         filename: path.resolve(__dirname, "templates/_abstracts/non-critical.twig"),
+         template: path.resolve(__dirname, "src/ejs/non-critical.ejs"),
+         inject: false
       })
 
    ], // END PLUGINS
