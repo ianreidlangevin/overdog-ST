@@ -1,4 +1,4 @@
-dateModified: 1652972324
+dateModified: 1655817351
 fs:
   fileSystemsDocuments:
     hasUrls: true
@@ -58,8 +58,8 @@ plugins:
     schemaVersion: '2.0'
 system:
   edition: solo
-  live: $SYSTEM_STATUS
-  name: $SYSTEM_NAME
+  live: $CRAFT_SYSTEM_STATUS
+  name: $CRAFT_SYSTEM_NAME
   retryDuration: null
   schemaVersion: 4.0.0.9
   timeZone: America/New_York
