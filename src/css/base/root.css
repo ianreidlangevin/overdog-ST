@@ -53,11 +53,16 @@
 */
 
 :focus {
-   outline: thin dotted !important;
-   outline-color: #80828a !important;
-}
-
-::-moz-focus-inner {
+   outline: none !important;
+ 
+   .outline-focus & {
+     outline: thin dotted !important;
+     outline-color: #80828a;
+   }
+ }
+ 
+ ::-moz-focus-inner {
    border-style: none;
    padding: 0;
-}
+ }
+ 
