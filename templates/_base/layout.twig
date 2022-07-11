@@ -28,8 +28,6 @@
          {{ include('_abstracts/style.twig', ignore_missing = true) }}
       {% endif %}
       {{ include('_abstracts/script.twig', ignore_missing = true) }}
-		{# JS SCRIPT - with defer attr #}
-		{% include '_base/hash/script.twig' ignore missing %}
 		{# OPEN GRAPH LANG - loop through all sites if many #}
 		<meta property="og:locale" content="{{ currentSite.language }}">
 		{% set sites = currentSite.group.sites|without(currentSite) %}
