@@ -1,21 +1,5 @@
 module.exports = {
    /*
-   --------------------------------------------------------------------------
-   CONTENT TO WATCH
-   Folders needs to be specific to avoid watching files modified by Webpack (style and script.twig, etc.)
-   --------------------------------------------------------------------------
-   */
-   content: [
-      "./templates/_base/**/*",
-      "./templates/_macros/**/*",
-      "./templates/_navigation/**/*",
-      "./templates/_sections/**/*",
-      "./templates/_shared/**/*",
-      "./templates/404.twig",
-      "./src/js/**/*.js"
-   ],
-
-   /*
    -------------------------------------
    DEFAULT OVERDOG THEME PRESET
    -------------------------------------

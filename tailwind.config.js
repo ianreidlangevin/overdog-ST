@@ -6,6 +6,23 @@ module.exports = {
       require("./tailwindcss-preset")
    ],
 
+   /*
+   --------------------------------------------------------------------------
+   CONTENT TO WATCH
+   Note : If you add folders in your templates folder, list them here to allow TW to scan them
+   Folders needs to be specific to avoid watching files modified by Webpack (style and script.twig, etc.)
+   --------------------------------------------------------------------------
+   */
+   content: [
+      "./templates/_base/**/*",
+      "./templates/_macros/**/*",
+      "./templates/_navigation/**/*",
+      "./templates/_sections/**/*",
+      "./templates/_shared/**/*",
+      "./templates/404.twig",
+      "./src/js/**/*.js"
+   ],
+
    theme: {
       /*
       --------------------------------------------------------------------------
