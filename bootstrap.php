@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Shared bootstrap file

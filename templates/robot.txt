@@ -2,12 +2,10 @@
 {% if env == 'production' %}
 # robots.txt for {{ siteUrl }}
 Sitemap: {{ siteUrl }}sitemap.xml
-
 User-agent: *
 Disallow: /cpresources/
 Disallow: /vendor/
 Disallow: /.env
 Disallow: /admin/
 Disallow: /admin
-
 {% endif %}

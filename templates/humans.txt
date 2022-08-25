@@ -24,22 +24,10 @@ Révision de contenu:
 
 /* TECHNOS */
 
-Languages: PHP, Twig, Javascript, SCSS, HTML5
-Dev tools: Webpack, Yarn, Composer
+Languages: PHP, Twig, Javascript, CSS, HTML5
+Dev tools: Webpack, Yarn, Composer, Tailwind CSS
 CMS: Craft CMS
-Assets:
-
-
-/* AGENCE */
-
-3e joueur est une agence web composée des meilleurs programmeurs, développeurs, designers et stratèges.
-De vrais mordus de techno qui donnent leur 110% à chaque projet.
-
-Pour plus d'info ou pour envoyer ton CV : https://3ejoueur.com
-
-
-/* REMERCIEMENTS */
-
+Assets: AWS S3, Imgix
 
 
 /* HUMANS TXT */
