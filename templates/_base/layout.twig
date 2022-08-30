@@ -60,10 +60,11 @@
 		<a class="sr-only" href="#main">{{ 'Skip to main content'|t }}</a>
       {# navbar #}
 		{{ include('_navigation/navbar', ignore_missing = true) }}
-      {# header or hero #}
-      {% set headerPartialName = entry is defined and entry.uri == "__home__" ? "hero" : "header" %}      
-		{{ include("_base/#{headerPartialName}", ignore_missing = true) }}
-		<main id="#main">
+      {# header block #}
+      {% block header %}
+         {{ include('_base/header', ignore_missing = true) }}
+      {% endblock %}
+      <main id="#main">
 			{% block content %}{% endblock %}
 		</main>
 		{{ include('_base/footer', ignore_missing = true) }}
