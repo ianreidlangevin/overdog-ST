@@ -31,8 +31,13 @@
          font-size: 1.4rem;
       }
 
+      /* remove margins on first and last element to avoid double gap with other elements */
       > *:first-child {
          margin-top: 0;
+      }
+
+      > *:last-child {
+         margin-bottom: 0;
       }
 
       p {

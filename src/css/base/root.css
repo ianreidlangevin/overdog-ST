@@ -28,8 +28,6 @@
       font-weight: normal;
       line-height: 1.6;
       letter-spacing: 0.03em;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;    
 
       @screen md { font-size: 1.14rem; }
       @screen lg { font-size: 1.06rem; }
