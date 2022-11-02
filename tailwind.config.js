@@ -19,6 +19,7 @@ module.exports = {
       "./templates/_navigation/**/*",
       "./templates/_sections/**/*",
       "./templates/_shared/**/*",
+      "./templates/_search/**/*",
       "./templates/404.twig",
       "./src/js/**/*.js"
    ],
