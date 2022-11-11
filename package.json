@@ -48,6 +48,6 @@
   },
   "dependencies": {
     "@3ejoueur/tailwindcss-fluid-properties": "^1.0.0",
-    "@overdog/fn": "^1.0.0-beta.3"
+    "@overdog/fn": "^1.0.0-beta.8"
   }
 }
