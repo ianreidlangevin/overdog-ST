@@ -1,51 +1,82 @@
 {#
    @param {boolean} removeCurrent
-
    Set it to false on include to show current language
 
    ### --------------------------------------------------
-
-   @param {array} switcherLinks
-
+   @param {array} langSwitcherSource
    Allows you to override the switcher array or to manually create it if entry is not 
    defined (search results, checkout, etc.). If you include an array, it will 
    always have priority over the default logic
 
-   Ex: switcherLinks: [ 
-      {'url':'panier', 'title':'Français', 'language': 'fr-CA'}, 
-      {'url':'en/cart', 'title':'English', 'language': 'en-CA'}, 
-   ]
+   {% set langSwitcherSource = [ 
+         {'path':'panier', 'siteId': 2}, 
+         {'path':'cart', 'siteId': 1}, 
+      ]
+   %}
 
 #}
 
-{% set removeCurrent = removeCurrent is defined ? removeCurrent : true %}
+{% set source = null %}
+{% set switcherLinks = [] %}
 
-{% if entry is defined and switcherLinks is not defined %}
-   {% set switcherLinks = [] %}
-   {# return only the ids of the enabled sites for this entry #}
-   {% set entryEnabledSitesIds = entry.supportedSites|map(s => s.siteId) %}
-   {# remove current site from the entryEnabledSitesIds if wanted #}
-   {% if removeCurrent is same as(true) %}
-      {% set entryEnabledSitesIds = entryEnabledSitesIds|without(currentSite.id) %}
+{% if langSwitcherSource is defined %}
+   {% set source = langSwitcherSource %}
+{% elseif entry is defined %}
+   {% set source = entry %}
+{% elseif category is defined %}
+   {% set source = category %}
+{% endif %}
+
+
+{% if source %}
+   {% set removeCurrent = removeCurrent is defined ? removeCurrent : true %}
+   {# get all sites for the current group #}
+   {% set currentGroupSites = craft.app.getSites().getGroupById(currentSite.groupId).getSites() %}
+   {# get enabled sites ID for each content type (categories are enabled for all sites, entries have a CP option) #}
+   {% if source is instance of('craft\\elements\\Entry') %}
+      {% set enabledSitesIds = source.supportedSites|map(s => s.siteId) %}
+   {% elseif source is instance of('craft\\elements\\Category') %}
+      {% set enabledSitesIds = currentGroupSites|map(s => s.id) %}
+   {% else %}
+      {% set enabledSitesIds = source|map(s => s.siteId) %}
    {% endif %}
-   {# query all the sites and filter if in entryEnabledSitesIds previously created  #}
-   {% set sitesElementsForThisEntry = craft.app.getSites().getAllSites()|filter(s => s.id in entryEnabledSitesIds) %}
-   {# fetch the current entry for all sites that are enabled (we will grab URL from each next step) #}
-   {% set currentEntryFromAllSites = craft.entries().siteId(entryEnabledSitesIds).id(entry.id).all() %}
+   {# remove current site from the enabledSitesIds if wanted #}
+   {% if removeCurrent is same as(true) %}
+      {% set enabledSitesIds = enabledSitesIds|without(currentSite.id) %}
+   {% endif %}
+   {# fetch the current element for all sites that are enabled (we will grab URL from each next step) #}
+   {% if source is instance of('craft\\elements\\Entry') %}
+      {% set sourceElements = craft.entries().siteId(enabledSitesIds).id(source.id).all()  %}
+   {% elseif source is instance of('craft\\elements\\Category') %}
+      {% set sourceElements = craft.categories().siteId(enabledSitesIds).id(source.id).all() %}
+   {% else %}
+      {% set sourceElements = source %}
+   {% endif %}
+   {# grab only the sites that are if in enabledSitesIds previously created  #}
+   {% set sourceSites = currentGroupSites|filter(s => s.id in enabledSitesIds) %}
    {# build the switcher links array #}
-   {% for site in sitesElementsForThisEntry %}
-      {% set siteEntry = currentEntryFromAllSites|filter(e => e.siteId is same as(site.id))|first %}
-      {% if siteEntry %}
-         {% set switcherLinks = switcherLinks|merge([{ url: siteEntry.url, title: site.name, language: site.language }]) %}
+   {% for site in sourceSites %}
+      {% set siteSourceElement = sourceElements|filter(e => e.siteId is same as(site.id))|first %}
+      {% if siteSourceElement %}
+         {% set switcherLinks = switcherLinks|merge([{ 
+               url: 
+                  source is instance of('craft\\elements\\Entry') or source is instance of('craft\\elements\\Category') 
+                  ? siteSourceElement.url 
+                  : site.baseUrl ~ siteSourceElement.path, 
+               title: site.name,
+               group: site.group,
+               language: site.language 
+            }]) 
+         %}
       {% endif %}
    {% endfor %}
 {% endif %}
 
 {# Simple loop through the switcherLinks array #}
-{% if switcherLinks is defined and switcherLinks|length %}
+{% if switcherLinks|length %}
    {% for switcherLink in switcherLinks %}
       <a 
-         class="text-7 p-4 {{ currentSite.language is same as(switcherLink.language) ? 'font-bold' }}" 
+         class="block px-4 -mr-4 hover:text-white nav-open:hover:text-vm-gray-800 {{ currentSite.language is same as(switcherLink.language) ? 'font-bold' }}" 
          href="{{ url(switcherLink.url) }}" 
          hreflang="{{switcherLink.language}}" 
          lang="{{switcherLink.language}}" 
