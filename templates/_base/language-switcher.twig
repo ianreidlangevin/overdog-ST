@@ -76,7 +76,7 @@
 {% if switcherLinks|length %}
    {% for switcherLink in switcherLinks %}
       <a 
-         class="block px-4 -mr-4 hover:text-white nav-open:hover:text-vm-gray-800 {{ currentSite.language is same as(switcherLink.language) ? 'font-bold' }}" 
+         class="block px-4 -mr-4 {{ currentSite.language is same as(switcherLink.language) ? 'font-bold' }}" 
          href="{{ url(switcherLink.url) }}" 
          hreflang="{{switcherLink.language}}" 
          lang="{{switcherLink.language}}" 
