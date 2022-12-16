@@ -2,11 +2,11 @@
   "name": "overdog",
   "version": "2.2.1",
   "description": "Webpack and dev dependencies for Overdog",
-  "author": "Ian Reid Langevin x 3e joueur",
+  "author": "Ian Reid Langevin",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack --config webpack.dev.js --watch --stats-children",
+    "start": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js --progress",
     "lint:js": "yarn eslint src --ext .js"
   },
@@ -48,6 +48,6 @@
   },
   "dependencies": {
     "@3ejoueur/tailwindcss-fluid-properties": "^1.0.0",
-    "@overdog/fn": "^1.0.0-beta.8"
+    "@overdog/fn": "^1.0.0-beta.9"
   }
 }
