@@ -1,5 +1,7 @@
 {% extends '_base/layout' %}
 
+{% set seoTitle = currentSite.group.name %}
+
 {% block header %}
    {{ include('_base/hero', ignore_missing = true) }}
 {% endblock %}

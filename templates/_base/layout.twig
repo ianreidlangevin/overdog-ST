@@ -6,9 +6,12 @@
 		{# PRECONNECT TO EXTERNAL RESSOURCES #}
 		<link rel="preconnect" href="{{ alias('@imagesUrl') }}" crossorigin>
 		<link rel="preconnect" href="{{ alias('@docsUrl') }}" crossorigin>
-		{# TITLE - id is used for realisations - content is changed by JS #}
-		<title>{{ (entry is defined and entry.uri == "__home__") ? currentSite.group.name : headerTitle ?? entry.title ~ ' | ' ~ currentSite.group.name }}</title>
-		{# SEO #}
+		{# TITLE FOR SEO - set seoTitle in your template to override default value #}
+      {% if seoTitle is not defined %}
+         {% set seoTitle = entry is defined ? entry.title ~ ' | ' ~ currentSite.group.name : currentSite.group.name %}
+      {% endif %}
+		<title>{{ seoTitle }}</title>		
+      {# SEO #}
 		<meta name="description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
 		<meta name="robots" content="index, follow">
 		{# MOBILE #}
@@ -40,7 +43,7 @@
 		<meta property="og:site_name" content="{{ currentSite.group.name }}">
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="{{ craft.app.request.absoluteUrl }}">
-		<meta property="og:title" content="{{ headerTitle|default(entry.title ?? '') }}">
+		<meta property="og:title" content="{{ seoTitle }}">
 		<meta property="og:description" content="{{ entry.seoDescription|default(globalSeo.seoDescription ?? '') }}">
 		{# OPEN GRAPH IMAGE #}
 		{% set ogImageField = entry.seoOgImage|default(globalSeo.seoOgImage ?? null ) %}
