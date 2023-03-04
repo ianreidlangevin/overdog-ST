@@ -1,0 +1,5 @@
+/* Add new properties to calc screen sizes without any browsers navbar */
+.h-screen-dvh {
+   height: 100vh; /* fallback */
+   height: 100dvh;
+}

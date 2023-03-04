@@ -7,6 +7,7 @@
 /* utilities layer */
 @import "./utilities/lazyload.css";
 @import "./utilities/wysiwyg.css";
+@import "./utilities/height.css";
 
 /* Tailwind */
 @tailwind base;
