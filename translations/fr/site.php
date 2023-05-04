@@ -7,6 +7,7 @@ return [
   "F j, Y" => "j F Y",
   "Switch language" => "Changer la langue",
   "Address" => "Coordonnées",
+  "Opening hours" => "Heures d’ouverture",
   "Contact" => "Contact",
   "Contact us" => "Contactez-nous",
   "Send" => "Envoyer",

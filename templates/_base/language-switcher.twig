@@ -1,88 +1,18 @@
-{#
-   @param {boolean} removeCurrent
-   Set it to false on include to show current language
+{# 
+   Language Switcher with Switcher plugin
 
-   ### --------------------------------------------------
-   @param {array} langSwitcherSource
-   Allows you to override the switcher array or to manually create it if entry is not 
-   defined (search results, checkout, etc.). If you include an array, it will 
-   always have priority over the default logic
+   If you want a custom source for the switcher, set langCustomSource = [] in your template
+   or langCustomSource = category (example).
 
-   {% set langSwitcherSource = [ 
-         {'path':'panier', 'siteId': 2}, 
-         {'path':'cart', 'siteId': 1}, 
-      ]
-   %}
+   Docs and params list : https://github.com/ianreidlangevin/craftcms-switcher 
 
 #}
+{% set languages = langSwitcher(langCustomSource|default(entry ?? null)) %}
 
-{% set source = null %}
-{% set switcherLinks = [] %}
-
-{% if langSwitcherSource is defined %}
-   {% set source = langSwitcherSource %}
-{% elseif entry is defined %}
-   {% set source = entry %}
-{% elseif category is defined %}
-   {% set source = category %}
-{% endif %}
-
-
-{% if source %}
-   {% set removeCurrent = removeCurrent is defined ? removeCurrent : true %}
-   {# get all sites for the current group #}
-   {% set currentGroupSites = craft.app.getSites().getGroupById(currentSite.groupId).getSites() %}
-   {# get enabled sites ID for each content type (categories are enabled for all sites, entries have a CP option) #}
-   {% if source is instance of('craft\\elements\\Entry') %}
-      {% set enabledSitesIds = source.supportedSites|map(s => s.siteId) %}
-   {% elseif source is instance of('craft\\elements\\Category') %}
-      {% set enabledSitesIds = currentGroupSites|map(s => s.id) %}
-   {% else %}
-      {% set enabledSitesIds = source|map(s => s.siteId) %}
-   {% endif %}
-   {# remove current site from the enabledSitesIds if wanted #}
-   {% if removeCurrent is same as(true) %}
-      {% set enabledSitesIds = enabledSitesIds|without(currentSite.id) %}
-   {% endif %}
-   {# fetch the current element for all sites that are enabled (we will grab URL from each next step) #}
-   {% if source is instance of('craft\\elements\\Entry') %}
-      {% set sourceElements = craft.entries().siteId(enabledSitesIds).id(source.id).all()  %}
-   {% elseif source is instance of('craft\\elements\\Category') %}
-      {% set sourceElements = craft.categories().siteId(enabledSitesIds).id(source.id).all() %}
-   {% else %}
-      {% set sourceElements = source %}
-   {% endif %}
-   {# grab only the sites that are if in enabledSitesIds previously created  #}
-   {% set sourceSites = currentGroupSites|filter(s => s.id in enabledSitesIds) %}
-   {# build the switcher links array #}
-   {% for site in sourceSites %}
-      {% set siteSourceElement = sourceElements|filter(e => e.siteId is same as(site.id))|first %}
-      {% if siteSourceElement %}
-         {% set switcherLinks = switcherLinks|merge([{ 
-               url: 
-                  source is instance of('craft\\elements\\Entry') or source is instance of('craft\\elements\\Category') 
-                  ? siteSourceElement.url 
-                  : site.baseUrl ~ siteSourceElement.path, 
-               title: site.name,
-               group: site.group,
-               language: site.language 
-            }]) 
-         %}
-      {% endif %}
-   {% endfor %}
-{% endif %}
-
-{# Simple loop through the switcherLinks array #}
-{% if switcherLinks|length %}
-   {% for switcherLink in switcherLinks %}
-      <a 
-         class="block px-4 -mr-4 {{ currentSite.language is same as(switcherLink.language) ? 'font-bold' }}" 
-         href="{{ url(switcherLink.url) }}" 
-         hreflang="{{switcherLink.language}}" 
-         lang="{{switcherLink.language}}" 
-         aria-label="{{ 'Switch language'|t }}"
-      >
-         {{ switcherLink.title [0:2]|capitalize }}
+{% if languages|length %}
+   {% for item in languages %}
+      <a href="{{ url(item.url) }}" hreflang="{{item.site.language}}" lang="{{item.site.language}}">
+         {{ item.site.language [0:2]|capitalize }} {# output only the first two letters #}
       </a>
    {% endfor %}
 {% endif %}

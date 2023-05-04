@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8eee0272ac3f2663ef5f724393e125c3",
+    "content-hash": "294ac6feacaf31e7360e7c4bd73018eb",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1688,6 +1688,70 @@
                 "url"
             ],
             "time": "2023-03-09T13:19:02+00:00"
+        },
+        {
+            "name": "ianreid/switcher",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ianreidlangevin/craftcms-switcher.git",
+                "reference": "f0adbf95118b8e7c50ed396a42a67af0292f2cbf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ianreidlangevin/craftcms-switcher/zipball/f0adbf95118b8e7c50ed396a42a67af0292f2cbf",
+                "reference": "f0adbf95118b8e7c50ed396a42a67af0292f2cbf",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0|^4.0"
+            },
+            "require-dev": {
+                "craftcms/rector": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Switcher",
+                "handle": "switcher",
+                "developer": "Ian Reid Langevin",
+                "developerUrl": "https://www.reidlangevin.com",
+                "documentationUrl": "https://github.com/ianreidlangevin/craftcms-switcher",
+                "changelogUrl": "https://github.com/ianreidlangevin/craftcms-switcher/blob/v1/CHANGELOG.md",
+                "class": "ianreid\\switcher\\Switcher"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ianreid\\switcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ian Reid Langevin",
+                    "homepage": "https://www.reidlangevin.com"
+                }
+            ],
+            "description": "A flexible and easy-to-use sites switcher for Craft CMS.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "language",
+                "language switcher",
+                "locale",
+                "localization",
+                "site"
+            ],
+            "support": {
+                "docs": "https://github.com/ianreidlangevin/craftcms-switcher",
+                "issues": "https://github.com/ianreidlangevin/craftcms-switcher/issues",
+                "source": "https://github.com/ianreidlangevin/craftcms-switcher/tree/1.0.4"
+            },
+            "time": "2023-05-03T15:37:28+00:00"
         },
         {
             "name": "illuminate/collections",
@@ -5847,5 +5911,5 @@
     "platform-overrides": {
         "php": "8.0.2"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

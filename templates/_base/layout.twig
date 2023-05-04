@@ -33,9 +33,13 @@
       {{ include('_abstracts/script.twig', ignore_missing = true) }}
 		{# OPEN GRAPH LANG - loop through all sites if many #}
 		<meta property="og:locale" content="{{ currentSite.language }}">
-		{% set sites = currentSite.group.sites|without(currentSite) %}
-		{% if sites|length %}
-			{% for site in sites %}
+      {# 
+         Other locales are returned by Switcher plugin
+         https://github.com/ianreidlangevin/craftcms-switcher 
+      #}
+      {% set otherLocales = localeAlternate(true) %}
+		{% if otherLocales|length %}
+			{% for site in otherLocales %}
 				<meta property="og:locale:alternate" content="{{ site.language }}">
 			{% endfor %}
 		{% endif %}

@@ -24,6 +24,7 @@
         "craftcms/aws-s3": "^2.0.1",
         "craftcms/cms": "4.4.1",
         "craftcms/redactor": "^3.0",
+        "ianreid/switcher": "^1.0.4",
         "vlucas/phpdotenv": "^5.4.0"
     },
     "require-dev": {

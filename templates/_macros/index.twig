@@ -1,29 +1,35 @@
-{#
-  ACTIVE FOR NAV
-  @param {string} navItemSlug
- #}
-{% macro isActive(navItemSlug) %}
-	{%- if navItemSlug in craft.app.request.segments -%}
-		{{' menu-link--active'}}
-	{%- endif -%}
-{% endmacro %}
-
 
 {#
-  LINK FROM ENTRY ID
-  @param {integer number} entryId
+-------------------------------------------------------------------
+   @name phoneHref
+   @param {string} phoneNumber
+   @param {extension} (optionnal, default to null)
+
+   Usage (both macros are used in the following example)
+   
+   {% import '_macros/index.twig' as macros %}
+   
+   <a href="{{ macros.phoneHref(entry.sharedPhone, entry.sharedExtension) }}">
+      {{ macros.phoneLabel(entry.sharedPhone, entry.sharedExtension) }}
+   </a>
+
+-------------------------------------------------------------------
 #}
-{% macro pageLink(entryId) %}
-	{% set entry = craft.entries.id(entryId).one() %}
-	{{ entry ? entry.url }}
-{% endmacro %}
-
+{%- macro phoneHref(phoneNumber, extension = null) -%}
+   {%- set number = phoneNumber|replace('/[^0-9]+/', '') -%}
+   {%- set ext = extension ? ";ext=#{extension}" : ''  -%}
+   {%- if number or ext -%}
+      {{ "tel:#{number}#{ext}" }}
+   {%- endif -%}
+{%- endmacro -%}
 
 {#
-  FORMAT PHONE NUMBER
-  @param {string} phoneNumber
-  Example use -> href="{{ call the macro here }}"
+-------------------------------------------------------------------
+   @name phoneLabel
+   @param {string} phoneNumber
+   @param {extension} (optionnal, default to null)
+-------------------------------------------------------------------
 #}
-{%- macro phoneFormat(phoneNumber) -%}
-	tel:{{ phoneNumber|replace({'.': "", '-': "", '(': "", ')': "", " " : ""}) }}
+{%- macro phoneLabel(phoneNumber, extension = null) -%}
+   {{ phoneNumber }}{%- if extension -%}{{ ' ext: '|t ~ extension }}{%- endif -%}
 {%- endmacro -%}
