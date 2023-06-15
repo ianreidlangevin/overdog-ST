@@ -55,7 +55,7 @@ return [
           '@webroot' => dirname(__DIR__) . '/web',
           '@rootUrl' => App::env('SITE_URL'),
           /**
-           *  AWS Cloudfront and Imgix URLs
+           *  AWS Cloudfront URLs
            *  Used in layout.twig with the preconnect attribute 
            *  Remove or edit if you use a different setup
            */

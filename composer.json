@@ -1,6 +1,6 @@
 {
     "name": "3ejoueur/overdog",
-    "description": "A Craft CMS scaffolding project for 3e joueur",
+    "description": "A Craft CMS scaffolding project",
     "version": "2.2.3",
     "authors": [
         {
@@ -11,12 +11,14 @@
         }
     ],
     "keywords": [
-        "3ejoueur",
+        "Craft CMS starter",
+        "Craft CMS boilerplate",
         "Overdog",
-        "Craft CMS"
+        "Craft CMS",
+        "Ian Reid"
     ],
     "support": {
-        "docs": "https://overdog.io"
+        "docs": "https://st.overdog.io"
     },
     "license": "MIT",
     "type": "project",
