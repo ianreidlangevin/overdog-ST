@@ -6,6 +6,11 @@ module.exports = {
       require("./tailwindcss-preset")
    ],
 
+   // will be default in v4 https://github.com/tailwindlabs/tailwindcss/pull/8394
+   future: {
+      hoverOnlyWhenSupported: true
+   },
+
    /*
    --------------------------------------------------------------------------
    CONTENT TO WATCH
