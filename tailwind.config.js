@@ -96,9 +96,7 @@ module.exports = {
    */
    plugins: [
       plugin(function ({ addVariant }) {
-         // SWIPER
-         // addVariant("swiper-disabled", "&.swiper-button-disabled")
-         // addVariant("swiper-lock", "&.swiper-button-lock")
+         // add your Tailwind CSS variants here
       }),
       require("@3ejoueur/tailwindcss-fluid-properties")
    ]
