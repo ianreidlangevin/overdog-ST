@@ -1,18 +1,15 @@
-
 {#
 -------------------------------------------------------------------
    @name phoneHref
-   @param {string} phoneNumber
-   @param {extension} (optionnal, default to null)
+   @param {string} phoneNumber - The phone number.
+   @param {string} [extension=null] - Optional phone extension (default: null).
 
-   Usage (both macros are used in the following example)
-   
+   Usage (both macros are used in the following example):
    {% import '_macros/index.twig' as macros %}
-   
+
    <a href="{{ macros.phoneHref(entry.sharedPhone, entry.sharedExtension) }}">
       {{ macros.phoneLabel(entry.sharedPhone, entry.sharedExtension) }}
    </a>
-
 -------------------------------------------------------------------
 #}
 {%- macro phoneHref(phoneNumber, extension = null) -%}

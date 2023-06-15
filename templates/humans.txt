@@ -1,26 +1,24 @@
 
-Bonjour, si vous êtes ici, c'est que vous n'êtes pas un robot !
+Hello, if you're here, it means you're not a robot!
 
+/* PROJECT */
 
-/* PROJET */
-
-Nom:
+Name:
 URL:
-Date de création:
+Creation date:
 
-/* ÉQUIPE DU PROJET */
+/* PROJECT TEAM */
 
-Architecture de contenu et wireframe:
-Webdesign:
-Programmeur principal:
-Autres programmeurs:
+Content Architecture and Wireframe:
+Web Design:
+Lead Programmer:
+Other Programmers:
 
-Gestionnaire de projet:
-Relation client:
+Project Manager:
+Client Relations:
 
-Intégration de contenu:
-Révision de contenu:
-
+Content Integration:
+Content Review:
 
 /* TECHNOS */
 
@@ -32,4 +30,4 @@ Assets: AWS S3, Imgix
 
 /* HUMANS TXT */
 
-Humans.txt est une initiative qui a pour but de faire connaitre les personnes derrière un site web.
+Humans.txt is an initiative aimed at introducing the individuals behind a website.

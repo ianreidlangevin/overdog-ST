@@ -1,11 +1,32 @@
 {% extends '_base/layout' %}
-
+{# 
+-------------------------------------------------------------------
+   You can override the default seoTitle on a per-template basis
+-------------------------------------------------------------------
+#}	
 {% set seoTitle = currentSite.group.name %}
 
+{# 
+-------------------------------------------------------------------
+   Block header
+   Example of overriding the default header
+-------------------------------------------------------------------
+#}	
 {% block header %}
-   {{ include('_base/hero', ignore_missing = true) }}
+   <header class="container py-full mb-half border-b border-slate-300">
+      <h1 class="fluid-title-page font-bold leading-none text-slate-900 mb-4 flex">Overdog
+         <span class="-mt-3 ml-4 flex items-center justify-center w-[0.8em] h-[0.8em] bg-slate-900">
+         <span class="text-[0.3em] text-white">ST</span></span>
+      </h1>
+      <h2 class="text-gray-40 fluid-text-3 leading-tight">Cheers 🍻! Vous avez installé Overdog avec succès. Éditez cette section dans {{ _self }}.</h2>
+   </header>   
 {% endblock %}
 
+{# 
+-------------------------------------------------------------------
+   Block content
+-------------------------------------------------------------------
+#}	
 {% block content %}
-
+   
 {% endblock %}

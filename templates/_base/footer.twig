@@ -1,11 +1,8 @@
-{# MAIN FOOTER LAYOUT #}
-<footer>
-	<div class="container">
-		<div class="flex justify-between items-center pb-quarter">
-			<div class="text-5 mr-2">{{ "© #{'now'|date('Y')} • #{currentSite.group.name}" }}</div>
-			<a rel="noopener noreferrer" href="https://www.3ejoueur.com" target="_blank" title="3e joueur">
-				<svg class="h-4 w-4 fill-slate-500"><use xlink:href="#logo-3ejoueur"></use></svg>
-			</a>
-		</div>
-	</div>
+{# 
+-------------------------------------------------------------------
+   Footer
+-------------------------------------------------------------------
+#}	
+<footer class="container pb-quarter">
+   <div class="text-5">{{ "© #{'now'|date('Y')} • #{currentSite.group.name}" }}</div>
 </footer>

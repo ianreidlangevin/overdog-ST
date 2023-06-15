@@ -23,7 +23,7 @@ module.exports = {
       "./templates/_macros/**/*",
       "./templates/_navigation/**/*",
       "./templates/_sections/**/*",
-      "./templates/_shared/**/*",
+      "./templates/_components/**/*",
       "./templates/_search/**/*",
       "./templates/404.twig",
       "./src/js/**/*.js"
