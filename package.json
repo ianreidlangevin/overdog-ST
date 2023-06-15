@@ -1,6 +1,6 @@
 {
   "name": "overdog",
-  "version": "2.3",
+  "version": "2.3.1",
   "description": "Webpack and dev dependencies for Overdog",
   "author": "Ian Reid Langevin",
   "license": "MIT",
