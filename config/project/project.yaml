@@ -1,4 +1,16 @@
-dateModified: 1694632867
+dateModified: 1698932608
+email:
+  fromEmail: $EMAIL_SYSTEM_ADDRESS
+  fromName: $EMAIL_SENDER_NAME
+  replyToEmail: $EMAIL_REPLY_TO
+  template: null
+  transportSettings:
+    host: $EMAIL_HOSTNAME
+    password: $EMAIL_PASSWORD
+    port: $EMAIL_PORT
+    useAuthentication: '1'
+    username: $EMAIL_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
 fs:
   fileSystemsDocuments:
     hasUrls: true
