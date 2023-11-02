@@ -24,7 +24,7 @@
     "type": "project",
     "require": {
         "craftcms/aws-s3": "^2.0.1",
-        "craftcms/cms": "4.5.4",
+        "craftcms/cms": "4.5.9",
         "craftcms/redactor": "^3.0",
         "ianreid/switcher": "^1.1",
         "vlucas/phpdotenv": "^5.4.0"
@@ -64,5 +64,12 @@
             "@php craft install/check && php craft clear-caches/compiled-templates --interactive=0 || exit 0",
             "@php craft install/check && php craft up/index --interactive=0 || exit 0"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.craftcms.com",
+            "canonical": false
+        }
+    ]
 }
