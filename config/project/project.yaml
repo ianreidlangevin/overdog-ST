@@ -1,4 +1,18 @@
-dateModified: 1698932608
+dateModified: 1698933783
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - link
+      type: native
+    -
+      key: singles
+      type: native
 email:
   fromEmail: $EMAIL_SYSTEM_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -73,9 +87,9 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 system:
-  edition: solo
+  edition: pro
   live: $CRAFT_SYSTEM_STATUS
   name: $CRAFT_SYSTEM_NAME
   retryDuration: null
   schemaVersion: 4.5.3.0
-  timeZone: America/New_York
+  timeZone: America/Toronto
