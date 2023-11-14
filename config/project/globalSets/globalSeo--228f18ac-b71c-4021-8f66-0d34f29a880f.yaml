@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: d3974314-8390-48bd-af85-f938616558be # Description SEO
+            fieldUid: d3974314-8390-48bd-af85-f938616558be # SEO Description
             instructions: null
             label: null
             required: false
@@ -13,7 +13,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 9b18697d-2ce6-492b-b628-1a649bb22eaa # Image OG pour SEO
+            fieldUid: 9b18697d-2ce6-492b-b628-1a649bb22eaa # SEO Open Graph Image
             instructions: null
             label: null
             required: false

@@ -2,30 +2,45 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: a7870a18-8ec8-42bd-bb94-ea232c8eb066 # SEO
 handle: seoOgImage
-instructions: 'Format paysage - Image utilisée pour les tags Open Graph'
-name: 'Image OG pour SEO'
+instructions: 'Recommend size is 1200 pixels by 630 pixels'
+name: 'SEO Open Graph Image'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: true
   allowedKinds: null
+  branchLimit: null
   defaultUploadLocationSource: 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e' # Images
   defaultUploadLocationSubpath: /seo
-  limit: '1'
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
   previewMode: full
-  restrictFiles: ''
-  selectionLabel: ''
+  restrictFiles: false
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e' # Images
+  restrictedLocationSubpath: /seo
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Asset
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\assets\AssetCondition
+  selectionLabel: null
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e' # Images
-  singleUploadLocationSubpath: /seo
-  source: null
   sources:
     - 'volume:00548086-7b2f-44f0-a0e4-c9d91fcaae9e' # Images
   targetSiteId: null
-  useSingleFolder: true
   validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null

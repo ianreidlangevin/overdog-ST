@@ -1,9 +1,9 @@
 baseUrl: $SITE_URL
 enabled: true
-handle: siteFrench
+handle: siteEnglish
 hasUrls: true
-language: fr-CA
-name: Français
+language: en
+name: English
 primary: true
 siteGroup: c1436119-37a0-4b5b-9538-52c47b611fd2 # $SITE_GROUP
 sortOrder: 1

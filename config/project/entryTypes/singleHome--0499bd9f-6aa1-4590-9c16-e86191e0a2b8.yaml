@@ -1,7 +1,8 @@
 fieldLayouts:
-  67a21254-ddd3-436c-b2fb-35e6c9aed3e3:
+  3deedf6c-4cfa-4eab-99ac-c8d63705558d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -24,15 +26,21 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 2c1fd938-132e-4980-8c7c-e7a7d76f7df9
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 114600ef-c785-48f9-bab5-460ba83eb9b7
+        userCondition: null
 handle: singleHome
-hasTitleField: false
-name: Accueil
-section: 4647bfbd-61b6-44f7-8536-869ac8dfd57e # Accueil
+hasTitleField: true
+name: Home
+section: 7d923ca0-fc68-4351-98ec-1274de3906db # Home
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
-titleTranslationMethod: ''
+titleTranslationMethod: site
