@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9208f61c9a30f31af339af691fd2de56",
+    "content-hash": "c23e9f3df7b05c40c67a18282c49e3f1",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -649,11 +649,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.5.9",
+            "version": "4.5.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/0fb938cba82b0ae9ee9e0854fd6bf96b428d6f2e",
-                "reference": "0fb938cba82b0ae9ee9e0854fd6bf96b428d6f2e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/dac4844088c56a44880f4b3b35c86c58641a7c1c",
+                "reference": "dac4844088c56a44880f4b3b35c86c58641a7c1c",
                 "shasum": ""
             },
             "require": {
@@ -741,7 +741,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2023-10-23T19:23:42+00:00"
+            "time": "2023-11-07T18:32:05+00:00"
         },
         {
             "name": "craftcms/flysystem",
@@ -4398,11 +4398,11 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.4.30",
+            "version": "v5.4.31",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/c6980e82a6656f6ebfabfd82f7585794cb122554",
-                "reference": "c6980e82a6656f6ebfabfd82f7585794cb122554",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/f387675d7f5fc4231f7554baa70681f222f73563",
+                "reference": "f387675d7f5fc4231f7554baa70681f222f73563",
                 "shasum": ""
             },
             "require": {
@@ -4443,7 +4443,7 @@
             ],
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
-            "time": "2023-10-27T18:36:14+00:00"
+            "time": "2023-11-03T14:41:28+00:00"
         },
         {
             "name": "theiconic/name-parser",
