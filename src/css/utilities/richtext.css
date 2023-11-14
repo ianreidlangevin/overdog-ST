@@ -8,7 +8,7 @@
 
 @layer utilities {
 
-   .wysiwyg {
+   .richtext {
 
       &::after {
          display: block;

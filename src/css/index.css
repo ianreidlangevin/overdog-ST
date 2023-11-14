@@ -1,12 +1,9 @@
-
 /* base layer */
 @import "./base/root.css";
-@import "./base/titles.css";
 @import "./base/container.css";
 
 /* utilities layer */
-@import "./utilities/lazyload.css";
-@import "./utilities/wysiwyg.css";
+@import "./utilities/richtext.css";
 @import "./utilities/height.css";
 
 /* Tailwind */
