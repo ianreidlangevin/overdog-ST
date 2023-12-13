@@ -1,7 +1,7 @@
 {
     "name": "3ejoueur/overdog",
     "description": "A Craft CMS scaffolding project",
-    "version": "2.3.2",
+    "version": "2.4",
     "authors": [
         {
             "name": "Ian Reid Langevin",
@@ -24,7 +24,7 @@
     "type": "project",
     "require": {
         "craftcms/aws-s3": "^2.0.1",
-        "craftcms/cms": "4.5.10",
+        "craftcms/cms": "4.5.12",
         "craftcms/redactor": "^3.0",
         "ianreid/switcher": "^1.1",
         "vlucas/phpdotenv": "^5.4.0"
